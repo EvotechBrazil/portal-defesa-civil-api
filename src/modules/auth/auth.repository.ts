@@ -69,14 +69,26 @@ export class AuthRepository {
     });
   }
 
+  /**
+   * Revoga o token anterior de forma condicional antes de emitir o novo.
+   * Devolve `null` quando outra requisição já revogou aquele token — é o sinal
+   * de reuso/corrida que o serviço traduz em revogação da cadeia inteira.
+   */
   rotateRefreshToken(params: {
     previousId: string;
     userId: string;
     tokenHash: string;
     expiresAt: Date;
     revokedAt: Date;
-  }): Promise<RefreshToken> {
+  }): Promise<RefreshToken | null> {
     return this.prisma.$transaction(async (tx) => {
+      const claimed = await tx.refreshToken.updateMany({
+        where: { id: params.previousId, revokedAt: null },
+        data: { revokedAt: params.revokedAt },
+      });
+      if (claimed.count === 0) {
+        return null;
+      }
       const created = await tx.refreshToken.create({
         data: {
           userId: params.userId,
@@ -86,10 +98,7 @@ export class AuthRepository {
       });
       await tx.refreshToken.update({
         where: { id: params.previousId },
-        data: {
-          revokedAt: params.revokedAt,
-          replacedById: created.id,
-        },
+        data: { replacedById: created.id },
       });
       return created;
     });

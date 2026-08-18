@@ -14,6 +14,15 @@ export async function verifyPassword(
   return bcrypt.compare(password, passwordHash);
 }
 
+/**
+ * Hash descartável usado quando o e-mail não existe. Sem ele o bcrypt só roda
+ * para usuários reais e a diferença de latência vira oráculo de enumeração.
+ */
+export const DUMMY_PASSWORD_HASH = bcrypt.hashSync(
+  'timing-oracle-placeholder',
+  BCRYPT_ROUNDS,
+);
+
 export function generateOpaqueToken(): string {
   return randomBytes(32).toString('base64url');
 }

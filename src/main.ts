@@ -23,13 +23,21 @@ async function bootstrap() {
     }),
   );
 
-  const swagger = new DocumentBuilder()
-    .setTitle('Portal Defesa Civil API')
-    .setDescription('API do portal de ensino')
-    .setVersion('1.0')
-    .addBearerAuth()
-    .build();
-  SwaggerModule.setup('docs', app, SwaggerModule.createDocument(app, swagger));
+  // Swagger é middleware Express e não passa pelos guards globais — em
+  // produção ele seria um mapa público da API.
+  if (configService.get<string>('app.nodeEnv') !== 'production') {
+    const swagger = new DocumentBuilder()
+      .setTitle('Portal Defesa Civil API')
+      .setDescription('API do portal de ensino')
+      .setVersion('1.0')
+      .addBearerAuth()
+      .build();
+    SwaggerModule.setup(
+      'docs',
+      app,
+      SwaggerModule.createDocument(app, swagger),
+    );
+  }
 
   const port = configService.get<number>('app.port') ?? 3001;
   await app.listen(port);

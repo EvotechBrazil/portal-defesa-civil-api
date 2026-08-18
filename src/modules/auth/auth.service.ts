@@ -14,6 +14,7 @@ import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { toUserProfile, UsersService } from '../users/users.service';
 import { UsersRepository } from '../users/users.repository';
 import {
+  DUMMY_PASSWORD_HASH,
   generateOpaqueToken,
   hashPassword,
   hashToken,
@@ -159,9 +160,12 @@ export class AuthService {
       tenant.id,
       normalizeEmail(dto.email),
     );
-    const passwordMatches = user
-      ? await verifyPassword(dto.password, user.passwordHash)
-      : false;
+    // Sempre roda o bcrypt, exista o usuário ou não: caminhos com custo de CPU
+    // diferente vazam a existência da conta pelo tempo de resposta.
+    const passwordMatches = await verifyPassword(
+      dto.password,
+      user?.passwordHash ?? DUMMY_PASSWORD_HASH,
+    );
     if (!user || !passwordMatches) {
       throw new UnauthorizedException('Credenciais inválidas.');
     }
@@ -208,13 +212,22 @@ export class AuthService {
     const ttlSeconds = this.configService.getOrThrow<number>(
       'jwt.refreshTtlSeconds',
     );
-    await this.authRepository.rotateRefreshToken({
+    const rotated = await this.authRepository.rotateRefreshToken({
       previousId: existing.id,
       userId: user.id,
       tokenHash: hashToken(refreshToken),
       expiresAt: new Date(Date.now() + ttlSeconds * 1000),
       revokedAt: new Date(),
     });
+    if (!rotated) {
+      // Outra requisição rotacionou o mesmo token entre a leitura e a escrita:
+      // é reuso, e reuso derruba a cadeia inteira.
+      await this.authRepository.revokeAllUserRefreshTokens(
+        existing.userId,
+        new Date(),
+      );
+      throw new UnauthorizedException('Refresh token inválido.');
+    }
 
     return {
       accessToken: this.signAccessToken(user),

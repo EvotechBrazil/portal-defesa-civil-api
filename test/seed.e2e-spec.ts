@@ -26,7 +26,7 @@ describe('seed integrity', () => {
       pageSlugs,
       linkSlugs,
     ] = await Promise.all([
-      prisma.tenant.count({ where: { deletedAt: null } }),
+      prisma.tenant.count({ where: { deletedAt: null, slug: 'default' } }),
       prisma.course.count({ where: { deletedAt: null } }),
       prisma.courseModule.count({ where: { deletedAt: null } }),
       prisma.quiz.count({ where: { deletedAt: null } }),

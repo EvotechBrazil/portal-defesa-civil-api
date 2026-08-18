@@ -1,0 +1,3 @@
+export const PRACTICE_SHUFFLE = 'PRACTICE_SHUFFLE';
+
+export const PRACTICE_HISTORY_LIMIT = 8;

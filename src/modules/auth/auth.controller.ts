@@ -1,6 +1,8 @@
 import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { CurrentUser } from '../../common/decorators/current-user.decorator';
 import { Public } from '../../common/decorators/public.decorator';
+import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { AuthService } from './auth.service';
 import { EmailDto } from './dtos/email.dto';
 import { LoginDto } from './dtos/login.dto';
@@ -15,44 +17,47 @@ export class AuthController {
 
   @Public()
   @Post('auth/register')
-  register(@Body() _body: RegisterDto) {
-    return this.authService.register();
+  register(@Body() body: RegisterDto) {
+    return this.authService.register(body);
   }
 
   @Public()
+  @HttpCode(200)
   @Post('auth/verify-email')
-  verifyEmail(@Body() _body: TokenDto) {
-    return this.authService.verifyEmail();
+  verifyEmail(@Body() body: TokenDto) {
+    return this.authService.verifyEmail(body);
   }
 
   @Public()
   @HttpCode(202)
   @Post('auth/resend-verification')
-  resendVerification(@Body() _body: EmailDto) {
-    return this.authService.resendVerification();
+  resendVerification(@Body() body: EmailDto) {
+    return this.authService.resendVerification(body);
   }
 
   @Public()
+  @HttpCode(200)
   @Post('auth/login')
-  login(@Body() _body: LoginDto) {
-    return this.authService.login();
+  login(@Body() body: LoginDto) {
+    return this.authService.login(body);
   }
 
   @Public()
+  @HttpCode(200)
   @Post('auth/refresh')
-  refresh(@Body() _body: RefreshDto) {
-    return this.authService.refresh();
+  refresh(@Body() body: RefreshDto) {
+    return this.authService.refresh(body);
   }
 
   @Public()
   @HttpCode(204)
   @Post('auth/logout')
-  logout(@Body() _body: RefreshDto) {
-    return this.authService.logout();
+  logout(@Body() body: RefreshDto) {
+    return this.authService.logout(body);
   }
 
   @Get('me')
-  me() {
-    return this.authService.me();
+  me(@CurrentUser() user: AuthenticatedUser) {
+    return this.authService.me(user);
   }
 }

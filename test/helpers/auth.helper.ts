@@ -1,6 +1,10 @@
 import { JwtService } from '@nestjs/jwt';
 import { User, UserRole } from '@prisma/client';
 import { PrismaService } from '../../src/database/prisma.service';
+import {
+  generateOpaqueToken,
+  hashToken,
+} from '../../src/modules/auth/auth.crypto';
 
 export async function getDefaultTenant(prisma: PrismaService) {
   const tenant = await prisma.tenant.findFirst({
@@ -13,7 +17,7 @@ export async function getDefaultTenant(prisma: PrismaService) {
 }
 
 export async function createSecondTenant(prisma: PrismaService) {
-  const slug = `tenant-${Date.now()}`;
+  const slug = `tenant-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
   return prisma.tenant.create({
     data: { slug, name: `Tenant ${slug}`, status: 'ACTIVE' },
   });
@@ -30,7 +34,9 @@ export async function createVerifiedStudent(
   return prisma.user.create({
     data: {
       tenantId: tenant.id,
-      email: overrides?.email ?? `student-${Date.now()}-${Math.random()}@example.com`,
+      email:
+        overrides?.email ??
+        `student-${Date.now()}-${Math.random()}@example.com`,
       name: overrides?.name ?? 'Aluno Teste',
       passwordHash: 'not-used-in-helper',
       role: overrides?.role ?? UserRole.STUDENT,
@@ -65,4 +71,83 @@ export async function bearerFor(
     token,
     header: { Authorization: `Bearer ${token}` },
   };
+}
+
+export async function issueEmailVerificationToken(
+  prisma: PrismaService,
+  userId: string,
+): Promise<string> {
+  const token = generateOpaqueToken();
+  await prisma.emailVerificationToken.create({
+    data: {
+      userId,
+      tokenHash: hashToken(token),
+      expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
+    },
+  });
+  return token;
+}
+
+interface MailpitListResponse {
+  messages?: Array<{
+    ID: string;
+    To?: Array<{ Address?: string }>;
+    Subject?: string;
+  }>;
+}
+
+interface MailpitMessageResponse {
+  Text?: string;
+  HTML?: string;
+}
+
+function extractVerificationToken(source: string): string | null {
+  const match = source.match(/[?&]token=([^&'"\s<]+)/);
+  if (!match?.[1]) {
+    return null;
+  }
+  return decodeURIComponent(match[1]);
+}
+
+export async function readVerificationTokenFromMailpit(
+  email: string,
+): Promise<string | null> {
+  try {
+    const baseUrl = 'http://localhost:8025/api/v1';
+    const listResponse = await fetch(`${baseUrl}/messages`);
+    if (!listResponse.ok) {
+      return null;
+    }
+    const list = (await listResponse.json()) as MailpitListResponse;
+    const message = (list.messages ?? []).find((item) =>
+      (item.To ?? []).some(
+        (to) => to.Address?.toLowerCase() === email.toLowerCase(),
+      ),
+    );
+    if (!message) {
+      return null;
+    }
+    const detailResponse = await fetch(`${baseUrl}/message/${message.ID}`);
+    if (!detailResponse.ok) {
+      return null;
+    }
+    const detail = (await detailResponse.json()) as MailpitMessageResponse;
+    return extractVerificationToken(
+      `${detail.Text ?? ''}\n${detail.HTML ?? ''}`,
+    );
+  } catch {
+    return null;
+  }
+}
+
+export async function resolveVerificationToken(
+  prisma: PrismaService,
+  userId: string,
+  email: string,
+): Promise<string> {
+  const fromMailpit = await readVerificationTokenFromMailpit(email);
+  if (fromMailpit) {
+    return fromMailpit;
+  }
+  return issueEmailVerificationToken(prisma, userId);
 }

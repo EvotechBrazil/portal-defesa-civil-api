@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { User } from '@prisma/client';
+import { User, UserRole } from '@prisma/client';
 import { PrismaService } from '../../database/prisma.service';
 
 @Injectable()
@@ -15,6 +15,30 @@ export class UsersRepository {
   findActiveByEmail(tenantId: string, email: string): Promise<User | null> {
     return this.prisma.user.findFirst({
       where: { tenantId, email, deletedAt: null },
+    });
+  }
+
+  createStudent(data: {
+    tenantId: string;
+    email: string;
+    name: string;
+    passwordHash: string;
+  }): Promise<User> {
+    return this.prisma.user.create({
+      data: {
+        tenantId: data.tenantId,
+        email: data.email,
+        name: data.name,
+        passwordHash: data.passwordHash,
+        role: UserRole.STUDENT,
+      },
+    });
+  }
+
+  async updateLastLoginAt(id: string, lastLoginAt: Date): Promise<void> {
+    await this.prisma.user.update({
+      where: { id },
+      data: { lastLoginAt },
     });
   }
 }

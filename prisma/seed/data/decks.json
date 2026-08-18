@@ -1,0 +1,4373 @@
+{
+"p": [
+{
+"id": "P1",
+"code": "#1",
+"deck": "p",
+"f": "Fórmula do risco",
+"v": "Risco = Ameaça × Exposição × Vulnerabilidade ÷ Capacidade",
+"t": "Risco não é sinônimo de ameaça. A ameaça é o fenômeno; o risco é a probabilidade de esse fenômeno produzir dano sobre alguém ou alguma coisa. Por isso a mesma chuva de 80 mm gera desastre numa encosta ocupada e não gera nada numa área de mata preservada: mudou a exposição e a vulnerabilidade, não a ameaça. A capacidade entra dividindo porque preparo, estrutura e liderança reduzem o resultado final sem alterar o fenômeno.",
+"a": "Apostila Mód. 03 — 'Todo desastre nasce da combinação entre ameaça, vulnerabilidade e ausência de preparo'. Mód. 03, item 7, define capacidade de resposta como treinamento + estrutura + planejamento + comunicação + liderança.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+14,
+13,
+15,
+57
+],
+"rev": true
+},
+{
+"id": "P2",
+"code": "#2",
+"deck": "p",
+"f": "O risco é…",
+"v": "Uma <strong>construção social</strong> entre ambiente e ocupação — não fatalidade natural",
+"t": "Chamar o risco de 'construção social' é uma tese, não um floreio: significa que ele é produzido por decisões humanas — onde se constrói, o que se fiscaliza, quem tem acesso a moradia segura. A consequência prática é que o risco pode ser desconstruído pelas mesmas vias. É o que separa a Defesa Civil moderna da lógica de fatalidade.",
+"a": "Apostila Mód. 03, item 6: ocupação irregular, falta de planejamento urbano, pobreza, desinformação, infraestrutura precária e degradação ambiental como fatores que ampliam a vulnerabilidade — 'desastre não é fatalidade, é consequência'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+13,
+15,
+44,
+39
+],
+"rev": true
+},
+{
+"id": "P3",
+"code": "#3",
+"deck": "p",
+"f": "As 5 fases do ciclo",
+"v": "Prevenção → Mitigação → Preparação → Resposta → Recuperação",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+30,
+76,
+29
+],
+"rev": true
+},
+{
+"id": "P4",
+"code": "#4",
+"deck": "p",
+"f": "Lei que institui a PNPDEC",
+"v": "<strong>Lei nº 12.608/2012</strong>",
+"t": "A Lei 12.608/2012 é a espinha dorsal: institui a PNPDEC, organiza o SINPDEC, cria o CONPDEC e autoriza o sistema de informações e monitoramento. Ela também alterou outras leis — inclusive a 12.340/2010, onde inseriu o art. 3º-A que exige plano de contingência dos municípios em cadastro de risco. Guardar a data (10/04/2012) evita confusão com a 12.340/2010.",
+"a": "Apostila Mód. 01, item 8 e Mód. 02 inteiro: princípios, objetivos, competências e estrutura do sistema nacional.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+41,
+94
+],
+"rev": true
+},
+{
+"id": "P5",
+"code": "#5",
+"deck": "p",
+"f": "Norma associada ao S2ID",
+"v": "<strong>Decreto nº 10.593/2020</strong> — organiza SINPDEC/CONPDEC e o Sistema Nacional de Informações sobre Desastres <em>(o quiz chama de \"Lei\")</em>",
+"t": "Cuidado com a pegadinha: o quiz fala em 'Lei 10.593/2020', mas 10.593/2020 é um DECRETO, de 24/12/2020, que organiza o SINPDEC, o CONPDEC, o Plano Nacional de Proteção e Defesa Civil e o Sistema Nacional de Informações sobre Desastres. O S2ID é a plataforma operacional da Secretaria Nacional de Proteção e Defesa Civil que materializa esse sistema de informações — o texto do decreto não usa a sigla.",
+"a": "Conteúdo do M3 da plataforma (Panorama Nacional). A apostila não trata do S2ID; a referência normativa foi conferida no Planalto.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+41,
+24,
+40,
+42
+],
+"rev": true
+},
+{
+"id": "P6",
+"code": "#6",
+"deck": "p",
+"f": "Base legal do PLANCON",
+"v": "<strong>Lei nº 12.340/2010</strong>, art. 3º-A §2º",
+"t": "A Lei 12.340/2010 trata de dinheiro: transferências da União a Estados, DF e Municípios para prevenção, resposta e recuperação, e institui o fundo hoje chamado FUNCAP. O gancho com o PLANCON está no art. 3º-A, §2º (incluído pela Lei 12.608/2012): município inscrito no cadastro de risco tem de elaborar mapeamento e plano de contingência. Ou seja, o plano é condição para acessar o sistema, não peça decorativa.",
+"a": "Conteúdo do M6 da plataforma (Bases Legais do PLANCON). Verificado no texto da Lei 12.340/2010 (Planalto).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+94,
+95,
+89,
+90
+],
+"rev": true
+},
+{
+"id": "P7",
+"code": "#7",
+"deck": "p",
+"f": "Marco internacional que inspirou a PNPDEC",
+"v": "<strong>Marco de Ação de Hyogo (2005)</strong>",
+"t": "O Marco de Ação de Hyogo (2005–2015) deslocou a agenda internacional da resposta para a redução do risco, e é a matriz da PNPDEC brasileira de 2012. Foi sucedido pelo Marco de Sendai (2015–2030), que reforçou entender o risco, fortalecer a governança, investir em redução e melhorar a preparação. Saber a sucessão evita marcar Sendai onde o curso pede Hyogo.",
+"a": "Apostila Mód. 01, item 8: 'Baseada no Marco de Ação de Hyogo (2005)'.",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+49,
+51,
+52
+],
+"rev": true
+},
+{
+"id": "P8",
+"code": "#8",
+"deck": "p",
+"f": "O que o COBRADE faz",
+"v": "Classifica desastres por <strong>grupo → subgrupo → tipo → subtipo</strong>",
+"t": "O COBRADE é a gramática comum do sistema: sem código padronizado, dois municípios registram o mesmo evento de formas diferentes e a estatística nacional vira ruído. A hierarquia é sempre grupo → subgrupo → tipo → subtipo, dentro de duas categorias, naturais e tecnológicos. É o que permite comparar séries históricas e priorizar investimento.",
+"a": "Conteúdo do M2 da plataforma (Sistemas de Registro). Estrutura conferida na tabela COBRADE oficial do MIDR.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+22,
+23,
+24,
+40
+],
+"rev": true
+},
+{
+"id": "P9",
+"code": "#9",
+"deck": "p",
+"f": "O que o FIDE faz",
+"v": "<strong>Registra as informações</strong> do desastre",
+"t": "O FIDE é o formulário que descreve o evento — o que houve, onde, quando, quantos afetados, que danos e prejuízos. Ele instrui o pedido de reconhecimento federal de Situação de Emergência ou Estado de Calamidade Pública dentro do S2ID. A decretação em si é ato do prefeito ou governador; o FIDE é a peça técnica que sustenta o pedido.",
+"a": "Conteúdo do M2 da plataforma (Sistemas de Registro).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+23,
+22,
+25,
+27
+],
+"rev": true
+},
+{
+"id": "P10",
+"code": "#10",
+"deck": "p",
+"f": "O que o S2ID faz",
+"v": "<strong>Centraliza os registros nacionais</strong> de desastres",
+"t": "O S2ID centraliza os registros nacionais de desastres: sem base única, cada esfera guarda o seu pedaço e ninguém enxerga o país. É por isso que o curso repete 'sem dados confiáveis não há gestão efetiva' — o dado é insumo de priorização orçamentária, de mapeamento e de política pública, não burocracia.",
+"a": "Conteúdo dos M2 e M3 da plataforma. Atenção: essa mesma pergunta aparece nos dois módulos com redações levemente diferentes ('registros nacionais' e 'dados nacionais').",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+24,
+40,
+42,
+41
+],
+"rev": true
+},
+{
+"id": "P11",
+"code": "#11",
+"deck": "p",
+"f": "O que o EM-DAT faz",
+"v": "Base internacional que <strong>mapeia desastres globais</strong>",
+"t": "O EM-DAT é a base internacional de eventos de desastre mantida pelo CRED (Universidade de Louvain, Bélgica). É a fonte usada para afirmar que o número de desastres cresce no mundo. O ponto do módulo é metodológico: conhecimento global serve, mas precisa ser adaptado ao contexto local — o perfil de risco brasileiro não é o de um país insular do Pacífico.",
+"a": "Conteúdo do M3 da plataforma (Cenário Global e Síntese).",
+"s": [
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+34,
+35,
+36,
+49
+],
+"rev": true
+},
+{
+"id": "P12",
+"code": "#12",
+"deck": "p",
+"f": "Ameaça",
+"v": "Processo/fenômeno <strong>natural OU humano</strong> com potencial de causar danos",
+"t": "O erro clássico é achar que ameaça é só fenômeno natural. A definição aceita inclui processos de origem humana — rompimento de barragem, acidente industrial, vazamento químico. Uma ameaça pode existir por décadas sem virar desastre: ela só se converte em desastre quando encontra exposição e vulnerabilidade.",
+"a": "Apostila Mód. 03, itens 3 e 4: classificação em ameaças naturais, tecnológicas, ambientais e sociais.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+57,
+19,
+14,
+58
+],
+"rev": true
+},
+{
+"id": "P13",
+"code": "#13",
+"deck": "p",
+"f": "Exposição",
+"v": "<strong>Pessoas e bens</strong> situados em áreas vulneráveis",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+58,
+37,
+44,
+43
+],
+"rev": true
+},
+{
+"id": "P14",
+"code": "#14",
+"deck": "p",
+"f": "Vulnerabilidade",
+"v": "Grau de fragilidade: física, social, econômica, ambiental, institucional",
+"t": "Vulnerabilidade é fragilidade diante do impacto, e tem cinco dimensões: física (a casa aguenta?), social (há rede de apoio?), econômica (há reserva para recomeçar?), ambiental (o entorno foi degradado?) e institucional (o poder público consegue agir?). É a variável em que desigualdade e risco se encontram — por isso pobreza aparece nas questões como fator de risco.",
+"a": "Apostila Mód. 03, itens 5 e 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+39,
+45,
+44,
+38
+],
+"rev": true
+},
+{
+"id": "P15",
+"code": "#15",
+"deck": "p",
+"f": "Capacidade",
+"v": "<strong>Recursos e atributos</strong> para enfrentar riscos",
+"t": "Capacidade é o que você tem para enfrentar o risco: equipe treinada, estrutura, plano, canal de comunicação e liderança. Aparece na equação dividindo porque é a única variável que a Defesa Civil controla diretamente no curto prazo — não dá para mudar a geografia até sexta, mas dá para treinar a equipe.",
+"a": "Apostila Mód. 03, item 7: 'Onde há preparo, há menos perdas'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+16,
+75,
+18
+],
+"rev": true
+},
+{
+"id": "P16",
+"code": "#16",
+"deck": "p",
+"f": "Resiliência",
+"v": "<strong>Resistir, adaptar-se e recuperar-se</strong>",
+"t": "Resiliência tem três tempos e todos caem em prova: resistir (absorver o impacto), adaptar-se (mudar para conviver com o risco) e recuperar-se (voltar a funcionar). Não é heroísmo individual — é propriedade de um sistema, e por isso depende de organização social e governamental, não de estrutura militar nem de clima.",
+"a": "Conteúdo do M2 da plataforma (Capacidade e Resiliência); dialoga com o Mód. 07 da apostila (reconstruir melhor).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+17,
+18,
+70,
+78
+],
+"rev": true
+},
+{
+"id": "P17",
+"code": "#17",
+"deck": "p",
+"f": "Do que depende a resiliência",
+"v": "<strong>Organização social e governamental</strong>",
+"t": "A pegadinha oferece 'estruturas militares' e 'condições climáticas' como iscas. A resposta é organização social e governamental: rede comunitária, coordenação entre esferas, capacidade institucional. É coerente com o resto do curso, que insiste em responsabilidade compartilhada e participação social.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 01, itens 13 e 14 (a comunidade e a participação social).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+18,
+70,
+50
+],
+"rev": true
+},
+{
+"id": "P18",
+"code": "#18",
+"deck": "p",
+"f": "Dano × Prejuízo",
+"v": "Dano = perda imediata; <strong>Prejuízo = impacto econômico que persiste após o evento</strong>",
+"t": "Essa distinção derruba gente em prova. Dano é a perda no momento do evento — pessoas, edificações, meio ambiente. Prejuízo é o rastro econômico que continua depois: comércio que não reabre, safra perdida, arrecadação que cai, serviço interrompido. O FIDE separa os dois justamente porque a conta da reconstrução depende dessa leitura.",
+"a": "Conteúdo do M2 da plataforma (Danos e Prejuízos).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+25,
+26,
+27
+],
+"rev": true
+},
+{
+"id": "P19",
+"code": "#19",
+"deck": "p",
+"f": "Danos humanos",
+"v": "Mortos, feridos, desabrigados, desalojados",
+"t": "Danos humanos são a contagem de pessoas: mortos, feridos, enfermos, desabrigados e desalojados. Vale fixar a diferença entre desalojado (saiu de casa e foi para casa de alguém) e desabrigado (depende de abrigo público) — é ela que dimensiona a demanda de abrigamento no plano de contingência.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 05, item 12 (organização de abrigos) e Mód. 06, item 11.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+25,
+26,
+85,
+84
+],
+"rev": true
+},
+{
+"id": "P20",
+"code": "#20",
+"deck": "p",
+"f": "Desastre súbito",
+"v": "<strong>Ocorre sem aviso</strong> (explosão, desabamento, vendaval)",
+"t": "A classificação por evolução separa o que exige alarme e fuga do que exige monitoramento longo. Súbito: explosão, desabamento, vendaval, enxurrada — o tempo entre alerta e ação tem de ser imediato. É esse tipo que justifica sistema de alerta, rota de fuga e simulado.",
+"a": "Conteúdo do M2 da plataforma (Tipos de Desastres); Apostila Mód. 05, item 5 (simulados) e Mód. 06, item 3.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+20,
+21,
+82
+],
+"rev": true
+},
+{
+"id": "P21",
+"code": "#21",
+"deck": "p",
+"f": "Desastre gradual",
+"v": "Instalação lenta — exemplo típico: <strong>estiagem</strong>",
+"t": "Desastre gradual, ou de evolução lenta, se instala ao longo de meses — estiagem, seca, desertificação, erosão. Não tem alarme nem fuga: tem monitoramento, indicador e decisão política antecipada. É o tipo que mais castiga o semiárido brasileiro e o que menos gera manchete.",
+"a": "Conteúdo do M2 da plataforma (Tipos de Desastres); Apostila Mód. 03, item 4 (secas entre as ameaças naturais).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+21,
+20,
+48
+],
+"rev": true
+},
+{
+"id": "P22",
+"code": "#22",
+"deck": "p",
+"f": "Desastre tecnológico (exemplo)",
+"v": "<strong>Incêndio industrial</strong>, rompimento de barragem, vazamento químico",
+"t": "Desastre tecnológico é o de origem humana ligada a processo produtivo ou infraestrutura: incêndio industrial, rompimento de barragem, vazamento de produto perigoso, explosão. No Brasil, Mariana (2015) e Brumadinho (2019) são os exemplos que mudaram a regulação de barragens. Nas questões, a isca é oferecer deslizamento ou enchente como se fossem tecnológicos.",
+"a": "Apostila Mód. 03, item 4: ameaças tecnológicas — rompimento de barragens, acidentes industriais, vazamento de produtos perigosos, explosões.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+19,
+20,
+57
+],
+"rev": true
+},
+{
+"id": "P23",
+"code": "#23",
+"deck": "p",
+"f": "Prevenção",
+"v": "Medidas <strong>antecipadas</strong> para evitar riscos",
+"t": "Prevenção age antes e sobre a causa: ordenamento territorial, legislação, fiscalização, educação preventiva. A PNPDEC dá a ela prioridade absoluta sobre a resposta — a lógica é econômica e humana ao mesmo tempo, já que prevenir custa uma fração do que custa reconstruir.",
+"a": "Apostila Mód. 04, item 2; Mód. 02, item 7 ('a lei determina que a prevenção deve ter prioridade sobre a resposta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+52,
+50,
+3
+],
+"rev": true
+},
+{
+"id": "P24",
+"code": "#24",
+"deck": "p",
+"f": "Mitigação",
+"v": "<strong>Reduzir impacto</strong> quando o risco não pode ser evitado",
+"t": "Mitigação é o reconhecimento honesto de que nem todo risco pode ser eliminado. Ela reduz a consequência: contenção de encosta, drenagem, dique, reforço estrutural, e também medidas não estruturais como norma técnica e alerta. Confundir prevenção com mitigação é o erro mais comum do bloco.",
+"a": "Apostila Mód. 04, itens 3, 6 e 7 (medidas estruturais e não estruturais). 'Conhecimento também é infraestrutura'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+76,
+30
+],
+"rev": true
+},
+{
+"id": "P25",
+"code": "#25",
+"deck": "p",
+"f": "Preparação",
+"v": "<strong>Treinamentos, alertas e simulados</strong>",
+"t": "Preparação é a fase que transforma plano em capacidade real: capacitação contínua, simulados, protocolos, sistema de alerta, organização logística. O simulado é a peça central — testa o plano, revela falha e cria memória operacional para quem vai agir sob pressão.",
+"a": "Apostila Mód. 05 inteiro, com destaque para os itens 4 (capacitação), 5 (simulados) e 6 (planos essenciais).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+],
+[
+"Módulo M5",
+"modulos"
+]
+],
+"q": [
+30,
+77,
+72,
+71
+],
+"rev": true
+},
+{
+"id": "P26",
+"code": "#26",
+"deck": "p",
+"f": "Resposta",
+"v": "<strong>Salvar vidas imediatamente</strong> (socorro + assistência + restabelecimento)",
+"t": "Resposta é a fase em que o tempo vale vidas, e o curso insiste que responder não é correr: é executar com método. A sequência é acionamento → avaliação inicial (size-up) → comando e coordenação → busca e salvamento → triagem → evacuação → abrigamento → logística → informação ao público → registro. Segurança da equipe vem antes de tudo.",
+"a": "Apostila Mód. 06 inteiro; Conteúdo do M5 da plataforma (Ações e Procedimentos da Resposta).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+31,
+79,
+81,
+80
+],
+"rev": true
+},
+{
+"id": "P27",
+"code": "#27",
+"deck": "p",
+"f": "Recuperação",
+"v": "<strong>Reconstrução sustentável</strong> — reconstruir melhor",
+"t": "Recuperação não é voltar ao que era: é reconstruir com redução de risco. Restabelecer serviços essenciais, garantir moradia digna fora da área de risco, apoiar economia local, cuidar de saúde mental e registrar lições aprendidas. 'Reconstruir no risco é repetir a tragédia' resume a fase inteira.",
+"a": "Apostila Mód. 07 inteiro, com destaque para os itens 6, 7 e 14.",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+78,
+33,
+31,
+32
+],
+"rev": true
+},
+{
+"id": "P28",
+"code": "#28",
+"deck": "p",
+"f": "Gestão <strong>corretiva</strong>",
+"v": "Reduz riscos <strong>já existentes</strong>",
+"t": "Gestão corretiva atua sobre o risco que já está instalado: a encosta já ocupada, a escola já construída na várzea. Obra de contenção, reassentamento e reforço estrutural são exemplos. É a modalidade mais cara — por isso o curso empurra para a prospectiva.",
+"a": "Conteúdo do M4 da plataforma (Modalidades de Gestão).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+59,
+60,
+61
+],
+"rev": true
+},
+{
+"id": "P29",
+"code": "#29",
+"deck": "p",
+"f": "Gestão <strong>prospectiva</strong>",
+"v": "<strong>Evita novos</strong> riscos",
+"t": "Gestão prospectiva impede que risco novo nasça: plano diretor, licenciamento, restrição de uso do solo, norma construtiva. Não aparece em manchete porque seu resultado é um desastre que não aconteceu — e é justamente a modalidade com melhor relação custo-benefício.",
+"a": "Conteúdo do M4 da plataforma; Apostila Mód. 04, item 5 (planejamento territorial).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+60,
+59,
+61
+],
+"rev": true
+},
+{
+"id": "P30",
+"code": "#30",
+"deck": "p",
+"f": "Gestão <strong>compensatória</strong>",
+"v": "Fortalece <strong>resiliência</strong> frente a riscos inevitáveis",
+"t": "Gestão compensatória lida com o risco que sobra depois de tudo: fortalece resiliência e distribui a perda. Entram aqui fundo de calamidade, seguro, rede de proteção social e capacidade de resposta. É o reconhecimento de que risco zero não existe.",
+"a": "Conteúdo do M4 da plataforma; conecta com o FUNCAP da Lei 12.340/2010.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+61,
+59,
+60
+],
+"rev": true
+},
+{
+"id": "P31",
+"code": "#31",
+"deck": "p",
+"f": "As 6 diretrizes",
+"v": "União entre governos · ação sistêmica · prioridade à prevenção · bacia como unidade de planejamento · base científica · participação social",
+"t": "As seis diretrizes são os incisos I a VI do art. 4º da Lei 12.608/2012. A mais cobrada é a bacia hidrográfica como unidade de análise — porque água não respeita divisa municipal, e planejar por município isolado produz solução que empurra o problema rio abaixo.",
+"a": "Apostila Mód. 01, item 10 ('Os seis pilares da missão'). Redação conferida no art. 4º da Lei 12.608/2012.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+74,
+95,
+73,
+66
+],
+"rev": true
+},
+{
+"id": "P32",
+"code": "#32",
+"deck": "p",
+"f": "Quem é a linha de frente no SINPDEC",
+"v": "O <strong>município</strong>",
+"t": "O município é a linha de frente porque o desastre acontece em algum lugar concreto, e esse lugar sempre é um município. União planeja, coordena e financia; Estado articula a região e garante resposta rápida; o município executa. Por isso capacidade municipal — infraestrutura e articulação — é tema recorrente.",
+"a": "Apostila Mód. 01, item 12 ('Papel de cada esfera'): 'Municípios: linha de frente, onde a Defesa Civil tem rosto e voz'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+75,
+73,
+84,
+66
+],
+"rev": true
+},
+{
+"id": "P33",
+"code": "#33",
+"deck": "p",
+"f": "Governança em GRD",
+"v": "<strong>Liderança, estratégia e controle</strong> + coordenação entre governos + <strong>transparência e responsabilidade</strong>",
+"t": "Governança em gestão de risco é quem decide, com que informação e respondendo a quem. Envolve liderança, estratégia e controle; exige coordenação entre esferas e tem transparência e responsabilização como princípio. O Marco de Sendai a elege como uma de suas quatro prioridades justamente porque plano sem governança não sai do papel.",
+"a": "Conteúdo do M4 da plataforma (Governança); Apostila Mód. 07, item 13 (transparência e prestação de contas).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+66,
+67,
+65,
+99
+],
+"rev": true
+},
+{
+"id": "P34",
+"code": "#34",
+"deck": "p",
+"f": "Furacão Mitch (1998)",
+"v": "Alto número de vítimas; revelou <strong>falta de sistemas preventivos</strong>; levou países a criar sistemas de GRD",
+"t": "Mitch atingiu a América Central em outubro/novembro de 1998, com mais de 11 mil mortos — Honduras e Nicarágua foram os mais atingidos. O que o tornou marco não foi a magnitude e sim o diagnóstico: faltavam sistemas preventivos, alerta e planejamento. Depois dele, a região montou estruturas de gerenciamento de risco, e o caso virou o 'antes e depois' da GRD latino-americana.",
+"a": "Conteúdo do M4 da plataforma (Caso Mitch), estudo de caso âncora do módulo. Dados conferidos em material da UNDRR.",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+55,
+54,
+56,
+51
+],
+"rev": true
+},
+{
+"id": "P35",
+"code": "#35",
+"deck": "p",
+"f": "Stop Disasters",
+"v": "Jogo da UNDRR: ensina <strong>planejamento urbano e prevenção</strong> de forma lúdica e prática",
+"t": "Stop Disasters! é um simulador online gratuito produzido pelo escritório da ONU para redução do risco de desastres (UNDRR, à época UNISDR). O jogador recebe orçamento e território e precisa decidir onde construir, o que proteger e quanto investir em prevenção antes do evento chegar. Ensina, na prática, o custo de oportunidade da prevenção.",
+"a": "Conteúdo do M4 da plataforma (Stop Disasters).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+64,
+62,
+63
+],
+"rev": true
+},
+{
+"id": "P36",
+"code": "#36",
+"deck": "p",
+"f": "SCO / ICS",
+"v": "Sistema de Comando de Operações — <strong>organiza equipes e decisões</strong>; grandes desastres exigem <strong>coordenação multiagências</strong>",
+"t": "SCO (Sistema de Comando de Operações), tradução do ICS norte-americano, resolve o problema clássico do desastre grande: muitas instituições, nenhuma cadeia de comando. Define função, cadeia única de comando, amplitude de controle e linguagem comum. É o que permite coordenação multiagências sem centralização sufocante.",
+"a": "Conteúdo do M5 da plataforma (Ferramentas de Coordenação); Apostila Mód. 06, item 5 (comando, controle e coordenação).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+86,
+87,
+88,
+83
+],
+"rev": true
+},
+{
+"id": "P37",
+"code": "#37",
+"deck": "p",
+"f": "O que é o PLANCON",
+"v": "Documento de <strong>planejamento prévio</strong> que organiza a resposta; é <strong>ativado e ajustado</strong> durante o evento",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+94,
+89,
+90,
+91
+],
+"rev": true
+},
+{
+"id": "P38",
+"code": "#38",
+"deck": "p",
+"f": "Elementos obrigatórios do PLANCON",
+"v": "Monitoramento, alerta, alarme, fuga, socorro, assistência às vítimas, restabelecimento de serviços essenciais",
+"t": "Sete elementos que precisam estar em qualquer plano de contingência: monitoramento, alerta, alarme, fuga, socorro, assistência às vítimas e restabelecimento de serviços essenciais. Note a distinção entre alerta (aviso técnico à estrutura) e alarme (sinal à população para agir) — são etapas diferentes e caem separadas.",
+"a": "Conteúdo do M6 da plataforma (Estrutura do PLANCON). Elementos conferidos em material de capacitação de Defesa Civil estadual.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+96,
+97,
+89,
+94
+],
+"rev": true
+},
+{
+"id": "P39",
+"code": "#39",
+"deck": "p",
+"f": "Os 9 passos do PLANCON",
+"v": "1 Analisar cenários · 2 Formar GT · 3 Avaliar cenários · 4 Definir ações · 5 Consulta pública · 6 Audiência pública · 7 Validação · 8 Operacionalização · 9 Revisão",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": true
+},
+{
+"id": "P40",
+"code": "#40",
+"deck": "p",
+"f": "Primeira estrutura estadual de Defesa Civil no Brasil",
+"v": "<strong>1966</strong>",
+"t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
+"a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Módulo M1",
+"modulos"
+]
+],
+"q": [
+6,
+7,
+8,
+9
+],
+"rev": true
+},
+{
+"id": "P41",
+"code": "#41",
+"deck": "p",
+"f": "O tripé do propósito da Defesa Civil",
+"v": "<strong>Conhecer · Compreender · Servir</strong> — e \"servir\" como <strong>vocação que move ações de proteção</strong>",
+"t": "O curso abre com um tripé que se repete em várias questões: conhecer o risco, compreender o território e servir a sociedade. 'Servir' aparece deliberadamente como vocação que move a ação de proteção — não como tarefa técnica nem como função opcional. Essa moldura explica por que o material insiste tanto em propósito antes de procedimento: sem ela, o resto vira burocracia.",
+"a": "Apostila Mód. 01, itens 1 e 2 ('Por que estamos aqui? Conhecer. Compreender. Servir.'); Conteúdo do M1 da plataforma (quiz Propósito).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+1,
+0,
+2,
+12
+],
+"rev": true
+},
+{
+"id": "P42",
+"code": "#42",
+"deck": "p",
+"f": "Como o curso define a Defesa Civil",
+"v": "<strong>União, prevenção e fé</strong> (identidade: união, prevenção e <strong>cuidado</strong>) · missão: <strong>o sistema que age quando tudo desaba</strong>",
+"t": "Nas questões de identidade, o curso define a Defesa Civil por três palavras — união, prevenção e fé — e descreve a missão como 'o sistema que age quando tudo desaba'. As iscas oferecem 'força armada' e 'entidade burocrática'. Vale notar a variação: uma questão pede união, prevenção e FÉ; outra pede união, prevenção e CUIDADO. Leia a alternativa inteira antes de marcar.",
+"a": "Apostila Mód. 01, itens 6 e 7 ('De armas a mãos estendidas' e 'O que é Defesa Civil'); Conteúdo do M1 da plataforma (quiz Identidade e Missão).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+10,
+11,
+2,
+4
+],
+"rev": true
+},
+{
+"id": "P43",
+"code": "#43",
+"deck": "p",
+"f": "A essência da GRD",
+"v": "<strong>Processo contínuo</strong> que busca <strong>reduzir perdas</strong>; na prática: <strong>prevenir, mitigar e responder</strong>",
+"t": "A Gestão de Risco de Desastres não é um projeto com início e fim: é processo contínuo. Seu objetivo declarado é reduzir perdas, e a ação prática se resume a prevenir, mitigar e responder — com a recuperação realimentando a prevenção seguinte. A cultura de resiliência que sustenta isso depende de educação e comunidade, não de tecnologia isolada.",
+"a": "Conteúdo do M4 da plataforma (Origem e Propósito, Essência da GRD).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+68,
+69,
+53,
+70
+],
+"rev": true
+}
+],
+"q": [
+{
+"id": "Q0",
+"code": "Q1",
+"deck": "q",
+"f": "Qual o principal motivo apresentado para o trabalho da Defesa Civil? …",
+"v": "<strong>Conhecer, compreender e servir a sociedade</strong>",
+"t": "O curso abre com um tripé que se repete em várias questões: conhecer o risco, compreender o território e servir a sociedade. 'Servir' aparece deliberadamente como vocação que move a ação de proteção — não como tarefa técnica nem como função opcional. Essa moldura explica por que o material insiste tanto em propósito antes de procedimento: sem ela, o resto vira burocracia.",
+"a": "Apostila Mód. 01, itens 1 e 2 ('Por que estamos aqui? Conhecer. Compreender. Servir.'); Conteúdo do M1 da plataforma (quiz Propósito).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+0,
+1,
+2,
+12
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
+"src": 0
+},
+{
+"id": "Q1",
+"code": "Q2",
+"deck": "q",
+"f": "O conceito de \"servir\" representa …",
+"v": "<strong>Uma vocação que move ações de proteção</strong>",
+"t": "O curso abre com um tripé que se repete em várias questões: conhecer o risco, compreender o território e servir a sociedade. 'Servir' aparece deliberadamente como vocação que move a ação de proteção — não como tarefa técnica nem como função opcional. Essa moldura explica por que o material insiste tanto em propósito antes de procedimento: sem ela, o resto vira burocracia.",
+"a": "Apostila Mód. 01, itens 1 e 2 ('Por que estamos aqui? Conhecer. Compreender. Servir.'); Conteúdo do M1 da plataforma (quiz Propósito).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+0,
+1,
+2,
+12
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
+"src": 1
+},
+{
+"id": "Q2",
+"code": "Q3",
+"deck": "q",
+"f": "A missão da Defesa Civil é …",
+"v": "<strong>Sistema que age quando tudo desaba</strong>",
+"t": "Nas questões de identidade, o curso define a Defesa Civil por três palavras — união, prevenção e fé — e descreve a missão como 'o sistema que age quando tudo desaba'. As iscas oferecem 'força armada' e 'entidade burocrática'. Vale notar a variação: uma questão pede união, prevenção e FÉ; outra pede união, prevenção e CUIDADO. Leia a alternativa inteira antes de marcar.",
+"a": "Apostila Mód. 01, itens 6 e 7 ('De armas a mãos estendidas' e 'O que é Defesa Civil'); Conteúdo do M1 da plataforma (quiz Identidade e Missão).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+2,
+4,
+10,
+11
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
+"src": 2
+},
+{
+"id": "Q3",
+"code": "Q4",
+"deck": "q",
+"f": "A grande virada da Defesa Civil brasileira ocorreu quando se entendeu que …",
+"v": "<strong>Prevenção é mais eficaz que reagir</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+3,
+28,
+29,
+30,
+76
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.2 — O Brasil que Protege",
+"src": 3
+},
+{
+"id": "Q4",
+"code": "Q5",
+"deck": "q",
+"f": "\"Da guerra à vida\" significa …",
+"v": "<strong>Focar na proteção humana</strong>",
+"t": "Nas questões de identidade, o curso define a Defesa Civil por três palavras — união, prevenção e fé — e descreve a missão como 'o sistema que age quando tudo desaba'. As iscas oferecem 'força armada' e 'entidade burocrática'. Vale notar a variação: uma questão pede união, prevenção e FÉ; outra pede união, prevenção e CUIDADO. Leia a alternativa inteira antes de marcar.",
+"a": "Apostila Mód. 01, itens 6 e 7 ('De armas a mãos estendidas' e 'O que é Defesa Civil'); Conteúdo do M1 da plataforma (quiz Identidade e Missão).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+2,
+4,
+10,
+11
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.2 — O Brasil que Protege",
+"src": 4
+},
+{
+"id": "Q5",
+"code": "Q6",
+"deck": "q",
+"f": "A evolução da Defesa Civil brasileira envolveu …",
+"v": "<strong>Organização e prevenção</strong>",
+"t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
+"a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Módulo M1",
+"modulos"
+]
+],
+"q": [
+5,
+6,
+7,
+8,
+9
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.2 — O Brasil que Protege",
+"src": 5
+},
+{
+"id": "Q6",
+"code": "Q7",
+"deck": "q",
+"f": "As origens da Defesa Civil estão ligadas a …",
+"v": "<strong>Guerras e crises internacionais</strong>",
+"t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
+"a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Módulo M1",
+"modulos"
+]
+],
+"q": [
+6,
+7,
+8,
+9
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
+"src": 6
+},
+{
+"id": "Q7",
+"code": "Q8",
+"deck": "q",
+"f": "Um marco importante da estrutura brasileira foi …",
+"v": "<strong>Criação da primeira estrutura estadual em 1966</strong>",
+"t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
+"a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Módulo M1",
+"modulos"
+]
+],
+"q": [
+6,
+7,
+8,
+9
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
+"src": 7
+},
+{
+"id": "Q8",
+"code": "Q9",
+"deck": "q",
+"f": "As primeiras estruturas estaduais tinham o objetivo de …",
+"v": "<strong>Organizar ações regionais</strong>",
+"t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
+"a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Módulo M1",
+"modulos"
+]
+],
+"q": [
+6,
+7,
+8,
+9
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
+"src": 8
+},
+{
+"id": "Q9",
+"code": "Q10",
+"deck": "q",
+"f": "O Plano Diretor estabeleceu …",
+"v": "<strong>Diretrizes de organização regional</strong>",
+"t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
+"a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Módulo M1",
+"modulos"
+]
+],
+"q": [
+6,
+7,
+8,
+9
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
+"src": 9
+},
+{
+"id": "Q10",
+"code": "Q11",
+"deck": "q",
+"f": "A Defesa Civil é definida como …",
+"v": "<strong>União, prevenção e fé</strong>",
+"t": "Nas questões de identidade, o curso define a Defesa Civil por três palavras — união, prevenção e fé — e descreve a missão como 'o sistema que age quando tudo desaba'. As iscas oferecem 'força armada' e 'entidade burocrática'. Vale notar a variação: uma questão pede união, prevenção e FÉ; outra pede união, prevenção e CUIDADO. Leia a alternativa inteira antes de marcar.",
+"a": "Apostila Mód. 01, itens 6 e 7 ('De armas a mãos estendidas' e 'O que é Defesa Civil'); Conteúdo do M1 da plataforma (quiz Identidade e Missão).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+2,
+4,
+10,
+11
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.5 — Identidade e Missão",
+"src": 10
+},
+{
+"id": "Q11",
+"code": "Q12",
+"deck": "q",
+"f": "A identidade da Defesa Civil se apoia em …",
+"v": "<strong>União, prevenção e cuidado</strong>",
+"t": "Nas questões de identidade, o curso define a Defesa Civil por três palavras — união, prevenção e fé — e descreve a missão como 'o sistema que age quando tudo desaba'. As iscas oferecem 'força armada' e 'entidade burocrática'. Vale notar a variação: uma questão pede união, prevenção e FÉ; outra pede união, prevenção e CUIDADO. Leia a alternativa inteira antes de marcar.",
+"a": "Apostila Mód. 01, itens 6 e 7 ('De armas a mãos estendidas' e 'O que é Defesa Civil'); Conteúdo do M1 da plataforma (quiz Identidade e Missão).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+2,
+4,
+10,
+11
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.5 — Identidade e Missão",
+"src": 11
+},
+{
+"id": "Q12",
+"code": "Q13",
+"deck": "q",
+"f": "O chamado para proteger vidas expressa …",
+"v": "<strong>Propósito e vocação</strong>",
+"t": "O curso abre com um tripé que se repete em várias questões: conhecer o risco, compreender o território e servir a sociedade. 'Servir' aparece deliberadamente como vocação que move a ação de proteção — não como tarefa técnica nem como função opcional. Essa moldura explica por que o material insiste tanto em propósito antes de procedimento: sem ela, o resto vira burocracia.",
+"a": "Apostila Mód. 01, itens 1 e 2 ('Por que estamos aqui? Conhecer. Compreender. Servir.'); Conteúdo do M1 da plataforma (quiz Propósito).",
+"s": [
+[
+"Módulo M1",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+0,
+1,
+2,
+12
+],
+"rev": false,
+"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+"quiz": "Quiz 1.5 — Identidade e Missão",
+"src": 12
+},
+{
+"id": "Q13",
+"code": "Q14",
+"deck": "q",
+"f": "O risco é definido como …",
+"v": "<strong>Uma construção social entre ambiente e ocupação</strong>",
+"t": "Risco não é sinônimo de ameaça. A ameaça é o fenômeno; o risco é a probabilidade de esse fenômeno produzir dano sobre alguém ou alguma coisa. Por isso a mesma chuva de 80 mm gera desastre numa encosta ocupada e não gera nada numa área de mata preservada: mudou a exposição e a vulnerabilidade, não a ameaça. A capacidade entra dividindo porque preparo, estrutura e liderança reduzem o resultado final sem alterar o fenômeno.",
+"a": "Apostila Mód. 03 — 'Todo desastre nasce da combinação entre ameaça, vulnerabilidade e ausência de preparo'. Mód. 03, item 7, define capacidade de resposta como treinamento + estrutura + planejamento + comunicação + liderança.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+13,
+14,
+15,
+57
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.1 — Conceitos Fundamentais",
+"src": 13
+},
+{
+"id": "Q14",
+"code": "Q15",
+"deck": "q",
+"f": "O risco depende da combinação entre …",
+"v": "<strong>Ameaça, exposição e vulnerabilidade</strong>",
+"t": "Risco não é sinônimo de ameaça. A ameaça é o fenômeno; o risco é a probabilidade de esse fenômeno produzir dano sobre alguém ou alguma coisa. Por isso a mesma chuva de 80 mm gera desastre numa encosta ocupada e não gera nada numa área de mata preservada: mudou a exposição e a vulnerabilidade, não a ameaça. A capacidade entra dividindo porque preparo, estrutura e liderança reduzem o resultado final sem alterar o fenômeno.",
+"a": "Apostila Mód. 03 — 'Todo desastre nasce da combinação entre ameaça, vulnerabilidade e ausência de preparo'. Mód. 03, item 7, define capacidade de resposta como treinamento + estrutura + planejamento + comunicação + liderança.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+13,
+14,
+15,
+57
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.1 — Conceitos Fundamentais",
+"src": 14
+},
+{
+"id": "Q15",
+"code": "Q16",
+"deck": "q",
+"f": "O risco surge principalmente devido a …",
+"v": "<strong>Ocupação inadequada</strong>",
+"t": "Risco não é sinônimo de ameaça. A ameaça é o fenômeno; o risco é a probabilidade de esse fenômeno produzir dano sobre alguém ou alguma coisa. Por isso a mesma chuva de 80 mm gera desastre numa encosta ocupada e não gera nada numa área de mata preservada: mudou a exposição e a vulnerabilidade, não a ameaça. A capacidade entra dividindo porque preparo, estrutura e liderança reduzem o resultado final sem alterar o fenômeno.",
+"a": "Apostila Mód. 03 — 'Todo desastre nasce da combinação entre ameaça, vulnerabilidade e ausência de preparo'. Mód. 03, item 7, define capacidade de resposta como treinamento + estrutura + planejamento + comunicação + liderança.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+13,
+14,
+15,
+57
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.1 — Conceitos Fundamentais",
+"src": 15
+},
+{
+"id": "Q16",
+"code": "Q17",
+"deck": "q",
+"f": "A capacidade é definida como …",
+"v": "<strong>Recursos e atributos para enfrentar riscos</strong>",
+"t": "Capacidade é o que você tem para enfrentar o risco: equipe treinada, estrutura, plano, canal de comunicação e liderança. Aparece na equação dividindo porque é a única variável que a Defesa Civil controla diretamente no curto prazo — não dá para mudar a geografia até sexta, mas dá para treinar a equipe.",
+"a": "Apostila Mód. 03, item 7: 'Onde há preparo, há menos perdas'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+16,
+18,
+75
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.2 — Capacidade e Resiliência",
+"src": 16
+},
+{
+"id": "Q17",
+"code": "Q18",
+"deck": "q",
+"f": "Resiliência significa …",
+"v": "<strong>Resistir, adaptar-se e recuperar-se</strong>",
+"t": "Resiliência tem três tempos e todos caem em prova: resistir (absorver o impacto), adaptar-se (mudar para conviver com o risco) e recuperar-se (voltar a funcionar). Não é heroísmo individual — é propriedade de um sistema, e por isso depende de organização social e governamental, não de estrutura militar nem de clima.",
+"a": "Conteúdo do M2 da plataforma (Capacidade e Resiliência); dialoga com o Mód. 07 da apostila (reconstruir melhor).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+]
+],
+"q": [
+17,
+18,
+70,
+78
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.2 — Capacidade e Resiliência",
+"src": 17
+},
+{
+"id": "Q18",
+"code": "Q19",
+"deck": "q",
+"f": "A resiliência depende principalmente de …",
+"v": "<strong>Organização social e governamental</strong>",
+"t": "A pegadinha oferece 'estruturas militares' e 'condições climáticas' como iscas. A resposta é organização social e governamental: rede comunitária, coordenação entre esferas, capacidade institucional. É coerente com o resto do curso, que insiste em responsabilidade compartilhada e participação social.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 01, itens 13 e 14 (a comunidade e a participação social).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+18,
+50,
+70
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.2 — Capacidade e Resiliência",
+"src": 18
+},
+{
+"id": "Q19",
+"code": "Q20",
+"deck": "q",
+"f": "Desastres tecnológicos incluem …",
+"v": "<strong>Incêndios industriais</strong>",
+"t": "O erro clássico é achar que ameaça é só fenômeno natural. A definição aceita inclui processos de origem humana — rompimento de barragem, acidente industrial, vazamento químico. Uma ameaça pode existir por décadas sem virar desastre: ela só se converte em desastre quando encontra exposição e vulnerabilidade.",
+"a": "Apostila Mód. 03, itens 3 e 4: classificação em ameaças naturais, tecnológicas, ambientais e sociais.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+14,
+19,
+57,
+58
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.3 — Tipos de Desastres",
+"src": 19
+},
+{
+"id": "Q20",
+"code": "Q21",
+"deck": "q",
+"f": "Um desastre súbito é aquele que …",
+"v": "<strong>Ocorre sem aviso</strong>",
+"t": "A classificação por evolução separa o que exige alarme e fuga do que exige monitoramento longo. Súbito: explosão, desabamento, vendaval, enxurrada — o tempo entre alerta e ação tem de ser imediato. É esse tipo que justifica sistema de alerta, rota de fuga e simulado.",
+"a": "Conteúdo do M2 da plataforma (Tipos de Desastres); Apostila Mód. 05, item 5 (simulados) e Mód. 06, item 3.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+20,
+21,
+82
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.3 — Tipos de Desastres",
+"src": 20
+},
+{
+"id": "Q21",
+"code": "Q22",
+"deck": "q",
+"f": "Um desastre gradual geralmente é …",
+"v": "<strong>Estiagem</strong>",
+"t": "Desastre gradual, ou de evolução lenta, se instala ao longo de meses — estiagem, seca, desertificação, erosão. Não tem alarme nem fuga: tem monitoramento, indicador e decisão política antecipada. É o tipo que mais castiga o semiárido brasileiro e o que menos gera manchete.",
+"a": "Conteúdo do M2 da plataforma (Tipos de Desastres); Apostila Mód. 03, item 4 (secas entre as ameaças naturais).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+20,
+21,
+48
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.3 — Tipos de Desastres",
+"src": 21
+},
+{
+"id": "Q22",
+"code": "Q23",
+"deck": "q",
+"f": "O COBRADE classifica desastres por …",
+"v": "<strong>Grupo, subgrupo, tipo e subtipo</strong>",
+"t": "O COBRADE é a gramática comum do sistema: sem código padronizado, dois municípios registram o mesmo evento de formas diferentes e a estatística nacional vira ruído. A hierarquia é sempre grupo → subgrupo → tipo → subtipo, dentro de duas categorias, naturais e tecnológicos. É o que permite comparar séries históricas e priorizar investimento.",
+"a": "Conteúdo do M2 da plataforma (Sistemas de Registro). Estrutura conferida na tabela COBRADE oficial do MIDR.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+22,
+23,
+24,
+40
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.4 — Sistemas de Registro",
+"src": 22
+},
+{
+"id": "Q23",
+"code": "Q24",
+"deck": "q",
+"f": "O FIDE é utilizado para …",
+"v": "<strong>Registrar informações de desastres</strong>",
+"t": "O FIDE é o formulário que descreve o evento — o que houve, onde, quando, quantos afetados, que danos e prejuízos. Ele instrui o pedido de reconhecimento federal de Situação de Emergência ou Estado de Calamidade Pública dentro do S2ID. A decretação em si é ato do prefeito ou governador; o FIDE é a peça técnica que sustenta o pedido.",
+"a": "Conteúdo do M2 da plataforma (Sistemas de Registro).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+22,
+23,
+25,
+27
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.4 — Sistemas de Registro",
+"src": 23
+},
+{
+"id": "Q24",
+"code": "Q25",
+"deck": "q",
+"f": "O S2ID é essencial porque …",
+"v": "<strong>Centraliza registros nacionais</strong>",
+"t": "O S2ID centraliza os registros nacionais de desastres: sem base única, cada esfera guarda o seu pedaço e ninguém enxerga o país. É por isso que o curso repete 'sem dados confiáveis não há gestão efetiva' — o dado é insumo de priorização orçamentária, de mapeamento e de política pública, não burocracia.",
+"a": "Conteúdo dos M2 e M3 da plataforma. Atenção: essa mesma pergunta aparece nos dois módulos com redações levemente diferentes ('registros nacionais' e 'dados nacionais').",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+24,
+40,
+41,
+42
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.4 — Sistemas de Registro",
+"src": 24
+},
+{
+"id": "Q25",
+"code": "Q26",
+"deck": "q",
+"f": "Danos humanos incluem …",
+"v": "<strong>Mortos, feridos e desabrigados</strong>",
+"t": "Danos humanos são a contagem de pessoas: mortos, feridos, enfermos, desabrigados e desalojados. Vale fixar a diferença entre desalojado (saiu de casa e foi para casa de alguém) e desabrigado (depende de abrigo público) — é ela que dimensiona a demanda de abrigamento no plano de contingência.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 05, item 12 (organização de abrigos) e Mód. 06, item 11.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+25,
+26,
+84,
+85
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.5 — Danos e Prejuízos",
+"src": 25
+},
+{
+"id": "Q26",
+"code": "Q27",
+"deck": "q",
+"f": "Danos materiais …",
+"v": "<strong>Infraestruturas destruídas</strong>",
+"t": "Danos humanos são a contagem de pessoas: mortos, feridos, enfermos, desabrigados e desalojados. Vale fixar a diferença entre desalojado (saiu de casa e foi para casa de alguém) e desabrigado (depende de abrigo público) — é ela que dimensiona a demanda de abrigamento no plano de contingência.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 05, item 12 (organização de abrigos) e Mód. 06, item 11.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+25,
+26,
+84,
+85
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.5 — Danos e Prejuízos",
+"src": 26
+},
+{
+"id": "Q27",
+"code": "Q28",
+"deck": "q",
+"f": "Prejuízos ocorrem quando …",
+"v": "<strong>Impactos econômicos duram após o evento</strong>",
+"t": "O FIDE é o formulário que descreve o evento — o que houve, onde, quando, quantos afetados, que danos e prejuízos. Ele instrui o pedido de reconhecimento federal de Situação de Emergência ou Estado de Calamidade Pública dentro do S2ID. A decretação em si é ato do prefeito ou governador; o FIDE é a peça técnica que sustenta o pedido.",
+"a": "Conteúdo do M2 da plataforma (Sistemas de Registro).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+22,
+23,
+25,
+27
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.5 — Danos e Prejuízos",
+"src": 27
+},
+{
+"id": "Q28",
+"code": "Q29",
+"deck": "q",
+"f": "Prevenção é …",
+"v": "<strong>Medidas antecipadas para evitar riscos</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+76
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
+"src": 28
+},
+{
+"id": "Q29",
+"code": "Q30",
+"deck": "q",
+"f": "Mitigação …",
+"v": "<strong>Reduzir impacto quando o risco não pode ser evitado</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+76
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
+"src": 29
+},
+{
+"id": "Q30",
+"code": "Q31",
+"deck": "q",
+"f": "Preparação envolve …",
+"v": "<strong>Treinamentos, alertas e simulados</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+76
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
+"src": 30
+},
+{
+"id": "Q31",
+"code": "Q32",
+"deck": "q",
+"f": "A resposta tem como objetivo …",
+"v": "<strong>Salvar vidas imediatamente</strong>",
+"t": "Resposta é a fase em que o tempo vale vidas, e o curso insiste que responder não é correr: é executar com método. A sequência é acionamento → avaliação inicial (size-up) → comando e coordenação → busca e salvamento → triagem → evacuação → abrigamento → logística → informação ao público → registro. Segurança da equipe vem antes de tudo.",
+"a": "Apostila Mód. 06 inteiro; Conteúdo do M5 da plataforma (Ações e Procedimentos da Resposta).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+31,
+79,
+80,
+81
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.7 — Resposta e Recuperação",
+"src": 31
+},
+{
+"id": "Q32",
+"code": "Q33",
+"deck": "q",
+"f": "Assistência consiste em …",
+"v": "<strong>Auxílio emergencial à população</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+32,
+76
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.7 — Resposta e Recuperação",
+"src": 32
+},
+{
+"id": "Q33",
+"code": "Q34",
+"deck": "q",
+"f": "Recuperação implica em …",
+"v": "<strong>Reconstrução sustentável</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+33,
+76
+],
+"rev": false,
+"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+"quiz": "Quiz 2.7 — Resposta e Recuperação",
+"src": 33
+},
+{
+"id": "Q34",
+"code": "Q35",
+"deck": "q",
+"f": "A base EM-DAT é usada para …",
+"v": "<strong>Mapear desastres globais</strong>",
+"t": "O EM-DAT é a base internacional de eventos de desastre mantida pelo CRED (Universidade de Louvain, Bélgica). É a fonte usada para afirmar que o número de desastres cresce no mundo. O ponto do módulo é metodológico: conhecimento global serve, mas precisa ser adaptado ao contexto local — o perfil de risco brasileiro não é o de um país insular do Pacífico.",
+"a": "Conteúdo do M3 da plataforma (Cenário Global e Síntese).",
+"s": [
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+34,
+35,
+36,
+49
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.1 — Cenário Global",
+"src": 34
+},
+{
+"id": "Q35",
+"code": "Q36",
+"deck": "q",
+"f": "O número de desastres no mundo está …",
+"v": "<strong>Aumentando</strong>",
+"t": "O EM-DAT é a base internacional de eventos de desastre mantida pelo CRED (Universidade de Louvain, Bélgica). É a fonte usada para afirmar que o número de desastres cresce no mundo. O ponto do módulo é metodológico: conhecimento global serve, mas precisa ser adaptado ao contexto local — o perfil de risco brasileiro não é o de um país insular do Pacífico.",
+"a": "Conteúdo do M3 da plataforma (Cenário Global e Síntese).",
+"s": [
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+34,
+35,
+36,
+49
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.1 — Cenário Global",
+"src": 35
+},
+{
+"id": "Q36",
+"code": "Q37",
+"deck": "q",
+"f": "A intensificação dos desastres ocorre devido a …",
+"v": "<strong>Fatores climáticos e urbanos</strong>",
+"t": "O EM-DAT é a base internacional de eventos de desastre mantida pelo CRED (Universidade de Louvain, Bélgica). É a fonte usada para afirmar que o número de desastres cresce no mundo. O ponto do módulo é metodológico: conhecimento global serve, mas precisa ser adaptado ao contexto local — o perfil de risco brasileiro não é o de um país insular do Pacífico.",
+"a": "Conteúdo do M3 da plataforma (Cenário Global e Síntese).",
+"s": [
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+34,
+35,
+36,
+49
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.1 — Cenário Global",
+"src": 36
+},
+{
+"id": "Q37",
+"code": "Q38",
+"deck": "q",
+"f": "O aumento da exposição humana ocorre quando …",
+"v": "<strong>As pessoas ocupam áreas de risco</strong>",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+37,
+43,
+44,
+58
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.2 — Impactos Globais",
+"src": 37
+},
+{
+"id": "Q38",
+"code": "Q39",
+"deck": "q",
+"f": "Países em desenvolvimento sofrem mais porque …",
+"v": "<strong>Têm menor preparo e mais vulnerabilidade</strong>",
+"t": "Vulnerabilidade é fragilidade diante do impacto, e tem cinco dimensões: física (a casa aguenta?), social (há rede de apoio?), econômica (há reserva para recomeçar?), ambiental (o entorno foi degradado?) e institucional (o poder público consegue agir?). É a variável em que desigualdade e risco se encontram — por isso pobreza aparece nas questões como fator de risco.",
+"a": "Apostila Mód. 03, itens 5 e 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+38,
+39,
+44,
+45
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.2 — Impactos Globais",
+"src": 38
+},
+{
+"id": "Q39",
+"code": "Q40",
+"deck": "q",
+"f": "A pobreza aumenta o risco porque …",
+"v": "<strong>Aumenta vulnerabilidade social</strong>",
+"t": "Vulnerabilidade é fragilidade diante do impacto, e tem cinco dimensões: física (a casa aguenta?), social (há rede de apoio?), econômica (há reserva para recomeçar?), ambiental (o entorno foi degradado?) e institucional (o poder público consegue agir?). É a variável em que desigualdade e risco se encontram — por isso pobreza aparece nas questões como fator de risco.",
+"a": "Apostila Mód. 03, itens 5 e 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+38,
+39,
+44,
+45
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.2 — Impactos Globais",
+"src": 39
+},
+{
+"id": "Q40",
+"code": "Q41",
+"deck": "q",
+"f": "O S2ID é essencial porque …",
+"v": "<strong>Centraliza dados nacionais</strong>",
+"t": "O S2ID centraliza os registros nacionais de desastres: sem base única, cada esfera guarda o seu pedaço e ninguém enxerga o país. É por isso que o curso repete 'sem dados confiáveis não há gestão efetiva' — o dado é insumo de priorização orçamentária, de mapeamento e de política pública, não burocracia.",
+"a": "Conteúdo dos M2 e M3 da plataforma. Atenção: essa mesma pergunta aparece nos dois módulos com redações levemente diferentes ('registros nacionais' e 'dados nacionais').",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+24,
+40,
+41,
+42
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.3 — Panorama Nacional",
+"src": 40
+},
+{
+"id": "Q41",
+"code": "Q42",
+"deck": "q",
+"f": "A Lei que consolida o S2ID é …",
+"v": "<strong>10.593/2020</strong>",
+"t": "A Lei 12.608/2012 é a espinha dorsal: institui a PNPDEC, organiza o SINPDEC, cria o CONPDEC e autoriza o sistema de informações e monitoramento. Ela também alterou outras leis — inclusive a 12.340/2010, onde inseriu o art. 3º-A que exige plano de contingência dos municípios em cadastro de risco. Guardar a data (10/04/2012) evita confusão com a 12.340/2010.",
+"a": "Apostila Mód. 01, item 8 e Mód. 02 inteiro: princípios, objetivos, competências e estrutura do sistema nacional.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+41,
+94
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.3 — Panorama Nacional",
+"src": 41
+},
+{
+"id": "Q42",
+"code": "Q43",
+"deck": "q",
+"f": "Sem dados confiáveis …",
+"v": "<strong>Não há gestão efetiva</strong>",
+"t": "O S2ID centraliza os registros nacionais de desastres: sem base única, cada esfera guarda o seu pedaço e ninguém enxerga o país. É por isso que o curso repete 'sem dados confiáveis não há gestão efetiva' — o dado é insumo de priorização orçamentária, de mapeamento e de política pública, não burocracia.",
+"a": "Conteúdo dos M2 e M3 da plataforma. Atenção: essa mesma pergunta aparece nos dois módulos com redações levemente diferentes ('registros nacionais' e 'dados nacionais').",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Módulo M3",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+24,
+40,
+41,
+42
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.3 — Panorama Nacional",
+"src": 42
+},
+{
+"id": "Q43",
+"code": "Q44",
+"deck": "q",
+"f": "A geografia brasileira favorece …",
+"v": "<strong>Vulnerabilidade a múltiplos fenômenos</strong>",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+37,
+43,
+44,
+58
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
+"src": 43
+},
+{
+"id": "Q44",
+"code": "Q45",
+"deck": "q",
+"f": "A ocupação irregular gera …",
+"v": "<strong>Aumento de vulnerabilidade</strong>",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+37,
+43,
+44,
+58
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
+"src": 44
+},
+{
+"id": "Q45",
+"code": "Q46",
+"deck": "q",
+"f": "A desigualdade contribui para …",
+"v": "<strong>Maior dificuldade de preparação</strong>",
+"t": "Vulnerabilidade é fragilidade diante do impacto, e tem cinco dimensões: física (a casa aguenta?), social (há rede de apoio?), econômica (há reserva para recomeçar?), ambiental (o entorno foi degradado?) e institucional (o poder público consegue agir?). É a variável em que desigualdade e risco se encontram — por isso pobreza aparece nas questões como fator de risco.",
+"a": "Apostila Mód. 03, itens 5 e 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+38,
+39,
+44,
+45
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
+"src": 45
+},
+{
+"id": "Q46",
+"code": "Q47",
+"deck": "q",
+"f": "Enchentes são comuns devido …",
+"v": "<strong>Impermeabilização urbana</strong>",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+37,
+43,
+44,
+46,
+58
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
+"src": 46
+},
+{
+"id": "Q47",
+"code": "Q48",
+"deck": "q",
+"f": "Deslizamentos ocorrem principalmente em …",
+"v": "<strong>Encostas ocupadas</strong>",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+37,
+43,
+44,
+47,
+58
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
+"src": 47
+},
+{
+"id": "Q48",
+"code": "Q49",
+"deck": "q",
+"f": "Um dos fatores de incêndios florestais é …",
+"v": "<strong>Secas prolongadas</strong>",
+"t": "Desastre gradual, ou de evolução lenta, se instala ao longo de meses — estiagem, seca, desertificação, erosão. Não tem alarme nem fuga: tem monitoramento, indicador e decisão política antecipada. É o tipo que mais castiga o semiárido brasileiro e o que menos gera manchete.",
+"a": "Conteúdo do M2 da plataforma (Tipos de Desastres); Apostila Mód. 03, item 4 (secas entre as ameaças naturais).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+20,
+21,
+48
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
+"src": 48
+},
+{
+"id": "Q49",
+"code": "Q50",
+"deck": "q",
+"f": "O conhecimento global deve ser …",
+"v": "<strong>Adaptado ao contexto local</strong>",
+"t": "O Marco de Ação de Hyogo (2005–2015) deslocou a agenda internacional da resposta para a redução do risco, e é a matriz da PNPDEC brasileira de 2012. Foi sucedido pelo Marco de Sendai (2015–2030), que reforçou entender o risco, fortalecer a governança, investir em redução e melhorar a preparação. Saber a sucessão evita marcar Sendai onde o curso pede Hyogo.",
+"a": "Apostila Mód. 01, item 8: 'Baseada no Marco de Ação de Hyogo (2005)'.",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+49,
+51,
+52
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.6 — Síntese",
+"src": 49
+},
+{
+"id": "Q50",
+"code": "Q51",
+"deck": "q",
+"f": "A cultura de prevenção depende de …",
+"v": "<strong>Educação e participação</strong>",
+"t": "A pegadinha oferece 'estruturas militares' e 'condições climáticas' como iscas. A resposta é organização social e governamental: rede comunitária, coordenação entre esferas, capacidade institucional. É coerente com o resto do curso, que insiste em responsabilidade compartilhada e participação social.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 01, itens 13 e 14 (a comunidade e a participação social).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+18,
+50,
+70
+],
+"rev": false,
+"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+"quiz": "Quiz 3.6 — Síntese",
+"src": 50
+},
+{
+"id": "Q51",
+"code": "Q52",
+"deck": "q",
+"f": "A GRD surgiu como resposta a …",
+"v": "<strong>Falhas reveladas em grandes tragédias</strong>",
+"t": "O Marco de Ação de Hyogo (2005–2015) deslocou a agenda internacional da resposta para a redução do risco, e é a matriz da PNPDEC brasileira de 2012. Foi sucedido pelo Marco de Sendai (2015–2030), que reforçou entender o risco, fortalecer a governança, investir em redução e melhorar a preparação. Saber a sucessão evita marcar Sendai onde o curso pede Hyogo.",
+"a": "Apostila Mód. 01, item 8: 'Baseada no Marco de Ação de Hyogo (2005)'.",
+"s": [
+[
+"Glossário e linha do tempo",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+49,
+51,
+52
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.1 — Origem e Propósito",
+"src": 51
+},
+{
+"id": "Q52",
+"code": "Q53",
+"deck": "q",
+"f": "A principal mudança global foi …",
+"v": "<strong>Focar na prevenção</strong>",
+"t": "Prevenção age antes e sobre a causa: ordenamento territorial, legislação, fiscalização, educação preventiva. A PNPDEC dá a ela prioridade absoluta sobre a resposta — a lógica é econômica e humana ao mesmo tempo, já que prevenir custa uma fração do que custa reconstruir.",
+"a": "Apostila Mód. 04, item 2; Mód. 02, item 7 ('a lei determina que a prevenção deve ter prioridade sobre a resposta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+3,
+28,
+50,
+52
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.1 — Origem e Propósito",
+"src": 52
+},
+{
+"id": "Q53",
+"code": "Q54",
+"deck": "q",
+"f": "A GRD busca …",
+"v": "<strong>Reduzir perdas</strong>",
+"t": "A Gestão de Risco de Desastres não é um projeto com início e fim: é processo contínuo. Seu objetivo declarado é reduzir perdas, e a ação prática se resume a prevenir, mitigar e responder — com a recuperação realimentando a prevenção seguinte. A cultura de resiliência que sustenta isso depende de educação e comunidade, não de tecnologia isolada.",
+"a": "Conteúdo do M4 da plataforma (Origem e Propósito, Essência da GRD).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+53,
+68,
+69,
+70
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.1 — Origem e Propósito",
+"src": 53
+},
+{
+"id": "Q54",
+"code": "Q55",
+"deck": "q",
+"f": "O furacão Mitch ficou marcado por …",
+"v": "<strong>Alto número de vítimas</strong>",
+"t": "Mitch atingiu a América Central em outubro/novembro de 1998, com mais de 11 mil mortos — Honduras e Nicarágua foram os mais atingidos. O que o tornou marco não foi a magnitude e sim o diagnóstico: faltavam sistemas preventivos, alerta e planejamento. Depois dele, a região montou estruturas de gerenciamento de risco, e o caso virou o 'antes e depois' da GRD latino-americana.",
+"a": "Conteúdo do M4 da plataforma (Caso Mitch), estudo de caso âncora do módulo. Dados conferidos em material da UNDRR.",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+51,
+54,
+55,
+56
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.2 — Caso Mitch",
+"src": 54
+},
+{
+"id": "Q55",
+"code": "Q56",
+"deck": "q",
+"f": "O desastre revelou …",
+"v": "<strong>Falta de sistemas preventivos</strong>",
+"t": "Mitch atingiu a América Central em outubro/novembro de 1998, com mais de 11 mil mortos — Honduras e Nicarágua foram os mais atingidos. O que o tornou marco não foi a magnitude e sim o diagnóstico: faltavam sistemas preventivos, alerta e planejamento. Depois dele, a região montou estruturas de gerenciamento de risco, e o caso virou o 'antes e depois' da GRD latino-americana.",
+"a": "Conteúdo do M4 da plataforma (Caso Mitch), estudo de caso âncora do módulo. Dados conferidos em material da UNDRR.",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+51,
+54,
+55,
+56
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.2 — Caso Mitch",
+"src": 55
+},
+{
+"id": "Q56",
+"code": "Q57",
+"deck": "q",
+"f": "Após Mitch, países passaram a …",
+"v": "<strong>Criar sistemas de gerenciamento de riscos</strong>",
+"t": "Mitch atingiu a América Central em outubro/novembro de 1998, com mais de 11 mil mortos — Honduras e Nicarágua foram os mais atingidos. O que o tornou marco não foi a magnitude e sim o diagnóstico: faltavam sistemas preventivos, alerta e planejamento. Depois dele, a região montou estruturas de gerenciamento de risco, e o caso virou o 'antes e depois' da GRD latino-americana.",
+"a": "Conteúdo do M4 da plataforma (Caso Mitch), estudo de caso âncora do módulo. Dados conferidos em material da UNDRR.",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+51,
+54,
+55,
+56
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.2 — Caso Mitch",
+"src": 56
+},
+{
+"id": "Q57",
+"code": "Q58",
+"deck": "q",
+"f": "Ameaça é …",
+"v": "<strong>Processo natural ou humano com potencial de causar danos</strong>",
+"t": "O erro clássico é achar que ameaça é só fenômeno natural. A definição aceita inclui processos de origem humana — rompimento de barragem, acidente industrial, vazamento químico. Uma ameaça pode existir por décadas sem virar desastre: ela só se converte em desastre quando encontra exposição e vulnerabilidade.",
+"a": "Apostila Mód. 03, itens 3 e 4: classificação em ameaças naturais, tecnológicas, ambientais e sociais.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+14,
+19,
+57,
+58
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
+"src": 57
+},
+{
+"id": "Q58",
+"code": "Q59",
+"deck": "q",
+"f": "Exposição envolve …",
+"v": "<strong>Pessoas e bens em áreas vulneráveis</strong>",
+"t": "Exposição é quantidade e localização: quantas pessoas, casas, escolas, hospitais e estradas estão dentro da área que a ameaça pode alcançar. É a variável que mais cresce no mundo, porque a urbanização empurra população para encostas e várzeas. Reduzir exposição é planejamento territorial, não obra.",
+"a": "Apostila Mód. 04, item 5: 'O uso adequado do solo reduz vulnerabilidades, evita ocupações de risco'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+37,
+43,
+44,
+58
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
+"src": 58
+},
+{
+"id": "Q59",
+"code": "Q60",
+"deck": "q",
+"f": "A gestão corretiva serve para …",
+"v": "<strong>Reduzir riscos existentes</strong>",
+"t": "Gestão corretiva atua sobre o risco que já está instalado: a encosta já ocupada, a escola já construída na várzea. Obra de contenção, reassentamento e reforço estrutural são exemplos. É a modalidade mais cara — por isso o curso empurra para a prospectiva.",
+"a": "Conteúdo do M4 da plataforma (Modalidades de Gestão).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+59,
+60,
+61
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.4 — Modalidades de Gestão",
+"src": 59
+},
+{
+"id": "Q60",
+"code": "Q61",
+"deck": "q",
+"f": "A gestão prospectiva busca …",
+"v": "<strong>Evitar novos riscos</strong>",
+"t": "Gestão prospectiva impede que risco novo nasça: plano diretor, licenciamento, restrição de uso do solo, norma construtiva. Não aparece em manchete porque seu resultado é um desastre que não aconteceu — e é justamente a modalidade com melhor relação custo-benefício.",
+"a": "Conteúdo do M4 da plataforma; Apostila Mód. 04, item 5 (planejamento territorial).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+59,
+60,
+61
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.4 — Modalidades de Gestão",
+"src": 60
+},
+{
+"id": "Q61",
+"code": "Q62",
+"deck": "q",
+"f": "A gestão compensatória visa …",
+"v": "<strong>Fortalecer resiliência frente a riscos inevitáveis</strong>",
+"t": "Gestão compensatória lida com o risco que sobra depois de tudo: fortalece resiliência e distribui a perda. Entram aqui fundo de calamidade, seguro, rede de proteção social e capacidade de resposta. É o reconhecimento de que risco zero não existe.",
+"a": "Conteúdo do M4 da plataforma; conecta com o FUNCAP da Lei 12.340/2010.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+59,
+60,
+61
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.4 — Modalidades de Gestão",
+"src": 61
+},
+{
+"id": "Q62",
+"code": "Q63",
+"deck": "q",
+"f": "O jogo Stop Disasters ensina …",
+"v": "<strong>Planejamento urbano e prevenção</strong>",
+"t": "Stop Disasters! é um simulador online gratuito produzido pelo escritório da ONU para redução do risco de desastres (UNDRR, à época UNISDR). O jogador recebe orçamento e território e precisa decidir onde construir, o que proteger e quanto investir em prevenção antes do evento chegar. Ensina, na prática, o custo de oportunidade da prevenção.",
+"a": "Conteúdo do M4 da plataforma (Stop Disasters).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+62,
+63,
+64
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.5 — Stop Disasters",
+"src": 62
+},
+{
+"id": "Q63",
+"code": "Q64",
+"deck": "q",
+"f": "O jogo Stop Disasters permite aprender de forma …",
+"v": "<strong>Lúdica e prática</strong>",
+"t": "Stop Disasters! é um simulador online gratuito produzido pelo escritório da ONU para redução do risco de desastres (UNDRR, à época UNISDR). O jogador recebe orçamento e território e precisa decidir onde construir, o que proteger e quanto investir em prevenção antes do evento chegar. Ensina, na prática, o custo de oportunidade da prevenção.",
+"a": "Conteúdo do M4 da plataforma (Stop Disasters).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+62,
+63,
+64
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.5 — Stop Disasters",
+"src": 63
+},
+{
+"id": "Q64",
+"code": "Q65",
+"deck": "q",
+"f": "O jogo simula …",
+"v": "<strong>Ações reais de prevenção</strong>",
+"t": "Stop Disasters! é um simulador online gratuito produzido pelo escritório da ONU para redução do risco de desastres (UNDRR, à época UNISDR). O jogador recebe orçamento e território e precisa decidir onde construir, o que proteger e quanto investir em prevenção antes do evento chegar. Ensina, na prática, o custo de oportunidade da prevenção.",
+"a": "Conteúdo do M4 da plataforma (Stop Disasters).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+62,
+63,
+64
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.5 — Stop Disasters",
+"src": 64
+},
+{
+"id": "Q65",
+"code": "Q66",
+"deck": "q",
+"f": "Governança envolve …",
+"v": "<strong>Liderança, estratégia e controle</strong>",
+"t": "Governança em gestão de risco é quem decide, com que informação e respondendo a quem. Envolve liderança, estratégia e controle; exige coordenação entre esferas e tem transparência e responsabilização como princípio. O Marco de Sendai a elege como uma de suas quatro prioridades justamente porque plano sem governança não sai do papel.",
+"a": "Conteúdo do M4 da plataforma (Governança); Apostila Mód. 07, item 13 (transparência e prestação de contas).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+65,
+66,
+67,
+99
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.6 — Governança",
+"src": 65
+},
+{
+"id": "Q66",
+"code": "Q67",
+"deck": "q",
+"f": "Boa governança precisa de …",
+"v": "<strong>Coordenação entre governos</strong>",
+"t": "Governança em gestão de risco é quem decide, com que informação e respondendo a quem. Envolve liderança, estratégia e controle; exige coordenação entre esferas e tem transparência e responsabilização como princípio. O Marco de Sendai a elege como uma de suas quatro prioridades justamente porque plano sem governança não sai do papel.",
+"a": "Conteúdo do M4 da plataforma (Governança); Apostila Mód. 07, item 13 (transparência e prestação de contas).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+65,
+66,
+67,
+99
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.6 — Governança",
+"src": 66
+},
+{
+"id": "Q67",
+"code": "Q68",
+"deck": "q",
+"f": "Um princípio essencial de governança é …",
+"v": "<strong>Transparência e responsabilidade</strong>",
+"t": "Governança em gestão de risco é quem decide, com que informação e respondendo a quem. Envolve liderança, estratégia e controle; exige coordenação entre esferas e tem transparência e responsabilização como princípio. O Marco de Sendai a elege como uma de suas quatro prioridades justamente porque plano sem governança não sai do papel.",
+"a": "Conteúdo do M4 da plataforma (Governança); Apostila Mód. 07, item 13 (transparência e prestação de contas).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+65,
+66,
+67,
+99
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.6 — Governança",
+"src": 67
+},
+{
+"id": "Q68",
+"code": "Q69",
+"deck": "q",
+"f": "A GRD é vista como …",
+"v": "<strong>Um processo contínuo</strong>",
+"t": "A Gestão de Risco de Desastres não é um projeto com início e fim: é processo contínuo. Seu objetivo declarado é reduzir perdas, e a ação prática se resume a prevenir, mitigar e responder — com a recuperação realimentando a prevenção seguinte. A cultura de resiliência que sustenta isso depende de educação e comunidade, não de tecnologia isolada.",
+"a": "Conteúdo do M4 da plataforma (Origem e Propósito, Essência da GRD).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+53,
+68,
+69,
+70
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.7 — Essência da GRD",
+"src": 68
+},
+{
+"id": "Q69",
+"code": "Q70",
+"deck": "q",
+"f": "A ação prática envolve …",
+"v": "<strong>Prevenir, mitigar e responder</strong>",
+"t": "A Gestão de Risco de Desastres não é um projeto com início e fim: é processo contínuo. Seu objetivo declarado é reduzir perdas, e a ação prática se resume a prevenir, mitigar e responder — com a recuperação realimentando a prevenção seguinte. A cultura de resiliência que sustenta isso depende de educação e comunidade, não de tecnologia isolada.",
+"a": "Conteúdo do M4 da plataforma (Origem e Propósito, Essência da GRD).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M4",
+"modulos"
+]
+],
+"q": [
+53,
+68,
+69,
+70
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.7 — Essência da GRD",
+"src": 69
+},
+{
+"id": "Q70",
+"code": "Q71",
+"deck": "q",
+"f": "A cultura de resiliência depende de …",
+"v": "<strong>Educação e comunidade</strong>",
+"t": "A pegadinha oferece 'estruturas militares' e 'condições climáticas' como iscas. A resposta é organização social e governamental: rede comunitária, coordenação entre esferas, capacidade institucional. É coerente com o resto do curso, que insiste em responsabilidade compartilhada e participação social.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 01, itens 13 e 14 (a comunidade e a participação social).",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+18,
+50,
+70
+],
+"rev": false,
+"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+"quiz": "Quiz 4.7 — Essência da GRD",
+"src": 70
+},
+{
+"id": "Q71",
+"code": "Q72",
+"deck": "q",
+"f": "A gestão não pode ser improvisada porque …",
+"v": "<strong>Improviso aumenta danos</strong>",
+"t": "Preparação é a fase que transforma plano em capacidade real: capacitação contínua, simulados, protocolos, sistema de alerta, organização logística. O simulado é a peça central — testa o plano, revela falha e cria memória operacional para quem vai agir sob pressão.",
+"a": "Apostila Mód. 05 inteiro, com destaque para os itens 4 (capacitação), 5 (simulados) e 6 (planos essenciais).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+],
+[
+"Módulo M5",
+"modulos"
+]
+],
+"q": [
+30,
+71,
+72,
+77
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.1 — Fundamentos",
+"src": 71
+},
+{
+"id": "Q72",
+"code": "Q73",
+"deck": "q",
+"f": "O planejamento garante …",
+"v": "<strong>Ações coordenadas</strong>",
+"t": "Preparação é a fase que transforma plano em capacidade real: capacitação contínua, simulados, protocolos, sistema de alerta, organização logística. O simulado é a peça central — testa o plano, revela falha e cria memória operacional para quem vai agir sob pressão.",
+"a": "Apostila Mód. 05 inteiro, com destaque para os itens 4 (capacitação), 5 (simulados) e 6 (planos essenciais).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+],
+[
+"Módulo M5",
+"modulos"
+]
+],
+"q": [
+30,
+71,
+72,
+77
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.1 — Fundamentos",
+"src": 72
+},
+{
+"id": "Q73",
+"code": "Q74",
+"deck": "q",
+"f": "A estrutura do Estado define …",
+"v": "<strong>Papéis e responsabilidades</strong>",
+"t": "O município é a linha de frente porque o desastre acontece em algum lugar concreto, e esse lugar sempre é um município. União planeja, coordena e financia; Estado articula a região e garante resposta rápida; o município executa. Por isso capacidade municipal — infraestrutura e articulação — é tema recorrente.",
+"a": "Apostila Mód. 01, item 12 ('Papel de cada esfera'): 'Municípios: linha de frente, onde a Defesa Civil tem rosto e voz'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+66,
+73,
+75,
+84
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.2 — Elementos Estruturantes",
+"src": 73
+},
+{
+"id": "Q74",
+"code": "Q75",
+"deck": "q",
+"f": "Diretrizes servem para …",
+"v": "<strong>Padronizar ações</strong>",
+"t": "As seis diretrizes são os incisos I a VI do art. 4º da Lei 12.608/2012. A mais cobrada é a bacia hidrográfica como unidade de análise — porque água não respeita divisa municipal, e planejar por município isolado produz solução que empurra o problema rio abaixo.",
+"a": "Apostila Mód. 01, item 10 ('Os seis pilares da missão'). Redação conferida no art. 4º da Lei 12.608/2012.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+66,
+73,
+74,
+95
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.2 — Elementos Estruturantes",
+"src": 74
+},
+{
+"id": "Q75",
+"code": "Q76",
+"deck": "q",
+"f": "Capacidade municipal envolve …",
+"v": "<strong>Infraestrutura e articulação</strong>",
+"t": "O município é a linha de frente porque o desastre acontece em algum lugar concreto, e esse lugar sempre é um município. União planeja, coordena e financia; Estado articula a região e garante resposta rápida; o município executa. Por isso capacidade municipal — infraestrutura e articulação — é tema recorrente.",
+"a": "Apostila Mód. 01, item 12 ('Papel de cada esfera'): 'Municípios: linha de frente, onde a Defesa Civil tem rosto e voz'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+66,
+73,
+75,
+84
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.2 — Elementos Estruturantes",
+"src": 75
+},
+{
+"id": "Q76",
+"code": "Q77",
+"deck": "q",
+"f": "Mitigação reduz …",
+"v": "<strong>Impactos futuros</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+76
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.3 — Ciclo de Ações",
+"src": 76
+},
+{
+"id": "Q77",
+"code": "Q78",
+"deck": "q",
+"f": "Preparação cria …",
+"v": "<strong>Protocolos e treinamentos</strong>",
+"t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
+"a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+28,
+29,
+30,
+76,
+77
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.3 — Ciclo de Ações",
+"src": 77
+},
+{
+"id": "Q78",
+"code": "Q79",
+"deck": "q",
+"f": "Recuperação busca …",
+"v": "<strong>Reconstruir melhor</strong>",
+"t": "Recuperação não é voltar ao que era: é reconstruir com redução de risco. Restabelecer serviços essenciais, garantir moradia digna fora da área de risco, apoiar economia local, cuidar de saúde mental e registrar lições aprendidas. 'Reconstruir no risco é repetir a tragédia' resume a fase inteira.",
+"a": "Apostila Mód. 07 inteiro, com destaque para os itens 6, 7 e 14.",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+31,
+32,
+33,
+78
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.3 — Ciclo de Ações",
+"src": 78
+},
+{
+"id": "Q79",
+"code": "Q80",
+"deck": "q",
+"f": "O socorro visa …",
+"v": "<strong>Preservar vidas</strong>",
+"t": "Resposta é a fase em que o tempo vale vidas, e o curso insiste que responder não é correr: é executar com método. A sequência é acionamento → avaliação inicial (size-up) → comando e coordenação → busca e salvamento → triagem → evacuação → abrigamento → logística → informação ao público → registro. Segurança da equipe vem antes de tudo.",
+"a": "Apostila Mód. 06 inteiro; Conteúdo do M5 da plataforma (Ações e Procedimentos da Resposta).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+31,
+79,
+80,
+81
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.4 — Ações de Resposta",
+"src": 79
+},
+{
+"id": "Q80",
+"code": "Q81",
+"deck": "q",
+"f": "Assistência garante …",
+"v": "<strong>Dignidade às vítimas</strong>",
+"t": "Resposta é a fase em que o tempo vale vidas, e o curso insiste que responder não é correr: é executar com método. A sequência é acionamento → avaliação inicial (size-up) → comando e coordenação → busca e salvamento → triagem → evacuação → abrigamento → logística → informação ao público → registro. Segurança da equipe vem antes de tudo.",
+"a": "Apostila Mód. 06 inteiro; Conteúdo do M5 da plataforma (Ações e Procedimentos da Resposta).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+31,
+79,
+80,
+81
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.4 — Ações de Resposta",
+"src": 80
+},
+{
+"id": "Q81",
+"code": "Q82",
+"deck": "q",
+"f": "A resposta deve seguir …",
+"v": "<strong>Ordem lógica e coordenada</strong>",
+"t": "Resposta é a fase em que o tempo vale vidas, e o curso insiste que responder não é correr: é executar com método. A sequência é acionamento → avaliação inicial (size-up) → comando e coordenação → busca e salvamento → triagem → evacuação → abrigamento → logística → informação ao público → registro. Segurança da equipe vem antes de tudo.",
+"a": "Apostila Mód. 06 inteiro; Conteúdo do M5 da plataforma (Ações e Procedimentos da Resposta).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+31,
+79,
+80,
+81
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.5 — Procedimentos da Resposta",
+"src": 81
+},
+{
+"id": "Q82",
+"code": "Q83",
+"deck": "q",
+"f": "O tempo entre alerta e ação deve ser …",
+"v": "<strong>Imediato</strong>",
+"t": "A classificação por evolução separa o que exige alarme e fuga do que exige monitoramento longo. Súbito: explosão, desabamento, vendaval, enxurrada — o tempo entre alerta e ação tem de ser imediato. É esse tipo que justifica sistema de alerta, rota de fuga e simulado.",
+"a": "Conteúdo do M2 da plataforma (Tipos de Desastres); Apostila Mód. 05, item 5 (simulados) e Mód. 06, item 3.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+]
+],
+"q": [
+20,
+21,
+82
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.5 — Procedimentos da Resposta",
+"src": 82
+},
+{
+"id": "Q83",
+"code": "Q84",
+"deck": "q",
+"f": "Comunicação eficiente evita …",
+"v": "<strong>Pânico e boatos</strong>",
+"t": "SCO (Sistema de Comando de Operações), tradução do ICS norte-americano, resolve o problema clássico do desastre grande: muitas instituições, nenhuma cadeia de comando. Define função, cadeia única de comando, amplitude de controle e linguagem comum. É o que permite coordenação multiagências sem centralização sufocante.",
+"a": "Conteúdo do M5 da plataforma (Ferramentas de Coordenação); Apostila Mód. 06, item 5 (comando, controle e coordenação).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+83,
+86,
+87,
+88
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.5 — Procedimentos da Resposta",
+"src": 83
+},
+{
+"id": "Q84",
+"code": "Q85",
+"deck": "q",
+"f": "Municípios devem manter estoques para …",
+"v": "<strong>Responder emergências</strong>",
+"t": "O município é a linha de frente porque o desastre acontece em algum lugar concreto, e esse lugar sempre é um município. União planeja, coordena e financia; Estado articula a região e garante resposta rápida; o município executa. Por isso capacidade municipal — infraestrutura e articulação — é tema recorrente.",
+"a": "Apostila Mód. 01, item 12 ('Papel de cada esfera'): 'Municípios: linha de frente, onde a Defesa Civil tem rosto e voz'.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+66,
+73,
+75,
+84
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.6 — Assistência Humanitária",
+"src": 84
+},
+{
+"id": "Q85",
+"code": "Q86",
+"deck": "q",
+"f": "Abrigos devem garantir …",
+"v": "<strong>Segurança e higiene</strong>",
+"t": "Danos humanos são a contagem de pessoas: mortos, feridos, enfermos, desabrigados e desalojados. Vale fixar a diferença entre desalojado (saiu de casa e foi para casa de alguém) e desabrigado (depende de abrigo público) — é ela que dimensiona a demanda de abrigamento no plano de contingência.",
+"a": "Conteúdo do M2 da plataforma; Apostila Mód. 05, item 12 (organização de abrigos) e Mód. 06, item 11.",
+"s": [
+[
+"Módulo M2",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+25,
+26,
+84,
+85
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.6 — Assistência Humanitária",
+"src": 85
+},
+{
+"id": "Q86",
+"code": "Q87",
+"deck": "q",
+"f": "O SCO/ICS auxilia …",
+"v": "<strong>Organizar equipes e decisões</strong>",
+"t": "SCO (Sistema de Comando de Operações), tradução do ICS norte-americano, resolve o problema clássico do desastre grande: muitas instituições, nenhuma cadeia de comando. Define função, cadeia única de comando, amplitude de controle e linguagem comum. É o que permite coordenação multiagências sem centralização sufocante.",
+"a": "Conteúdo do M5 da plataforma (Ferramentas de Coordenação); Apostila Mód. 06, item 5 (comando, controle e coordenação).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+83,
+86,
+87,
+88
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.7 — Ferramentas de Coordenação",
+"src": 86
+},
+{
+"id": "Q87",
+"code": "Q88",
+"deck": "q",
+"f": "Em grandes desastres é necessário …",
+"v": "<strong>Coordenação multiagências</strong>",
+"t": "SCO (Sistema de Comando de Operações), tradução do ICS norte-americano, resolve o problema clássico do desastre grande: muitas instituições, nenhuma cadeia de comando. Define função, cadeia única de comando, amplitude de controle e linguagem comum. É o que permite coordenação multiagências sem centralização sufocante.",
+"a": "Conteúdo do M5 da plataforma (Ferramentas de Coordenação); Apostila Mód. 06, item 5 (comando, controle e coordenação).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+83,
+86,
+87,
+88
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.7 — Ferramentas de Coordenação",
+"src": 87
+},
+{
+"id": "Q88",
+"code": "Q89",
+"deck": "q",
+"f": "Controle eficiente do cenário evita …",
+"v": "<strong>Desinformação</strong>",
+"t": "SCO (Sistema de Comando de Operações), tradução do ICS norte-americano, resolve o problema clássico do desastre grande: muitas instituições, nenhuma cadeia de comando. Define função, cadeia única de comando, amplitude de controle e linguagem comum. É o que permite coordenação multiagências sem centralização sufocante.",
+"a": "Conteúdo do M5 da plataforma (Ferramentas de Coordenação); Apostila Mód. 06, item 5 (comando, controle e coordenação).",
+"s": [
+[
+"Módulo M5",
+"modulos"
+],
+[
+"Glossário",
+"gloss"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+83,
+86,
+87,
+88
+],
+"rev": false,
+"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+"quiz": "Quiz 5.7 — Ferramentas de Coordenação",
+"src": 88
+},
+{
+"id": "Q89",
+"code": "Q90",
+"deck": "q",
+"f": "O PLANCON é …",
+"v": "<strong>Documento de planejamento prévio</strong>",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+91,
+94
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.1 — O que é o PLANCON",
+"src": 89
+},
+{
+"id": "Q90",
+"code": "Q91",
+"deck": "q",
+"f": "O PLANCON serve para …",
+"v": "<strong>Organizar a resposta</strong>",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+91,
+94
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.1 — O que é o PLANCON",
+"src": 90
+},
+{
+"id": "Q91",
+"code": "Q92",
+"deck": "q",
+"f": "O plano é importante porque …",
+"v": "<strong>Garante rapidez e organização</strong>",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+91,
+94
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.1 — O que é o PLANCON",
+"src": 91
+},
+{
+"id": "Q92",
+"code": "Q93",
+"deck": "q",
+"f": "Na preparação o PLANCON …",
+"v": "<strong>Define procedimentos antecipados</strong>",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+91,
+92,
+94
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
+"src": 92
+},
+{
+"id": "Q93",
+"code": "Q94",
+"deck": "q",
+"f": "Na resposta o PLANCON …",
+"v": "<strong>É ativado e ajustado</strong>",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+91,
+93,
+94
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
+"src": 93
+},
+{
+"id": "Q94",
+"code": "Q95",
+"deck": "q",
+"f": "O PLANCON está previsto em …",
+"v": "<strong>Lei 12.340/2010</strong>",
+"t": "O PLANCON responde antes do evento às perguntas que ninguém consegue responder durante: quem aciona, quem faz o quê, com que recurso, por qual rota, para qual abrigo. Ele não é consultado e arquivado — é ativado e ajustado durante a operação, e revisado depois. Documento que ninguém treinou não é plano, é papel.",
+"a": "Conteúdo do M6 da plataforma (O que é o PLANCON e Papel na Preparação e Resposta); Apostila Mód. 05, item 6.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+91,
+94
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.3 — Bases Legais",
+"src": 94
+},
+{
+"id": "Q95",
+"code": "Q96",
+"deck": "q",
+"f": "Diretrizes definem …",
+"v": "<strong>Responsabilidades</strong>",
+"t": "A Lei 12.340/2010 trata de dinheiro: transferências da União a Estados, DF e Municípios para prevenção, resposta e recuperação, e institui o fundo hoje chamado FUNCAP. O gancho com o PLANCON está no art. 3º-A, §2º (incluído pela Lei 12.608/2012): município inscrito no cadastro de risco tem de elaborar mapeamento e plano de contingência. Ou seja, o plano é condição para acessar o sistema, não peça decorativa.",
+"a": "Conteúdo do M6 da plataforma (Bases Legais do PLANCON). Verificado no texto da Lei 12.340/2010 (Planalto).",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+90,
+94,
+95
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.3 — Bases Legais",
+"src": 95
+},
+{
+"id": "Q96",
+"code": "Q97",
+"deck": "q",
+"f": "Monitoramento envolve …",
+"v": "<strong>Análise de riscos e alertas</strong>",
+"t": "Sete elementos que precisam estar em qualquer plano de contingência: monitoramento, alerta, alarme, fuga, socorro, assistência às vítimas e restabelecimento de serviços essenciais. Note a distinção entre alerta (aviso técnico à estrutura) e alarme (sinal à população para agir) — são etapas diferentes e caem separadas.",
+"a": "Conteúdo do M6 da plataforma (Estrutura do PLANCON). Elementos conferidos em material de capacitação de Defesa Civil estadual.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+94,
+96,
+97
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.4 — Estrutura do PLANCON",
+"src": 96
+},
+{
+"id": "Q97",
+"code": "Q98",
+"deck": "q",
+"f": "O plano define …",
+"v": "<strong>Rotas seguras</strong>",
+"t": "Sete elementos que precisam estar em qualquer plano de contingência: monitoramento, alerta, alarme, fuga, socorro, assistência às vítimas e restabelecimento de serviços essenciais. Note a distinção entre alerta (aviso técnico à estrutura) e alarme (sinal à população para agir) — são etapas diferentes e caem separadas.",
+"a": "Conteúdo do M6 da plataforma (Estrutura do PLANCON). Elementos conferidos em material de capacitação de Defesa Civil estadual.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+89,
+94,
+96,
+97
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.4 — Estrutura do PLANCON",
+"src": 97
+},
+{
+"id": "Q98",
+"code": "Q99",
+"deck": "q",
+"f": "A consulta pública serve para …",
+"v": "<strong>Garantir participação da sociedade</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+98,
+101,
+102,
+103,
+104,
+105
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.5 — Participação Social",
+"src": 98
+},
+{
+"id": "Q99",
+"code": "Q100",
+"deck": "q",
+"f": "Controle social ajuda a …",
+"v": "<strong>Aumentar transparência</strong>",
+"t": "Governança em gestão de risco é quem decide, com que informação e respondendo a quem. Envolve liderança, estratégia e controle; exige coordenação entre esferas e tem transparência e responsabilização como princípio. O Marco de Sendai a elege como uma de suas quatro prioridades justamente porque plano sem governança não sai do papel.",
+"a": "Conteúdo do M4 da plataforma (Governança); Apostila Mód. 07, item 13 (transparência e prestação de contas).",
+"s": [
+[
+"Módulo M4",
+"modulos"
+],
+[
+"Apostila 01–08",
+"apostila"
+]
+],
+"q": [
+65,
+66,
+67,
+99
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.5 — Participação Social",
+"src": 99
+},
+{
+"id": "Q100",
+"code": "Q101",
+"deck": "q",
+"f": "Participar do PLANCON significa …",
+"v": "<strong>Corresponsabilidade no risco</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+100,
+101,
+102,
+103,
+104,
+105
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.5 — Participação Social",
+"src": 100
+},
+{
+"id": "Q101",
+"code": "Q102",
+"deck": "q",
+"f": "O Passo 1 consiste em …",
+"v": "<strong>Analisar cenários de risco</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
+"src": 101
+},
+{
+"id": "Q102",
+"code": "Q103",
+"deck": "q",
+"f": "O Passo 2 inclui …",
+"v": "<strong>Formar grupo de trabalho</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
+"src": 102
+},
+{
+"id": "Q103",
+"code": "Q104",
+"deck": "q",
+"f": "O Passo 3 é …",
+"v": "<strong>Avaliar cenários</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
+"src": 103
+},
+{
+"id": "Q104",
+"code": "Q105",
+"deck": "q",
+"f": "O Passo 4 define …",
+"v": "<strong>Ações e procedimentos</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
+"src": 104
+},
+{
+"id": "Q105",
+"code": "Q106",
+"deck": "q",
+"f": "O Passo 5 exige …",
+"v": "<strong>Consulta pública</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
+"src": 105
+},
+{
+"id": "Q106",
+"code": "Q107",
+"deck": "q",
+"f": "O Passo 6 envolve …",
+"v": "<strong>Audiência pública</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
+"src": 106
+},
+{
+"id": "Q107",
+"code": "Q108",
+"deck": "q",
+"f": "O Passo 7 trata da …",
+"v": "<strong>Validação do plano</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
+"src": 107
+},
+{
+"id": "Q108",
+"code": "Q109",
+"deck": "q",
+"f": "O Passo 8 corresponde a …",
+"v": "<strong>Operacionalizar o PLANCON</strong>",
+"t": "A sequência dos nove passos tem uma lógica: primeiro se entende o risco (1–3), depois se decide o que fazer (4), então se abre para a sociedade (5–6), valida-se formalmente (7), opera-se (8) e revisa-se (9). Consulta pública e audiência pública são passos distintos e vêm nessa ordem — é a troca mais cobrada do módulo.",
+"a": "Conteúdo do M6 da plataforma (9 Passos, partes 1 a 3). Não há questão sobre o Passo 9 no banco; pela doutrina, é a revisão/atualização contínua.",
+"s": [
+[
+"Núcleo 80/20",
+"pareto"
+],
+[
+"Módulo M6",
+"modulos"
+]
+],
+"q": [
+101,
+102,
+103,
+104,
+105,
+106
+],
+"rev": false,
+"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+"quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
+"src": 108
+}
+]
+}

@@ -1,0 +1,462 @@
+import { PrismaClient } from '@prisma/client';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const prisma = new PrismaClient();
+
+interface SeedQuestion {
+  mod: string;
+  quiz: string;
+  q: string;
+  opts: string[];
+  c: number;
+  com: string;
+}
+
+interface SeedCard {
+  id?: string;
+  code: string;
+  deck?: string;
+  f: string;
+  v: string;
+  t: string;
+  a: string;
+  s?: [string, string][];
+  q?: number[];
+  rev: boolean;
+  mod?: string;
+  quiz?: string;
+  src?: number;
+}
+
+interface SeedDecks {
+  p: SeedCard[];
+  q: SeedCard[];
+}
+
+const DATA_DIR = join(__dirname, 'data');
+const CONTENT_DIR = join(DATA_DIR, 'content');
+const VERIFIED_AT = new Date('2026-08-18T00:00:00.000Z');
+const VERIFIED_BY = 'platform-elimination-algorithm';
+
+const CONTENT_PAGES: Array<{
+  file: string;
+  slug: string;
+  ord: number;
+  title: string;
+}> = [
+  {
+    file: '01_nucleo_pareto.md',
+    slug: 'pareto',
+    ord: 1,
+    title: 'Núcleo Pareto 80/20',
+  },
+  {
+    file: '02_modulos_plataforma.md',
+    slug: 'modulos',
+    ord: 2,
+    title: 'Resumo por módulo · M1 a M6',
+  },
+  {
+    file: '06_apostila_sintese.md',
+    slug: 'apostila',
+    ord: 3,
+    title: 'Síntese da apostila · Módulos 01 a 08',
+  },
+  {
+    file: '03_glossario_linha_tempo.md',
+    slug: 'gloss',
+    ord: 4,
+    title: 'Glossário, siglas e linha do tempo',
+  },
+];
+
+function readJson<T>(name: string): T {
+  return JSON.parse(readFileSync(join(DATA_DIR, name), 'utf8')) as T;
+}
+
+function readMd(name: string): string {
+  return readFileSync(join(CONTENT_DIR, name), 'utf8');
+}
+
+function parseModule(mod: string): { ord: number; code: string; title: string } {
+  const match = /^MÓDULO\s+(\d+)\s+—\s+(.+)$/.exec(mod.trim());
+  if (!match) {
+    throw new Error(`Unexpected module label: ${mod}`);
+  }
+  const ord = Number(match[1]);
+  return { ord, code: `M${ord}`, title: match[2] };
+}
+
+function parseQuiz(quiz: string): { code: string; ord: number; title: string } {
+  const match = /^Quiz\s+(\d+)\.(\d+)\s+—\s+(.+)$/.exec(quiz.trim());
+  if (!match) {
+    throw new Error(`Unexpected quiz label: ${quiz}`);
+  }
+  return {
+    code: `${match[1]}.${match[2]}`,
+    ord: Number(match[2]),
+    title: match[3],
+  };
+}
+
+function extractModuleSummaries(source: string): Map<string, string> {
+  const summaries = new Map<string, string>();
+  const parts = source.split(/^## /m).slice(1);
+  for (const part of parts) {
+    const heading = part.split('\n', 1)[0] ?? '';
+    const codeMatch = /^(M\d+)\b/.exec(heading.trim());
+    if (!codeMatch) {
+      continue;
+    }
+    summaries.set(codeMatch[1], `## ${part.trim()}`);
+  }
+  return summaries;
+}
+
+async function seedTenant() {
+  return prisma.tenant.upsert({
+    where: { slug: 'default' },
+    create: {
+      slug: 'default',
+      name: 'Portal Defesa Civil',
+      status: 'ACTIVE',
+    },
+    update: {},
+  });
+}
+
+async function seedCourse() {
+  return prisma.course.upsert({
+    where: { slug: 'defesa-civil-lgnd' },
+    create: {
+      slug: 'defesa-civil-lgnd',
+      title: 'Proteção e Defesa Civil — LGND SQUAD',
+      sourcePlatform: 'ticketandgo',
+    },
+    update: {},
+  });
+}
+
+async function seedModulesAndQuestions(
+  courseId: string,
+  questions: SeedQuestion[],
+): Promise<Map<number, string>> {
+  const summaries = extractModuleSummaries(readMd('02_modulos_plataforma.md'));
+  const moduleIds = new Map<string, string>();
+  const quizIds = new Map<string, string>();
+  const indexToQuestionId = new Map<number, string>();
+
+  for (const question of questions) {
+    const parsedMod = parseModule(question.mod);
+    if (!moduleIds.has(parsedMod.code)) {
+      const created = await prisma.courseModule.upsert({
+        where: {
+          courseId_code: { courseId, code: parsedMod.code },
+        },
+        create: {
+          courseId,
+          ord: parsedMod.ord,
+          code: parsedMod.code,
+          title: parsedMod.title,
+          summaryMd: summaries.get(parsedMod.code) ?? null,
+        },
+        update: {},
+      });
+      moduleIds.set(parsedMod.code, created.id);
+    }
+  }
+
+  const quizSeen = new Set<string>();
+  for (const question of questions) {
+    const parsedMod = parseModule(question.mod);
+    const parsedQuiz = parseQuiz(question.quiz);
+    const key = `${parsedMod.code}:${parsedQuiz.code}`;
+    if (quizSeen.has(key)) {
+      continue;
+    }
+    quizSeen.add(key);
+    const courseModuleId = moduleIds.get(parsedMod.code);
+    if (!courseModuleId) {
+      throw new Error(`Missing module ${parsedMod.code}`);
+    }
+    const created = await prisma.quiz.upsert({
+      where: {
+        courseModuleId_code: { courseModuleId, code: parsedQuiz.code },
+      },
+      create: {
+        courseModuleId,
+        ord: parsedQuiz.ord,
+        code: parsedQuiz.code,
+        title: parsedQuiz.title,
+        passScore: 66,
+      },
+      update: {},
+    });
+    quizIds.set(key, created.id);
+  }
+
+  const quizOrd = new Map<string, number>();
+  for (let i = 0; i < questions.length; i += 1) {
+    const question = questions[i];
+    const parsedMod = parseModule(question.mod);
+    const parsedQuiz = parseQuiz(question.quiz);
+    const quizKey = `${parsedMod.code}:${parsedQuiz.code}`;
+    const quizId = quizIds.get(quizKey);
+    if (!quizId) {
+      throw new Error(`Missing quiz ${quizKey}`);
+    }
+    const ord = (quizOrd.get(quizKey) ?? 0) + 1;
+    quizOrd.set(quizKey, ord);
+
+    const existing = await prisma.question.findFirst({
+      where: { quizId, ord, deletedAt: null },
+    });
+
+    const data = {
+      quizId,
+      ord,
+      stem: question.q,
+      explanationMd: question.com,
+      sourceRef: `${question.mod} › ${question.quiz}`,
+      verifiedAt: VERIFIED_AT,
+      verifiedBy: VERIFIED_BY,
+    };
+
+    const saved = existing
+      ? existing
+      : await prisma.question.create({ data });
+
+    if (existing) {
+      // idempotent: do not overwrite curated fields
+    }
+
+    for (let optIdx = 0; optIdx < question.opts.length; optIdx += 1) {
+      await prisma.questionOption.upsert({
+        where: {
+          questionId_ord: { questionId: saved.id, ord: optIdx },
+        },
+        create: {
+          questionId: saved.id,
+          ord: optIdx,
+          text: question.opts[optIdx],
+          isCorrect: optIdx === question.c,
+        },
+        update: {},
+      });
+    }
+
+    indexToQuestionId.set(i, saved.id);
+  }
+
+  return indexToQuestionId;
+}
+
+async function seedDeck(
+  courseId: string,
+  kind: 'ESSENTIAL' | 'EXAM',
+  title: string,
+  cards: SeedCard[],
+  indexToQuestionId: Map<number, string>,
+) {
+  const deck = await prisma.deck.upsert({
+    where: { courseId_kind: { courseId, kind } },
+    create: { courseId, kind, title },
+    update: {},
+  });
+
+  for (let i = 0; i < cards.length; i += 1) {
+    const item = cards[i];
+    const originQuestionId =
+      kind === 'EXAM' && typeof item.src === 'number'
+        ? (indexToQuestionId.get(item.src) ?? null)
+        : null;
+
+    const card = await prisma.card.upsert({
+      where: { deckId_code: { deckId: deck.id, code: item.code } },
+      create: {
+        deckId: deck.id,
+        ord: i,
+        code: item.code,
+        frontMd: item.f,
+        backMd: item.v,
+        theoryMd: item.t,
+        sourceMd: item.a,
+        reversible: item.rev,
+        originQuestionId,
+      },
+      update: {},
+    });
+
+    const related = item.q ?? [];
+    for (let rank = 0; rank < related.length; rank += 1) {
+      const questionId = indexToQuestionId.get(related[rank]);
+      if (!questionId) {
+        throw new Error(
+          `Card ${item.code} references missing question index ${related[rank]}`,
+        );
+      }
+      await prisma.cardQuestion.upsert({
+        where: {
+          cardId_questionId: { cardId: card.id, questionId },
+        },
+        create: { cardId: card.id, questionId, rank },
+        update: {},
+      });
+    }
+
+    const links = item.s ?? [];
+    for (let ord = 0; ord < links.length; ord += 1) {
+      const [label, targetSlug] = links[ord];
+      const existingLink = await prisma.cardLink.findFirst({
+        where: { cardId: card.id, ord },
+      });
+      if (!existingLink) {
+        await prisma.cardLink.create({
+          data: { cardId: card.id, label, targetSlug, ord },
+        });
+      }
+    }
+  }
+}
+
+async function seedContentPages(courseId: string) {
+  for (const page of CONTENT_PAGES) {
+    await prisma.contentPage.upsert({
+      where: { courseId_slug: { courseId, slug: page.slug } },
+      create: {
+        courseId,
+        slug: page.slug,
+        ord: page.ord,
+        title: page.title,
+        bodyMd: readMd(page.file),
+      },
+      update: {},
+    });
+  }
+}
+
+async function printValidation() {
+  const [
+    tenants,
+    courses,
+    courseModules,
+    quizzes,
+    questions,
+    questionOptions,
+    decks,
+    essentialCards,
+    examCards,
+    contentPages,
+    examOrigins,
+    essentialCited,
+    cardsWithoutQuestions,
+    badOptions,
+    orphanLinks,
+  ] = await Promise.all([
+    prisma.tenant.count({ where: { deletedAt: null } }),
+    prisma.course.count({ where: { deletedAt: null } }),
+    prisma.courseModule.count({ where: { deletedAt: null } }),
+    prisma.quiz.count({ where: { deletedAt: null } }),
+    prisma.question.count({ where: { deletedAt: null } }),
+    prisma.questionOption.count(),
+    prisma.deck.count({ where: { deletedAt: null } }),
+    prisma.card.count({
+      where: { deletedAt: null, deck: { kind: 'ESSENTIAL' } },
+    }),
+    prisma.card.count({ where: { deletedAt: null, deck: { kind: 'EXAM' } } }),
+    prisma.contentPage.count({ where: { deletedAt: null } }),
+    prisma.card.findMany({
+      where: {
+        deletedAt: null,
+        deck: { kind: 'EXAM' },
+        originQuestionId: { not: null },
+      },
+      select: { originQuestionId: true },
+      distinct: ['originQuestionId'],
+    }),
+    prisma.cardQuestion.findMany({
+      where: { card: { deletedAt: null, deck: { kind: 'ESSENTIAL' } } },
+      select: { questionId: true },
+      distinct: ['questionId'],
+    }),
+    prisma.card.count({
+      where: { deletedAt: null, cardQuestions: { none: {} } },
+    }),
+    prisma.question.findMany({
+      where: { deletedAt: null },
+      select: {
+        id: true,
+        options: { where: { isCorrect: true }, select: { id: true } },
+      },
+    }),
+    prisma.cardLink.findMany({
+      select: { targetSlug: true },
+      distinct: ['targetSlug'],
+    }),
+  ]);
+
+  const pageSlugs = new Set(
+    (
+      await prisma.contentPage.findMany({
+        where: { deletedAt: null },
+        select: { slug: true },
+      })
+    ).map((p) => p.slug),
+  );
+  const missingLinkSlugs = orphanLinks
+    .map((l) => l.targetSlug)
+    .filter((slug) => !pageSlugs.has(slug));
+  const questionsWithoutSingleCorrect = badOptions.filter(
+    (q) => q.options.length !== 1,
+  ).length;
+
+  const report = [
+    `tenants: ${tenants} · courses: ${courses} · course_modules: ${courseModules} · quizzes: ${quizzes}`,
+    `questions: ${questions} · question_options: ${questionOptions} (${questions} × 3)`,
+    `decks: ${decks} · cards ESSENTIAL: ${essentialCards} · cards EXAM: ${examCards}`,
+    `card_questions: ${cardsWithoutQuestions === 0 ? '> 0 para todas as 152 cartas' : `MISSING on ${cardsWithoutQuestions} cards`}`,
+    `content_pages: ${contentPages}`,
+    `cobertura EXAM (originQuestionId distintos): ${examOrigins.length}/109`,
+    `cobertura ESSENTIAL (questões citadas em CardQuestion de cartas ESSENTIAL): ${essentialCited.length}/109`,
+    `todo CardLink.targetSlug existe em ContentPage.slug: ${missingLinkSlugs.length === 0 ? 'OK' : missingLinkSlugs.join(',')}`,
+    `toda Question tem exatamente 1 option com isCorrect = true: ${questionsWithoutSingleCorrect === 0 ? 'OK' : String(questionsWithoutSingleCorrect)}`,
+  ];
+  for (const line of report) {
+    console.info(line);
+  }
+}
+
+async function main() {
+  const questions = readJson<SeedQuestion[]>('questoes.json');
+  const decks = readJson<SeedDecks>('decks.json');
+
+  await seedTenant();
+  const course = await seedCourse();
+  const indexToQuestionId = await seedModulesAndQuestions(course.id, questions);
+  await seedDeck(
+    course.id,
+    'ESSENTIAL',
+    'Cartas essenciais',
+    decks.p,
+    indexToQuestionId,
+  );
+  await seedDeck(
+    course.id,
+    'EXAM',
+    'Cartas de prova',
+    decks.q,
+    indexToQuestionId,
+  );
+  await seedContentPages(course.id);
+  await printValidation();
+}
+
+main()
+  .catch((error: unknown) => {
+    console.error(error);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

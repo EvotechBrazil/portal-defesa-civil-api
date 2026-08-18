@@ -1,0 +1,492 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TenantStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum UserRole {
+  STUDENT
+  ADMIN
+}
+
+enum LessonKind {
+  VIDEO
+  TEXT
+  ATTACHMENT
+}
+
+enum DeckKind {
+  ESSENTIAL
+  EXAM
+}
+
+enum CardLevel {
+  NEW
+  HARD
+  LEARNING
+  EASY
+}
+
+enum ReviewRating {
+  HARD
+  LEARNING
+  EASY
+}
+
+enum DeckSelector {
+  ESSENTIAL
+  FULL
+}
+
+enum CardDirection {
+  FORWARD
+  REVERSE
+}
+
+// ─────────────────────────── tenant e identidade ───────────────────────────
+
+model Tenant {
+  id        String       @id @default(cuid())
+  slug      String       @unique
+  name      String
+  status    TenantStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+  deletedAt DateTime?    @map("deleted_at")
+
+  users           User[]
+  enrollments     Enrollment[]
+  lessonProgress  LessonProgress[]
+  cardStates      CardState[]
+  studySessions   StudySession[]
+  attempts        Attempt[]
+
+  @@map("tenants")
+}
+
+model User {
+  id              String    @id @default(cuid())
+  tenantId        String    @map("tenant_id")
+  email           String
+  name            String
+  passwordHash    String    @map("password_hash")
+  role            UserRole  @default(STUDENT)
+  emailVerifiedAt DateTime? @map("email_verified_at")
+  lastLoginAt     DateTime? @map("last_login_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  deletedAt       DateTime? @map("deleted_at")
+
+  tenant                 Tenant                    @relation(fields: [tenantId], references: [id])
+  refreshTokens          RefreshToken[]
+  emailVerificationTokens EmailVerificationToken[]
+  enrollments            Enrollment[]
+  lessonProgress         LessonProgress[]
+  cardStates             CardState[]
+  studySessions          StudySession[]
+  attempts               Attempt[]
+
+  @@unique([tenantId, email])
+  @@index([tenantId])
+  @@map("users")
+}
+
+model RefreshToken {
+  id           String    @id @default(cuid())
+  userId       String    @map("user_id")
+  tokenHash    String    @unique @map("token_hash")
+  expiresAt    DateTime  @map("expires_at")
+  revokedAt    DateTime? @map("revoked_at")
+  replacedById String?   @map("replaced_by_id")
+  createdAt    DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+model EmailVerificationToken {
+  id        String    @id @default(cuid())
+  userId    String    @map("user_id")
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("email_verification_tokens")
+}
+
+// ─────────────── conteúdo: CATÁLOGO GLOBAL, sem tenantId ───────────────
+
+model Course {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  title          String
+  description    String?
+  sourcePlatform String?   @map("source_platform")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  modules      CourseModule[]
+  contentPages ContentPage[]
+  decks        Deck[]
+  enrollments  Enrollment[]
+
+  @@map("courses")
+}
+
+model CourseModule {
+  id        String    @id @default(cuid())
+  courseId  String    @map("course_id")
+  ord       Int
+  code      String                                   // "M1".."M6"
+  title     String
+  summaryMd String?   @map("summary_md")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  course  Course   @relation(fields: [courseId], references: [id])
+  lessons Lesson[]
+  quizzes Quiz[]
+
+  @@unique([courseId, code])
+  @@index([courseId])
+  @@map("course_modules")
+}
+
+model Lesson {
+  id             String     @id @default(cuid())
+  courseModuleId String     @map("course_module_id")
+  ord            Int
+  title          String
+  kind           LessonKind @default(VIDEO)
+  videoUrl       String?    @map("video_url")
+  transcriptMd   String?    @map("transcript_md")
+  durationS      Int?       @map("duration_s")
+  createdAt      DateTime   @default(now()) @map("created_at")
+  updatedAt      DateTime   @updatedAt @map("updated_at")
+  deletedAt      DateTime?  @map("deleted_at")
+
+  courseModule CourseModule     @relation(fields: [courseModuleId], references: [id])
+  assets       Asset[]
+  progress     LessonProgress[]
+
+  @@index([courseModuleId])
+  @@map("lessons")
+}
+
+model Asset {
+  id            String    @id @default(cuid())
+  lessonId      String    @map("lesson_id")
+  filename      String
+  mime          String
+  sizeBytes     Int       @map("size_bytes")
+  storageKey    String    @map("storage_key")
+  extractedText String?   @map("extracted_text")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  deletedAt     DateTime? @map("deleted_at")
+
+  lesson Lesson @relation(fields: [lessonId], references: [id])
+
+  @@index([lessonId])
+  @@map("assets")
+}
+
+model ContentPage {
+  id        String    @id @default(cuid())
+  courseId  String    @map("course_id")
+  slug      String                                   // "pareto" | "modulos" | "apostila" | "gloss"
+  ord       Int
+  title     String
+  bodyMd    String    @map("body_md")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  course Course @relation(fields: [courseId], references: [id])
+
+  @@unique([courseId, slug])
+  @@index([courseId])
+  @@map("content_pages")
+}
+
+model Quiz {
+  id             String    @id @default(cuid())
+  courseModuleId String    @map("course_module_id")
+  ord            Int
+  code           String                              // "1.1".."6.8"
+  title          String
+  passScore      Int       @default(66) @map("pass_score")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  courseModule CourseModule @relation(fields: [courseModuleId], references: [id])
+  questions    Question[]
+  attempts     Attempt[]
+
+  @@unique([courseModuleId, code])
+  @@index([courseModuleId])
+  @@map("quizzes")
+}
+
+model Question {
+  id            String    @id @default(cuid())
+  quizId        String    @map("quiz_id")
+  ord           Int
+  stem          String
+  explanationMd String?   @map("explanation_md")
+  sourceRef     String?   @map("source_ref")
+  verifiedAt    DateTime? @map("verified_at")
+  verifiedBy    String?   @map("verified_by")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  deletedAt     DateTime? @map("deleted_at")
+
+  quiz          Quiz             @relation(fields: [quizId], references: [id])
+  options       QuestionOption[]
+  cardQuestions CardQuestion[]
+  originCards   Card[]           @relation("CardOriginQuestion")
+  attemptItems  AttemptItem[]
+
+  @@index([quizId])
+  @@map("questions")
+}
+
+model QuestionOption {
+  id         String   @id @default(cuid())
+  questionId String   @map("question_id")
+  ord        Int
+  text       String
+  isCorrect  Boolean  @map("is_correct")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  question     Question      @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  attemptItems AttemptItem[]
+
+  @@unique([questionId, ord])
+  @@index([questionId])
+  @@map("question_options")
+}
+
+model Deck {
+  id        String    @id @default(cuid())
+  courseId  String    @map("course_id")
+  kind      DeckKind
+  title     String
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  course Course @relation(fields: [courseId], references: [id])
+  cards  Card[]
+
+  @@unique([courseId, kind])
+  @@index([courseId])
+  @@map("decks")
+}
+
+model Card {
+  id               String    @id @default(cuid())
+  deckId           String    @map("deck_id")
+  ord              Int
+  code             String                            // "#1".."#43" | "Q1".."Q109"
+  frontMd          String    @map("front_md")
+  backMd           String    @map("back_md")
+  theoryMd         String    @map("theory_md")
+  sourceMd         String    @map("source_md")
+  reversible       Boolean   @default(true)
+  originQuestionId String?   @map("origin_question_id")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+  deletedAt        DateTime? @map("deleted_at")
+
+  deck           Deck           @relation(fields: [deckId], references: [id])
+  originQuestion Question?      @relation("CardOriginQuestion", fields: [originQuestionId], references: [id])
+  cardQuestions  CardQuestion[]
+  links          CardLink[]
+  states         CardState[]
+  attempts       Attempt[]
+
+  @@unique([deckId, code])
+  @@index([deckId])
+  @@map("cards")
+}
+
+model CardQuestion {
+  cardId     String @map("card_id")
+  questionId String @map("question_id")
+  rank       Int
+
+  card     Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@id([cardId, questionId])
+  @@index([cardId])
+  @@index([questionId])
+  @@map("card_questions")
+}
+
+model CardLink {
+  id         String @id @default(cuid())
+  cardId     String @map("card_id")
+  label      String                                  // "Núcleo 80/20"
+  targetSlug String @map("target_slug")              // "pareto" — casa com ContentPage.slug
+  ord        Int
+
+  card Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  @@index([cardId])
+  @@map("card_links")
+}
+
+// ─────────────────── progresso: TENANT-SCOPED ───────────────────
+
+model Enrollment {
+  id          String    @id @default(cuid())
+  tenantId    String    @map("tenant_id")
+  userId      String    @map("user_id")
+  courseId    String    @map("course_id")
+  startedAt   DateTime  @default(now()) @map("started_at")
+  completedAt DateTime? @map("completed_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  deletedAt   DateTime? @map("deleted_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+  course Course @relation(fields: [courseId], references: [id])
+
+  @@unique([userId, courseId])
+  @@index([tenantId])
+  @@index([tenantId, userId])
+  @@map("enrollments")
+}
+
+model LessonProgress {
+  id          String    @id @default(cuid())
+  tenantId    String    @map("tenant_id")
+  userId      String    @map("user_id")
+  lessonId    String    @map("lesson_id")
+  watchedS    Int       @default(0) @map("watched_s")
+  completedAt DateTime? @map("completed_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+  lesson Lesson @relation(fields: [lessonId], references: [id])
+
+  @@unique([userId, lessonId])
+  @@index([tenantId])
+  @@index([tenantId, userId])
+  @@map("lesson_progress")
+}
+
+model CardState {
+  id         String    @id @default(cuid())
+  tenantId   String    @map("tenant_id")
+  userId     String    @map("user_id")
+  cardId     String    @map("card_id")
+  level      CardLevel @default(NEW)
+  streak     Int       @default(0)
+  seen       Int       @default(0)
+  lastSeenAt DateTime? @map("last_seen_at")
+  dueAt      DateTime? @map("due_at")
+  stability  Float?                                  // reservado para FSRS
+  difficulty Float?                                  // reservado para FSRS
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+  card   Card   @relation(fields: [cardId], references: [id])
+
+  @@unique([userId, cardId])
+  @@index([tenantId])
+  @@index([tenantId, userId, level])
+  @@map("card_states")
+}
+
+model StudySession {
+  id           String       @id @default(cuid())
+  tenantId     String       @map("tenant_id")
+  userId       String       @map("user_id")
+  deckSelector DeckSelector @map("deck_selector")
+  bidir        Boolean      @default(true)
+  queue        Json                                  // string[] de cardId, muta a cada review
+  reviews      Int          @default(0)
+  tally        Json                                  // {HARD:n, LEARNING:n, EASY:n}
+  startedAt    DateTime     @default(now()) @map("started_at")
+  endedAt      DateTime?    @map("ended_at")
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@index([tenantId])
+  @@index([tenantId, userId])
+  @@map("study_sessions")
+}
+
+model Attempt {
+  id           String    @id @default(cuid())
+  tenantId     String    @map("tenant_id")
+  userId       String    @map("user_id")
+  cardId       String?   @map("card_id")
+  quizId       String?   @map("quiz_id")
+  startedAt    DateTime  @default(now()) @map("started_at")
+  finishedAt   DateTime? @map("finished_at")
+  correctCount Int       @default(0) @map("correct_count")
+  totalCount   Int       @default(0) @map("total_count")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  tenant Tenant        @relation(fields: [tenantId], references: [id])
+  user   User          @relation(fields: [userId], references: [id])
+  card   Card?         @relation(fields: [cardId], references: [id])
+  quiz   Quiz?         @relation(fields: [quizId], references: [id])
+  items  AttemptItem[]
+
+  @@index([tenantId])
+  @@index([tenantId, userId])
+  @@index([userId, cardId])
+  @@map("attempts")
+}
+
+model AttemptItem {
+  id             String   @id @default(cuid())
+  attemptId      String   @map("attempt_id")
+  questionId     String   @map("question_id")
+  chosenOptionId String?  @map("chosen_option_id")
+  isCorrect      Boolean? @map("is_correct")
+  shownOrd       Int      @map("shown_ord")
+  optionOrder    Json     @map("option_order")       // int[] — ordem embaralhada apresentada
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  attempt      Attempt         @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question     Question        @relation(fields: [questionId], references: [id])
+  chosenOption QuestionOption? @relation(fields: [chosenOptionId], references: [id])
+
+  @@unique([attemptId, questionId])
+  @@index([attemptId])
+  @@map("attempt_items")
+}

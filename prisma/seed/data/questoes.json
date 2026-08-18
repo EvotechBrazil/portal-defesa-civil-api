@@ -1,1310 +1,1622 @@
 [
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
-"q": "Qual o principal motivo apresentado para o trabalho da Defesa Civil?",
-"opts": [
-"Cumprir metas administrativas",
-"Conhecer, compreender e servir a sociedade",
-"Atuar apenas após desastres"
-],
-"c": 1,
-"com": "<em>Comentário:</em> o tripé é a tese de abertura do curso. Defesa Civil não é meta administrativa nem atuação exclusivamente pós-evento."
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
-"q": "O conceito de \"servir\" representa:",
-"opts": [
-"Uma vocação que move ações de proteção",
-"Uma tarefa técnica",
-"Uma função opcional"
-],
-"c": 0,
-"com": "<em>Comentário:</em> \"servir\" é tratado como vocação/propósito, não como função técnica."
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
-"q": "A missão da Defesa Civil é:",
-"opts": [
-"Estrutura burocrática de resposta",
-"Trabalho militar restrito",
-"Sistema que age quando tudo desaba"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.2 — O Brasil que Protege",
-"q": "A grande virada da Defesa Civil brasileira ocorreu quando se entendeu que:",
-"opts": [
-"Prevenção é mais eficaz que reagir",
-"Resposta é suficiente",
-"Todo desastre é inevitável"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.2 — O Brasil que Protege",
-"q": "\"Da guerra à vida\" significa:",
-"opts": [
-"Militarizar ações",
-"Focar na proteção humana",
-"Atuar apenas após conflito"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.2 — O Brasil que Protege",
-"q": "A evolução da Defesa Civil brasileira envolveu:",
-"opts": [
-"Redução de políticas públicas",
-"Ações improvisadas",
-"Organização e prevenção"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
-"q": "As origens da Defesa Civil estão ligadas a:",
-"opts": [
-"Guerras e crises internacionais",
-"Eventos escolares",
-"Políticas ambientais"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
-"q": "Um marco importante da estrutura brasileira foi:",
-"opts": [
-"Plano Nacional de Segurança Pública",
-"Criação da primeira estrutura estadual em 1966",
-"Reconhecimento internacional do S2ID"
-],
-"c": 1,
-"com": "<em>Comentário:</em> <strong>1966</strong> é a data para memorizar."
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
-"q": "As primeiras estruturas estaduais tinham o objetivo de:",
-"opts": [
-"Organizar ações regionais",
-"Controlar áreas militares",
-"Gerenciar apenas abrigos"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
-"q": "O Plano Diretor estabeleceu:",
-"opts": [
-"Redução de equipes",
-"Diretrizes de organização regional",
-"Foco exclusivo em resposta"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.5 — Identidade e Missão",
-"q": "A Defesa Civil é definida como:",
-"opts": [
-"Uma força armada",
-"União, prevenção e fé",
-"Entidade burocrática"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.5 — Identidade e Missão",
-"q": "A identidade da Defesa Civil se apoia em:",
-"opts": [
-"Punição e vigilância",
-"Estratégias financeiras",
-"União, prevenção e cuidado"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
-"quiz": "Quiz 1.5 — Identidade e Missão",
-"q": "O chamado para proteger vidas expressa:",
-"opts": [
-"Motivação administrativa",
-"Propósito e vocação",
-"Obrigação reativa"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.1 — Conceitos Fundamentais",
-"q": "O risco é definido como:",
-"opts": [
-"Algo inevitável da natureza",
-"Uma construção social entre ambiente e ocupação",
-"Resultado exclusivo do clima"
-],
-"c": 1,
-"com": "<em>Comentário:</em> questão-chave do curso inteiro. Risco NÃO é fatalidade."
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.1 — Conceitos Fundamentais",
-"q": "O risco depende da combinação entre:",
-"opts": [
-"Governo e orçamento",
-"Clima e vegetação",
-"Ameaça, exposição e vulnerabilidade"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.1 — Conceitos Fundamentais",
-"q": "O risco surge principalmente devido a:",
-"opts": [
-"Ocupação inadequada",
-"Avanço tecnológico",
-"Crescimento populacional apenas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.2 — Capacidade e Resiliência",
-"q": "A capacidade é definida como:",
-"opts": [
-"Recursos e atributos para enfrentar riscos",
-"Reação improvisada",
-"Motivação emocional"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.2 — Capacidade e Resiliência",
-"q": "Resiliência significa:",
-"opts": [
-"Resistir, adaptar-se e recuperar-se",
-"Ignorar impactos",
-"Evitar mudanças"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.2 — Capacidade e Resiliência",
-"q": "A resiliência depende principalmente de:",
-"opts": [
-"Estruturas militares",
-"Organização social e governamental",
-"Condições climáticas"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.3 — Tipos de Desastres",
-"q": "Desastres tecnológicos incluem:",
-"opts": [
-"Deslizamentos",
-"Incêndios industriais",
-"Enchentes"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.3 — Tipos de Desastres",
-"q": "Um desastre súbito é aquele que:",
-"opts": [
-"Aumenta lentamente",
-"Não causa danos",
-"Ocorre sem aviso"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.3 — Tipos de Desastres",
-"q": "Um desastre gradual geralmente é:",
-"opts": [
-"Estiagem",
-"Explosão",
-"Desabamento imediato"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.4 — Sistemas de Registro",
-"q": "O COBRADE classifica desastres por:",
-"opts": [
-"Tamanho populacional",
-"Grupo, subgrupo, tipo e subtipo",
-"Orçamento disponível"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.4 — Sistemas de Registro",
-"q": "O FIDE é utilizado para:",
-"opts": [
-"Registrar informações de desastres",
-"Criar leis",
-"Treinar voluntários"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.4 — Sistemas de Registro",
-"q": "O S2ID é essencial porque:",
-"opts": [
-"Aumenta custos",
-"Substitui equipes locais",
-"Centraliza registros nacionais"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.5 — Danos e Prejuízos",
-"q": "Danos humanos incluem:",
-"opts": [
-"Perdas financeiras",
-"Mortos, feridos e desabrigados",
-"Quebra de infraestrutura"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.5 — Danos e Prejuízos",
-"q": "Danos materiais:",
-"opts": [
-"Infraestruturas destruídas",
-"Investimentos públicos",
-"Emoções afetadas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.5 — Danos e Prejuízos",
-"q": "Prejuízos ocorrem quando:",
-"opts": [
-"Há perda imediata física",
-"Há apenas danos ambientais",
-"Impactos econômicos duram após o evento"
-],
-"c": 2,
-"com": "<em>Comentário:</em> <strong>dano = perda imediata; prejuízo = impacto econômico que persiste.</strong> Pega-ratão clássico."
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
-"q": "Prevenção é:",
-"opts": [
-"Medidas antecipadas para evitar riscos",
-"Resposta imediata",
-"Ação após o desastre"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
-"q": "Mitigação:",
-"opts": [
-"Evitar toda ameaça",
-"Focar apenas em reconstrução",
-"Reduzir impacto quando o risco não pode ser evitado"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
-"q": "Preparação envolve:",
-"opts": [
-"Apenas resposta",
-"Treinamentos, alertas e simulados",
-"Apenas reconstrução"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.7 — Resposta e Recuperação",
-"q": "A resposta tem como objetivo:",
-"opts": [
-"Reconstruir casas",
-"Salvar vidas imediatamente",
-"Criar leis preventivas"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.7 — Resposta e Recuperação",
-"q": "Assistência consiste em:",
-"opts": [
-"Auxílio emergencial à população",
-"Estudos técnicos",
-"Reuniões administrativas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
-"quiz": "Quiz 2.7 — Resposta e Recuperação",
-"q": "Recuperação implica em:",
-"opts": [
-"Intervenções rápidas e provisórias",
-"Reconstrução sustentável",
-"Priorizar abrigos temporários somente"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.1 — Cenário Global",
-"q": "A base EM-DAT é usada para:",
-"opts": [
-"Registrar eleições",
-"Mapear desastres globais",
-"Controlar orçamento nacional"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.1 — Cenário Global",
-"q": "O número de desastres no mundo está:",
-"opts": [
-"Diminuindo",
-"Estável",
-"Aumentando"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.1 — Cenário Global",
-"q": "A intensificação dos desastres ocorre devido a:",
-"opts": [
-"Baixa tecnologia",
-"Fatores climáticos e urbanos",
-"Falta de estradas"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.2 — Impactos Globais",
-"q": "O aumento da exposição humana ocorre quando:",
-"opts": [
-"As pessoas ocupam áreas de risco",
-"Há menos cidades",
-"A população diminui"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.2 — Impactos Globais",
-"q": "Países em desenvolvimento sofrem mais porque:",
-"opts": [
-"São mais ricos",
-"Têm baixa vulnerabilidade",
-"Têm menor preparo e mais vulnerabilidade"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.2 — Impactos Globais",
-"q": "A pobreza aumenta o risco porque:",
-"opts": [
-"Reduz a urbanização",
-"Aumenta vulnerabilidade social",
-"Impede o clima de mudar"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.3 — Panorama Nacional",
-"q": "O S2ID é essencial porque:",
-"opts": [
-"Atua na resposta",
-"Centraliza dados nacionais",
-"Treina voluntários"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.3 — Panorama Nacional",
-"q": "A Lei que consolida o S2ID é:",
-"opts": [
-"12.608/2012",
-"10.593/2020",
-"8.112/1990"
-],
-"c": 1,
-"com": "<em>Correção técnica:</em> o nº <strong>10.593/2020</strong> é um <strong>DECRETO</strong> (24/12/2020), que dispõe sobre a organização do SINPDEC, do CONPDEC e do Sistema Nacional de Informações sobre Desastres — a base normativa em que o S2ID opera (o texto do decreto não cita \"S2ID\" pelo nome). A plataforma usa \"Lei\" indevidamente; para acertar o quiz, marque <strong>10.593/2020</strong>."
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.3 — Panorama Nacional",
-"q": "Sem dados confiáveis:",
-"opts": [
-"Não há gestão efetiva",
-"Há mais recursos",
-"A prevenção aumenta"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
-"q": "A geografia brasileira favorece:",
-"opts": [
-"Baixa exposição",
-"Vulnerabilidade a múltiplos fenômenos",
-"Redução de ameaças"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
-"q": "A ocupação irregular gera:",
-"opts": [
-"Aumento de vulnerabilidade",
-"Redução de risco",
-"Melhora ambiental"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
-"q": "A desigualdade contribui para:",
-"opts": [
-"Menor exposição",
-"Maior dificuldade de preparação",
-"Mais investimentos"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
-"q": "Enchentes são comuns devido:",
-"opts": [
-"Falta de rios",
-"Clima seco",
-"Impermeabilização urbana"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
-"q": "Deslizamentos ocorrem principalmente em:",
-"opts": [
-"Chapadas planas",
-"Encostas ocupadas",
-"Zonas desérticas"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
-"q": "Um dos fatores de incêndios florestais é:",
-"opts": [
-"Ambientes alagados",
-"Rios cheios",
-"Secas prolongadas"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.6 — Síntese",
-"q": "O conhecimento global deve ser:",
-"opts": [
-"Ignorado",
-"Adaptado ao contexto local",
-"Aplicado igual em todo país"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
-"quiz": "Quiz 3.6 — Síntese",
-"q": "A cultura de prevenção depende de:",
-"opts": [
-"Educação e participação",
-"Tecnologia apenas",
-"Aumento de multas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.1 — Origem e Propósito",
-"q": "A GRD surgiu como resposta a:",
-"opts": [
-"Crescimento do turismo",
-"Falhas reveladas em grandes tragédias",
-"Políticas ambientais isoladas"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.1 — Origem e Propósito",
-"q": "A principal mudança global foi:",
-"opts": [
-"Reagir sempre",
-"Usar menos dados",
-"Focar na prevenção"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.1 — Origem e Propósito",
-"q": "A GRD busca:",
-"opts": [
-"Reduzir perdas",
-"Militarizar ações",
-"Aumentar burocracia"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.2 — Caso Mitch",
-"q": "O furacão Mitch ficou marcado por:",
-"opts": [
-"Baixos danos",
-"Alto número de vítimas",
-"Ausência de enchentes"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.2 — Caso Mitch",
-"q": "O desastre revelou:",
-"opts": [
-"Excessos de preparação",
-"Boa infraestrutura",
-"Falta de sistemas preventivos"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.2 — Caso Mitch",
-"q": "Após Mitch, países passaram a:",
-"opts": [
-"Criar sistemas de gerenciamento de riscos",
-"Reduzir políticas de prevenção",
-"Desativar estruturas regionais"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
-"q": "Ameaça é:",
-"opts": [
-"Processo natural ou humano com potencial de causar danos",
-"Apenas fenômeno natural",
-"Sempre causada pelo clima"
-],
-"c": 0,
-"com": "<em>Comentário:</em> atenção — ameaça <strong>não</strong> é só natural."
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
-"q": "Exposição envolve:",
-"opts": [
-"Custos governamentais",
-"Pessoas e bens em áreas vulneráveis",
-"Apenas locais sem moradias"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.4 — Modalidades de Gestão",
-"q": "A gestão corretiva serve para:",
-"opts": [
-"Criar riscos",
-"Reduzir riscos existentes",
-"Fazer obras apenas após desastres"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.4 — Modalidades de Gestão",
-"q": "A gestão prospectiva busca:",
-"opts": [
-"Evitar novos riscos",
-"Criar barragens sempre",
-"Focar apenas na resposta"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.4 — Modalidades de Gestão",
-"q": "A gestão compensatória visa:",
-"opts": [
-"Fortalecer resiliência frente a riscos inevitáveis",
-"Eliminar todos os riscos",
-"Militarizar regiões"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.5 — Stop Disasters",
-"q": "O jogo Stop Disasters ensina:",
-"opts": [
-"Combate físico",
-"Planejamento urbano e prevenção",
-"Estratégias militares"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.5 — Stop Disasters",
-"q": "O jogo Stop Disasters permite aprender de forma:",
-"opts": [
-"Lúdica e prática",
-"Punitiva",
-"Apenas teórica"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.5 — Stop Disasters",
-"q": "O jogo simula:",
-"opts": [
-"Reformas políticas",
-"Partidas esportivas",
-"Ações reais de prevenção"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.6 — Governança",
-"q": "Governança envolve:",
-"opts": [
-"Liderança, estratégia e controle",
-"Estruturas isoladas",
-"Apenas ações emergenciais"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.6 — Governança",
-"q": "Boa governança precisa de:",
-"opts": [
-"Segredo institucional",
-"Coordenação entre governos",
-"Competição entre municípios"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.6 — Governança",
-"q": "Um princípio essencial de governança é:",
-"opts": [
-"Sigilo absoluto",
-"Atuação individual",
-"Transparência e responsabilidade"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.7 — Essência da GRD",
-"q": "A GRD é vista como:",
-"opts": [
-"Um evento isolado",
-"Uma etapa repetitiva",
-"Um processo contínuo"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.7 — Essência da GRD",
-"q": "A ação prática envolve:",
-"opts": [
-"Prevenir, mitigar e responder",
-"Apenas reconstruir",
-"Reagir sem planejamento"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
-"quiz": "Quiz 4.7 — Essência da GRD",
-"q": "A cultura de resiliência depende de:",
-"opts": [
-"Doutrinas militares",
-"Educação e comunidade",
-"Apenas tecnologia"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.1 — Fundamentos",
-"q": "A gestão não pode ser improvisada porque:",
-"opts": [
-"Desastres são simples",
-"Custos são baixos",
-"Improviso aumenta danos"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.1 — Fundamentos",
-"q": "O planejamento garante:",
-"opts": [
-"Burocracia",
-"Ações coordenadas",
-"Mais riscos"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.2 — Elementos Estruturantes",
-"q": "A estrutura do Estado define:",
-"opts": [
-"Papéis e responsabilidades",
-"Número de voluntários",
-"Nível de chuvas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.2 — Elementos Estruturantes",
-"q": "Diretrizes servem para:",
-"opts": [
-"Criar divergências",
-"Padronizar ações",
-"Reduzir comunicação"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.2 — Elementos Estruturantes",
-"q": "Capacidade municipal envolve:",
-"opts": [
-"Infraestrutura e articulação",
-"Férias de servidores",
-"Apenas abrigos"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.3 — Ciclo de Ações",
-"q": "Mitigação reduz:",
-"opts": [
-"Impactos futuros",
-"Resposta",
-"Preparo"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.3 — Ciclo de Ações",
-"q": "Preparação cria:",
-"opts": [
-"Confusão",
-"Protocolos e treinamentos",
-"Ocupações irregulares"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.3 — Ciclo de Ações",
-"q": "Recuperação busca:",
-"opts": [
-"Evitar obras",
-"Voltar pior",
-"Reconstruir melhor"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.4 — Ações de Resposta",
-"q": "O socorro visa:",
-"opts": [
-"Distribuir documentos",
-"Preservar vidas",
-"Criar leis"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.4 — Ações de Resposta",
-"q": "Assistência garante:",
-"opts": [
-"Dignidade às vítimas",
-"Apenas alimentação",
-"Apenas água"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.5 — Procedimentos da Resposta",
-"q": "A resposta deve seguir:",
-"opts": [
-"Ordem aleatória",
-"Ordem militar",
-"Ordem lógica e coordenada"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.5 — Procedimentos da Resposta",
-"q": "O tempo entre alerta e ação deve ser:",
-"opts": [
-"Lento",
-"Imediato",
-"Parcial"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.5 — Procedimentos da Resposta",
-"q": "Comunicação eficiente evita:",
-"opts": [
-"Pânico e boatos",
-"Evacuação",
-"Planejamento"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.6 — Assistência Humanitária",
-"q": "Municípios devem manter estoques para:",
-"opts": [
-"Responder emergências",
-"Economia interna",
-"Vender produtos"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.6 — Assistência Humanitária",
-"q": "Abrigos devem garantir:",
-"opts": [
-"Segurança e higiene",
-"Cobrança de taxas",
-"Permanência indefinida"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.7 — Ferramentas de Coordenação",
-"q": "O SCO/ICS auxilia:",
-"opts": [
-"Aumentar burocracia",
-"Reduzir planejamento",
-"Organizar equipes e decisões"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.7 — Ferramentas de Coordenação",
-"q": "Em grandes desastres é necessário:",
-"opts": [
-"Atuação isolada",
-"Coordenação multiagências",
-"Centralização total"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
-"quiz": "Quiz 5.7 — Ferramentas de Coordenação",
-"q": "Controle eficiente do cenário evita:",
-"opts": [
-"Desinformação",
-"Apoio técnico",
-"Comunicação direta"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.1 — O que é o PLANCON",
-"q": "O PLANCON é:",
-"opts": [
-"Documento de planejamento prévio",
-"Plano militar",
-"Manual de reconstrução"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.1 — O que é o PLANCON",
-"q": "O PLANCON serve para:",
-"opts": [
-"Registrar desastres",
-"Organizar a resposta",
-"Substituir governos"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.1 — O que é o PLANCON",
-"q": "O plano é importante porque:",
-"opts": [
-"Garante rapidez e organização",
-"Evita coordenação",
-"Impede alertas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
-"q": "Na preparação o PLANCON:",
-"opts": [
-"Define procedimentos antecipados",
-"Reage ao desastre",
-"Cria abrigos permanentes"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
-"q": "Na resposta o PLANCON:",
-"opts": [
-"Não é usado",
-"É ativado e ajustado",
-"É arquivado"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.3 — Bases Legais",
-"q": "O PLANCON está previsto em:",
-"opts": [
-"Lei 12.340/2010",
-"Código Penal",
-"Lei trabalhista"
-],
-"c": 0,
-"com": "<em>Comentário:</em> a Lei 12.340/2010 trata das transferências de recursos da União e institui o FUNCAP; a exigência de mapeamento e plano de contingência para municípios do cadastro de risco está no <strong>art. 3º-A, §2º</strong>, incluído pela <strong>Lei 12.608/2012</strong>."
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.3 — Bases Legais",
-"q": "Diretrizes definem:",
-"opts": [
-"Responsabilidades",
-"Orçamentos pessoais",
-"Rotina de trabalho administrativo"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.4 — Estrutura do PLANCON",
-"q": "Monitoramento envolve:",
-"opts": [
-"Análise de riscos e alertas",
-"Apenas resposta",
-"Treinamento militar"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.4 — Estrutura do PLANCON",
-"q": "O plano define:",
-"opts": [
-"Rotas seguras",
-"Pontos turísticos",
-"Novas estradas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.5 — Participação Social",
-"q": "A consulta pública serve para:",
-"opts": [
-"Garantir participação da sociedade",
-"Reduzir informações",
-"Impedir críticas"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.5 — Participação Social",
-"q": "Controle social ajuda a:",
-"opts": [
-"Aumentar transparência",
-"Diminuir confiança",
-"Evitar planos"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.5 — Participação Social",
-"q": "Participar do PLANCON significa:",
-"opts": [
-"Observar passivamente",
-"Corresponsabilidade no risco",
-"Atuar só após desastre"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
-"q": "O Passo 1 consiste em:",
-"opts": [
-"Analisar cenários de risco",
-"Construir abrigos",
-"Executar resposta"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
-"q": "O Passo 2 inclui:",
-"opts": [
-"Formar grupo de trabalho",
-"Criar leis novas",
-"Realizar simulados"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
-"q": "O Passo 3 é:",
-"opts": [
-"Avaliar cenários",
-"Criar obras",
-"Fiscalizar terrenos"
-],
-"c": 0,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
-"q": "O Passo 4 define:",
-"opts": [
-"Novas cidades",
-"Ações e procedimentos",
-"Traçado de rodovias"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
-"q": "O Passo 5 exige:",
-"opts": [
-"Ação militar",
-"Cortes orçamentários",
-"Consulta pública"
-],
-"c": 2,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
-"q": "O Passo 6 envolve:",
-"opts": [
-"Apoio privado",
-"Audiência pública",
-"Desativação de abrigos"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
-"q": "O Passo 7 trata da:",
-"opts": [
-"Resposta imediata",
-"Validação do plano",
-"Construção de barragens"
-],
-"c": 1,
-"com": ""
-},
-{
-"mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
-"quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
-"q": "O Passo 8 corresponde a:",
-"opts": [
-"Criar mapas turísticos",
-"Reunir voluntários",
-"Operacionalizar o PLANCON"
-],
-"c": 2,
-"com": "<em>Nota:</em> não há questão sobre o <strong>Passo 9</strong> no banco da plataforma. Pela doutrina de planejamento de contingência, o passo final corresponde à <strong>revisão/atualização contínua do plano</strong>."
-}
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
+    "q": "Qual o principal motivo apresentado para o trabalho da Defesa Civil?",
+    "opts": [
+      "Cumprir metas administrativas",
+      "Conhecer, compreender e servir a sociedade",
+      "Atuar apenas após desastres"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> o tripé é a tese de abertura do curso. Defesa Civil não é meta administrativa nem atuação exclusivamente pós-evento."
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
+    "q": "O conceito de \"servir\" representa:",
+    "opts": [
+      "Uma vocação que move ações de proteção",
+      "Uma tarefa técnica",
+      "Uma função opcional"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> \"servir\" é tratado como vocação/propósito, não como função técnica."
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
+    "q": "A missão da Defesa Civil é:",
+    "opts": [
+      "Estrutura burocrática de resposta",
+      "Trabalho militar restrito",
+      "Sistema que age quando tudo desaba"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.2 — O Brasil que Protege",
+    "q": "A grande virada da Defesa Civil brasileira ocorreu quando se entendeu que:",
+    "opts": [
+      "Prevenção é mais eficaz que reagir",
+      "Resposta é suficiente",
+      "Todo desastre é inevitável"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.2 — O Brasil que Protege",
+    "q": "\"Da guerra à vida\" significa:",
+    "opts": [
+      "Militarizar ações",
+      "Focar na proteção humana",
+      "Atuar apenas após conflito"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.2 — O Brasil que Protege",
+    "q": "A evolução da Defesa Civil brasileira envolveu:",
+    "opts": [
+      "Redução de políticas públicas",
+      "Ações improvisadas",
+      "Organização e prevenção"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
+    "q": "As origens da Defesa Civil estão ligadas a:",
+    "opts": [
+      "Guerras e crises internacionais",
+      "Eventos escolares",
+      "Políticas ambientais"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
+    "q": "Um marco importante da estrutura brasileira foi:",
+    "opts": [
+      "Plano Nacional de Segurança Pública",
+      "Criação da primeira estrutura estadual em 1966",
+      "Reconhecimento internacional do S2ID"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> <strong>1966</strong> é a data para memorizar."
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
+    "q": "As primeiras estruturas estaduais tinham o objetivo de:",
+    "opts": [
+      "Organizar ações regionais",
+      "Controlar áreas militares",
+      "Gerenciar apenas abrigos"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
+    "q": "O Plano Diretor estabeleceu:",
+    "opts": [
+      "Redução de equipes",
+      "Diretrizes de organização regional",
+      "Foco exclusivo em resposta"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.5 — Identidade e Missão",
+    "q": "A Defesa Civil é definida como:",
+    "opts": [
+      "Uma força armada",
+      "União, prevenção e fé",
+      "Entidade burocrática"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.5 — Identidade e Missão",
+    "q": "A identidade da Defesa Civil se apoia em:",
+    "opts": [
+      "Punição e vigilância",
+      "Estratégias financeiras",
+      "União, prevenção e cuidado"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
+    "quiz": "Quiz 1.5 — Identidade e Missão",
+    "q": "O chamado para proteger vidas expressa:",
+    "opts": [
+      "Motivação administrativa",
+      "Propósito e vocação",
+      "Obrigação reativa"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.1 — Conceitos Fundamentais",
+    "q": "O risco é definido como:",
+    "opts": [
+      "Algo inevitável da natureza",
+      "Uma construção social entre ambiente e ocupação",
+      "Resultado exclusivo do clima"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> questão-chave do curso inteiro. Risco NÃO é fatalidade."
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.1 — Conceitos Fundamentais",
+    "q": "O risco depende da combinação entre:",
+    "opts": [
+      "Governo e orçamento",
+      "Clima e vegetação",
+      "Ameaça, exposição e vulnerabilidade"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.1 — Conceitos Fundamentais",
+    "q": "O risco surge principalmente devido a:",
+    "opts": [
+      "Ocupação inadequada",
+      "Avanço tecnológico",
+      "Crescimento populacional apenas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.2 — Capacidade e Resiliência",
+    "q": "A capacidade é definida como:",
+    "opts": [
+      "Recursos e atributos para enfrentar riscos",
+      "Reação improvisada",
+      "Motivação emocional"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.2 — Capacidade e Resiliência",
+    "q": "Resiliência significa:",
+    "opts": [
+      "Resistir, adaptar-se e recuperar-se",
+      "Ignorar impactos",
+      "Evitar mudanças"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.2 — Capacidade e Resiliência",
+    "q": "A resiliência depende principalmente de:",
+    "opts": [
+      "Estruturas militares",
+      "Organização social e governamental",
+      "Condições climáticas"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.3 — Tipos de Desastres",
+    "q": "Desastres tecnológicos incluem:",
+    "opts": [
+      "Deslizamentos",
+      "Incêndios industriais",
+      "Enchentes"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.3 — Tipos de Desastres",
+    "q": "Um desastre súbito é aquele que:",
+    "opts": [
+      "Aumenta lentamente",
+      "Não causa danos",
+      "Ocorre sem aviso"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.3 — Tipos de Desastres",
+    "q": "Um desastre gradual geralmente é:",
+    "opts": [
+      "Estiagem",
+      "Explosão",
+      "Desabamento imediato"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.4 — Sistemas de Registro",
+    "q": "O COBRADE classifica desastres por:",
+    "opts": [
+      "Tamanho populacional",
+      "Grupo, subgrupo, tipo e subtipo",
+      "Orçamento disponível"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.4 — Sistemas de Registro",
+    "q": "O FIDE é utilizado para:",
+    "opts": [
+      "Registrar informações de desastres",
+      "Criar leis",
+      "Treinar voluntários"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.4 — Sistemas de Registro",
+    "q": "O S2ID é essencial porque:",
+    "opts": [
+      "Aumenta custos",
+      "Substitui equipes locais",
+      "Centraliza registros nacionais"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.5 — Danos e Prejuízos",
+    "q": "Danos humanos incluem:",
+    "opts": [
+      "Perdas financeiras",
+      "Mortos, feridos e desabrigados",
+      "Quebra de infraestrutura"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.5 — Danos e Prejuízos",
+    "q": "Danos materiais:",
+    "opts": [
+      "Infraestruturas destruídas",
+      "Investimentos públicos",
+      "Emoções afetadas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.5 — Danos e Prejuízos",
+    "q": "Prejuízos ocorrem quando:",
+    "opts": [
+      "Há perda imediata física",
+      "Há apenas danos ambientais",
+      "Impactos econômicos duram após o evento"
+    ],
+    "c": 2,
+    "com": "<em>Comentário:</em> <strong>dano = perda imediata; prejuízo = impacto econômico que persiste.</strong> Pega-ratão clássico."
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
+    "q": "Prevenção é:",
+    "opts": [
+      "Medidas antecipadas para evitar riscos",
+      "Resposta imediata",
+      "Ação após o desastre"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
+    "q": "Mitigação:",
+    "opts": [
+      "Evitar toda ameaça",
+      "Focar apenas em reconstrução",
+      "Reduzir impacto quando o risco não pode ser evitado"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
+    "q": "Preparação envolve:",
+    "opts": [
+      "Apenas resposta",
+      "Treinamentos, alertas e simulados",
+      "Apenas reconstrução"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.7 — Resposta e Recuperação",
+    "q": "A resposta tem como objetivo:",
+    "opts": [
+      "Reconstruir casas",
+      "Salvar vidas imediatamente",
+      "Criar leis preventivas"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.7 — Resposta e Recuperação",
+    "q": "Assistência consiste em:",
+    "opts": [
+      "Auxílio emergencial à população",
+      "Estudos técnicos",
+      "Reuniões administrativas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
+    "quiz": "Quiz 2.7 — Resposta e Recuperação",
+    "q": "Recuperação implica em:",
+    "opts": [
+      "Intervenções rápidas e provisórias",
+      "Reconstrução sustentável",
+      "Priorizar abrigos temporários somente"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.1 — Cenário Global",
+    "q": "A base EM-DAT é usada para:",
+    "opts": [
+      "Registrar eleições",
+      "Mapear desastres globais",
+      "Controlar orçamento nacional"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.1 — Cenário Global",
+    "q": "O número de desastres no mundo está:",
+    "opts": [
+      "Diminuindo",
+      "Estável",
+      "Aumentando"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.1 — Cenário Global",
+    "q": "A intensificação dos desastres ocorre devido a:",
+    "opts": [
+      "Baixa tecnologia",
+      "Fatores climáticos e urbanos",
+      "Falta de estradas"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.2 — Impactos Globais",
+    "q": "O aumento da exposição humana ocorre quando:",
+    "opts": [
+      "As pessoas ocupam áreas de risco",
+      "Há menos cidades",
+      "A população diminui"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.2 — Impactos Globais",
+    "q": "Países em desenvolvimento sofrem mais porque:",
+    "opts": [
+      "São mais ricos",
+      "Têm baixa vulnerabilidade",
+      "Têm menor preparo e mais vulnerabilidade"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.2 — Impactos Globais",
+    "q": "A pobreza aumenta o risco porque:",
+    "opts": [
+      "Reduz a urbanização",
+      "Aumenta vulnerabilidade social",
+      "Impede o clima de mudar"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.3 — Panorama Nacional",
+    "q": "O S2ID é essencial porque:",
+    "opts": [
+      "Atua na resposta",
+      "Centraliza dados nacionais",
+      "Treina voluntários"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.3 — Panorama Nacional",
+    "q": "A Lei que consolida o S2ID é:",
+    "opts": [
+      "12.608/2012",
+      "10.593/2020",
+      "8.112/1990"
+    ],
+    "c": 1,
+    "com": "<em>Correção técnica:</em> o nº <strong>10.593/2020</strong> é um <strong>DECRETO</strong> (24/12/2020), que dispõe sobre a organização do SINPDEC, do CONPDEC e do Sistema Nacional de Informações sobre Desastres — a base normativa em que o S2ID opera (o texto do decreto não cita \"S2ID\" pelo nome). A plataforma usa \"Lei\" indevidamente; para acertar o quiz, marque <strong>10.593/2020</strong>."
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.3 — Panorama Nacional",
+    "q": "Sem dados confiáveis:",
+    "opts": [
+      "Não há gestão efetiva",
+      "Há mais recursos",
+      "A prevenção aumenta"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
+    "q": "A geografia brasileira favorece:",
+    "opts": [
+      "Baixa exposição",
+      "Vulnerabilidade a múltiplos fenômenos",
+      "Redução de ameaças"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
+    "q": "A ocupação irregular gera:",
+    "opts": [
+      "Aumento de vulnerabilidade",
+      "Redução de risco",
+      "Melhora ambiental"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
+    "q": "A desigualdade contribui para:",
+    "opts": [
+      "Menor exposição",
+      "Maior dificuldade de preparação",
+      "Mais investimentos"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
+    "q": "Enchentes são comuns devido:",
+    "opts": [
+      "Falta de rios",
+      "Clima seco",
+      "Impermeabilização urbana"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
+    "q": "Deslizamentos ocorrem principalmente em:",
+    "opts": [
+      "Chapadas planas",
+      "Encostas ocupadas",
+      "Zonas desérticas"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
+    "q": "Um dos fatores de incêndios florestais é:",
+    "opts": [
+      "Ambientes alagados",
+      "Rios cheios",
+      "Secas prolongadas"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.6 — Síntese",
+    "q": "O conhecimento global deve ser:",
+    "opts": [
+      "Ignorado",
+      "Adaptado ao contexto local",
+      "Aplicado igual em todo país"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
+    "quiz": "Quiz 3.6 — Síntese",
+    "q": "A cultura de prevenção depende de:",
+    "opts": [
+      "Educação e participação",
+      "Tecnologia apenas",
+      "Aumento de multas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.1 — Origem e Propósito",
+    "q": "A GRD surgiu como resposta a:",
+    "opts": [
+      "Crescimento do turismo",
+      "Falhas reveladas em grandes tragédias",
+      "Políticas ambientais isoladas"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.1 — Origem e Propósito",
+    "q": "A principal mudança global foi:",
+    "opts": [
+      "Reagir sempre",
+      "Usar menos dados",
+      "Focar na prevenção"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.1 — Origem e Propósito",
+    "q": "A GRD busca:",
+    "opts": [
+      "Reduzir perdas",
+      "Militarizar ações",
+      "Aumentar burocracia"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.2 — Caso Mitch",
+    "q": "O furacão Mitch ficou marcado por:",
+    "opts": [
+      "Baixos danos",
+      "Alto número de vítimas",
+      "Ausência de enchentes"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.2 — Caso Mitch",
+    "q": "O desastre revelou:",
+    "opts": [
+      "Excessos de preparação",
+      "Boa infraestrutura",
+      "Falta de sistemas preventivos"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.2 — Caso Mitch",
+    "q": "Após Mitch, países passaram a:",
+    "opts": [
+      "Criar sistemas de gerenciamento de riscos",
+      "Reduzir políticas de prevenção",
+      "Desativar estruturas regionais"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
+    "q": "Ameaça é:",
+    "opts": [
+      "Processo natural ou humano com potencial de causar danos",
+      "Apenas fenômeno natural",
+      "Sempre causada pelo clima"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> atenção — ameaça <strong>não</strong> é só natural."
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
+    "q": "Exposição envolve:",
+    "opts": [
+      "Custos governamentais",
+      "Pessoas e bens em áreas vulneráveis",
+      "Apenas locais sem moradias"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.4 — Modalidades de Gestão",
+    "q": "A gestão corretiva serve para:",
+    "opts": [
+      "Criar riscos",
+      "Reduzir riscos existentes",
+      "Fazer obras apenas após desastres"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.4 — Modalidades de Gestão",
+    "q": "A gestão prospectiva busca:",
+    "opts": [
+      "Evitar novos riscos",
+      "Criar barragens sempre",
+      "Focar apenas na resposta"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.4 — Modalidades de Gestão",
+    "q": "A gestão compensatória visa:",
+    "opts": [
+      "Fortalecer resiliência frente a riscos inevitáveis",
+      "Eliminar todos os riscos",
+      "Militarizar regiões"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.5 — Stop Disasters",
+    "q": "O jogo Stop Disasters ensina:",
+    "opts": [
+      "Combate físico",
+      "Planejamento urbano e prevenção",
+      "Estratégias militares"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.5 — Stop Disasters",
+    "q": "O jogo Stop Disasters permite aprender de forma:",
+    "opts": [
+      "Lúdica e prática",
+      "Punitiva",
+      "Apenas teórica"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.5 — Stop Disasters",
+    "q": "O jogo simula:",
+    "opts": [
+      "Reformas políticas",
+      "Partidas esportivas",
+      "Ações reais de prevenção"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.6 — Governança",
+    "q": "Governança envolve:",
+    "opts": [
+      "Liderança, estratégia e controle",
+      "Estruturas isoladas",
+      "Apenas ações emergenciais"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.6 — Governança",
+    "q": "Boa governança precisa de:",
+    "opts": [
+      "Segredo institucional",
+      "Coordenação entre governos",
+      "Competição entre municípios"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.6 — Governança",
+    "q": "Um princípio essencial de governança é:",
+    "opts": [
+      "Sigilo absoluto",
+      "Atuação individual",
+      "Transparência e responsabilidade"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.7 — Essência da GRD",
+    "q": "A GRD é vista como:",
+    "opts": [
+      "Um evento isolado",
+      "Uma etapa repetitiva",
+      "Um processo contínuo"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.7 — Essência da GRD",
+    "q": "A ação prática envolve:",
+    "opts": [
+      "Prevenir, mitigar e responder",
+      "Apenas reconstruir",
+      "Reagir sem planejamento"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
+    "quiz": "Quiz 4.7 — Essência da GRD",
+    "q": "A cultura de resiliência depende de:",
+    "opts": [
+      "Doutrinas militares",
+      "Educação e comunidade",
+      "Apenas tecnologia"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.1 — Fundamentos",
+    "q": "A gestão não pode ser improvisada porque:",
+    "opts": [
+      "Desastres são simples",
+      "Custos são baixos",
+      "Improviso aumenta danos"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.1 — Fundamentos",
+    "q": "O planejamento garante:",
+    "opts": [
+      "Burocracia",
+      "Ações coordenadas",
+      "Mais riscos"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.2 — Elementos Estruturantes",
+    "q": "A estrutura do Estado define:",
+    "opts": [
+      "Papéis e responsabilidades",
+      "Número de voluntários",
+      "Nível de chuvas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.2 — Elementos Estruturantes",
+    "q": "Diretrizes servem para:",
+    "opts": [
+      "Criar divergências",
+      "Padronizar ações",
+      "Reduzir comunicação"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.2 — Elementos Estruturantes",
+    "q": "Capacidade municipal envolve:",
+    "opts": [
+      "Infraestrutura e articulação",
+      "Férias de servidores",
+      "Apenas abrigos"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.3 — Ciclo de Ações",
+    "q": "Mitigação reduz:",
+    "opts": [
+      "Impactos futuros",
+      "Resposta",
+      "Preparo"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.3 — Ciclo de Ações",
+    "q": "Preparação cria:",
+    "opts": [
+      "Confusão",
+      "Protocolos e treinamentos",
+      "Ocupações irregulares"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.3 — Ciclo de Ações",
+    "q": "Recuperação busca:",
+    "opts": [
+      "Evitar obras",
+      "Voltar pior",
+      "Reconstruir melhor"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.4 — Ações de Resposta",
+    "q": "O socorro visa:",
+    "opts": [
+      "Distribuir documentos",
+      "Preservar vidas",
+      "Criar leis"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.4 — Ações de Resposta",
+    "q": "Assistência garante:",
+    "opts": [
+      "Dignidade às vítimas",
+      "Apenas alimentação",
+      "Apenas água"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.5 — Procedimentos da Resposta",
+    "q": "A resposta deve seguir:",
+    "opts": [
+      "Ordem aleatória",
+      "Ordem militar",
+      "Ordem lógica e coordenada"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.5 — Procedimentos da Resposta",
+    "q": "O tempo entre alerta e ação deve ser:",
+    "opts": [
+      "Lento",
+      "Imediato",
+      "Parcial"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.5 — Procedimentos da Resposta",
+    "q": "Comunicação eficiente evita:",
+    "opts": [
+      "Pânico e boatos",
+      "Evacuação",
+      "Planejamento"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.6 — Assistência Humanitária",
+    "q": "Municípios devem manter estoques para:",
+    "opts": [
+      "Responder emergências",
+      "Economia interna",
+      "Vender produtos"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.6 — Assistência Humanitária",
+    "q": "Abrigos devem garantir:",
+    "opts": [
+      "Segurança e higiene",
+      "Cobrança de taxas",
+      "Permanência indefinida"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.7 — Ferramentas de Coordenação",
+    "q": "O SCO/ICS auxilia:",
+    "opts": [
+      "Aumentar burocracia",
+      "Reduzir planejamento",
+      "Organizar equipes e decisões"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.7 — Ferramentas de Coordenação",
+    "q": "Em grandes desastres é necessário:",
+    "opts": [
+      "Atuação isolada",
+      "Coordenação multiagências",
+      "Centralização total"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
+    "quiz": "Quiz 5.7 — Ferramentas de Coordenação",
+    "q": "Controle eficiente do cenário evita:",
+    "opts": [
+      "Desinformação",
+      "Apoio técnico",
+      "Comunicação direta"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.1 — O que é o PLANCON",
+    "q": "O PLANCON é:",
+    "opts": [
+      "Documento de planejamento prévio",
+      "Plano militar",
+      "Manual de reconstrução"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.1 — O que é o PLANCON",
+    "q": "O PLANCON serve para:",
+    "opts": [
+      "Registrar desastres",
+      "Organizar a resposta",
+      "Substituir governos"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.1 — O que é o PLANCON",
+    "q": "O plano é importante porque:",
+    "opts": [
+      "Garante rapidez e organização",
+      "Evita coordenação",
+      "Impede alertas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
+    "q": "Na preparação o PLANCON:",
+    "opts": [
+      "Define procedimentos antecipados",
+      "Reage ao desastre",
+      "Cria abrigos permanentes"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
+    "q": "Na resposta o PLANCON:",
+    "opts": [
+      "Não é usado",
+      "É ativado e ajustado",
+      "É arquivado"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.3 — Bases Legais",
+    "q": "O PLANCON está previsto em:",
+    "opts": [
+      "Lei 12.340/2010",
+      "Código Penal",
+      "Lei trabalhista"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> a Lei 12.340/2010 trata das transferências de recursos da União e institui o FUNCAP; a exigência de mapeamento e plano de contingência para municípios do cadastro de risco está no <strong>art. 3º-A, §2º</strong>, incluído pela <strong>Lei 12.608/2012</strong>."
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.3 — Bases Legais",
+    "q": "Diretrizes definem:",
+    "opts": [
+      "Responsabilidades",
+      "Orçamentos pessoais",
+      "Rotina de trabalho administrativo"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.4 — Estrutura do PLANCON",
+    "q": "Monitoramento envolve:",
+    "opts": [
+      "Análise de riscos e alertas",
+      "Apenas resposta",
+      "Treinamento militar"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.4 — Estrutura do PLANCON",
+    "q": "O plano define:",
+    "opts": [
+      "Rotas seguras",
+      "Pontos turísticos",
+      "Novas estradas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.5 — Participação Social",
+    "q": "A consulta pública serve para:",
+    "opts": [
+      "Garantir participação da sociedade",
+      "Reduzir informações",
+      "Impedir críticas"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.5 — Participação Social",
+    "q": "Controle social ajuda a:",
+    "opts": [
+      "Aumentar transparência",
+      "Diminuir confiança",
+      "Evitar planos"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.5 — Participação Social",
+    "q": "Participar do PLANCON significa:",
+    "opts": [
+      "Observar passivamente",
+      "Corresponsabilidade no risco",
+      "Atuar só após desastre"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
+    "q": "O Passo 1 consiste em:",
+    "opts": [
+      "Analisar cenários de risco",
+      "Construir abrigos",
+      "Executar resposta"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
+    "q": "O Passo 2 inclui:",
+    "opts": [
+      "Formar grupo de trabalho",
+      "Criar leis novas",
+      "Realizar simulados"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
+    "q": "O Passo 3 é:",
+    "opts": [
+      "Avaliar cenários",
+      "Criar obras",
+      "Fiscalizar terrenos"
+    ],
+    "c": 0,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
+    "q": "O Passo 4 define:",
+    "opts": [
+      "Novas cidades",
+      "Ações e procedimentos",
+      "Traçado de rodovias"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
+    "q": "O Passo 5 exige:",
+    "opts": [
+      "Ação militar",
+      "Cortes orçamentários",
+      "Consulta pública"
+    ],
+    "c": 2,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
+    "q": "O Passo 6 envolve:",
+    "opts": [
+      "Apoio privado",
+      "Audiência pública",
+      "Desativação de abrigos"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
+    "q": "O Passo 7 trata da:",
+    "opts": [
+      "Resposta imediata",
+      "Validação do plano",
+      "Construção de barragens"
+    ],
+    "c": 1,
+    "com": ""
+  },
+  {
+    "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
+    "quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
+    "q": "O Passo 8 corresponde a:",
+    "opts": [
+      "Criar mapas turísticos",
+      "Reunir voluntários",
+      "Operacionalizar o PLANCON"
+    ],
+    "c": 2,
+    "com": "<em>Nota:</em> não há questão sobre o <strong>Passo 9</strong> no banco da plataforma. Pela doutrina de planejamento de contingência, o passo final corresponde à <strong>revisão/atualização contínua do plano</strong>."
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.1 — Apostila M01: Introdução",
+    "q": "O tripé formativo da apostila oficial para o trabalho da Defesa Civil é:",
+    "opts": [
+      "Planejar, fiscalizar e punir",
+      "Conhecer, compreender e servir",
+      "Acionar, evacuar e reconstruir"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 01, item 2: o objetivo é formar pessoas para entender riscos, planejar ações e servir. O chamado central é servir.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.1 — Apostila M01: Introdução",
+    "q": "A PNPDEC, apresentada na apostila como coração da Defesa Civil no Brasil, foi criada pela:",
+    "opts": [
+      "Lei nº 12.608/2012",
+      "Lei nº 12.340/2010",
+      "Decreto nº 10.593/2020"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 01, item 8: criada pela Lei nº 12.608/2012, baseada no Marco de Ação de Hyogo (2005).",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.1 — Apostila M01: Introdução",
+    "q": "As cinco fases do ciclo da proteção, na ordem da apostila, são:",
+    "opts": [
+      "Socorro, assistência, abrigo, logística e relatório",
+      "Prevenção, mitigação, preparação, resposta e recuperação",
+      "Alerta, evacuação, busca, triagem e reassentamento"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 01, item 9: prevenção (evitar), mitigação (reduzir impactos), preparação (treinar e planejar), resposta (agir rápido), recuperação (reconstruir e fortalecer).",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.2 — Apostila M02: PNPDEC",
+    "q": "A Lei nº 12.608, que institui a PNPDEC, é datada de:",
+    "opts": [
+      "10 de abril de 2012",
+      "1º de janeiro de 2010",
+      "22 de dezembro de 2020"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 02, item 2: instituída pela Lei nº 12.608, de 10 de abril de 2012.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.2 — Apostila M02: PNPDEC",
+    "q": "A lei determina, como prioridade absoluta, que:",
+    "opts": [
+      "A resposta deve preceder qualquer planejamento",
+      "A prevenção deve ter prioridade sobre a resposta",
+      "A reconstrução deve ocorrer no mesmo local do desastre"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 02, item 7: prevenir custa menos que reconstruir e salva mais vidas.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.2 — Apostila M02: PNPDEC",
+    "q": "Sobre a natureza da PNPDEC, a apostila afirma que ela:",
+    "opts": [
+      "É permanente, política de Estado, independente de mandatos",
+      "Vale só no mandato de quem a regulamentou",
+      "É uma diretriz interna da brigada, sem força de lei"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 02, item 12: a PNPDEC é permanente e não depende de governos ou mandatos.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.3 — Apostila M03: Riscos",
+    "q": "Segundo a apostila, todo desastre nasce da combinação entre:",
+    "opts": [
+      "Clima extremo, sorte e fatalidade",
+      "Ameaça, vulnerabilidade e ausência de preparo",
+      "Comando militar, mídia e evacuação tardia"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 03, item 1: nenhuma emergência surge do nada; o desastre é combinação de ameaça + vulnerabilidade + ausência de preparo.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.3 — Apostila M03: Riscos",
+    "q": "A apostila distingue ameaça de desastre ao afirmar que:",
+    "opts": [
+      "Toda ameaça já é um desastre",
+      "A ameaça pode existir sem causar desastre; o desastre acontece quando encontra vulnerabilidade",
+      "Desastre e ameaça são sinônimos técnicos"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 03, itens 3 e 6: a ameaça é o evento capaz de causar dano; o desastre não é fatalidade, é consequência.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.3 — Apostila M03: Riscos",
+    "q": "Capacidade de resposta, na apostila, é o conjunto de:",
+    "opts": [
+      "Treinamento, estrutura, planejamento, comunicação e liderança",
+      "Somente viaturas e estoques de emergência",
+      "Apenas o número de voluntários cadastrados"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 03, item 7. Onde há preparo, há menos perdas.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.4 — Apostila M04: Prevenção e mitigação",
+    "q": "Prevenção e mitigação, na apostila, diferem porque:",
+    "opts": [
+      "Prevenção impede ou reduz a ocorrência; mitigação diminui danos quando o risco não pode ser eliminado",
+      "Mitigação é só obra pesada; prevenção é só campanha educativa",
+      "Não há diferença: os termos são intercambiáveis"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 04, itens 2 e 3: nem todo risco pode ser evitado, mas todo impacto pode ser reduzido.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.4 — Apostila M04: Prevenção e mitigação",
+    "q": "Sobre medidas não estruturais, a apostila sintetiza que:",
+    "opts": [
+      "Só valem se houver contenção de encosta",
+      "Conhecimento também é infraestrutura",
+      "Educação preventiva é opcional em município pequeno"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 04, item 7: leis, fiscalização, educação, alerta e planos de contingência são infraestrutura de conhecimento.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.4 — Apostila M04: Prevenção e mitigação",
+    "q": "Monitoramento e alerta antecipado, na apostila, equivalem a:",
+    "opts": [
+      "Tempo ganho",
+      "Substituição do plano de contingência",
+      "Dispensa da participação da comunidade"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 04, item 8: alerta antecipado é tempo ganho.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.5 — Apostila M05: Preparação e planejamento",
+    "q": "Planejamento, na apostila, é definido como decidir antes do caos:",
+    "opts": [
+      "O que fazer, como fazer, quem faz e com quais recursos",
+      "Apenas o orçamento anual da secretaria",
+      "Somente a lista de abrigos sem donos de ação"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 05, item 3: planejamento reduz erros, acelera a resposta e protege vidas.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.5 — Apostila M05: Preparação e planejamento",
+    "q": "São exemplos de planos essenciais citados na apostila:",
+    "opts": [
+      "Somente o plano de mídia e o plano de honrarias",
+      "Contingência, evacuação, comunicação, abrigamento e logístico",
+      "Plano diretor urbano no lugar de qualquer plano de emergência"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 05, item 6.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.5 — Apostila M05: Preparação e planejamento",
+    "q": "Na preparação, os planos devem priorizar especialmente:",
+    "opts": [
+      "Somente o centro comercial da cidade",
+      "Crianças, idosos, pessoas com deficiência e populações em maior risco",
+      "Apenas equipes de elite de resgate"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 05, item 11: proteger os vulneráveis é proteger a vida no ponto mais sensível.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.6 — Apostila M06: Resposta",
+    "q": "O objetivo da resposta, segundo a apostila, é:",
+    "opts": [
+      "Correr para o local o mais rápido possível, sem método",
+      "Salvar vidas, reduzir danos, proteger vulneráveis e estabilizar a situação",
+      "Reconstruir moradias definitivas ainda na fase aguda"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 06, item 2: responder não é correr — é executar com método.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.6 — Apostila M06: Resposta",
+    "q": "Na avaliação inicial (size-up), a apostila estabelece como prioridade:",
+    "opts": [
+      "A segurança da equipe",
+      "A coletiva de imprensa",
+      "O recobrimento imediato da economia"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 06, itens 4 e 7: antes de agir, avaliar cenário; equipe protegida mantém a missão.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.6 — Apostila M06: Resposta",
+    "q": "Na fase de resposta, a apostila afirma que o tempo:",
+    "opts": [
+      "Pode ser compensado na reconstrução",
+      "Vale vidas",
+      "Só importa para a logística de entulho"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 06, item 1: resposta é a fase em que o tempo vale vidas.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.7 — Apostila M07: Recuperação",
+    "q": "Sobre moradia e reassentamento, a apostila adverte que:",
+    "opts": [
+      "Reconstruir no risco é repetir a tragédia",
+      "O reassentamento deve sempre ocorrer no mesmo lote",
+      "Abrigo provisório dispensa critérios de dignidade"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 07, item 6.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.7 — Apostila M07: Recuperação",
+    "q": "As prioridades pós-desastre, na ordem da apostila, começam por:",
+    "opts": [
+      "Economia local e depois saúde mental",
+      "Vida e dignidade; depois serviços essenciais e moradia",
+      "Transporte e comunicação antes de qualquer atendimento"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 07, item 4: priorizar evita desperdício e injustiça.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.7 — Apostila M07: Recuperação",
+    "q": "Transparência na recuperação, segundo a apostila, serve para:",
+    "opts": [
+      "Substituir a avaliação de danos",
+      "Manter a confiança pública ao registrar recursos, decisões e resultados",
+      "Acelerar o reassentamento sem critérios técnicos"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 07, item 13.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.8 — Apostila M08: Ética e liderança",
+    "q": "A tese de abertura do Módulo 08 da apostila é:",
+    "opts": [
+      "Técnica sem caráter vira risco",
+      "Liderança é o que manda na cadeia de comando",
+      "Ética só se aplica depois da operação"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 08, item 1: este módulo consolida postura, ética e liderança.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.8 — Apostila M08: Ética e liderança",
+    "q": "Ética na missão, na apostila, é definida como:",
+    "opts": [
+      "Fazer o certo quando ninguém está olhando",
+      "Cumprir a meta de atendimentos do plantão",
+      "Publicar fotos da operação para prestar contas"
+    ],
+    "c": 0,
+    "com": "<em>Comentário:</em> Módulo 08, itens 2 e 11: em desastre, ética protege vítimas e equipe; informação mal usada vira dano.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  },
+  {
+    "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
+    "quiz": "Quiz 7.8 — Apostila M08: Ética e liderança",
+    "q": "Sobre limites operacionais, a apostila afirma que o agente deve:",
+    "opts": [
+      "Avançar mesmo quando a operação se torna insegura",
+      "Saber dizer 'não' quando a operação se torna insegura — equipe viva continua salvando",
+      "Delegar a decisão de risco apenas à imprensa"
+    ],
+    "c": 1,
+    "com": "<em>Comentário:</em> Módulo 08, item 12.",
+    "verifiedBy": "apostila-oficial-lgnd-01-08"
+  }
 ]

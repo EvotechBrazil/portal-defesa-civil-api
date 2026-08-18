@@ -16,6 +16,7 @@ const MODULE_QUESTION_COUNTS: Record<string, number> = {
   M4: 20,
   M5: 18,
   M6: 20,
+  M7: 24,
 };
 
 describe('Questions (e2e)', () => {
@@ -43,7 +44,7 @@ describe('Questions (e2e)', () => {
     return session.header;
   }
 
-  it('lists 109 questions in a paginated envelope', async () => {
+  it('lists 133 questions in a paginated envelope', async () => {
     const header = await authHeader();
 
     const firstResponse = await request(httpServer(app))
@@ -56,7 +57,7 @@ describe('Questions (e2e)', () => {
     expect(firstPage.meta).toEqual({
       page: 1,
       pageSize: 100,
-      total: 109,
+      total: 133,
       pageCount: 2,
     });
     expect(firstPage.data).toHaveLength(100);
@@ -68,13 +69,13 @@ describe('Questions (e2e)', () => {
       .expect(200);
     const secondPage = readEnvelope<QuestionDto[]>(secondResponse.body);
 
-    expect(secondPage.data).toHaveLength(9);
-    expect(secondPage.meta?.total).toBe(109);
+    expect(secondPage.data).toHaveLength(33);
+    expect(secondPage.meta?.total).toBe(133);
 
     const ids = new Set(
       [...firstPage.data, ...secondPage.data].map((question) => question.id),
     );
-    expect(ids.size).toBe(109);
+    expect(ids.size).toBe(133);
   });
 
   it('filters by module with the measured counts', async () => {

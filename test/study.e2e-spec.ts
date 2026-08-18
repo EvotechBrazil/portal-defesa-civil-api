@@ -99,7 +99,7 @@ describe('Study (e2e)', () => {
 
     const createdBody = created.body as Envelope<SessionView>;
     expect(createdBody.data.sessionId).toBeDefined();
-    expect(createdBody.data.queueLength).toBe(43);
+    expect(createdBody.data.queueLength).toBe(51);
     expect(createdBody.data.reviews).toBe(0);
     expect(createdBody.data.card).toBeTruthy();
     expect(createdBody.data.card?.direction).toBe('FORWARD');
@@ -158,7 +158,7 @@ describe('Study (e2e)', () => {
       .expect(201);
 
     const body = created.body as Envelope<SessionView>;
-    expect(body.data.queueLength).toBe(43);
+    expect(body.data.queueLength).toBe(51);
     expect(body.data.card).toBeTruthy();
   });
 
@@ -171,7 +171,7 @@ describe('Study (e2e)', () => {
       .expect(201);
 
     const body = created.body as Envelope<SessionView>;
-    expect(body.data.queueLength).toBe(152);
+    expect(body.data.queueLength).toBe(184);
   });
 
   it('orders HARD cards first at session start', async () => {
@@ -334,11 +334,11 @@ describe('Study (e2e)', () => {
     const listB = (decksB.body as Envelope<DeckListItem[]>).data;
     const essentialA = listA.find((deck) => deck.kind === 'ESSENTIAL');
     const essentialB = listB.find((deck) => deck.kind === 'ESSENTIAL');
-    expect(essentialA?.cardCount).toBe(43);
-    expect(essentialB?.cardCount).toBe(43);
+    expect(essentialA?.cardCount).toBe(51);
+    expect(essentialB?.cardCount).toBe(51);
     expect(essentialA?.levels.HARD).toBeGreaterThanOrEqual(1);
     expect(essentialB?.levels.HARD).toBe(0);
-    expect(essentialB?.levels.NEW).toBe(43);
+    expect(essentialB?.levels.NEW).toBe(51);
 
     const stateB = await prisma.cardState.findFirst({
       where: {
@@ -381,7 +381,7 @@ describe('Study (e2e)', () => {
     expect(body.data.sessionId).toBe(sessionId);
     expect(body.data.reviews).toBe(1);
     expect(body.data.tally.EASY).toBe(1);
-    expect(body.data.poolSize).toBe(43);
+    expect(body.data.poolSize).toBe(51);
     expect(body.data.endedAt).toBeTruthy();
 
     const persisted = await prisma.studySession.findFirst({

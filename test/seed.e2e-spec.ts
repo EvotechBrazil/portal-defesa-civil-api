@@ -100,16 +100,16 @@ describe('seed integrity', () => {
 
     expect(tenants).toBe(1);
     expect(courses).toBe(1);
-    expect(courseModules).toBe(6);
-    expect(quizzes).toBe(40);
-    expect(questions).toBe(109);
-    expect(questionOptions).toBe(327);
+    expect(courseModules).toBe(7);
+    expect(quizzes).toBe(48);
+    expect(questions).toBe(133);
+    expect(questionOptions).toBe(399);
     expect(decks).toBe(2);
-    expect(essentialCards).toBe(43);
-    expect(examCards).toBe(109);
-    expect(contentPages).toBe(4);
-    expect(examOrigins).toHaveLength(109);
-    expect(essentialCited).toHaveLength(100);
+    expect(essentialCards).toBe(51);
+    expect(examCards).toBe(133);
+    expect(contentPages).toBe(12);
+    expect(examOrigins).toHaveLength(133);
+    expect(essentialCited).toHaveLength(124);
     expect(cardsWithoutQuestions).toBe(0);
     expect(
       questionsWithOptions.every(

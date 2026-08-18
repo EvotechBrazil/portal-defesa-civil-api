@@ -11,6 +11,7 @@ interface SeedQuestion {
   opts: string[];
   c: number;
   com: string;
+  verifiedBy?: string;
 }
 
 interface SeedCard {
@@ -69,6 +70,54 @@ const CONTENT_PAGES: Array<{
     ord: 4,
     title: 'Glossário, siglas e linha do tempo',
   },
+  {
+    file: '08_apostila_m01.md',
+    slug: 'apostila-01',
+    ord: 5,
+    title: 'Apostila · M01 Introdução',
+  },
+  {
+    file: '08_apostila_m02.md',
+    slug: 'apostila-02',
+    ord: 6,
+    title: 'Apostila · M02 PNPDEC',
+  },
+  {
+    file: '08_apostila_m03.md',
+    slug: 'apostila-03',
+    ord: 7,
+    title: 'Apostila · M03 Riscos',
+  },
+  {
+    file: '08_apostila_m04.md',
+    slug: 'apostila-04',
+    ord: 8,
+    title: 'Apostila · M04 Prevenção e mitigação',
+  },
+  {
+    file: '08_apostila_m05.md',
+    slug: 'apostila-05',
+    ord: 9,
+    title: 'Apostila · M05 Preparação e planejamento',
+  },
+  {
+    file: '08_apostila_m06.md',
+    slug: 'apostila-06',
+    ord: 10,
+    title: 'Apostila · M06 Resposta',
+  },
+  {
+    file: '08_apostila_m07.md',
+    slug: 'apostila-07',
+    ord: 11,
+    title: 'Apostila · M07 Recuperação',
+  },
+  {
+    file: '08_apostila_m08.md',
+    slug: 'apostila-08',
+    ord: 12,
+    title: 'Apostila · M08 Ética e liderança',
+  },
 ];
 
 function readJson<T>(name: string): T {
@@ -104,7 +153,7 @@ function parseQuiz(quiz: string): { code: string; ord: number; title: string } {
   };
 }
 
-const EXPECTED_MODULE_SUMMARIES = 6;
+const EXPECTED_MODULE_SUMMARIES = 7;
 
 /**
  * §11.1: fatiar por `## ` só é seguro se a âncora for única e a saída for
@@ -242,7 +291,7 @@ async function seedModulesAndQuestions(
       explanationMd: question.com,
       sourceRef: `${question.mod} › ${question.quiz}`,
       verifiedAt: VERIFIED_AT,
-      verifiedBy: VERIFIED_BY,
+      verifiedBy: question.verifiedBy ?? VERIFIED_BY,
     };
 
     const saved = existing ? existing : await prisma.question.create({ data });
@@ -463,18 +512,18 @@ async function printValidation() {
   };
   expect('tenants', tenants, 1);
   expect('courses', courses, 1);
-  expect('course_modules', courseModules, 6);
-  expect('course_modules com summaryMd', modulesWithSummary, 6);
-  expect('quizzes', quizzes, 40);
-  expect('questions', questions, 109);
-  expect('question_options', questionOptions, 327);
+  expect('course_modules', courseModules, 7);
+  expect('course_modules com summaryMd', modulesWithSummary, 7);
+  expect('quizzes', quizzes, 48);
+  expect('questions', questions, 133);
+  expect('question_options', questionOptions, 399);
   expect('decks', decks, 2);
-  expect('cards ESSENTIAL', essentialCards, 43);
-  expect('cards EXAM', examCards, 109);
-  expect('content_pages', contentPages, 4);
+  expect('cards ESSENTIAL', essentialCards, 51);
+  expect('cards EXAM', examCards, 133);
+  expect('content_pages', contentPages, 12);
   expect('cartas sem card_question', cardsWithoutQuestions, 0);
-  expect('cobertura EXAM', examOrigins.length, 109);
-  expect('cobertura ESSENTIAL', essentialCited.length, 100);
+  expect('cobertura EXAM', examOrigins.length, 133);
+  expect('cobertura ESSENTIAL', essentialCited.length, 124);
   expect('CardLink órfãos', missingLinkSlugs.length, 0);
   expect('questões sem 1 correta', questionsWithoutSingleCorrect, 0);
 

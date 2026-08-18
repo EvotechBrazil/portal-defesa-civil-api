@@ -23,6 +23,7 @@ const MODULE_QUESTION_COUNTS: Record<string, number> = {
   M4: 20,
   M5: 18,
   M6: 20,
+  M7: 24,
 };
 
 describe('Courses (e2e)', () => {
@@ -97,7 +98,7 @@ describe('Courses (e2e)', () => {
 
     const course = readEnvelope<CourseDetailDto>(response.body).data;
     expect(course.slug).toBe(COURSE_SLUG);
-    expect(course.modules).toHaveLength(6);
+    expect(course.modules).toHaveLength(7);
     for (const [code, count] of Object.entries(MODULE_QUESTION_COUNTS)) {
       const module = course.modules.find((item) => item.code === code);
       expect(module).toBeDefined();
@@ -106,6 +107,14 @@ describe('Courses (e2e)', () => {
     }
     expect(course.pages.map((page) => page.slug).sort()).toEqual([
       'apostila',
+      'apostila-01',
+      'apostila-02',
+      'apostila-03',
+      'apostila-04',
+      'apostila-05',
+      'apostila-06',
+      'apostila-07',
+      'apostila-08',
       'gloss',
       'modulos',
       'pareto',

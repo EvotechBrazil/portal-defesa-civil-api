@@ -123,3 +123,23 @@ A Defesa Civil é definida como **união, prevenção e fé** — e sua identida
 7. Validação do plano
 8. Operacionalizar o PLANCON
 9. Revisar e atualizar
+
+---
+
+## M7 — APOSTILA OFICIAL · MÓDULOS 01 A 08
+*Texto integral da apostila completa (29 páginas) · 8 quizzes · 24 questões novas*
+
+A apostila oficial organiza a formação em **8 módulos temáticos**, diferentes da numeração da plataforma (M1–M6). Entra no portal como o **sétimo módulo de estudo**: conteúdo completo + banco de perguntas derivado do PDF.
+
+| Apostila | Tema |
+|---|---|
+| 01 | Introdução — conhecer, compreender, servir; ciclo de 5 fases; SINPDEC |
+| 02 | PNPDEC — Lei nº 12.608/2012; prevenção como prioridade; política de Estado |
+| 03 | Riscos — ameaça × vulnerabilidade × ausência de preparo |
+| 04 | Prevenção e mitigação — estrutural e não estrutural; alerta é tempo ganho |
+| 05 | Preparação e planejamento — decidir antes do caos; vulneráveis primeiro |
+| 06 | Resposta — o tempo vale vidas; método, não corrida |
+| 07 | Recuperação — reconstruir melhor; não reconstruir no risco |
+| 08 | Ética e liderança LGND — técnica sem caráter vira risco |
+
+As 24 questões deste módulo **não** foram cobradas na plataforma de vídeo; o gabarito vem do texto da apostila (`verifiedBy: apostila-oficial-lgnd-01-08`).

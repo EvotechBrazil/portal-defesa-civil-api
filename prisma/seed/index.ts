@@ -79,7 +79,11 @@ function readMd(name: string): string {
   return readFileSync(join(CONTENT_DIR, name), 'utf8');
 }
 
-function parseModule(mod: string): { ord: number; code: string; title: string } {
+function parseModule(mod: string): {
+  ord: number;
+  code: string;
+  title: string;
+} {
   const match = /^MÓDULO\s+(\d+)\s+—\s+(.+)$/.exec(mod.trim());
   if (!match) {
     throw new Error(`Unexpected module label: ${mod}`);
@@ -100,6 +104,13 @@ function parseQuiz(quiz: string): { code: string; ord: number; title: string } {
   };
 }
 
+const EXPECTED_MODULE_SUMMARIES = 6;
+
+/**
+ * §11.1: fatiar por `## ` só é seguro se a âncora for única e a saída for
+ * validada. Âncora duplicada sobrescreveria em silêncio, e um heading que
+ * mudasse de formato degradaria para `summaryMd: null` sem estourar nada.
+ */
 function extractModuleSummaries(source: string): Map<string, string> {
   const summaries = new Map<string, string>();
   const parts = source.split(/^## /m).slice(1);
@@ -109,7 +120,18 @@ function extractModuleSummaries(source: string): Map<string, string> {
     if (!codeMatch) {
       continue;
     }
-    summaries.set(codeMatch[1], `## ${part.trim()}`);
+    const code = codeMatch[1];
+    if (summaries.has(code)) {
+      throw new Error(
+        `Âncora duplicada em 02_modulos_plataforma.md: "## ${code}" aparece mais de uma vez`,
+      );
+    }
+    summaries.set(code, `## ${part.trim()}`);
+  }
+  if (summaries.size !== EXPECTED_MODULE_SUMMARIES) {
+    throw new Error(
+      `Esperados ${EXPECTED_MODULE_SUMMARIES} resumos de módulo em 02_modulos_plataforma.md, extraídos ${summaries.size}: ${[...summaries.keys()].join(',')}`,
+    );
   }
   return summaries;
 }
@@ -223,9 +245,7 @@ async function seedModulesAndQuestions(
       verifiedBy: VERIFIED_BY,
     };
 
-    const saved = existing
-      ? existing
-      : await prisma.question.create({ data });
+    const saved = existing ? existing : await prisma.question.create({ data });
 
     if (existing) {
       // idempotent: do not overwrite curated fields
@@ -354,7 +374,9 @@ async function printValidation() {
     badOptions,
     orphanLinks,
   ] = await Promise.all([
-    prisma.tenant.count({ where: { deletedAt: null } }),
+    // Escopado no tenant que ESTE seeder cria: os e2e adversariais criam
+    // tenants extras no mesmo banco e poluiriam a contagem do §7.3.
+    prisma.tenant.count({ where: { deletedAt: null, slug: 'default' } }),
     prisma.course.count({ where: { deletedAt: null } }),
     prisma.courseModule.count({ where: { deletedAt: null } }),
     prisma.quiz.count({ where: { deletedAt: null } }),
@@ -411,19 +433,53 @@ async function printValidation() {
     (q) => q.options.length !== 1,
   ).length;
 
+  const modulesWithSummary = await prisma.courseModule.count({
+    where: { deletedAt: null, summaryMd: { not: null } },
+  });
+
+  const totalCards = essentialCards + examCards;
   const report = [
     `tenants: ${tenants} · courses: ${courses} · course_modules: ${courseModules} · quizzes: ${quizzes}`,
     `questions: ${questions} · question_options: ${questionOptions} (${questions} × 3)`,
     `decks: ${decks} · cards ESSENTIAL: ${essentialCards} · cards EXAM: ${examCards}`,
-    `card_questions: ${cardsWithoutQuestions === 0 ? '> 0 para todas as 152 cartas' : `MISSING on ${cardsWithoutQuestions} cards`}`,
+    `card_questions: ${cardsWithoutQuestions === 0 ? `> 0 para todas as ${totalCards} cartas` : `MISSING on ${cardsWithoutQuestions} cards`}`,
     `content_pages: ${contentPages}`,
-    `cobertura EXAM (originQuestionId distintos): ${examOrigins.length}/109`,
-    `cobertura ESSENTIAL (questões citadas em CardQuestion de cartas ESSENTIAL): ${essentialCited.length}/109`,
+    `course_modules com summaryMd: ${modulesWithSummary}/${courseModules}`,
+    `cobertura EXAM (originQuestionId distintos): ${examOrigins.length}/${questions}`,
+    `cobertura ESSENTIAL (questões citadas em CardQuestion de cartas ESSENTIAL): ${essentialCited.length}/${questions}`,
     `todo CardLink.targetSlug existe em ContentPage.slug: ${missingLinkSlugs.length === 0 ? 'OK' : missingLinkSlugs.join(',')}`,
     `toda Question tem exatamente 1 option com isCorrect = true: ${questionsWithoutSingleCorrect === 0 ? 'OK' : String(questionsWithoutSingleCorrect)}`,
   ];
   for (const line of report) {
     console.info(line);
+  }
+
+  // §11.5: medir sem gate é meio caminho. Divergência derruba o seed.
+  const failures: string[] = [];
+  const expect = (label: string, actual: number, expected: number) => {
+    if (actual !== expected) {
+      failures.push(`${label}: esperado ${expected}, medido ${actual}`);
+    }
+  };
+  expect('tenants', tenants, 1);
+  expect('courses', courses, 1);
+  expect('course_modules', courseModules, 6);
+  expect('course_modules com summaryMd', modulesWithSummary, 6);
+  expect('quizzes', quizzes, 40);
+  expect('questions', questions, 109);
+  expect('question_options', questionOptions, 327);
+  expect('decks', decks, 2);
+  expect('cards ESSENTIAL', essentialCards, 43);
+  expect('cards EXAM', examCards, 109);
+  expect('content_pages', contentPages, 4);
+  expect('cartas sem card_question', cardsWithoutQuestions, 0);
+  expect('cobertura EXAM', examOrigins.length, 109);
+  expect('cobertura ESSENTIAL', essentialCited.length, 100);
+  expect('CardLink órfãos', missingLinkSlugs.length, 0);
+  expect('questões sem 1 correta', questionsWithoutSingleCorrect, 0);
+
+  if (failures.length > 0) {
+    throw new Error(`Seed divergente do §7.3:\n  - ${failures.join('\n  - ')}`);
   }
 }
 

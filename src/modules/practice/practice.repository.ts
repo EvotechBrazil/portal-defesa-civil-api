@@ -32,7 +32,7 @@ export class PracticeRepository {
     cardId: string,
   ): Promise<CardWithQuestionsRecord | null> {
     return this.prisma.card.findFirst({
-      where: { id: cardId, deletedAt: null },
+      where: { id: cardId, deletedAt: null, deck: { deletedAt: null } },
       include: {
         cardQuestions: {
           orderBy: { rank: 'asc' },

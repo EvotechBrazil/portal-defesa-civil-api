@@ -7,7 +7,11 @@ import { AppModule } from '../src/app.module';
 import { PrismaService } from '../src/database/prisma.service';
 import { PRACTICE_SHUFFLE } from '../src/modules/practice/practice.constants';
 import { PracticeShuffle } from '../src/modules/practice/practice.shuffle';
-import { bearerFor, createSecondTenant } from './helpers/auth.helper';
+import {
+  bearerFor,
+  createSecondTenant,
+  cleanupTestTenants,
+} from './helpers/auth.helper';
 
 interface Envelope<T> {
   data: T;
@@ -120,6 +124,7 @@ describe('Practice (e2e)', () => {
   afterAll(async () => {
     await prisma.attempt.deleteMany({ where: { userId: user.id } });
     await prisma.user.delete({ where: { id: user.id } });
+    await cleanupTestTenants(prisma);
     await app.close();
   });
 
@@ -261,6 +266,62 @@ describe('Practice (e2e)', () => {
     expect([...firstOptions].sort()).toEqual([...secondOptions].sort());
   });
 
+  // §6.4 regra 1 / §9.2: answer_key sai de idle, nunca de running. Sem este
+  // gate a rota auxiliar entrega correctOptionId com a tentativa aberta e o
+  // aluno gabarita 100% sem saber a matéria.
+  it('GET /cards/:cardId/answer-key is refused while an attempt is running', async () => {
+    reverseShuffle = false;
+    // Carta própria: os testes anteriores deixam tentativas abertas em #1.
+    const other = await prisma.card.findFirst({
+      where: { deletedAt: null, code: '#2' },
+      select: { id: true },
+    });
+    if (!other) {
+      throw new Error('Seed card #2 is missing');
+    }
+
+    await request(app.getHttpServer())
+      .get(`/api/v1/cards/${other.id}/answer-key`)
+      .set(authHeader)
+      .expect(200);
+
+    const created = await request(app.getHttpServer())
+      .post(`/api/v1/cards/${other.id}/attempts`)
+      .set(authHeader)
+      .expect(201);
+    const attempt = (created.body as Envelope<RunningAttempt>).data;
+
+    const blocked = await request(app.getHttpServer())
+      .get(`/api/v1/cards/${other.id}/answer-key`)
+      .set(authHeader)
+      .expect(409);
+    assertNoIsCorrect(blocked.body);
+
+    await request(app.getHttpServer())
+      .post(`/api/v1/attempts/${attempt.attemptId}/finish`)
+      .set(authHeader)
+      .expect(200);
+
+    await request(app.getHttpServer())
+      .get(`/api/v1/cards/${other.id}/answer-key`)
+      .set(authHeader)
+      .expect(200);
+  });
+
+  it('never leaks isCorrect on the auxiliary practice listings', async () => {
+    const cards = await request(app.getHttpServer())
+      .get('/api/v1/practice/cards?page=1&pageSize=5')
+      .set(authHeader)
+      .expect(200);
+    assertNoIsCorrect(cards.body);
+
+    const recent = await request(app.getHttpServer())
+      .get('/api/v1/practice/recent')
+      .set(authHeader)
+      .expect(200);
+    assertNoIsCorrect(recent.body);
+  });
+
   it('GET history is isolated by tenant', async () => {
     reverseShuffle = false;
     const created = await request(app.getHttpServer())
@@ -300,6 +361,35 @@ describe('Practice (e2e)', () => {
       .get(`/api/v1/attempts/${attempt.attemptId}`)
       .set(authB.header)
       .expect(404);
+
+    // §12: o adversarial precisa cobrir mutação, não só leitura.
+    await request(app.getHttpServer())
+      .post(`/api/v1/attempts/${attempt.attemptId}/answers`)
+      .set(authB.header)
+      .send({
+        questionId: attempt.questions[0].questionId,
+        optionId: attempt.questions[0].options[0].optionId,
+      })
+      .expect(404);
+
+    await request(app.getHttpServer())
+      .post(`/api/v1/attempts/${attempt.attemptId}/finish`)
+      .set(authB.header)
+      .expect(404);
+
+    const foreignRecent = await request(app.getHttpServer())
+      .get('/api/v1/practice/recent')
+      .set(authB.header)
+      .expect(200);
+    assertNoIsCorrect(foreignRecent.body);
+    const recentPayload = foreignRecent.body as Envelope<{
+      items: Array<{ attemptId: string }>;
+    }>;
+    expect(
+      recentPayload.data.items.some(
+        (row) => row.attemptId === attempt.attemptId,
+      ),
+    ).toBe(false);
 
     await prisma.attempt.deleteMany({ where: { userId: authB.user.id } });
     await prisma.user.delete({ where: { id: authB.user.id } });

@@ -226,13 +226,25 @@ export class PracticeService {
   }
 
   async answerKey(
-    _user: AuthenticatedUser,
+    user: AuthenticatedUser,
     cardId: string,
   ): Promise<{ questions: AnswerKeyQuestionView[] }> {
     const card =
       await this.practiceRepository.findActiveCardWithQuestions(cardId);
     if (!card) {
       throw new NotFoundException('Carta não encontrada.');
+    }
+    // §6.4 regra 1: nenhum payload anterior ao finish pode carregar o gabarito.
+    // O estado answer_key sai de idle, nunca de running.
+    const running = await this.practiceRepository.findLatestUnfinished(
+      user.id,
+      user.tenantId,
+      cardId,
+    );
+    if (running) {
+      throw new ConflictException(
+        'Há uma tentativa em andamento nesta carta. Finalize antes de ver o gabarito.',
+      );
     }
     const questions = card.cardQuestions
       .filter((link) => link.question.deletedAt === null)

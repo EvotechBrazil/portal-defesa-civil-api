@@ -10,6 +10,7 @@ import {
   createSecondTenant,
   resolveVerificationToken,
   signAccessToken,
+  cleanupTestTenants,
 } from './helpers/auth.helper';
 
 interface Envelope<T> {
@@ -85,6 +86,7 @@ describe('Auth (e2e)', () => {
   });
 
   afterAll(async () => {
+    await cleanupTestTenants(prisma);
     await app.close();
   });
 

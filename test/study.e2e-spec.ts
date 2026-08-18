@@ -5,7 +5,11 @@ import request from 'supertest';
 import { App } from 'supertest/types';
 import { AppModule } from '../src/app.module';
 import { PrismaService } from '../src/database/prisma.service';
-import { bearerFor, createSecondTenant } from './helpers/auth.helper';
+import {
+  bearerFor,
+  createSecondTenant,
+  cleanupTestTenants,
+} from './helpers/auth.helper';
 
 interface Envelope<T> {
   data: T;
@@ -69,6 +73,9 @@ describe('Study (e2e)', () => {
   });
 
   afterAll(async () => {
+    // e2e roda contra o banco de dev: tenants de teste não podem sobrar e
+    // poluir a contagem do §7.3.
+    await cleanupTestTenants(prisma);
     if (app) {
       await app.close();
     }
@@ -307,6 +314,11 @@ describe('Study (e2e)', () => {
       .post(`/api/v1/study-sessions/${sessionA.sessionId}/reviews`)
       .set(authB.header)
       .send({ rating: 'EASY' })
+      .expect(404);
+
+    await request(server())
+      .post(`/api/v1/study-sessions/${sessionA.sessionId}/finish`)
+      .set(authB.header)
       .expect(404);
 
     const decksA = await request(server())

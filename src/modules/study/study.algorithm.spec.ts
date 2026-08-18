@@ -70,6 +70,49 @@ describe('study algorithm', () => {
 
       jest.useRealTimers();
     });
+
+    // O DoD §9.1 cita HARD (0,3,18) e LEARNING (0,8,23). Os dois trios não
+    // cabem numa corrida só — duas cartas não ocupam a posição 0. Esta corrida
+    // espelhada (LEARNING primeiro) produz o (0,8,23) do plano com o mesmo
+    // motor, provando que o (1,8,23) do caso acima é consequência da ordem do
+    // roteiro, não de um teste ajustado à implementação.
+    it('mirrored run: LEARNING first reappears at 0, 8, 23 and HARD at 1, 4, 19', () => {
+      jest.useFakeTimers();
+      jest.setSystemTime(new Date('2026-08-18T12:00:00.000Z'));
+
+      const pool = Array.from({ length: 43 }, (_, index) => ({
+        id: `c${index}`,
+        level: 'NEW' as const,
+      }));
+      let queue = orderPoolByRank(pool, identityShuffle).map((card) => card.id);
+      const states = new Map<string, CardProgress>(
+        pool.map((card) => [card.id, blankState()]),
+      );
+      const seenOrder: string[] = [];
+
+      for (let step = 0; step < 40; step += 1) {
+        const cardId = queue[0];
+        seenOrder.push(cardId);
+        const rating = step === 0 ? 'LEARNING' : step === 1 ? 'HARD' : 'EASY';
+        const current = states.get(cardId);
+        if (!current) {
+          throw new Error('missing state');
+        }
+        const result = applyReview(queue, current, rating, new Date());
+        queue = result.queue;
+        states.set(result.cardId, result.state);
+      }
+
+      const positionsOf = (id: string) =>
+        seenOrder
+          .map((seen, index) => (seen === id ? index : -1))
+          .filter((index) => index >= 0);
+
+      expect(positionsOf('c0')).toEqual([0, 8, 23]);
+      expect(positionsOf('c1')).toEqual([1, 4, 19]);
+
+      jest.useRealTimers();
+    });
   });
 
   describe('queue order', () => {

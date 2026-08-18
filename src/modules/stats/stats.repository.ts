@@ -129,14 +129,10 @@ export class StatsRepository {
       where: {
         tenantId,
         userId,
-        ...(courseId
-          ? {
-              card: {
-                deletedAt: null,
-                deck: { courseId, deletedAt: null },
-              },
-            }
-          : {}),
+        card: {
+          deletedAt: null,
+          ...(courseId ? { deck: { courseId, deletedAt: null } } : {}),
+        },
       },
       _count: { _all: true },
     });

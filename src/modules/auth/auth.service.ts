@@ -82,6 +82,8 @@ export class AuthService {
     }
 
     const passwordHash = await hashPassword(dto.password);
+    const autoVerify =
+      this.configService.get<boolean>('mail.autoVerifyEmail') === true;
     let user: User;
     try {
       user = await this.usersRepository.createStudent({
@@ -89,6 +91,7 @@ export class AuthService {
         email,
         name: dto.name.trim(),
         passwordHash,
+        emailVerifiedAt: autoVerify ? new Date() : undefined,
       });
     } catch (error: unknown) {
       if (isPrismaUniqueConstraint(error)) {
@@ -97,7 +100,9 @@ export class AuthService {
       throw error;
     }
 
-    await this.issueVerificationEmail(user);
+    if (!autoVerify) {
+      await this.issueVerificationEmail(user);
+    }
     return { id: user.id, email: user.email, name: user.name };
   }
 

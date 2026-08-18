@@ -23,6 +23,7 @@ export class UsersRepository {
     email: string;
     name: string;
     passwordHash: string;
+    emailVerifiedAt?: Date;
   }): Promise<User> {
     return this.prisma.user.create({
       data: {
@@ -31,6 +32,7 @@ export class UsersRepository {
         name: data.name,
         passwordHash: data.passwordHash,
         role: UserRole.STUDENT,
+        emailVerifiedAt: data.emailVerifiedAt,
       },
     });
   }

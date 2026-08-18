@@ -1,0 +1,12 @@
+{
+  "framework": null,
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm exec prisma generate && pnpm exec nest build",
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
+  "functions": {
+    "api/index.ts": {
+      "maxDuration": 30,
+      "includeFiles": "prisma/**"
+    }
+  }
+}

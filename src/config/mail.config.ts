@@ -5,4 +5,5 @@ export const mailConfig = registerAs('mail', () => ({
   port: Number(process.env.MAIL_PORT ?? 1025),
   from: process.env.MAIL_FROM ?? 'Portal Defesa Civil <noreply@localhost>',
   webBaseUrl: process.env.WEB_BASE_URL ?? 'http://localhost:3000',
+  autoVerifyEmail: process.env.AUTO_VERIFY_EMAIL === 'true',
 }));

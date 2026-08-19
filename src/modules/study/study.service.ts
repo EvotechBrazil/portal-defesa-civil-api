@@ -52,7 +52,16 @@ export class StudyService {
     dto: CreateStudySessionDto,
   ): Promise<StudySessionView> {
     const kinds = kindsForSelector(dto.deckSelector);
-    const cards = await this.studyRepository.findCardIdsByKinds(kinds);
+    const course = await this.studyRepository.findCourseBySlug(
+      dto.courseSlug?.trim() || 'defesa-civil-lgnd',
+    );
+    if (!course) {
+      throw new NotFoundException('Course not found');
+    }
+    const cards = await this.studyRepository.findCardIdsByKinds(
+      kinds,
+      course.id,
+    );
     if (cards.length === 0) {
       throw new NotFoundException('No cards available');
     }
@@ -83,6 +92,7 @@ export class StudyService {
     const session = await this.studyRepository.createSession({
       tenantId: user.tenantId,
       userId: user.id,
+      courseId: course.id,
       deckSelector: dto.deckSelector,
       bidir: dto.bidir ?? true,
       queue,
@@ -215,6 +225,7 @@ export class StudyService {
       user.id,
       user.tenantId,
       kinds,
+      session.courseId,
     );
 
     return {

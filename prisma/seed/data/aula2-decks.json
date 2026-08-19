@@ -1,0 +1,105 @@
+{
+  "p": [
+    {
+      "code": "#1",
+      "f": "Pirâmide do resgate aquático",
+      "v": "<strong>1. o resgatista</strong> (fundação) → <strong>2. a equipe</strong> → <strong>3. a vítima</strong>. Se o sistema colapsa, ninguém se salva",
+      "t": "A matemática da sobrevivência: uma vítima não pode ser salva se o sistema de resgate colapsar. Sem a segurança de quem entra, a operação termina.",
+      "a": "Aula 2 · LGND-01 · Fase 01 fundamentos · regra de ouro.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [0, 1],
+      "rev": true
+    },
+    {
+      "code": "#2",
+      "f": "Quatro pilares táticos",
+      "v": "<strong>Reconhecimento · deslocamento · execução · sincronia</strong>",
+      "t": "Ler a dinâmica do rio, aplicar nado e movimentação em correteza, resgatar de forma geométrica e comunicar sem falha. Os quatro dependem uns dos outros.",
+      "a": "Aula 2 · objetivos da missão.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [1],
+      "rev": true
+    },
+    {
+      "code": "#3",
+      "f": "Regra de EPI na água",
+      "v": "<strong>Sem EPI completo, não entra.</strong> Capacete com drenagem, PFD Classe V, térmica/neoprene, calçado de aderência",
+      "t": "Colete de flutuação extrema, proteção contra impacto e hipotermia, sola para pedra submersa. Hardware: throw bag, mosquetões e polias, faca, apito.",
+      "a": "Aula 2 · anatomia do operador.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [2],
+      "rev": true
+    },
+    {
+      "code": "#4",
+      "f": "Por que 30 cm derrubam um adulto",
+      "v": "Águas acima de <strong>3 km/h</strong> — pressão exponencial. Hidráulica ≈ área × velocidade²",
+      "t": "A força é invisível e cresce com o quadrado da velocidade. Lâmina rasa e rápida não é “água baixa”: é vetor.",
+      "a": "Aula 2 · cálculo do impacto.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [3],
+      "rev": true
+    },
+    {
+      "code": "#5",
+      "f": "Strainer",
+      "v": "Galhada/obstáculo vazado que <strong>deixa a água passar e prende o corpo</strong>",
+      "t": "Leitura do rio: corrente principal (maior energia), ondas estacionárias (pedra submersa), sifões (fenda com sucção), strainers. Ler o terreno reduz o risco operacional.",
+      "a": "Aula 2 · mapeamento de ameaças.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [4],
+      "rev": true
+    },
+    {
+      "code": "#6",
+      "f": "Hidráulica × remanso (eddy)",
+      "v": "Hidráulica = <strong>armadilha</strong> de retorno contra a corrente · remanso = <strong>refúgio</strong> de água calma atrás do obstáculo",
+      "t": "Cold zone na margem (triagem e material). Warm zone de apoio. O rio é o vetor de ameaça ativo. Use o remanso para descanso e planejamento — nunca a hidráulica.",
+      "a": "Aula 2 · fluxos de retorno e perímetro.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [5],
+      "rev": true
+    },
+    {
+      "code": "#7",
+      "f": "Nunca contra a força",
+      "v": "Sempre em <strong>diagonal (~45°)</strong>. De frente para o fluxo é exaustão garantida",
+      "t": "Deslocamento exige geometria. Posição defensiva: dorsal, pés à frente e elevados, joelhos flexionados, braços abertos. Ofensiva: crawl a 45° com a corrente a favor.",
+      "a": "Aula 2 · regra do ângulo e posturas.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [6, 7],
+      "rev": true
+    },
+    {
+      "code": "#8",
+      "f": "Formações de travessia",
+      "v": "<strong>Linha</strong> (estabilidade lateral) · <strong>cunha</strong> (rompe corrente, líder à frente) · <strong>V invertido</strong> (apoios traseiros)",
+      "t": "Estruturas de equipe para área rasa com correteza forte. Escolher a formação é escolher como o fluxo encontra o grupo.",
+      "a": "Aula 2 · engenharia humana.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [8],
+      "rev": true
+    },
+    {
+      "code": "#9",
+      "f": "Throw bag",
+      "v": "Lançar a corda <strong>acima</strong> da vítima para a corrente levá-la até ela · tração a ~45° até o remanso",
+      "t": "1 arremesso underhand, ancorado, contato visual. 2 vítima de costas, corda no ombro. 3 tração no colete do socorrista — soltura rápida se houver pânico. A correteza é ferramenta, não inimiga.",
+      "a": "Aula 2 · protocolo throw bag e geometria do resgate.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [9],
+      "rev": true
+    },
+    {
+      "code": "#10",
+      "f": "Choque térmico após a extração",
+      "v": "Perda de calor na água até <strong>25×</strong> mais rápida que no ar. Tirar o molhado, isolar do solo, aquecer <strong>devagar</strong>",
+      "t": "O resgate não termina na margem: extração em terreno firme, triagem (consciência e respiração), varredura de trauma. Hipotermia é o risco mais comum depois da água.",
+      "a": "Aula 2 · resolução · ameaça invisível.",
+      "s": [["Aula 2 · Águas rápidas", "aula"]],
+      "q": [10, 11],
+      "rev": true
+    }
+  ],
+  "q": []
+}

@@ -61,6 +61,17 @@ export class PracticeService {
       );
     }
 
+    const finished = await this.practiceRepository.countFinishedAttempts(
+      user.id,
+      user.tenantId,
+      cardId,
+    );
+    if (finished > 0) {
+      throw new ConflictException(
+        'Gabarito já revelado. Esta avaliação não pode ser refeita.',
+      );
+    }
+
     const shuffledQuestions = this.shuffle(links);
     const items = shuffledQuestions.map((link, shownOrd) => {
       const shuffledOptions = this.shuffle(link.question.options);

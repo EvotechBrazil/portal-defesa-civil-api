@@ -80,6 +80,16 @@ export class PracticeRepository {
     });
   }
 
+  countFinishedAttempts(
+    userId: string,
+    tenantId: string,
+    cardId: string,
+  ): Promise<number> {
+    return this.prisma.attempt.count({
+      where: { userId, tenantId, cardId, finishedAt: { not: null } },
+    });
+  }
+
   findLatestUnfinished(
     userId: string,
     tenantId: string,

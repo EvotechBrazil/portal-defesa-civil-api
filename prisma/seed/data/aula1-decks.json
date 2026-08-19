@@ -1,0 +1,105 @@
+{
+  "p": [
+    {
+      "code": "#1",
+      "f": "Regra zero no escombro",
+      "v": "O socorrista que se acidenta deixa de ser solução e passa a ser <strong>mais uma vítima</strong>",
+      "t": "Nas primeiras horas, quem salva é quem já está no local — mas só se não virar problema. A aula dá noções: nós, deslocamento, apito, chamada e croqui. Não forma Operador de Desastres, não autoriza zona quente e não substitui o BREC de 60 h/a.",
+      "a": "Aula 1 FIRE Experience · Estevão Marques · LGND SQUAD 010. “A quem enviarei?… Eis-me aqui.”",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [0, 1],
+      "rev": true
+    },
+    {
+      "code": "#2",
+      "f": "Três verdades sobre o nó",
+      "v": "Todo nó <strong>enfraquece 20–50%</strong> · nó conferido é nó seguro · simples salva",
+      "t": "Escolher o nó é escolher quanta força você abre mão. Executou, arrumou (sem cruzes), apertou e conferiu em voz alta com o parceiro. Sem conferência dupla, não sobe carga. Sob estresse só sai o automático.",
+      "a": "Aula 1 · bloco Nós e amarrações.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [2, 3],
+      "rev": true
+    },
+    {
+      "code": "#3",
+      "f": "Sequência de execução do nó",
+      "v": "<strong>1 executar → 2 arrumar → 3 apertar → 4 conferir</strong> (você e o parceiro)",
+      "t": "Arrumar é retirar cruzamentos. Apertar é pré-carga. Conferir é em voz alta, em dupla. A corda só é confiável até o ponto onde o nó foi bem feito e conferido.",
+      "a": "Aula 1 · fundamentos de nós.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [3],
+      "rev": true
+    },
+    {
+      "code": "#4",
+      "f": "Lais de guia",
+      "v": "Alça <strong>fixa que não corre</strong> — resgate de pessoa e ancoragem. Chicote de no mínimo um palmo, travado",
+      "t": "Cartilha dos 7 nós: fiel (ponto fixo, travar com meio-nó), lais de guia, azelha (mosquetão), oito (conexão mais usada, desenho limpo), carioca (alça no meio), direito (une cordas iguais, sem carga de vida sem travamento), cadeirinha rápida (conferir antes de elevar).",
+      "a": "Aula 1 · os 7 nós da cartilha.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [4],
+      "rev": true
+    },
+    {
+      "code": "#5",
+      "f": "Progressão em 3 pontos",
+      "v": "Dois pés e uma mão (ou dois joelhos e uma mão) — <strong>peso distribuído</strong>, ninguém avança sozinho",
+      "t": "Contato físico e visual ininterrupto. Fila no mesmo ritmo: parou um, parou todo mundo. Testa o ponto antes de transferir carga. Poeirada, vazio sob laje, ferragem, gás e estalo = recuo. Quem entra por último controla a saída.",
+      "a": "Aula 1 · deslocamento em área colapsada.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [5],
+      "rev": true
+    },
+    {
+      "code": "#6",
+      "f": "Comandos de apito",
+      "v": "<strong>1 silvo longo</strong> = pare · <strong>2 curtos</strong> = volte ao trabalho · <strong>3 ou mais</strong> = evacuar agora",
+      "t": "Dentro do escombro o apito é a única voz que todos escutam. Evacuar: caminho já reconhecido, sem correr e sem recolher material. Sem apito preso ao corpo, não entra em área de operação.",
+      "a": "Aula 1 · sinais sonoros no sinistro.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [6, 7],
+      "rev": true
+    },
+    {
+      "code": "#7",
+      "f": "Os 4 tempos da chamada",
+      "v": "Atenção (1 silvo) → silêncio total → “Aqui é o LGND SQUAD” → “se alguém me escuta, grite ou bata 3 vezes” + 30 s",
+      "t": "A técnica mais barata de achar vítima viva. Ciclo nos 4 lados (360°), dois ouvintes em pontos diferentes. Máquinas desligadas: o silêncio é a ferramenta. Um único emissor fala.",
+      "a": "Aula 1 · chamada e escuta.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [8],
+      "rev": true
+    },
+    {
+      "code": "#8",
+      "f": "Vítima localizada — o que fazer",
+      "v": "<strong>Marque, registre e acione o oficial.</strong> Não escave por conta",
+      "t": "Registrar horário, tipo de resposta (voz/batida) e direção do som. Extração sem comando do órgão oficial vira segunda vítima. Marcação INSARAG impede duas equipes de refazerem o mesmo trabalho.",
+      "a": "Aula 1 · localização técnica.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [9],
+      "rev": true
+    },
+    {
+      "code": "#9",
+      "f": "O que todo croqui precisa ter",
+      "v": "Norte e acessos · setores A–D · vítimas · riscos · recursos · entrada e saída da equipe",
+      "t": "O que não está registrado, para a equipe seguinte, não existe. O croqui é entregue ao Corpo de Bombeiros / Defesa Civil — produto final e assinatura do SQUAD.",
+      "a": "Aula 1 · croqui do sinistro.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [10],
+      "rev": true
+    },
+    {
+      "code": "#10",
+      "f": "Checklist antes de entrar",
+      "v": "Autorização · EPI · apito · dupla · rotas de recuo · croqui iniciado · nós conferidos por dois · cabeça no lugar",
+      "t": "Ninguém entra e ninguém sai sozinho. EPI: capacete, luva, óculos, calçado fechado, proteção respiratória. Pressa mata mais que escombro.",
+      "a": "Aula 1 · checklist do SQUAD.",
+      "s": [["Aula 1 · BREC e NOS", "aula"]],
+      "q": [11],
+      "rev": true
+    }
+  ],
+  "q": []
+}

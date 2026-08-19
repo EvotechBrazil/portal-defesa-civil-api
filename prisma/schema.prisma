@@ -143,8 +143,9 @@ model Course {
 
   modules      CourseModule[]
   contentPages ContentPage[]
-  decks        Deck[]
-  enrollments  Enrollment[]
+  decks          Deck[]
+  enrollments    Enrollment[]
+  studySessions  StudySession[]
 
   @@map("courses")
 }
@@ -429,6 +430,7 @@ model StudySession {
   id           String       @id @default(cuid())
   tenantId     String       @map("tenant_id")
   userId       String       @map("user_id")
+  courseId     String?      @map("course_id")
   deckSelector DeckSelector @map("deck_selector")
   bidir        Boolean      @default(true)
   queue        Json                                  // string[] de cardId, muta a cada review
@@ -439,11 +441,13 @@ model StudySession {
   createdAt    DateTime     @default(now()) @map("created_at")
   updatedAt    DateTime     @updatedAt @map("updated_at")
 
-  tenant Tenant @relation(fields: [tenantId], references: [id])
-  user   User   @relation(fields: [userId], references: [id])
+  tenant Tenant  @relation(fields: [tenantId], references: [id])
+  user   User    @relation(fields: [userId], references: [id])
+  course Course? @relation(fields: [courseId], references: [id])
 
   @@index([tenantId])
   @@index([tenantId, userId])
+  @@index([courseId])
   @@map("study_sessions")
 }
 

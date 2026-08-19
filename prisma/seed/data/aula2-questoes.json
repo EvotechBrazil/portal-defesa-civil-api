@@ -1,0 +1,146 @@
+[
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.1 — Fundamentos e EPI",
+    "q": "Qual é a regra de ouro da pirâmide de resgate em águas rápidas?",
+    "opts": [
+      "A vítima vem primeiro; a equipe se adapta depois",
+      "Uma vítima não pode ser salva se o sistema de resgate colapsar — 1 resgatista, 2 equipe, 3 vítima",
+      "Entrar na água imediatamente reduz o tempo de hipotermia da vítima"
+    ],
+    "c": 1,
+    "com": "Base da pirâmide é o resgatista: sem a sua segurança a operação termina. Depois a equipe. A vítima é o topo, sustentada pelos dois níveis de baixo."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.1 — Fundamentos e EPI",
+    "q": "Quais são os quatro pilares táticos da intervenção?",
+    "opts": [
+      "Velocidade, força, improvisação e silêncio",
+      "Reconhecimento, deslocamento, execução e sincronia",
+      "Throw bag, cunha, V invertido e aquecimento"
+    ],
+    "c": 1,
+    "com": "Reconhecer o rio, deslocar com técnica, executar o resgate de forma geométrica e trabalhar em sincronia. Sem comunicação a formação desaba."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.1 — Fundamentos e EPI",
+    "q": "Qual é a regra básica de EPI para entrar na água?",
+    "opts": [
+      "Sem EPI completo, não entra — capacete com drenagem, PFD Classe V, térmica/neoprene, calçado de aderência",
+      "Colete salva-vidas basta se a água estiver abaixo de 3 km/h",
+      "Capacete é opcional em área rasa com formação em linha"
+    ],
+    "c": 0,
+    "com": "Hardware mínimo ainda inclui corda e throw bag, mosquetões e polias, faca de corte emergencial e apito — a voz acima do ruído do rio."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.2 — Dinâmica do rio",
+    "q": "Por que 30 cm de correteza já derrubam um adulto?",
+    "opts": [
+      "Porque a profundidade reduz o atrito do calçado",
+      "Águas acima de 3 km/h exercem pressão exponencial — hidráulica ≈ área × velocidade ao quadrado",
+      "Porque 30 cm é a altura mínima de um sifão"
+    ],
+    "c": 1,
+    "com": "A força é invisível e cresce com o quadrado da velocidade. Não subestime lâmina rasa e rápida."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.2 — Dinâmica do rio",
+    "q": "O que é um strainer?",
+    "opts": [
+      "Água calma atrás de obstáculo, usada como refúgio",
+      "Obstáculo vazado (galhada) que deixa a água passar e prende sólidos — inclusive o corpo",
+      "Fenda entre rochas submersas com sucção"
+    ],
+    "c": 1,
+    "com": "Strainer prende. Sifão suga em fenda. Remanso (eddy) é o refúgio. Hidráulica é a armadilha de retorno contra a corrente."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.2 — Dinâmica do rio",
+    "q": "Qual a diferença entre hidráulica e remanso (eddy)?",
+    "opts": [
+      "Hidráulica é refúgio; remanso é armadilha",
+      "Hidráulica é água que retorna e forma armadilha; remanso é água calma atrás de obstáculo — descanso e planejamento",
+      "Os dois nomes descrevem a corrente principal"
+    ],
+    "c": 1,
+    "com": "Ameaças: hidráulica, strainer, sifão, ondas estacionárias (pedra submersa). Zona segura: remanso. Cold zone na margem; o rio é o vetor ativo."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.3 — Deslocamento e formações",
+    "q": "Como se deslocar na correteza sem gastar a operação?",
+    "opts": [
+      "Sempre de frente para o fluxo, para ver o obstáculo",
+      "Nunca contra a força — sempre em diagonal (~45°)",
+      "Nado parado até a hidráulica perder energia"
+    ],
+    "c": 1,
+    "com": "Bater de frente com o fluxo é exaustão garantida. O deslocamento exige geometria."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.3 — Deslocamento e formações",
+    "q": "Qual é a posição defensiva (sobrevivência) na água?",
+    "opts": [
+      "Decúbito dorsal, pés à frente e elevados, joelhos flexionados, braços abertos",
+      "Nado crawl forte a 45° rumo a um ponto",
+      "Em pé, de frente para a corrente, para ancorar os pés"
+    ],
+    "c": 0,
+    "com": "Defensiva evita impacto e enroscamento. Ofensiva é crawl a 45° com a corrente a favor, para alcançar um ponto rápido."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.3 — Deslocamento e formações",
+    "q": "Quando usar formação em cunha na travessia rasa?",
+    "opts": [
+      "Quando se quer máxima área de contato lateral",
+      "Para romper corrente muito forte, com o líder à frente dividindo o fluxo",
+      "Só na cold zone, para carregar material"
+    ],
+    "c": 1,
+    "com": "Linha = estabilidade lateral. Cunha = rompe corrente forte. V invertido = vários apoios traseiros contra a corrente."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.4 — Throw bag, extração e hipotermia",
+    "q": "No protocolo throw bag, para onde se lança a corda?",
+    "opts": [
+      "Direto no peito da vítima, para ela agarrar na hora",
+      "Acima da vítima, para a corrente levar a corda até ela",
+      "A jusante, para a vítima nadar até o cabo"
+    ],
+    "c": 1,
+    "com": "1 arremesso underhand com ancoragem e contato visual. 2 vítima de costas põe a corda no ombro. 3 tração no colete do socorrista, soltura rápida se houver pânico. Ângulo ótimo ~45°, pêndulo até o remanso."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.4 — Throw bag, extração e hipotermia",
+    "q": "O resgate termina quando a vítima chega à margem?",
+    "opts": [
+      "Sim — a cold zone é só descanso da equipe",
+      "Não — extração em terreno firme, triagem (consciência e respiração) e varredura de trauma",
+      "Só se a vítima não estiver consciente"
+    ],
+    "c": 1,
+    "com": "A transição para a cold zone exige estabilização imediata. Lesões de pedras e strainers não aparecem só na água."
+  },
+  {
+    "mod": "MÓDULO 1 — Águas rápidas e corretezas",
+    "quiz": "Quiz 1.4 — Throw bag, extração e hipotermia",
+    "q": "Por que o choque térmico é a ameaça invisível após a extração?",
+    "opts": [
+      "A perda de calor na água é até 25× mais rápida que no ar — hipotermia é o risco mais comum",
+      "A água quente dilata os vasos e causa desmaio",
+      "O neoprene impede qualquer perda de calor, então o risco é só na margem seca"
+    ],
+    "c": 0,
+    "com": "Remover roupa molhada, cobrir e isolar do solo, aquecer gradualmente. Não esquentar de choque."
+  }
+]

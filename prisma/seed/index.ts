@@ -212,8 +212,8 @@ async function seedCourse() {
 async function seedModulesAndQuestions(
   courseId: string,
   questions: SeedQuestion[],
+  summaries: Map<string, string>,
 ): Promise<Map<number, string>> {
-  const summaries = extractModuleSummaries(readMd('02_modulos_plataforma.md'));
   const moduleIds = new Map<string, string>();
   const quizIds = new Map<string, string>();
   const indexToQuestionId = new Map<number, string>();
@@ -389,8 +389,11 @@ async function seedDeck(
   }
 }
 
-async function seedContentPages(courseId: string) {
-  for (const page of CONTENT_PAGES) {
+async function seedContentPages(
+  courseId: string,
+  pages: Array<{ file: string; slug: string; ord: number; title: string }>,
+) {
+  for (const page of pages) {
     await prisma.contentPage.upsert({
       where: { courseId_slug: { courseId, slug: page.slug } },
       create: {
@@ -511,19 +514,19 @@ async function printValidation() {
     }
   };
   expect('tenants', tenants, 1);
-  expect('courses', courses, 1);
-  expect('course_modules', courseModules, 7);
-  expect('course_modules com summaryMd', modulesWithSummary, 7);
-  expect('quizzes', quizzes, 48);
-  expect('questions', questions, 133);
-  expect('question_options', questionOptions, 399);
-  expect('decks', decks, 2);
-  expect('cards ESSENTIAL', essentialCards, 51);
+  expect('courses', courses, 3);
+  expect('course_modules', courseModules, 9);
+  expect('course_modules com summaryMd', modulesWithSummary, 9);
+  expect('quizzes', quizzes, 56);
+  expect('questions', questions, 157);
+  expect('question_options', questionOptions, 471);
+  expect('decks', decks, 4);
+  expect('cards ESSENTIAL', essentialCards, 71);
   expect('cards EXAM', examCards, 133);
-  expect('content_pages', contentPages, 12);
+  expect('content_pages', contentPages, 14);
   expect('cartas sem card_question', cardsWithoutQuestions, 0);
   expect('cobertura EXAM', examOrigins.length, 133);
-  expect('cobertura ESSENTIAL', essentialCited.length, 124);
+  expect('cobertura ESSENTIAL', essentialCited.length, 148);
   expect('CardLink órfãos', missingLinkSlugs.length, 0);
   expect('questões sem 1 correta', questionsWithoutSingleCorrect, 0);
 
@@ -532,13 +535,52 @@ async function printValidation() {
   }
 }
 
+async function seedLectureCourse(input: {
+  slug: string;
+  title: string;
+  questionsFile: string;
+  decksFile: string;
+  page: { file: string; slug: string; ord: number; title: string };
+  summaryMd: string;
+}) {
+  const course = await prisma.course.upsert({
+    where: { slug: input.slug },
+    create: {
+      slug: input.slug,
+      title: input.title,
+      sourcePlatform: 'lgnd-squad',
+    },
+    update: { title: input.title },
+  });
+  const questions = readJson<SeedQuestion[]>(input.questionsFile);
+  const decks = readJson<SeedDecks>(input.decksFile);
+  const summaries = new Map<string, string>([['M1', input.summaryMd]]);
+  const indexToQuestionId = await seedModulesAndQuestions(
+    course.id,
+    questions,
+    summaries,
+  );
+  await seedDeck(
+    course.id,
+    'ESSENTIAL',
+    'Essenciais · 80/20',
+    decks.p,
+    indexToQuestionId,
+  );
+  await seedContentPages(course.id, [input.page]);
+}
+
 async function main() {
   const questions = readJson<SeedQuestion[]>('questoes.json');
   const decks = readJson<SeedDecks>('decks.json');
 
   await seedTenant();
   const course = await seedCourse();
-  const indexToQuestionId = await seedModulesAndQuestions(course.id, questions);
+  const indexToQuestionId = await seedModulesAndQuestions(
+    course.id,
+    questions,
+    extractModuleSummaries(readMd('02_modulos_plataforma.md')),
+  );
   await seedDeck(
     course.id,
     'ESSENTIAL',
@@ -553,7 +595,35 @@ async function main() {
     decks.q,
     indexToQuestionId,
   );
-  await seedContentPages(course.id);
+  await seedContentPages(course.id, CONTENT_PAGES);
+  await seedLectureCourse({
+    slug: 'aula-1-brec-nos',
+    title: 'Aula 1 — BREC e NOS',
+    questionsFile: 'aula1-questoes.json',
+    decksFile: 'aula1-decks.json',
+    page: {
+      file: '09_aula1_brec_nos.md',
+      slug: 'aula',
+      ord: 1,
+      title: 'Aula 1 · BREC e NOS',
+    },
+    summaryMd:
+      'FIRE Experience: noções de BREC e NOS para a Brigada de Resgate. Regra zero, 7 nós, 3 pontos, apito, chamada 360° e croqui.',
+  });
+  await seedLectureCourse({
+    slug: 'aula-2-aguas-rapidas',
+    title: 'Aula 2 — Águas rápidas e corretezas',
+    questionsFile: 'aula2-questoes.json',
+    decksFile: 'aula2-decks.json',
+    page: {
+      file: '10_aula2_aguas_rapidas.md',
+      slug: 'aula',
+      ord: 1,
+      title: 'Aula 2 · Águas rápidas',
+    },
+    summaryMd:
+      'Táticas de águas rápidas: pirâmide resgatista-equipe-vítima, EPI, 3 km/h, strainer, remanso, 45°, throw bag e choque térmico.',
+  });
   await printValidation();
 }
 

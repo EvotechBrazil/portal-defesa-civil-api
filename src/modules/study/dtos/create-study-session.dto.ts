@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { DeckSelector } from '@prisma/client';
-import { IsBoolean, IsEnum, IsOptional } from 'class-validator';
+import { IsBoolean, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export enum StudyFilterDto {
   ALL = 'ALL',
@@ -21,4 +21,11 @@ export class CreateStudySessionDto {
   @IsOptional()
   @IsEnum(StudyFilterDto)
   filter?: StudyFilterDto;
+
+  @ApiPropertyOptional({
+    description: 'Curso da base de conteúdo. Padrão: defesa-civil-lgnd',
+  })
+  @IsOptional()
+  @IsString()
+  courseSlug?: string;
 }

@@ -113,6 +113,7 @@ describe('PracticeService', () => {
   beforeEach(() => {
     repository = {
       findActiveCardWithQuestions: jest.fn(),
+      countFinishedAttempts: jest.fn().mockResolvedValue(0),
       createAttempt: jest.fn(),
       findAttemptForUser: jest.fn(),
       findLatestUnfinished: jest.fn(),

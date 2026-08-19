@@ -70,6 +70,7 @@ export function toSessionView(
     queueLength: queue.length,
     reviews: session.reviews,
     bidir: session.bidir,
+    courseSlug: card?.deck.course.slug ?? null,
     deckSelector: session.deckSelector,
     finished,
     tally: parseTally(session.tally),

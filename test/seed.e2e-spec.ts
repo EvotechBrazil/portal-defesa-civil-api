@@ -99,17 +99,17 @@ describe('seed integrity', () => {
     ]);
 
     expect(tenants).toBe(1);
-    expect(courses).toBe(1);
-    expect(courseModules).toBe(7);
-    expect(quizzes).toBe(48);
-    expect(questions).toBe(133);
-    expect(questionOptions).toBe(399);
-    expect(decks).toBe(2);
-    expect(essentialCards).toBe(51);
+    expect(courses).toBe(3);
+    expect(courseModules).toBe(9);
+    expect(quizzes).toBe(56);
+    expect(questions).toBe(157);
+    expect(questionOptions).toBe(471);
+    expect(decks).toBe(4);
+    expect(essentialCards).toBe(71);
     expect(examCards).toBe(133);
-    expect(contentPages).toBe(12);
+    expect(contentPages).toBe(14);
     expect(examOrigins).toHaveLength(133);
-    expect(essentialCited).toHaveLength(124);
+    expect(essentialCited).toHaveLength(148);
     expect(cardsWithoutQuestions).toBe(0);
     expect(
       questionsWithOptions.every(
@@ -131,7 +131,10 @@ describe('seed integrity', () => {
     const seedDecks = readSeedJson<SeedDecks>('decks.json');
 
     const cards = await prisma.card.findMany({
-      where: { deletedAt: null },
+      where: {
+        deletedAt: null,
+        deck: { course: { slug: 'defesa-civil-lgnd' } },
+      },
       select: {
         code: true,
         deck: { select: { kind: true } },

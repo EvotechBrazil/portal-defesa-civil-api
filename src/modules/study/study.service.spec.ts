@@ -53,6 +53,7 @@ function session(
     id: 'sess-1',
     tenantId: 'tenant-1',
     userId: 'user-1',
+    courseId: 'course-1',
     deckSelector: 'ESSENTIAL',
     bidir: true,
     queue: ['hard', 'new', 'easy'],
@@ -72,6 +73,7 @@ describe('StudyService', () => {
 
   beforeEach(() => {
     repo = {
+      findCourseBySlug: jest.fn(),
       findCardIdsByKinds: jest.fn(),
       findCardsByKinds: jest.fn(),
       findCardById: jest.fn(),
@@ -94,6 +96,10 @@ describe('StudyService', () => {
       card({ id: 'easy', code: '#2' }),
       card({ id: 'hard', code: '#3' }),
     ];
+    repo.findCourseBySlug.mockResolvedValue({
+      id: 'course-1',
+      slug: 'defesa-civil-lgnd',
+    });
     repo.findCardIdsByKinds.mockResolvedValue(
       cards.map((item) => ({ id: item.id })),
     );
@@ -163,6 +169,10 @@ describe('StudyService', () => {
       card({ id: 'a', code: '#1' }),
       card({ id: 'b', code: '#2' }),
     ];
+    repo.findCourseBySlug.mockResolvedValue({
+      id: 'course-1',
+      slug: 'defesa-civil-lgnd',
+    });
     repo.findCardIdsByKinds.mockResolvedValue(
       cards.map((item) => ({ id: item.id })),
     );

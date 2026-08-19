@@ -1,0 +1,146 @@
+[
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.1 — Regra zero e missão",
+    "q": "Qual é a regra zero da brigada em estrutura colapsada?",
+    "opts": [
+      "Entrar rápido para ganhar tempo sobre o relógio da vítima",
+      "O socorrista que se acidenta deixa de ser solução e passa a ser mais uma vítima",
+      "O SQUAD entra na zona quente se o órgão oficial ainda não chegou"
+    ],
+    "c": 1,
+    "com": "Regra zero da FIRE Experience: o socorrista acidentado vira problema. A aula não forma Operador de Desastres nem autoriza zona quente."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.1 — Regra zero e missão",
+    "q": "O que esta aula NÃO é?",
+    "opts": [
+      "Noções de comportamento seguro, nós e protocolo de chamada",
+      "Substituição do curso oficial de BREC de 60 h/a e autorização para zona quente",
+      "Registro de croqui para entregar ao órgão oficial"
+    ],
+    "c": 1,
+    "com": "A aula dá noções. Não forma Operador de Desastres, não autoriza zona quente e não substitui o BREC oficial. Nenhum SQUAD entra em escombro sem comando do órgão oficial."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.2 — Nós e amarrações",
+    "q": "Por que escolher o nó certo importa para a resistência da corda?",
+    "opts": [
+      "Todo nó enfraquece a corda entre 20% e 50%",
+      "Nó bem feito aumenta a resistência da corda em até 50%",
+      "O material da corda anula o efeito do nó"
+    ],
+    "c": 0,
+    "com": "Três verdades: todo nó enfraquece 20–50%; nó conferido é nó seguro; simples salva — sob estresse só sai o automático."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.2 — Nós e amarrações",
+    "q": "Qual é a sequência de execução de um nó?",
+    "opts": [
+      "Apertar → executar → conferir → arrumar",
+      "Executar → arrumar (sem cruzes) → apertar → conferir com o parceiro",
+      "Conferir → executar → subir carga → arrumar"
+    ],
+    "c": 1,
+    "com": "Quatro tempos: executar, arrumar (retirar cruzamentos), apertar (pré-carga) e conferir em voz alta com o parceiro. Sem conferência dupla, não sobe carga."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.2 — Nós e amarrações",
+    "q": "Para que serve o lais de guia no resgate?",
+    "opts": [
+      "Unir duas cordas de mesma espessura em carga leve",
+      "Alça fixa que não corre — resgate de pessoa e ancoragem",
+      "Alça no meio da corda, sem usar as pontas"
+    ],
+    "c": 1,
+    "com": "Lais de guia = alça que não corre. Chicote de no mínimo um palmo, travado. Fiel fixa em ponto; carioca é alça no meio; direito une cordas iguais."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.3 — Deslocamento e sinais",
+    "q": "O que é progressão em 3 pontos em área colapsada?",
+    "opts": [
+      "Três socorristas avançam enquanto o quarto observa",
+      "Manter três apoios no solo (dois pés e uma mão, ou dois joelhos e uma mão) para distribuir o peso",
+      "Três silvos curtos autorizam o avanço da fila"
+    ],
+    "c": 1,
+    "com": "Três pontos distribuem o peso e reduzem afundamento. Ninguém progride sozinho. Poeirada, vazio sob laje, gás e estalo são ordem de recuo."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.3 — Deslocamento e sinais",
+    "q": "O que significa 1 silvo longo de apito no sinistro?",
+    "opts": [
+      "Evacuar agora pelo caminho reconhecido",
+      "Atenção / pare — silêncio e aguarde instrução",
+      "Volte ao trabalho no ponto onde parou"
+    ],
+    "c": 1,
+    "com": "1 silvo longo = atenção/pare. 2 silvos curtos = volte ao trabalho. 3 silvos ou mais = evacuar agora. Sem apito no corpo, não entra."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.3 — Deslocamento e sinais",
+    "q": "O que significam 3 silvos curtos (ou mais)?",
+    "opts": [
+      "Risco de vida — evacuar agora pelo caminho já reconhecido, sem correr e sem recolher material",
+      "Liberado retomar a atividade",
+      "Início da chamada e escuta 360°"
+    ],
+    "c": 0,
+    "com": "Três silvos = evacuar. Saia pelo caminho reconhecido, sem correr e sem recolher material."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.4 — Chamada, escuta e croqui",
+    "q": "Qual é a ordem dos 4 tempos da chamada e escuta?",
+    "opts": [
+      "Identificação → silêncio → silvo → escavação imediata",
+      "Atenção (1 silvo) → silêncio total → “Aqui é o LGND SQUAD” → “se alguém me escuta, grite ou bata 3 vezes” e 30 s de escuta",
+      "Croqui → marcação INSARAG → silvo → avanço da fila"
+    ],
+    "c": 1,
+    "com": "Ciclo nos 4 lados do setor, dois ouvintes em pontos diferentes. Resposta = marcar, registrar e acionar o oficial. Não escavar por conta."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.4 — Chamada, escuta e croqui",
+    "q": "O que o SQUAD faz ao localizar uma vítima?",
+    "opts": [
+      "Marca o ponto, registra horário/tipo/direção e aciona o órgão oficial — não escava por conta",
+      "Inicia a extração imediatamente para ganhar o relógio",
+      "Recua todo o setor e apaga a marcação INSARAG"
+    ],
+    "c": 0,
+    "com": "Vítima localizada: marque, registre e acione o oficial. Extração sem comando vira segunda vítima."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.4 — Chamada, escuta e croqui",
+    "q": "Por que o croqui é o produto final da operação do SQUAD?",
+    "opts": [
+      "Substitui a autorização do órgão oficial",
+      "O que não está registrado, para a equipe seguinte, não existe — o croqui é entregue ao CB/Defesa Civil",
+      "Serve só para o relatório interno do SQUAD, sem valor operacional"
+    ],
+    "c": 1,
+    "com": "Croqui: norte e acessos, setores A–D, vítimas, riscos, recursos, entrada e saída da equipe. É a memória da operação e a assinatura do SQUAD."
+  },
+  {
+    "mod": "MÓDULO 1 — BREC e NOS",
+    "quiz": "Quiz 1.4 — Chamada, escuta e croqui",
+    "q": "Antes de entrar no escombro, o que NÃO pode faltar no checklist?",
+    "opts": [
+      "Autorização do órgão oficial, EPI, apito, dupla, rota de recuo, croqui iniciado e nós conferidos por dois",
+      "Drone, maca motorizada e rádio trunking da corporação",
+      "Apenas capacete — o restante se improvisa no setor"
+    ],
+    "c": 0,
+    "com": "Checklist: autorização e função, EPI completo, apito, dupla, rotas, croqui com horário, nós conferidos por dois. Pressa mata mais que escombro."
+  }
+]

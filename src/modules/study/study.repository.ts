@@ -15,6 +15,7 @@ export interface StudySessionRecord {
   id: string;
   tenantId: string;
   userId: string;
+  courseId: string | null;
   deckSelector: DeckSelector;
   bidir: boolean;
   queue: Prisma.JsonValue;
@@ -40,6 +41,7 @@ export interface CardStateRecord {
 export interface CreateSessionInput {
   tenantId: string;
   userId: string;
+  courseId: string;
   deckSelector: DeckSelector;
   bidir: boolean;
   queue: string[];
@@ -66,7 +68,13 @@ export interface CardPoolRow {
 }
 
 export interface StudyStore {
-  findCardIdsByKinds(kinds: DeckKind[]): Promise<CardPoolRow[]>;
+  findCourseBySlug(
+    slug: string,
+  ): Promise<{ id: string; slug: string } | null>;
+  findCardIdsByKinds(
+    kinds: DeckKind[],
+    courseId: string,
+  ): Promise<CardPoolRow[]>;
   findCardsByKinds(kinds: DeckKind[]): Promise<CardWithStudy[]>;
   findCardById(id: string): Promise<CardWithStudy | null>;
   findStatesForUserCards(
@@ -102,6 +110,7 @@ export interface StudyStore {
     userId: string,
     tenantId: string,
     kinds: DeckKind[],
+    courseId?: string | null,
   ): Promise<{ easyCount: number; poolSize: number }>;
 }
 
@@ -125,11 +134,18 @@ const cardStudyInclude = {
 
 function createStore(db: DbClient): StudyStore {
   return {
-    findCardIdsByKinds(kinds: DeckKind[]) {
+    findCourseBySlug(slug: string) {
+      return db.course.findFirst({
+        where: { slug, deletedAt: null },
+        select: { id: true, slug: true },
+      });
+    },
+
+    findCardIdsByKinds(kinds: DeckKind[], courseId: string) {
       return db.card.findMany({
         where: {
           deletedAt: null,
-          deck: { deletedAt: null, kind: { in: kinds } },
+          deck: { deletedAt: null, kind: { in: kinds }, courseId },
         },
         select: { id: true },
         orderBy: [{ deck: { kind: 'asc' } }, { ord: 'asc' }],
@@ -207,6 +223,7 @@ function createStore(db: DbClient): StudyStore {
         data: {
           tenantId: data.tenantId,
           userId: data.userId,
+          courseId: data.courseId,
           deckSelector: data.deckSelector,
           bidir: data.bidir,
           queue: data.queue,
@@ -234,10 +251,14 @@ function createStore(db: DbClient): StudyStore {
       });
     },
 
-    async countEasyInPool(userId, tenantId, kinds) {
+    async countEasyInPool(userId, tenantId, kinds, courseId) {
       const whereCard = {
         deletedAt: null,
-        deck: { deletedAt: null, kind: { in: kinds } },
+        deck: {
+          deletedAt: null,
+          kind: { in: kinds },
+          ...(courseId ? { courseId } : {}),
+        },
       };
       const [poolSize, easyCount] = await Promise.all([
         db.card.count({ where: whereCard }),
@@ -263,8 +284,17 @@ export class StudyRepository implements StudyStore {
     return createStore(this.prisma);
   }
 
-  findCardIdsByKinds(kinds: DeckKind[]): Promise<CardPoolRow[]> {
-    return this.store.findCardIdsByKinds(kinds);
+  findCourseBySlug(
+    slug: string,
+  ): Promise<{ id: string; slug: string } | null> {
+    return this.store.findCourseBySlug(slug);
+  }
+
+  findCardIdsByKinds(
+    kinds: DeckKind[],
+    courseId: string,
+  ): Promise<CardPoolRow[]> {
+    return this.store.findCardIdsByKinds(kinds, courseId);
   }
 
   findCardsByKinds(kinds: DeckKind[]): Promise<CardWithStudy[]> {
@@ -329,8 +359,9 @@ export class StudyRepository implements StudyStore {
     userId: string,
     tenantId: string,
     kinds: DeckKind[],
+    courseId?: string | null,
   ): Promise<{ easyCount: number; poolSize: number }> {
-    return this.store.countEasyInPool(userId, tenantId, kinds);
+    return this.store.countEasyInPool(userId, tenantId, kinds, courseId);
   }
 
   runTransaction<T>(fn: (store: StudyStore) => Promise<T>): Promise<T> {

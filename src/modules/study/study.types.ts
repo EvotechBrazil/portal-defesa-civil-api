@@ -40,6 +40,7 @@ export interface StudySessionView {
   queueLength: number;
   reviews: number;
   bidir: boolean;
+  courseSlug: string | null;
   deckSelector: DeckSelector;
   finished: boolean;
   tally: Record<ReviewRating, number>;

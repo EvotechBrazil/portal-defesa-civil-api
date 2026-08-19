@@ -52,7 +52,7 @@ export class StudyService {
     dto: CreateStudySessionDto,
   ): Promise<StudySessionView> {
     const kinds = kindsForSelector(dto.deckSelector);
-    const cards = await this.studyRepository.findCardsByKinds(kinds);
+    const cards = await this.studyRepository.findCardIdsByKinds(kinds);
     if (cards.length === 0) {
       throw new NotFoundException('No cards available');
     }
@@ -67,7 +67,6 @@ export class StudyService {
 
     const pooled = cards.map((card) => ({
       id: card.id,
-      card,
       level: stateByCard.get(card.id)?.level ?? 'NEW',
     }));
     const selected = applyHardOnlyFilter(pooled, dto.filter ?? 'ALL');

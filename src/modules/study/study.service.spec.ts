@@ -72,6 +72,7 @@ describe('StudyService', () => {
 
   beforeEach(() => {
     repo = {
+      findCardIdsByKinds: jest.fn(),
       findCardsByKinds: jest.fn(),
       findCardById: jest.fn(),
       findStatesForUserCards: jest.fn(),
@@ -93,7 +94,9 @@ describe('StudyService', () => {
       card({ id: 'easy', code: '#2' }),
       card({ id: 'hard', code: '#3' }),
     ];
-    repo.findCardsByKinds.mockResolvedValue(cards);
+    repo.findCardIdsByKinds.mockResolvedValue(
+      cards.map((item) => ({ id: item.id })),
+    );
     repo.findStatesForUserCards.mockResolvedValue([
       {
         id: 's-new',
@@ -160,7 +163,9 @@ describe('StudyService', () => {
       card({ id: 'a', code: '#1' }),
       card({ id: 'b', code: '#2' }),
     ];
-    repo.findCardsByKinds.mockResolvedValue(cards);
+    repo.findCardIdsByKinds.mockResolvedValue(
+      cards.map((item) => ({ id: item.id })),
+    );
     repo.findStatesForUserCards.mockResolvedValue([]);
     repo.ensureStates.mockResolvedValue(undefined);
     repo.createSession.mockImplementation((input) =>

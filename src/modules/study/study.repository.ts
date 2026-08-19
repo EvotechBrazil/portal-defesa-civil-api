@@ -61,7 +61,12 @@ export interface UpdateCardStateInput {
   lastSeenAt: Date | null;
 }
 
+export interface CardPoolRow {
+  id: string;
+}
+
 export interface StudyStore {
+  findCardIdsByKinds(kinds: DeckKind[]): Promise<CardPoolRow[]>;
   findCardsByKinds(kinds: DeckKind[]): Promise<CardWithStudy[]>;
   findCardById(id: string): Promise<CardWithStudy | null>;
   findStatesForUserCards(
@@ -120,6 +125,17 @@ const cardStudyInclude = {
 
 function createStore(db: DbClient): StudyStore {
   return {
+    findCardIdsByKinds(kinds: DeckKind[]) {
+      return db.card.findMany({
+        where: {
+          deletedAt: null,
+          deck: { deletedAt: null, kind: { in: kinds } },
+        },
+        select: { id: true },
+        orderBy: [{ deck: { kind: 'asc' } }, { ord: 'asc' }],
+      });
+    },
+
     findCardsByKinds(kinds: DeckKind[]) {
       return db.card.findMany({
         where: {
@@ -247,6 +263,10 @@ export class StudyRepository implements StudyStore {
     return createStore(this.prisma);
   }
 
+  findCardIdsByKinds(kinds: DeckKind[]): Promise<CardPoolRow[]> {
+    return this.store.findCardIdsByKinds(kinds);
+  }
+
   findCardsByKinds(kinds: DeckKind[]): Promise<CardWithStudy[]> {
     return this.store.findCardsByKinds(kinds);
   }
@@ -314,6 +334,9 @@ export class StudyRepository implements StudyStore {
   }
 
   runTransaction<T>(fn: (store: StudyStore) => Promise<T>): Promise<T> {
-    return this.prisma.$transaction((tx) => fn(createStore(tx)));
+    return this.prisma.$transaction((tx) => fn(createStore(tx)), {
+      maxWait: 10_000,
+      timeout: 20_000,
+    });
   }
 }

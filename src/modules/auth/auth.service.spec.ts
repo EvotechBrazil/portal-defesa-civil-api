@@ -18,6 +18,14 @@ function buildUser(overrides?: Partial<User>): User {
     role: UserRole.STUDENT,
     emailVerifiedAt: new Date('2026-01-01T00:00:00.000Z'),
     lastLoginAt: null,
+    whatsapp: null,
+    lgndNumber: null,
+    manada: null,
+    city: null,
+    squad: null,
+    eventoFire: null,
+    photoBytes: null,
+    photoMime: null,
     createdAt: new Date('2026-01-01T00:00:00.000Z'),
     updatedAt: new Date('2026-01-01T00:00:00.000Z'),
     deletedAt: null,
@@ -41,6 +49,7 @@ describe('AuthService refresh rotation', () => {
   let usersRepository: {
     findActiveById: jest.Mock;
     findActiveByEmail: jest.Mock;
+    findActiveByWhatsapp: jest.Mock;
     createStudent: jest.Mock;
     updateLastLoginAt: jest.Mock;
   };
@@ -65,6 +74,7 @@ describe('AuthService refresh rotation', () => {
     usersRepository = {
       findActiveById: jest.fn(),
       findActiveByEmail: jest.fn(),
+      findActiveByWhatsapp: jest.fn(),
       createStudent: jest.fn(),
       updateLastLoginAt: jest.fn(),
     };
@@ -84,6 +94,11 @@ describe('AuthService refresh rotation', () => {
         }),
       } as unknown as ConfigService,
       { sendVerificationEmail: jest.fn() } as unknown as MailService,
+      {
+        parseWhatsapp: jest.fn(),
+        assertCanRegister: jest.fn(),
+        markRegistered: jest.fn(),
+      } as never,
     );
   });
 

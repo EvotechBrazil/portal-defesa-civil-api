@@ -46,6 +46,12 @@ export async function cleanupTestTenants(prisma: PrismaService): Promise<void> {
     select: { id: true },
   });
   const userIds = users.map((user) => user.id);
+  await prisma.accessRequest.deleteMany({
+    where: { tenantId: { in: tenantIds } },
+  });
+  await prisma.allowedWhatsapp.deleteMany({
+    where: { tenantId: { in: tenantIds } },
+  });
   if (userIds.length > 0) {
     await prisma.attemptItem.deleteMany({
       where: { attempt: { userId: { in: userIds } } },
@@ -75,6 +81,45 @@ export async function createSecondTenant(prisma: PrismaService) {
   return prisma.tenant.create({
     data: { slug, name: `Tenant ${slug}`, status: 'ACTIVE' },
   });
+}
+
+let whatsappSeq = 0;
+
+export function uniqueWhatsapp(): string {
+  whatsappSeq += 1;
+  return `5543999${String(whatsappSeq).padStart(6, '0')}`;
+}
+
+export async function allowWhatsapp(
+  prisma: PrismaService,
+  whatsapp: string,
+  tenantId?: string,
+) {
+  const tenant = tenantId
+    ? { id: tenantId }
+    : await getDefaultTenant(prisma);
+  return prisma.allowedWhatsapp.create({
+    data: { tenantId: tenant.id, whatsapp },
+  });
+}
+
+export function registerPayload(input: {
+  email: string;
+  name: string;
+  password: string;
+  whatsapp: string;
+}) {
+  return {
+    email: input.email,
+    name: input.name,
+    password: input.password,
+    whatsapp: input.whatsapp,
+    lgndNumber: '1001',
+    manada: 'Manada Teste',
+    city: 'Arapongas',
+    squad: 'Squad 1',
+    eventoFire: 'Fire 2026',
+  };
 }
 
 export async function createVerifiedStudent(

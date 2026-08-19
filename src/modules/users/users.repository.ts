@@ -18,12 +18,29 @@ export class UsersRepository {
     });
   }
 
+  findActiveByWhatsapp(
+    tenantId: string,
+    whatsapp: string,
+  ): Promise<User | null> {
+    return this.prisma.user.findFirst({
+      where: { tenantId, whatsapp, deletedAt: null },
+    });
+  }
+
   createStudent(data: {
     tenantId: string;
     email: string;
     name: string;
     passwordHash: string;
     emailVerifiedAt?: Date;
+    whatsapp: string;
+    lgndNumber: string;
+    manada: string;
+    city: string;
+    squad: string;
+    eventoFire: string;
+    photoBytes?: Buffer;
+    photoMime?: string;
   }): Promise<User> {
     return this.prisma.user.create({
       data: {
@@ -33,6 +50,16 @@ export class UsersRepository {
         passwordHash: data.passwordHash,
         role: UserRole.STUDENT,
         emailVerifiedAt: data.emailVerifiedAt,
+        whatsapp: data.whatsapp,
+        lgndNumber: data.lgndNumber,
+        manada: data.manada,
+        city: data.city,
+        squad: data.squad,
+        eventoFire: data.eventoFire,
+        photoBytes: data.photoBytes
+          ? Uint8Array.from(data.photoBytes)
+          : undefined,
+        photoMime: data.photoMime,
       },
     });
   }

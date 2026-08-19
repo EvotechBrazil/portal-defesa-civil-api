@@ -18,6 +18,13 @@ enum UserRole {
   ADMIN
 }
 
+enum AccessRequestStatus {
+  INTERESTED
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 enum LessonKind {
   VIDEO
   TEXT
@@ -63,12 +70,14 @@ model Tenant {
   updatedAt DateTime     @updatedAt @map("updated_at")
   deletedAt DateTime?    @map("deleted_at")
 
-  users           User[]
-  enrollments     Enrollment[]
-  lessonProgress  LessonProgress[]
-  cardStates      CardState[]
-  studySessions   StudySession[]
-  attempts        Attempt[]
+  users            User[]
+  enrollments      Enrollment[]
+  lessonProgress   LessonProgress[]
+  cardStates       CardState[]
+  studySessions    StudySession[]
+  attempts         Attempt[]
+  allowedWhatsapps AllowedWhatsapp[]
+  accessRequests   AccessRequest[]
 
   @@map("tenants")
 }
@@ -82,22 +91,70 @@ model User {
   role            UserRole  @default(STUDENT)
   emailVerifiedAt DateTime? @map("email_verified_at")
   lastLoginAt     DateTime? @map("last_login_at")
+  whatsapp        String?
+  lgndNumber      String?   @map("lgnd_number")
+  manada          String?
+  city            String?
+  squad           String?
+  eventoFire      String?   @map("evento_fire")
+  photoBytes      Bytes?    @map("photo_bytes")
+  photoMime       String?   @map("photo_mime")
   createdAt       DateTime  @default(now()) @map("created_at")
   updatedAt       DateTime  @updatedAt @map("updated_at")
   deletedAt       DateTime? @map("deleted_at")
 
-  tenant                 Tenant                    @relation(fields: [tenantId], references: [id])
-  refreshTokens          RefreshToken[]
+  tenant                  Tenant                    @relation(fields: [tenantId], references: [id])
+  refreshTokens           RefreshToken[]
   emailVerificationTokens EmailVerificationToken[]
-  enrollments            Enrollment[]
-  lessonProgress         LessonProgress[]
-  cardStates             CardState[]
-  studySessions          StudySession[]
-  attempts               Attempt[]
+  enrollments             Enrollment[]
+  lessonProgress          LessonProgress[]
+  cardStates              CardState[]
+  studySessions           StudySession[]
+  attempts                Attempt[]
+  reviewedAccessRequests  AccessRequest[]           @relation("AccessRequestReviewer")
 
   @@unique([tenantId, email])
   @@index([tenantId])
+  @@index([tenantId, whatsapp])
   @@map("users")
+}
+
+model AllowedWhatsapp {
+  id        String   @id @default(cuid())
+  tenantId  String   @map("tenant_id")
+  whatsapp  String
+  label     String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, whatsapp])
+  @@index([tenantId])
+  @@map("allowed_whatsapps")
+}
+
+model AccessRequest {
+  id            String              @id @default(cuid())
+  tenantId      String              @map("tenant_id")
+  whatsapp      String
+  name          String?
+  lgndNumber    String?             @map("lgnd_number")
+  manada        String?
+  email         String?
+  justification String?
+  status        AccessRequestStatus @default(INTERESTED)
+  reviewedAt    DateTime?           @map("reviewed_at")
+  reviewedById  String?             @map("reviewed_by_id")
+  createdAt     DateTime            @default(now()) @map("created_at")
+  updatedAt     DateTime            @updatedAt @map("updated_at")
+
+  tenant     Tenant @relation(fields: [tenantId], references: [id])
+  reviewedBy User?  @relation("AccessRequestReviewer", fields: [reviewedById], references: [id])
+
+  @@unique([tenantId, whatsapp])
+  @@index([tenantId, status])
+  @@map("access_requests")
 }
 
 model RefreshToken {

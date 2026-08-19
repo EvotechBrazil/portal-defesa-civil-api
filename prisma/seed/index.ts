@@ -1,6 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, UserRole } from '@prisma/client';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { hashPassword } from '../../src/modules/auth/auth.crypto';
+import { normalizeWhatsapp } from '../../src/modules/access/whatsapp.util';
 
 const prisma = new PrismaClient();
 
@@ -208,6 +210,58 @@ async function seedTenant() {
     },
     update: {},
   });
+}
+
+async function seedAdmin(tenantId: string) {
+  const email = (process.env.ADMIN_EMAIL ?? 'admin@portal.local').toLowerCase();
+  const password = process.env.ADMIN_PASSWORD ?? 'admin12345';
+  const existing = await prisma.user.findFirst({
+    where: { tenantId, email, deletedAt: null },
+  });
+  if (existing) {
+    if (existing.role !== UserRole.ADMIN) {
+      await prisma.user.update({
+        where: { id: existing.id },
+        data: { role: UserRole.ADMIN, emailVerifiedAt: new Date() },
+      });
+    }
+    return;
+  }
+  await prisma.user.create({
+    data: {
+      tenantId,
+      email,
+      name: 'Administrador',
+      passwordHash: await hashPassword(password),
+      role: UserRole.ADMIN,
+      emailVerifiedAt: new Date(),
+    },
+  });
+}
+
+interface SeedAllowedWhatsapp {
+  whatsapp: string;
+  label?: string;
+}
+
+async function seedAllowedWhatsapps(tenantId: string) {
+  const file = readJson<{ numbers: SeedAllowedWhatsapp[] }>(
+    'allowed-whatsapps.json',
+  );
+  for (const item of file.numbers) {
+    const whatsapp = normalizeWhatsapp(item.whatsapp);
+    await prisma.allowedWhatsapp.upsert({
+      where: { tenantId_whatsapp: { tenantId, whatsapp } },
+      create: {
+        tenantId,
+        whatsapp,
+        label: item.label ?? null,
+      },
+      update: {
+        label: item.label ?? undefined,
+      },
+    });
+  }
 }
 
 async function seedCourse() {
@@ -616,7 +670,9 @@ async function main() {
   const questions = readJson<SeedQuestion[]>('questoes.json');
   const decks = readJson<SeedDecks>('decks.json');
 
-  await seedTenant();
+  const tenant = await seedTenant();
+  await seedAdmin(tenant.id);
+  await seedAllowedWhatsapps(tenant.id);
   const course = await seedCourse();
   const indexToQuestionId = await seedModulesAndQuestions(
     course.id,

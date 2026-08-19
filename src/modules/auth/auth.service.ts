@@ -11,6 +11,8 @@ import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { User } from '@prisma/client';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
+import { AccessService } from '../access/access.service';
+import { decodePhotoBase64 } from '../access/photo.util';
 import { toUserProfile, UsersService } from '../users/users.service';
 import { UsersRepository } from '../users/users.repository';
 import {
@@ -46,6 +48,25 @@ function isPrismaUniqueConstraint(error: unknown): boolean {
   return error.code === 'P2002';
 }
 
+function uniqueConstraintTargets(error: unknown): string[] {
+  if (typeof error !== 'object' || error === null || !('meta' in error)) {
+    return [];
+  }
+  const meta = (error as { meta?: { target?: unknown } }).meta;
+  if (!meta || !Array.isArray(meta.target)) {
+    return [];
+  }
+  return meta.target.filter((item): item is string => typeof item === 'string');
+}
+
+function conflictMessageForUnique(error: unknown): string {
+  const target = uniqueConstraintTargets(error).join('.').toLowerCase();
+  if (target.includes('whatsapp')) {
+    return 'WhatsApp já cadastrado';
+  }
+  return 'E-mail já cadastrado';
+}
+
 function normalizeEmail(email: string): string {
   return email.trim().toLowerCase();
 }
@@ -61,6 +82,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
     private readonly configService: ConfigService,
     private readonly mailService: MailService,
+    private readonly accessService: AccessService,
   ) {}
 
   async register(dto: RegisterDto): Promise<RegisterResult> {
@@ -73,6 +95,9 @@ export class AuthService {
     }
 
     const email = normalizeEmail(dto.email);
+    const whatsapp = this.accessService.parseWhatsapp(dto.whatsapp);
+    await this.accessService.assertCanRegister(tenant.id, whatsapp);
+
     const existing = await this.usersRepository.findActiveByEmail(
       tenant.id,
       email,
@@ -80,7 +105,17 @@ export class AuthService {
     if (existing) {
       throw new ConflictException('E-mail já cadastrado');
     }
+    const existingWhatsapp = await this.usersRepository.findActiveByWhatsapp(
+      tenant.id,
+      whatsapp,
+    );
+    if (existingWhatsapp) {
+      throw new ConflictException('WhatsApp já cadastrado');
+    }
 
+    const photo = dto.photoBase64
+      ? decodePhotoBase64(dto.photoBase64)
+      : undefined;
     const passwordHash = await hashPassword(dto.password);
     const autoVerify =
       this.configService.get<boolean>('mail.autoVerifyEmail') === true;
@@ -92,13 +127,22 @@ export class AuthService {
         name: dto.name.trim(),
         passwordHash,
         emailVerifiedAt: autoVerify ? new Date() : undefined,
+        whatsapp,
+        lgndNumber: dto.lgndNumber.trim(),
+        manada: dto.manada.trim(),
+        city: dto.city.trim(),
+        squad: dto.squad.trim(),
+        eventoFire: dto.eventoFire.trim(),
+        photoBytes: photo?.bytes,
+        photoMime: photo?.mime,
       });
     } catch (error: unknown) {
       if (isPrismaUniqueConstraint(error)) {
-        throw new ConflictException('E-mail já cadastrado');
+        throw new ConflictException(conflictMessageForUnique(error));
       }
       throw error;
     }
+    await this.accessService.markRegistered(tenant.id, whatsapp);
 
     if (!autoVerify) {
       await this.issueVerificationEmail(user);

@@ -6,10 +6,13 @@ import { AppModule } from '../src/app.module';
 import { PrismaService } from '../src/database/prisma.service';
 import { hashToken } from '../src/modules/auth/auth.crypto';
 import {
+  allowWhatsapp,
   bearerFor,
   createSecondTenant,
+  registerPayload,
   resolveVerificationToken,
   signAccessToken,
+  uniqueWhatsapp,
   cleanupTestTenants,
 } from './helpers/auth.helper';
 
@@ -66,6 +69,18 @@ describe('Auth (e2e)', () => {
     return `auth-${label}-${Date.now()}-${seq}@example.com`;
   }
 
+  async function registerStudent(input: {
+    email: string;
+    name: string;
+    password: string;
+  }) {
+    const whatsapp = uniqueWhatsapp();
+    await allowWhatsapp(prisma, whatsapp);
+    return request(server)
+      .post('/api/v1/auth/register')
+      .send(registerPayload({ ...input, whatsapp }));
+  }
+
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule],
@@ -95,10 +110,9 @@ describe('Auth (e2e)', () => {
     const password = 'password12';
     const name = 'Ana Silva';
 
-    const registerRes = await request(server)
-      .post('/api/v1/auth/register')
-      .send({ email, name, password })
-      .expect(201);
+    const registerRes = await registerStudent({ email, name, password }).expect(
+      201,
+    );
 
     const registered = (registerRes.body as Envelope<RegisterData>).data;
     expect(typeof registered.id).toBe('string');
@@ -158,10 +172,11 @@ describe('Auth (e2e)', () => {
     const email = uniqueEmail('unverified');
     const password = 'password12';
 
-    await request(server)
-      .post('/api/v1/auth/register')
-      .send({ email, name: 'Unverified User', password })
-      .expect(201);
+    await registerStudent({
+      email,
+      name: 'Unverified User',
+      password,
+    }).expect(201);
 
     const res = await request(server)
       .post('/api/v1/auth/login')
@@ -179,10 +194,11 @@ describe('Auth (e2e)', () => {
       .expect(202);
 
     const email = uniqueEmail('resend');
-    await request(server)
-      .post('/api/v1/auth/register')
-      .send({ email, name: 'Resend User', password: 'password12' })
-      .expect(201);
+    await registerStudent({
+      email,
+      name: 'Resend User',
+      password: 'password12',
+    }).expect(201);
 
     const existing = await request(server)
       .post('/api/v1/auth/resend-verification')
@@ -195,10 +211,11 @@ describe('Auth (e2e)', () => {
   it('rotates refresh tokens and revokes the chain on reuse', async () => {
     const email = uniqueEmail('rotate');
     const password = 'password12';
-    const registerRes = await request(server)
-      .post('/api/v1/auth/register')
-      .send({ email, name: 'Rotate User', password })
-      .expect(201);
+    const registerRes = await registerStudent({
+      email,
+      name: 'Rotate User',
+      password,
+    }).expect(201);
     const userId = (registerRes.body as Envelope<RegisterData>).data.id;
     const verifyToken = await resolveVerificationToken(prisma, userId, email);
     await request(server)
@@ -250,10 +267,11 @@ describe('Auth (e2e)', () => {
   it('logs out a refresh token with 204', async () => {
     const email = uniqueEmail('logout');
     const password = 'password12';
-    const registerRes = await request(server)
-      .post('/api/v1/auth/register')
-      .send({ email, name: 'Logout User', password })
-      .expect(201);
+    const registerRes = await registerStudent({
+      email,
+      name: 'Logout User',
+      password,
+    }).expect(201);
     const userId = (registerRes.body as Envelope<RegisterData>).data.id;
     const verifyToken = await resolveVerificationToken(prisma, userId, email);
     await request(server)
@@ -329,5 +347,21 @@ describe('Auth (e2e)', () => {
       otherTenant.id,
     );
     expect((otherMe.body as Envelope<MeData>).data.id).not.toBe(user.id);
+  });
+
+  it('rejects register when the WhatsApp is not on the pre-released list', async () => {
+    const res = await request(server)
+      .post('/api/v1/auth/register')
+      .send(
+        registerPayload({
+          email: uniqueEmail('blocked'),
+          name: 'Blocked User',
+          password: 'password12',
+          whatsapp: uniqueWhatsapp(),
+        }),
+      )
+      .expect(403);
+
+    expect(JSON.stringify(res.body)).toMatch(/não está liberado/i);
   });
 });

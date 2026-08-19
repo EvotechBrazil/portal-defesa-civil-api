@@ -35,6 +35,19 @@ interface SeedDecks {
   q: SeedCard[];
 }
 
+function cardBack(item: SeedCard, kind: 'ESSENTIAL' | 'EXAM'): string {
+  if (kind !== 'EXAM') {
+    return item.v;
+  }
+  const context = [item.mod, item.quiz]
+    .filter((value): value is string => Boolean(value))
+    .map((value) => value.replace(/^MÓDULO\s+/u, 'Módulo '))
+    .join(' · ');
+  return context
+    ? `${item.v}\n\n*Contexto para revisão inversa: ${context}.*`
+    : item.v;
+}
+
 const DATA_DIR = join(__dirname, 'data');
 const CONTENT_DIR = join(DATA_DIR, 'content');
 const VERIFIED_AT = new Date('2026-08-18T00:00:00.000Z');
@@ -341,20 +354,24 @@ async function seedDeck(
         ? (indexToQuestionId.get(item.src) ?? null)
         : null;
 
+    const cardData = {
+      ord: i,
+      frontMd: item.f,
+      backMd: cardBack(item, kind),
+      theoryMd: item.t,
+      sourceMd: item.a,
+      reversible: kind === 'EXAM' ? true : item.rev,
+      originQuestionId,
+    };
+
     const card = await prisma.card.upsert({
       where: { deckId_code: { deckId: deck.id, code: item.code } },
       create: {
         deckId: deck.id,
-        ord: i,
         code: item.code,
-        frontMd: item.f,
-        backMd: item.v,
-        theoryMd: item.t,
-        sourceMd: item.a,
-        reversible: item.rev,
-        originQuestionId,
+        ...cardData,
       },
-      update: {},
+      update: cardData,
     });
 
     const related = item.q ?? [];
@@ -394,6 +411,7 @@ async function seedContentPages(
   pages: Array<{ file: string; slug: string; ord: number; title: string }>,
 ) {
   for (const page of pages) {
+    const bodyMd = readMd(page.file);
     await prisma.contentPage.upsert({
       where: { courseId_slug: { courseId, slug: page.slug } },
       create: {
@@ -401,9 +419,13 @@ async function seedContentPages(
         slug: page.slug,
         ord: page.ord,
         title: page.title,
-        bodyMd: readMd(page.file),
+        bodyMd,
       },
-      update: {},
+      update: {
+        ord: page.ord,
+        title: page.title,
+        bodyMd,
+      },
     });
   }
 }
@@ -419,6 +441,7 @@ async function printValidation() {
     decks,
     essentialCards,
     examCards,
+    reversibleExamCards,
     contentPages,
     examOrigins,
     essentialCited,
@@ -439,6 +462,13 @@ async function printValidation() {
       where: { deletedAt: null, deck: { kind: 'ESSENTIAL' } },
     }),
     prisma.card.count({ where: { deletedAt: null, deck: { kind: 'EXAM' } } }),
+    prisma.card.count({
+      where: {
+        deletedAt: null,
+        reversible: true,
+        deck: { kind: 'EXAM' },
+      },
+    }),
     prisma.contentPage.count({ where: { deletedAt: null } }),
     prisma.card.findMany({
       where: {
@@ -494,6 +524,7 @@ async function printValidation() {
     `tenants: ${tenants} · courses: ${courses} · course_modules: ${courseModules} · quizzes: ${quizzes}`,
     `questions: ${questions} · question_options: ${questionOptions} (${questions} × 3)`,
     `decks: ${decks} · cards ESSENTIAL: ${essentialCards} · cards EXAM: ${examCards}`,
+    `cartas EXAM reversíveis: ${reversibleExamCards}/${examCards}`,
     `card_questions: ${cardsWithoutQuestions === 0 ? `> 0 para todas as ${totalCards} cartas` : `MISSING on ${cardsWithoutQuestions} cards`}`,
     `content_pages: ${contentPages}`,
     `course_modules com summaryMd: ${modulesWithSummary}/${courseModules}`,
@@ -523,6 +554,7 @@ async function printValidation() {
   expect('decks', decks, 4);
   expect('cards ESSENTIAL', essentialCards, 71);
   expect('cards EXAM', examCards, 133);
+  expect('cards EXAM reversíveis', reversibleExamCards, 133);
   expect('content_pages', contentPages, 14);
   expect('cartas sem card_question', cardsWithoutQuestions, 0);
   expect('cobertura EXAM', examOrigins.length, 133);

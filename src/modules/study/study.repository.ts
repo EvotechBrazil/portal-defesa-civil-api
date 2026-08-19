@@ -68,9 +68,7 @@ export interface CardPoolRow {
 }
 
 export interface StudyStore {
-  findCourseBySlug(
-    slug: string,
-  ): Promise<{ id: string; slug: string } | null>;
+  findCourseBySlug(slug: string): Promise<{ id: string; slug: string } | null>;
   findCardIdsByKinds(
     kinds: DeckKind[],
     courseId: string,
@@ -284,9 +282,7 @@ export class StudyRepository implements StudyStore {
     return createStore(this.prisma);
   }
 
-  findCourseBySlug(
-    slug: string,
-  ): Promise<{ id: string; slug: string } | null> {
+  findCourseBySlug(slug: string): Promise<{ id: string; slug: string } | null> {
     return this.store.findCourseBySlug(slug);
   }
 

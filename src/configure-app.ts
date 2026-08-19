@@ -3,7 +3,9 @@ import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import helmet from 'helmet';
 
-export function resolveCorsOrigin(raw: string | undefined): boolean | string | string[] {
+export function resolveCorsOrigin(
+  raw: string | undefined,
+): boolean | string | string[] {
   const value = raw?.trim() || 'http://localhost:3000';
   if (value === '*') {
     return true;

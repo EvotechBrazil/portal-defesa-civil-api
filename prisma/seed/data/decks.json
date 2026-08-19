@@ -4,10 +4,10 @@
       "id": "P1",
       "code": "#1",
       "deck": "p",
-      "f": "Fórmula do risco",
+      "f": "Modelo didático: quais fatores elevam e reduzem o risco?",
       "v": "Risco = Ameaça × Exposição × Vulnerabilidade ÷ Capacidade",
-      "t": "Risco não é sinônimo de ameaça. A ameaça é o fenômeno; o risco é a probabilidade de esse fenômeno produzir dano sobre alguém ou alguma coisa. Por isso a mesma chuva de 80 mm gera desastre numa encosta ocupada e não gera nada numa área de mata preservada: mudou a exposição e a vulnerabilidade, não a ameaça. A capacidade entra dividindo porque preparo, estrutura e liderança reduzem o resultado final sem alterar o fenômeno.",
-      "a": "Apostila Mód. 03 — 'Todo desastre nasce da combinação entre ameaça, vulnerabilidade e ausência de preparo'. Mód. 03, item 7, define capacidade de resposta como treinamento + estrutura + planejamento + comunicação + liderança.",
+      "t": "Risco não é sinônimo de ameaça. A ameaça é o fenômeno; o risco expressa a possibilidade de perdas quando esse fenômeno encontra pessoas e bens expostos e vulneráveis. A mesma chuva pode produzir impactos muito diferentes em uma encosta ocupada e em uma área preservada. A fórmula é um mapa mental do curso, não um cálculo normativo universal; capacidade representa recursos, conhecimento, organização e liderança que reduzem consequências e fortalecem a resiliência.",
+      "a": "Apostila Mód. 03; Lei 12.608/2012, art. 1º, parágrafo único, XIII (redação da Lei 14.750/2023); Terminologia UNDRR sobre ameaça, exposição, vulnerabilidade e capacidade.",
       "s": [
         [
           "Núcleo 80/20",
@@ -30,7 +30,7 @@
       "id": "P2",
       "code": "#2",
       "deck": "p",
-      "f": "O risco é…",
+      "f": "Como o curso caracteriza o risco?",
       "v": "Uma <strong>construção social</strong> entre ambiente e ocupação — não fatalidade natural",
       "t": "Chamar o risco de 'construção social' é uma tese, não um floreio: significa que ele é produzido por decisões humanas — onde se constrói, o que se fiscaliza, quem tem acesso a moradia segura. A consequência prática é que o risco pode ser desconstruído pelas mesmas vias. É o que separa a Defesa Civil moderna da lógica de fatalidade.",
       "a": "Apostila Mód. 03, item 6: ocupação irregular, falta de planejamento urbano, pobreza, desinformação, infraestrutura precária e degradação ambiental como fatores que ampliam a vulnerabilidade — 'desastre não é fatalidade, é consequência'.",
@@ -56,7 +56,7 @@
       "id": "P3",
       "code": "#3",
       "deck": "p",
-      "f": "As 5 fases do ciclo",
+      "f": "Quais são as 5 fases do ciclo de proteção e defesa civil?",
       "v": "Prevenção → Mitigação → Preparação → Resposta → Recuperação",
       "t": "As cinco fases não são uma fila que anda uma vez: são um ciclo. A recuperação de um evento alimenta a prevenção do próximo, via lições aprendidas e atualização de mapeamentos. A PNPDEC organiza a política inteira nesse eixo e determina que prevenção tem prioridade sobre resposta — prevenir custa menos e salva mais.",
       "a": "Apostila Mód. 01, item 9 ('O ciclo da proteção — cinco fases, uma missão') e Mód. 02, item 7 ('Prevenção como prioridade absoluta').",
@@ -110,10 +110,10 @@
       "id": "P5",
       "code": "#5",
       "deck": "p",
-      "f": "Norma associada ao S2ID",
-      "v": "<strong>Decreto nº 10.593/2020</strong> — organiza SINPDEC/CONPDEC e o Sistema Nacional de Informações sobre Desastres <em>(o quiz chama de \"Lei\")</em>",
-      "t": "Cuidado com a pegadinha: o quiz fala em 'Lei 10.593/2020', mas 10.593/2020 é um DECRETO, de 24/12/2020, que organiza o SINPDEC, o CONPDEC, o Plano Nacional de Proteção e Defesa Civil e o Sistema Nacional de Informações sobre Desastres. O S2ID é a plataforma operacional da Secretaria Nacional de Proteção e Defesa Civil que materializa esse sistema de informações — o texto do decreto não usa a sigla.",
-      "a": "Conteúdo do M3 da plataforma (Panorama Nacional). A apostila não trata do S2ID; a referência normativa foi conferida no Planalto.",
+      "f": "Qual decreto organiza o SINPDEC e o sistema nacional de informações?",
+      "v": "<strong>Decreto nº 10.593/2020</strong>, alterado pelo Decreto nº 11.774/2023 <em>(o quiz chama incorretamente de \"Lei\")</em>",
+      "t": "Cuidado com a pegadinha: 10.593/2020 é decreto, não lei. Ele organiza o SINPDEC, o CONPDEC e o Sistema Nacional de Informações e Monitoramento de Desastres. O S2ID é a plataforma da SEDEC para registrar ocorrências, solicitar reconhecimento federal e recursos e acompanhar processos. Em 2025, os dispositivos do plano nacional foram atualizados pelo Decreto 12.652, que estabeleceu o PN-PDC 2025–2035.",
+      "a": "Decreto 10.593/2020 (texto consolidado); Decreto 11.774/2023; Decreto 12.652/2025; página oficial do S2ID no MIDR.",
       "s": [
         [
           "Núcleo 80/20",
@@ -191,9 +191,9 @@
       "id": "P8",
       "code": "#8",
       "deck": "p",
-      "f": "O que o COBRADE faz",
-      "v": "Classifica desastres por <strong>grupo → subgrupo → tipo → subtipo</strong>",
-      "t": "O COBRADE é a gramática comum do sistema: sem código padronizado, dois municípios registram o mesmo evento de formas diferentes e a estatística nacional vira ruído. A hierarquia é sempre grupo → subgrupo → tipo → subtipo, dentro de duas categorias, naturais e tecnológicos. É o que permite comparar séries históricas e priorizar investimento.",
+      "f": "O que a COBRADE classifica e qual é sua hierarquia?",
+      "v": "Classifica desastres por <strong>categoria → grupo → subgrupo → tipo → subtipo</strong>",
+      "t": "A COBRADE é a gramática comum do sistema: sem código padronizado, dois municípios podem registrar o mesmo evento de formas incompatíveis. A estrutura completa começa pela categoria — natural ou tecnológica — e segue por grupo, subgrupo, tipo e subtipo. O quiz omite a categoria na alternativa, mas a tabela oficial a inclui.",
       "a": "Conteúdo do M2 da plataforma (Sistemas de Registro). Estrutura conferida na tabela COBRADE oficial do MIDR.",
       "s": [
         [
@@ -221,8 +221,8 @@
       "id": "P9",
       "code": "#9",
       "deck": "p",
-      "f": "O que o FIDE faz",
-      "v": "<strong>Registra as informações</strong> do desastre",
+      "f": "Qual formulário registra as informações e os efeitos do desastre?",
+      "v": "<strong>FIDE — Formulário de Informações do Desastre</strong>",
       "t": "O FIDE é o formulário que descreve o evento — o que houve, onde, quando, quantos afetados, que danos e prejuízos. Ele instrui o pedido de reconhecimento federal de Situação de Emergência ou Estado de Calamidade Pública dentro do S2ID. A decretação em si é ato do prefeito ou governador; o FIDE é a peça técnica que sustenta o pedido.",
       "a": "Conteúdo do M2 da plataforma (Sistemas de Registro).",
       "s": [
@@ -247,9 +247,9 @@
       "id": "P10",
       "code": "#10",
       "deck": "p",
-      "f": "O que o S2ID faz",
-      "v": "<strong>Centraliza os registros nacionais</strong> de desastres",
-      "t": "O S2ID centraliza os registros nacionais de desastres: sem base única, cada esfera guarda o seu pedaço e ninguém enxerga o país. É por isso que o curso repete 'sem dados confiáveis não há gestão efetiva' — o dado é insumo de priorização orçamentária, de mapeamento e de política pública, não burocracia.",
+      "f": "Qual plataforma integra registros, reconhecimento federal e pedidos de recursos?",
+      "v": "<strong>S2ID — Sistema Integrado de Informações sobre Desastres</strong>",
+      "t": "O S2ID não é só um arquivo: o município registra ocorrências, solicita reconhecimento federal de situação de emergência ou calamidade, pede recursos para resposta e recuperação e acompanha processos. A frase do quiz — centraliza os registros nacionais — é uma boa âncora, mas resume apenas parte da função.",
       "a": "Conteúdo dos M2 e M3 da plataforma. Atenção: essa mesma pergunta aparece nos dois módulos com redações levemente diferentes ('registros nacionais' e 'dados nacionais').",
       "s": [
         [
@@ -277,8 +277,8 @@
       "id": "P11",
       "code": "#11",
       "deck": "p",
-      "f": "O que o EM-DAT faz",
-      "v": "Base internacional que <strong>mapeia desastres globais</strong>",
+      "f": "Qual base internacional reúne dados sobre desastres globais?",
+      "v": "<strong>EM-DAT</strong> — base internacional de eventos e impactos de desastres",
       "t": "O EM-DAT é a base internacional de eventos de desastre mantida pelo CRED (Universidade de Louvain, Bélgica). É a fonte usada para afirmar que o número de desastres cresce no mundo. O ponto do módulo é metodológico: conhecimento global serve, mas precisa ser adaptado ao contexto local — o perfil de risco brasileiro não é o de um país insular do Pacífico.",
       "a": "Conteúdo do M3 da plataforma (Cenário Global e Síntese).",
       "s": [
@@ -440,8 +440,8 @@
       "id": "P17",
       "code": "#17",
       "deck": "p",
-      "f": "Do que depende a resiliência",
-      "v": "<strong>Organização social e governamental</strong>",
+      "f": "Segundo o curso, de que depende principalmente a resiliência?",
+      "v": "<strong>Organização social e governamental</strong> — base coletiva da resiliência",
       "t": "A pegadinha oferece 'estruturas militares' e 'condições climáticas' como iscas. A resposta é organização social e governamental: rede comunitária, coordenação entre esferas, capacidade institucional. É coerente com o resto do curso, que insiste em responsabilidade compartilhada e participação social.",
       "a": "Conteúdo do M2 da plataforma; Apostila Mód. 01, itens 13 e 14 (a comunidade e a participação social).",
       "s": [
@@ -830,8 +830,8 @@
       "id": "P32",
       "code": "#32",
       "deck": "p",
-      "f": "Quem é a linha de frente no SINPDEC",
-      "v": "O <strong>município</strong>",
+      "f": "Qual ente é a linha de frente territorial do SINPDEC?",
+      "v": "O <strong>município</strong> — onde prevenção, alerta e resposta chegam à população",
       "t": "O município é a linha de frente porque o desastre acontece em algum lugar concreto, e esse lugar sempre é um município. União planeja, coordena e financia; Estado articula a região e garante resposta rápida; o município executa. Por isso capacidade municipal — infraestrutura e articulação — é tema recorrente.",
       "a": "Apostila Mód. 01, item 12 ('Papel de cada esfera'): 'Municípios: linha de frente, onde a Defesa Civil tem rosto e voz'.",
       "s": [
@@ -1039,8 +1039,8 @@
       "id": "P40",
       "code": "#40",
       "deck": "p",
-      "f": "Primeira estrutura estadual de Defesa Civil no Brasil",
-      "v": "<strong>1966</strong>",
+      "f": "Em que ano foi criada a primeira estrutura estadual de Defesa Civil no Brasil?",
+      "v": "<strong>1966</strong> — primeira estrutura estadual, no então Estado da Guanabara",
       "t": "1966 é a data-chave: depois das enchentes que castigaram o Rio, criou-se no então estado da Guanabara a primeira estrutura estadual de Defesa Civil do país. A apostila fala em 'organização nacional' em 1966/67 — na prática, 1967 é a criação do Ministério do Interior, e o Sistema Nacional de Defesa Civil só foi organizado em 1988, pelo Decreto 97.274. Para o quiz, a resposta é 1966.",
       "a": "Apostila Mód. 01, item 5 (linha do tempo: 1914, 1942, 1943, 1966/1967); Conteúdo do M1 da plataforma (Linha Histórica e Estrutura Estadual).",
       "s": [
@@ -1143,8 +1143,8 @@
       "id": "P44",
       "code": "#44",
       "deck": "p",
-      "f": "Tripé da apostila oficial",
-      "v": "Conhecer, compreender e servir",
+      "f": "Qual é o tripé formativo da apostila oficial?",
+      "v": "<strong>Conhecer · compreender · servir</strong>",
       "t": "A apostila abre a formação com o chamado de quem se prepara para agir quando o mundo precisa. Defesa Civil não é só estrutura: é propósito, preparo e serviço. O tripé conhecer → compreender → servir é o mesmo eixo do curso em vídeo, agora no texto oficial dos 8 módulos.",
       "a": "Apostila oficial LGND · Módulo 01 — Introdução à Proteção e Defesa Civil.",
       "s": [
@@ -1168,8 +1168,8 @@
       "id": "P45",
       "code": "#45",
       "deck": "p",
-      "f": "PNPDEC",
-      "v": "Lei nº 12.608, de 10 de abril de 2012 — política de Estado permanente",
+      "f": "Qual lei institui a PNPDEC como política permanente?",
+      "v": "<strong>Lei nº 12.608, de 10 de abril de 2012</strong> — política de Estado",
       "t": "A apostila trata a PNPDEC como a lei que transforma propósito em ação coordenada. Prevenção tem prioridade sobre a resposta; a política não depende de mandato.",
       "a": "Apostila oficial LGND · Módulo 02 — Política Nacional de Proteção e Defesa Civil (PNPDEC).",
       "s": [
@@ -1193,9 +1193,9 @@
       "id": "P46",
       "code": "#46",
       "deck": "p",
-      "f": "Origem do desastre",
-      "v": "Ameaça × vulnerabilidade × ausência de preparo",
-      "t": "Nenhuma emergência surge do nada. A ameaça pode existir sem desastre; o desastre acontece quando encontra vulnerabilidade e falta de preparo. Capacidade de resposta = treinamento + estrutura + planejamento + comunicação + liderança.",
+      "f": "Que interação transforma um evento adverso em desastre?",
+      "v": "Ameaça encontra <strong>exposição, vulnerabilidade e baixa capacidade</strong>",
+      "t": "Uma ameaça pode existir sem causar desastre. As perdas surgem quando o evento atinge pessoas, bens e ecossistemas expostos e vulneráveis, especialmente onde a capacidade de prevenir, responder e recuperar é insuficiente. A apostila usa a expressão 'ameaça × vulnerabilidade × ausência de preparo'; a atualização deixa explícita a exposição, adotada na terminologia técnica contemporânea.",
       "a": "Apostila oficial LGND · Módulo 03 — Riscos, Ameaças e Vulnerabilidades.",
       "s": [
         [
@@ -1243,8 +1243,8 @@
       "id": "P48",
       "code": "#48",
       "deck": "p",
-      "f": "Planejar antes do caos",
-      "v": "O quê, como, quem e com quais recursos",
+      "f": "Quais perguntas o planejamento deve responder antes do caos?",
+      "v": "<strong>O quê, como, quem, quando e com quais recursos</strong>",
       "t": "Preparação fortalece pessoas e instituições; planejamento decide antes. Planos essenciais: contingência, evacuação, comunicação, abrigamento e logístico. Vulneráveis primeiro.",
       "a": "Apostila oficial LGND · Módulo 05 — Preparação e Planejamento.",
       "s": [
@@ -1268,8 +1268,8 @@
       "id": "P49",
       "code": "#49",
       "deck": "p",
-      "f": "Resposta",
-      "v": "Agir rápido, certo e humano — o tempo vale vidas",
+      "f": "Qual é a lógica de uma resposta segura a desastres?",
+      "v": "Agir <strong>rápido, certo e humano</strong> — com avaliação, comando e segurança da equipe",
       "t": "Responder não é correr: é executar com método. Size-up primeiro, segurança da equipe como prioridade, depois busca, triagem, evacuação, abrigo, logística e registro.",
       "a": "Apostila oficial LGND · Módulo 06 — Resposta a Desastres.",
       "s": [
@@ -1293,8 +1293,8 @@
       "id": "P50",
       "code": "#50",
       "deck": "p",
-      "f": "Reconstruir melhor",
-      "v": "Reconstruir no risco é repetir a tragédia",
+      "f": "O que significa reconstruir melhor na recuperação?",
+      "v": "Restaurar sem reproduzir a vulnerabilidade: <strong>reconstruir no risco é repetir a tragédia</strong>",
       "t": "Recuperação restabelece vida com dignidade e reduz risco futuro. Prioridade: vida e dignidade, depois serviços essenciais e moradia. Transparência mantém confiança.",
       "a": "Apostila oficial LGND · Módulo 07 — Recuperação e Reconstrução.",
       "s": [
@@ -1318,8 +1318,8 @@
       "id": "P51",
       "code": "#51",
       "deck": "p",
-      "f": "Ética LGND",
-      "v": "Técnica sem caráter vira risco — autoridade vem do serviço",
+      "f": "Qual princípio resume ética e liderança na atuação LGND?",
+      "v": "<strong>Técnica sem caráter vira risco</strong> — autoridade vem do serviço e do exemplo",
       "t": "Ética é fazer o certo quando ninguém está olhando. Líder sustenta a equipe sob pressão. Saber dizer não quando a operação fica insegura: equipe viva continua salvando.",
       "a": "Apostila oficial LGND · Módulo 08 — Ética, Liderança e Atuação do Agente LGND.",
       "s": [
@@ -1365,7 +1365,7 @@
         2,
         12
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
       "src": 0
@@ -1394,7 +1394,7 @@
         2,
         12
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
       "src": 1
@@ -1423,7 +1423,7 @@
         10,
         11
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.1 — Propósito: Conhecer, Compreender e Servir",
       "src": 2
@@ -1453,7 +1453,7 @@
         30,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.2 — O Brasil que Protege",
       "src": 3
@@ -1482,7 +1482,7 @@
         10,
         11
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.2 — O Brasil que Protege",
       "src": 4
@@ -1512,7 +1512,7 @@
         8,
         9
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.2 — O Brasil que Protege",
       "src": 5
@@ -1541,7 +1541,7 @@
         8,
         9
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
       "src": 6
@@ -1570,7 +1570,7 @@
         8,
         9
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.3 — Linha Histórica da Defesa Civil",
       "src": 7
@@ -1599,7 +1599,7 @@
         8,
         9
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
       "src": 8
@@ -1628,7 +1628,7 @@
         8,
         9
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.4 — Estrutura Estadual e Organização",
       "src": 9
@@ -1657,7 +1657,7 @@
         10,
         11
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.5 — Identidade e Missão",
       "src": 10
@@ -1686,7 +1686,7 @@
         10,
         11
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.5 — Identidade e Missão",
       "src": 11
@@ -1715,7 +1715,7 @@
         2,
         12
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 1 — APRESENTAÇÃO LGND 01",
       "quiz": "Quiz 1.5 — Identidade e Missão",
       "src": 12
@@ -1744,7 +1744,7 @@
         15,
         57
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.1 — Conceitos Fundamentais",
       "src": 13
@@ -1773,7 +1773,7 @@
         15,
         57
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.1 — Conceitos Fundamentais",
       "src": 14
@@ -1802,7 +1802,7 @@
         15,
         57
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.1 — Conceitos Fundamentais",
       "src": 15
@@ -1830,7 +1830,7 @@
         18,
         75
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.2 — Capacidade e Resiliência",
       "src": 16
@@ -1859,7 +1859,7 @@
         70,
         78
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.2 — Capacidade e Resiliência",
       "src": 17
@@ -1887,7 +1887,7 @@
         50,
         70
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.2 — Capacidade e Resiliência",
       "src": 18
@@ -1920,7 +1920,7 @@
         57,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.3 — Tipos de Desastres",
       "src": 19
@@ -1948,7 +1948,7 @@
         21,
         82
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.3 — Tipos de Desastres",
       "src": 20
@@ -1976,7 +1976,7 @@
         21,
         48
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.3 — Tipos de Desastres",
       "src": 21
@@ -2009,7 +2009,7 @@
         24,
         40
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.4 — Sistemas de Registro",
       "src": 22
@@ -2038,7 +2038,7 @@
         25,
         27
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.4 — Sistemas de Registro",
       "src": 23
@@ -2071,7 +2071,7 @@
         41,
         42
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.4 — Sistemas de Registro",
       "src": 24
@@ -2100,7 +2100,7 @@
         84,
         85
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.5 — Danos e Prejuízos",
       "src": 25
@@ -2129,7 +2129,7 @@
         84,
         85
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.5 — Danos e Prejuízos",
       "src": 26
@@ -2158,7 +2158,7 @@
         25,
         27
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.5 — Danos e Prejuízos",
       "src": 27
@@ -2187,7 +2187,7 @@
         30,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
       "src": 28
@@ -2216,7 +2216,7 @@
         30,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
       "src": 29
@@ -2245,7 +2245,7 @@
         30,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.6 — Prevenção, Mitigação e Preparação",
       "src": 30
@@ -2274,7 +2274,7 @@
         80,
         81
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.7 — Resposta e Recuperação",
       "src": 31
@@ -2304,7 +2304,7 @@
         32,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.7 — Resposta e Recuperação",
       "src": 32
@@ -2334,7 +2334,7 @@
         33,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 2 — FUNDAMENTOS TÉCNICOS · RDD",
       "quiz": "Quiz 2.7 — Resposta e Recuperação",
       "src": 33
@@ -2363,7 +2363,7 @@
         36,
         49
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.1 — Cenário Global",
       "src": 34
@@ -2392,7 +2392,7 @@
         36,
         49
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.1 — Cenário Global",
       "src": 35
@@ -2421,7 +2421,7 @@
         36,
         49
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.1 — Cenário Global",
       "src": 36
@@ -2450,7 +2450,7 @@
         44,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.2 — Impactos Globais",
       "src": 37
@@ -2483,7 +2483,7 @@
         44,
         45
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.2 — Impactos Globais",
       "src": 38
@@ -2516,7 +2516,7 @@
         44,
         45
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.2 — Impactos Globais",
       "src": 39
@@ -2549,7 +2549,7 @@
         41,
         42
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.3 — Panorama Nacional",
       "src": 40
@@ -2580,7 +2580,7 @@
         41,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.3 — Panorama Nacional",
       "src": 41
@@ -2613,7 +2613,7 @@
         41,
         42
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.3 — Panorama Nacional",
       "src": 42
@@ -2642,7 +2642,7 @@
         44,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
       "src": 43
@@ -2671,7 +2671,7 @@
         44,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
       "src": 44
@@ -2704,7 +2704,7 @@
         44,
         45
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.4 — Perfil de Risco do Brasil",
       "src": 45
@@ -2734,7 +2734,7 @@
         46,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
       "src": 46
@@ -2764,7 +2764,7 @@
         47,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
       "src": 47
@@ -2792,7 +2792,7 @@
         21,
         48
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.5 — Desastres Frequentes no Brasil",
       "src": 48
@@ -2820,7 +2820,7 @@
         51,
         52
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.6 — Síntese",
       "src": 49
@@ -2848,7 +2848,7 @@
         50,
         70
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 3 — PANORAMA GLOBAL E NACIONAL",
       "quiz": "Quiz 3.6 — Síntese",
       "src": 50
@@ -2876,7 +2876,7 @@
         51,
         52
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.1 — Origem e Propósito",
       "src": 51
@@ -2905,7 +2905,7 @@
         50,
         52
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.1 — Origem e Propósito",
       "src": 52
@@ -2934,7 +2934,7 @@
         69,
         70
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.1 — Origem e Propósito",
       "src": 53
@@ -2959,7 +2959,7 @@
         55,
         56
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.2 — Caso Mitch",
       "src": 54
@@ -2984,7 +2984,7 @@
         55,
         56
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.2 — Caso Mitch",
       "src": 55
@@ -3009,7 +3009,7 @@
         55,
         56
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.2 — Caso Mitch",
       "src": 56
@@ -3042,7 +3042,7 @@
         57,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
       "src": 57
@@ -3071,7 +3071,7 @@
         44,
         58
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.3 — Fundamentos da Análise de Risco",
       "src": 58
@@ -3099,7 +3099,7 @@
         60,
         61
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.4 — Modalidades de Gestão",
       "src": 59
@@ -3127,7 +3127,7 @@
         60,
         61
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.4 — Modalidades de Gestão",
       "src": 60
@@ -3159,7 +3159,7 @@
         60,
         61
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.4 — Modalidades de Gestão",
       "src": 61
@@ -3183,7 +3183,7 @@
         63,
         64
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.5 — Stop Disasters",
       "src": 62
@@ -3207,7 +3207,7 @@
         63,
         64
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.5 — Stop Disasters",
       "src": 63
@@ -3231,7 +3231,7 @@
         63,
         64
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.5 — Stop Disasters",
       "src": 64
@@ -3260,7 +3260,7 @@
         67,
         99
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.6 — Governança",
       "src": 65
@@ -3289,7 +3289,7 @@
         67,
         99
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.6 — Governança",
       "src": 66
@@ -3318,7 +3318,7 @@
         67,
         99
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.6 — Governança",
       "src": 67
@@ -3347,7 +3347,7 @@
         69,
         70
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.7 — Essência da GRD",
       "src": 68
@@ -3376,7 +3376,7 @@
         69,
         70
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.7 — Essência da GRD",
       "src": 69
@@ -3404,7 +3404,7 @@
         50,
         70
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 4 — ESTRUTURAS E PRINCÍPIOS DA GESTÃO",
       "quiz": "Quiz 4.7 — Essência da GRD",
       "src": 70
@@ -3437,7 +3437,7 @@
         72,
         77
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.1 — Fundamentos",
       "src": 71
@@ -3470,7 +3470,7 @@
         72,
         77
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.1 — Fundamentos",
       "src": 72
@@ -3503,7 +3503,7 @@
         75,
         84
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.2 — Elementos Estruturantes",
       "src": 73
@@ -3532,7 +3532,7 @@
         74,
         95
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.2 — Elementos Estruturantes",
       "src": 74
@@ -3565,7 +3565,7 @@
         75,
         84
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.2 — Elementos Estruturantes",
       "src": 75
@@ -3594,7 +3594,7 @@
         30,
         76
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.3 — Ciclo de Ações",
       "src": 76
@@ -3624,7 +3624,7 @@
         76,
         77
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.3 — Ciclo de Ações",
       "src": 77
@@ -3653,7 +3653,7 @@
         33,
         78
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.3 — Ciclo de Ações",
       "src": 78
@@ -3682,7 +3682,7 @@
         80,
         81
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.4 — Ações de Resposta",
       "src": 79
@@ -3711,7 +3711,7 @@
         80,
         81
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.4 — Ações de Resposta",
       "src": 80
@@ -3740,7 +3740,7 @@
         80,
         81
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.5 — Procedimentos da Resposta",
       "src": 81
@@ -3768,7 +3768,7 @@
         21,
         82
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.5 — Procedimentos da Resposta",
       "src": 82
@@ -3801,7 +3801,7 @@
         87,
         88
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.5 — Procedimentos da Resposta",
       "src": 83
@@ -3834,7 +3834,7 @@
         75,
         84
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.6 — Assistência Humanitária",
       "src": 84
@@ -3863,7 +3863,7 @@
         84,
         85
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.6 — Assistência Humanitária",
       "src": 85
@@ -3896,7 +3896,7 @@
         87,
         88
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.7 — Ferramentas de Coordenação",
       "src": 86
@@ -3929,7 +3929,7 @@
         87,
         88
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.7 — Ferramentas de Coordenação",
       "src": 87
@@ -3962,7 +3962,7 @@
         87,
         88
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 5 — GESTÃO OPERACIONAL DE DESASTRES",
       "quiz": "Quiz 5.7 — Ferramentas de Coordenação",
       "src": 88
@@ -3991,7 +3991,7 @@
         91,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.1 — O que é o PLANCON",
       "src": 89
@@ -4020,7 +4020,7 @@
         91,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.1 — O que é o PLANCON",
       "src": 90
@@ -4049,7 +4049,7 @@
         91,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.1 — O que é o PLANCON",
       "src": 91
@@ -4079,7 +4079,7 @@
         92,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
       "src": 92
@@ -4109,7 +4109,7 @@
         93,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.2 — Papel na Preparação e Resposta",
       "src": 93
@@ -4138,7 +4138,7 @@
         91,
         94
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.3 — Bases Legais",
       "src": 94
@@ -4167,7 +4167,7 @@
         94,
         95
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.3 — Bases Legais",
       "src": 95
@@ -4196,7 +4196,7 @@
         96,
         97
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.4 — Estrutura do PLANCON",
       "src": 96
@@ -4225,7 +4225,7 @@
         96,
         97
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.4 — Estrutura do PLANCON",
       "src": 97
@@ -4256,7 +4256,7 @@
         104,
         105
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.5 — Participação Social",
       "src": 98
@@ -4285,7 +4285,7 @@
         67,
         99
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.5 — Participação Social",
       "src": 99
@@ -4316,7 +4316,7 @@
         104,
         105
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.5 — Participação Social",
       "src": 100
@@ -4347,7 +4347,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
       "src": 101
@@ -4378,7 +4378,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
       "src": 102
@@ -4409,7 +4409,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.6 — 9 Passos (Parte 1)",
       "src": 103
@@ -4440,7 +4440,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
       "src": 104
@@ -4471,7 +4471,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
       "src": 105
@@ -4502,7 +4502,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.7 — 9 Passos (Parte 2)",
       "src": 106
@@ -4533,7 +4533,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
       "src": 107
@@ -4564,7 +4564,7 @@
         105,
         106
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 6 — PLANEJAMENTO OPERACIONAL (PLANCON)",
       "quiz": "Quiz 6.8 — 9 Passos (Parte 3)",
       "src": 108
@@ -4592,7 +4592,7 @@
         110,
         111
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.1 — Apostila M01: Introdução",
       "src": 109
@@ -4620,7 +4620,7 @@
         110,
         111
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.1 — Apostila M01: Introdução",
       "src": 110
@@ -4648,7 +4648,7 @@
         110,
         111
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.1 — Apostila M01: Introdução",
       "src": 111
@@ -4676,7 +4676,7 @@
         113,
         114
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.2 — Apostila M02: PNPDEC",
       "src": 112
@@ -4704,7 +4704,7 @@
         113,
         114
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.2 — Apostila M02: PNPDEC",
       "src": 113
@@ -4732,7 +4732,7 @@
         113,
         114
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.2 — Apostila M02: PNPDEC",
       "src": 114
@@ -4760,7 +4760,7 @@
         116,
         117
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.3 — Apostila M03: Riscos",
       "src": 115
@@ -4788,7 +4788,7 @@
         116,
         117
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.3 — Apostila M03: Riscos",
       "src": 116
@@ -4816,7 +4816,7 @@
         116,
         117
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.3 — Apostila M03: Riscos",
       "src": 117
@@ -4844,7 +4844,7 @@
         119,
         120
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.4 — Apostila M04: Prevenção e mitigação",
       "src": 118
@@ -4872,7 +4872,7 @@
         119,
         120
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.4 — Apostila M04: Prevenção e mitigação",
       "src": 119
@@ -4900,7 +4900,7 @@
         119,
         120
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.4 — Apostila M04: Prevenção e mitigação",
       "src": 120
@@ -4928,7 +4928,7 @@
         122,
         123
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.5 — Apostila M05: Preparação e planejamento",
       "src": 121
@@ -4956,7 +4956,7 @@
         122,
         123
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.5 — Apostila M05: Preparação e planejamento",
       "src": 122
@@ -4984,7 +4984,7 @@
         122,
         123
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.5 — Apostila M05: Preparação e planejamento",
       "src": 123
@@ -5012,7 +5012,7 @@
         125,
         126
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.6 — Apostila M06: Resposta",
       "src": 124
@@ -5040,7 +5040,7 @@
         125,
         126
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.6 — Apostila M06: Resposta",
       "src": 125
@@ -5068,7 +5068,7 @@
         125,
         126
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.6 — Apostila M06: Resposta",
       "src": 126
@@ -5096,7 +5096,7 @@
         128,
         129
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.7 — Apostila M07: Recuperação",
       "src": 127
@@ -5124,7 +5124,7 @@
         128,
         129
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.7 — Apostila M07: Recuperação",
       "src": 128
@@ -5152,7 +5152,7 @@
         128,
         129
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.7 — Apostila M07: Recuperação",
       "src": 129
@@ -5180,7 +5180,7 @@
         131,
         132
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.8 — Apostila M08: Ética e liderança",
       "src": 130
@@ -5208,7 +5208,7 @@
         131,
         132
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.8 — Apostila M08: Ética e liderança",
       "src": 131
@@ -5236,7 +5236,7 @@
         131,
         132
       ],
-      "rev": false,
+      "rev": true,
       "mod": "MÓDULO 7 — APOSTILA OFICIAL · MÓDULOS 01 A 08",
       "quiz": "Quiz 7.8 — Apostila M08: Ética e liderança",
       "src": 132

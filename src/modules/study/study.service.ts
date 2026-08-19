@@ -5,11 +5,13 @@ import {
   NotFoundException,
   Optional,
 } from '@nestjs/common';
-import { DeckKind, ReviewRating } from '@prisma/client';
+import { CardLevel, DeckKind, ReviewRating } from '@prisma/client';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import {
   applyHardOnlyFilter,
   applyReview,
+  countQueueLevels,
+  findFocusIndex,
   fisherYatesShuffle,
   orderPoolByRank,
   parseQueue,
@@ -106,6 +108,7 @@ export class StudyService {
   async getById(
     user: AuthenticatedUser,
     sessionId: string,
+    focus: CardLevel | null = null,
   ): Promise<StudySessionView> {
     const session = await this.studyRepository.findSessionById(
       sessionId,
@@ -115,13 +118,14 @@ export class StudyService {
     if (!session) {
       throw new NotFoundException('Study session not found');
     }
-    return this.presentSession(this.studyRepository, session);
+    return this.presentSession(this.studyRepository, session, focus);
   }
 
   review(
     user: AuthenticatedUser,
     sessionId: string,
     rating: ReviewRating,
+    focus: CardLevel | null = null,
   ): Promise<ReviewSessionView> {
     return this.studyRepository.runTransaction(async (store) => {
       const session = await store.findSessionById(
@@ -141,9 +145,11 @@ export class StudyService {
         throw new ConflictException('Study session already finished');
       }
 
-      const currentId = queue[0];
+      const levels = await this.levelsForQueue(store, session, queue);
+      const index = findFocusIndex(queue, levels, focus);
+      const currentId = index >= 0 ? queue[index] : undefined;
       if (!currentId) {
-        throw new ConflictException('Study session already finished');
+        throw new ConflictException('No card matches the current focus');
       }
 
       const state = await store.findCardState(
@@ -166,6 +172,7 @@ export class StudyService {
         },
         rating,
         now,
+        index,
       );
 
       const tally = parseTally(session.tally);
@@ -185,7 +192,7 @@ export class StudyService {
         endedAt: result.queue.length === 0 ? now : undefined,
       });
 
-      const view = await this.presentSession(store, updated);
+      const view = await this.presentSession(store, updated, focus);
       return {
         ...view,
         reviewed: {
@@ -241,11 +248,20 @@ export class StudyService {
   private async presentSession(
     store: StudyStore,
     session: StudySessionRecord,
+    focus: CardLevel | null = null,
   ): Promise<StudySessionView> {
     const queue = parseQueue(session.queue);
-    const cardId = queue[0];
+    const levels = await this.levelsForQueue(store, session, queue);
+    const extra = {
+      queueLevels: countQueueLevels(queue, levels),
+      focus,
+    };
+
+    const index = findFocusIndex(queue, levels, focus);
+    const cardId = index >= 0 ? queue[index] : undefined;
     if (!cardId) {
-      return toSessionView(session, null, null);
+      // Fila vazia (sessão acabou) ou o foco atual não casa com nenhuma carta.
+      return toSessionView(session, null, null, extra);
     }
 
     const card = await store.findCardById(cardId);
@@ -257,7 +273,23 @@ export class StudyService {
       session.tenantId,
       cardId,
     );
-    return toSessionView(session, card, toProgress(state));
+    return toSessionView(session, card, toProgress(state), extra);
+  }
+
+  private async levelsForQueue(
+    store: StudyStore,
+    session: StudySessionRecord,
+    queue: string[],
+  ): Promise<Map<string, CardLevel>> {
+    if (queue.length === 0) {
+      return new Map();
+    }
+    const states = await store.findStatesForUserCards(
+      session.userId,
+      session.tenantId,
+      queue,
+    );
+    return new Map(states.map((state) => [state.cardId, state.level]));
   }
 }
 

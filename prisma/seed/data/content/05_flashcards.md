@@ -1,11 +1,11 @@
 # FLASHCARDS — PARETO 80/20
-*43 cartões conceituais que cobrem ~80% do que o curso cobra. Ordenados por peso.*
+*51 cartões conceituais que concentram o conteúdo de maior retorno. Ordenados por peso.*
 
 > No guia HTML esses cartões rodam em **repetição espaçada**: depois de virar a carta você marca **Difícil** (volta em ~2 cartas), **Aprendendo** (volta em ~6) ou **Fácil** (sai da rodada após dois acertos seguidos). Na sessão seguinte a fila já começa pelas difíceis, e o progresso fica salvo no navegador entre os dias.
 >
 > Com **mão dupla** ligada, a cada nova aparição a carta inverte o sentido: ora você vê o conceito e busca a definição, ora vê a definição e precisa nomear o conceito. Ao revelar a resposta, o guia abre abaixo do cartão a **fundamentação teórica**, a origem do ponto na apostila e uma **mini-prova** com as questões daquele ponto — embaralhadas a cada tentativa, sem gabarito até o fim, com a nota comparada à tentativa anterior.
 >
-> **Dois baralhos.** *Essenciais (Pareto 80/20)* = estas 43 cartas conceituais. *Completo* = as 43 + **109 cartas no formato das questões reais**, uma para cada item do banco, para não deixar nada do curso de fora.
+> **Dois modos principais.** *Essenciais · 80/20* = 51 cartas conceituais. *Conteúdo completo* = as 51 + **133 cartas de perguntas e respostas**, totalizando **184 cartas**. No modo completo, as cartas de pergunta também alternam o sentido e exibem o contexto do módulo/quiz quando a resposta vem primeiro.
 
 | # | Frente | Verso |
 |---|---|---|
@@ -52,3 +52,11 @@
 | 41 | O tripé do propósito da Defesa Civil | **Conhecer · Compreender · Servir** — e "servir" como **vocação que move ações de proteção** |
 | 42 | Como o curso define a Defesa Civil | **União, prevenção e fé** (identidade: união, prevenção e **cuidado**) · missão: **o sistema que age quando tudo desaba** |
 | 43 | A essência da GRD | **Processo contínuo** que busca **reduzir perdas**; na prática: **prevenir, mitigar e responder** |
+| 44 | Tripé da apostila oficial | **Conhecer · compreender · servir** |
+| 45 | PNPDEC como política de Estado | **Lei nº 12.608/2012**, permanente e interfederativa |
+| 46 | Como o desastre se forma | Ameaça encontra **exposição, vulnerabilidade e baixa capacidade** |
+| 47 | Prevenir × mitigar | Prevenir evita ou reduz a formação do risco; mitigar limita o impacto do risco existente |
+| 48 | Planejar antes do caos | Definir **o quê, como, quem, quando e com quais recursos** |
+| 49 | Resposta segura | Agir rápido, certo e humano — com avaliação, comando e segurança da equipe |
+| 50 | Reconstruir melhor | Recuperar sem reproduzir a vulnerabilidade anterior |
+| 51 | Ética LGND | Técnica sem caráter vira risco; autoridade vem do serviço |

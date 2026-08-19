@@ -44,6 +44,8 @@ export interface StudySessionView {
   deckSelector: DeckSelector;
   finished: boolean;
   tally: Record<ReviewRating, number>;
+  queueLevels: Record<CardLevel, number>;
+  focus: CardLevel | null;
   card: CurrentCardView | null;
 }
 

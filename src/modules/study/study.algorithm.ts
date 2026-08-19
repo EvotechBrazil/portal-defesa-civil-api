@@ -73,9 +73,10 @@ export function applyReview(
   state: CardProgress,
   rating: ReviewRating,
   now: Date,
+  index = 0,
 ): ReviewResult {
   const nextQueue = [...queue];
-  const cardId = nextQueue.shift();
+  const [cardId] = nextQueue.splice(index, 1);
   if (!cardId) {
     throw new Error('Cannot review an empty queue');
   }
@@ -101,6 +102,35 @@ export function applyReview(
   }
 
   return { cardId, queue: nextQueue, state: nextState, retired };
+}
+
+export function countQueueLevels(
+  queue: readonly string[],
+  levelByCard: ReadonlyMap<string, CardLevel>,
+): Record<CardLevel, number> {
+  const counts: Record<CardLevel, number> = {
+    NEW: 0,
+    HARD: 0,
+    LEARNING: 0,
+    EASY: 0,
+  };
+  for (const cardId of queue) {
+    counts[levelByCard.get(cardId) ?? 'NEW'] += 1;
+  }
+  return counts;
+}
+
+export function findFocusIndex(
+  queue: readonly string[],
+  levelByCard: ReadonlyMap<string, CardLevel>,
+  focus: CardLevel | null,
+): number {
+  if (!focus) {
+    return queue.length > 0 ? 0 : -1;
+  }
+  return queue.findIndex(
+    (cardId) => (levelByCard.get(cardId) ?? 'NEW') === focus,
+  );
 }
 
 export function parseQueue(raw: unknown): string[] {

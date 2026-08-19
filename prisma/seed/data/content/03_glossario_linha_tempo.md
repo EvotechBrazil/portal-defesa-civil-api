@@ -6,9 +6,9 @@
 | **PNPDEC** | Política Nacional de Proteção e Defesa Civil | Instituída pela **Lei 12.608/2012**. É a base legal de tudo. |
 | **SINPDEC** | Sistema Nacional de Proteção e Defesa Civil | Rede que integra União, Estados, Municípios e comunidade. |
 | **CONPDEC** | Conselho Nacional de Proteção e Defesa Civil | Órgão consultivo do SINPDEC. |
-| **S2ID** | Sistema Integrado de Informações sobre Desastres | **Centraliza os registros nacionais** de desastres. |
+| **S2ID** | Sistema Integrado de Informações sobre Desastres | Registra ocorrências, apoia reconhecimento federal e pedidos de recursos e sistematiza informações. |
 | **FIDE** | Formulário de Informações do Desastre | Documento de **registro das informações** do evento. |
-| **COBRADE** | Codificação Brasileira de Desastres | Classifica por **grupo → subgrupo → tipo → subtipo**. |
+| **COBRADE** | Classificação e Codificação Brasileira de Desastres | Classifica por **categoria → grupo → subgrupo → tipo → subtipo**. |
 | **DMATE** | Declaração Municipal de Atuação Emergencial | Complementa o FIDE na decretação. |
 | **EM-DAT** | Emergency Events Database | Base **internacional** de desastres (CRED/Bélgica). |
 | **GRD / RRD** | Gestão / Redução do Risco de Desastres | Processo **contínuo**, não evento isolado. |
@@ -26,6 +26,8 @@
 - **Resiliência:** capacidade de **resistir, adaptar-se e recuperar-se**.
 - **Risco:** probabilidade de ocorrência de evento adverso associada aos seus impactos. Construção social.
 - **Desastre:** resultado de evento adverso sobre cenário vulnerável, causando danos e prejuízos.
+- **Desabrigado:** deixou a habitação e necessita de abrigo provido pelo SINPDEC ou pelo responsável pelo evento.
+- **Desalojado:** deixou a habitação, mas não necessariamente necessita de abrigo provido pelo sistema.
 - **Desastre súbito:** ocorre sem aviso (explosão, desabamento, vendaval).
 - **Desastre gradual / de evolução lenta:** instala-se progressivamente (estiagem, seca, desertificação).
 - **Danos:** perdas imediatas — humanos, materiais, ambientais.
@@ -52,6 +54,15 @@
 | **2005** | **Marco de Ação de Hyogo** — base internacional da PNPDEC. |
 | **2010** | **Lei nº 12.340/2010** — transferências de recursos, FUNCAP, base do PLANCON. |
 | **2012** | **Lei nº 12.608/2012** — institui a **PNPDEC**. |
-| **2015** | **Marco de Sendai (2015–2030)** — sucede Hyogo na agenda global de RRD. |
 | **1988** | Decreto nº 97.274 organiza o **Sistema Nacional de Defesa Civil (SINDEC)**. |
+| **2015** | **Marco de Sendai (2015–2030)** — sucede Hyogo na agenda global de RRD. |
 | **2020** | **Decreto nº 10.593/2020** — organiza o SINPDEC, o CONPDEC e o Sistema Nacional de Informações sobre Desastres (base do **S2ID**). |
+| **2023** | **Lei nº 14.750/2023** atualiza conceitos e responsabilidades da Lei nº 12.608/2012; **Decreto nº 11.774/2023** atualiza o SINPDEC/CONPDEC. |
+| **2025** | **Decreto nº 12.652/2025** e Portaria MIDR nº 3.318/2025 instituem o **PN-PDC 2025–2035**. |
+
+## Fontes oficiais atualizadas
+
+- [Lei nº 12.608/2012 — texto consolidado](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12608.htm)
+- [Decreto nº 10.593/2020 — texto consolidado](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10593.htm)
+- [Plano Nacional de Proteção e Defesa Civil](https://www.gov.br/mdr/pt-br/acesso-a-informacao/legislacao/secretaria-nacional-de-protecao-e-defesa-civil/legislacao/plano-nacional-de-protecao-e)
+- [S2ID — página oficial](https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/sistema-integrado-de-informacoes-sobre-desastres)

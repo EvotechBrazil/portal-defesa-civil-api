@@ -33,6 +33,8 @@ interface SessionView {
   finished: boolean;
   card: SessionCard | null;
   tally: { HARD: number; LEARNING: number; EASY: number };
+  queueLevels: { NEW: number; HARD: number; LEARNING: number; EASY: number };
+  focus: string | null;
   reviewed?: { cardId: string; level: string; retired: boolean };
 }
 
@@ -149,6 +151,66 @@ describe('Study (e2e)', () => {
     expect(state?.seen).toBe(1);
   });
 
+  it('focuses the queue on a level and reviews only cards in it', async () => {
+    const auth = await bearerFor(prisma);
+
+    const created = await request(server())
+      .post('/api/v1/study-sessions')
+      .set(auth.header)
+      .send({ deckSelector: 'ESSENTIAL' })
+      .expect(201);
+    const sessionId = (created.body as Envelope<SessionView>).data.sessionId;
+    const firstCardId = (created.body as Envelope<SessionView>).data.card?.id;
+    expect((created.body as Envelope<SessionView>).data.queueLevels.NEW).toBe(
+      51,
+    );
+    expect((created.body as Envelope<SessionView>).data.focus).toBeNull();
+
+    await request(server())
+      .post(`/api/v1/study-sessions/${sessionId}/reviews`)
+      .set(auth.header)
+      .send({ rating: 'HARD' })
+      .expect(200);
+
+    const focused = await request(server())
+      .get(`/api/v1/study-sessions/${sessionId}`)
+      .query({ focus: 'HARD' })
+      .set(auth.header)
+      .expect(200);
+    const focusedBody = focused.body as Envelope<SessionView>;
+    expect(focusedBody.data.focus).toBe('HARD');
+    expect(focusedBody.data.queueLevels.HARD).toBe(1);
+    expect(focusedBody.data.card?.id).toBe(firstCardId);
+
+    const reviewedInFocus = await request(server())
+      .post(`/api/v1/study-sessions/${sessionId}/reviews`)
+      .set(auth.header)
+      .send({ rating: 'EASY', focus: 'HARD' })
+      .expect(200);
+    const reviewedBody = reviewedInFocus.body as Envelope<SessionView>;
+    expect(reviewedBody.data.reviewed?.cardId).toBe(firstCardId);
+    expect(reviewedBody.data.queueLevels.HARD).toBe(0);
+    // Sem carta no foco, a fila continua cheia esperando outro filtro.
+    expect(reviewedBody.data.card).toBeNull();
+    expect(reviewedBody.data.finished).toBe(false);
+  });
+
+  it('rejects an unknown focus value', async () => {
+    const auth = await bearerFor(prisma);
+    const created = await request(server())
+      .post('/api/v1/study-sessions')
+      .set(auth.header)
+      .send({ deckSelector: 'ESSENTIAL' })
+      .expect(201);
+    const sessionId = (created.body as Envelope<SessionView>).data.sessionId;
+
+    await request(server())
+      .get(`/api/v1/study-sessions/${sessionId}`)
+      .query({ focus: 'BANANA' })
+      .set(auth.header)
+      .expect(400);
+  });
+
   it('HARD_ONLY with no matching cards falls back to the full pool', async () => {
     const auth = await bearerFor(prisma);
     const created = await request(server())
@@ -207,7 +269,7 @@ describe('Study (e2e)', () => {
     expect(body.data.card?.state.level).toBe('HARD');
   });
 
-  it('alternates direction and never reverses EXAM cards', async () => {
+  it('alternates direction for both ESSENTIAL and EXAM cards', async () => {
     const auth = await bearerFor(prisma);
     const essential = await prisma.card.findFirst({
       where: {
@@ -219,7 +281,7 @@ describe('Study (e2e)', () => {
     const exam = await prisma.card.findFirst({
       where: {
         deletedAt: null,
-        reversible: false,
+        reversible: true,
         deck: { kind: 'EXAM', deletedAt: null },
       },
     });
@@ -281,8 +343,9 @@ describe('Study (e2e)', () => {
       .expect(200);
     const secondBody = second.body as Envelope<SessionView>;
     expect(secondBody.data.card?.id).toBe(exam.id);
-    expect(secondBody.data.card?.direction).toBe('FORWARD');
-    expect(secondBody.data.card?.front).toBe(exam.frontMd);
+    expect(secondBody.data.card?.direction).toBe('REVERSE');
+    expect(secondBody.data.card?.front).toBe(exam.backMd);
+    expect(secondBody.data.card?.back).toBe(exam.frontMd);
   });
 
   it('isolates sessions, listings and level aggregations across tenants', async () => {

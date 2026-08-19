@@ -6,12 +6,14 @@ import {
   HttpStatus,
   Param,
   Post,
+  Query,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { CreateStudySessionDto } from './dtos/create-study-session.dto';
 import { ReviewStudySessionDto } from './dtos/review-study-session.dto';
+import { StudyFocusQueryDto } from './dtos/study-focus.dto';
 import { StudyService } from './study.service';
 
 @ApiTags('study')
@@ -29,8 +31,12 @@ export class StudyController {
   }
 
   @Get(':id')
-  getById(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.studyService.getById(user, id);
+  getById(
+    @CurrentUser() user: AuthenticatedUser,
+    @Param('id') id: string,
+    @Query() query: StudyFocusQueryDto,
+  ) {
+    return this.studyService.getById(user, id, query.focus ?? null);
   }
 
   @Post(':id/reviews')
@@ -40,7 +46,7 @@ export class StudyController {
     @Param('id') id: string,
     @Body() dto: ReviewStudySessionDto,
   ) {
-    return this.studyService.review(user, id, dto.rating);
+    return this.studyService.review(user, id, dto.rating, dto.focus ?? null);
   }
 
   @Post(':id/finish')

@@ -35,7 +35,7 @@ A Defesa Civil é definida como **união, prevenção e fé** — e sua identida
 - Quanto à **origem**: naturais / tecnológicos (ex.: incêndios industriais, rompimento de barragem, vazamento químico) / ambientais / sociais.
 - Quanto à **evolução**: **súbitos** (ocorrem sem aviso — explosão, desabamento) e **graduais/de evolução lenta** (ex.: **estiagem**, seca).
 
-**Sistemas de registro.** **COBRADE** classifica por **grupo, subgrupo, tipo e subtipo**. **FIDE** registra as informações do desastre. **S2ID** **centraliza os registros nacionais** — é o que permite gestão baseada em dado, não em impressão.
+**Sistemas de registro.** **COBRADE** classifica por **categoria, grupo, subgrupo, tipo e subtipo**. **FIDE** registra as informações do desastre. **S2ID** registra ocorrências, apoia reconhecimento federal e pedidos de recursos e sistematiza informações — é o que permite gestão baseada em dado, não em impressão.
 
 **Danos e prejuízos.** Danos humanos = mortos, feridos, desabrigados. Danos materiais = infraestruturas destruídas. **Prejuízos = impactos econômicos que duram após o evento.**
 
@@ -52,7 +52,7 @@ A Defesa Civil é definida como **união, prevenção e fé** — e sua identida
 
 **Impactos globais.** A **exposição** cresce quando as pessoas ocupam áreas de risco. Países em desenvolvimento sofrem mais porque têm **menor preparo e maior vulnerabilidade**. A **pobreza aumenta a vulnerabilidade social** e, portanto, o risco.
 
-**Panorama nacional.** O **S2ID centraliza os dados nacionais** e opera sob o **Decreto nº 10.593/2020** (que organiza o SINPDEC e o Sistema Nacional de Informações sobre Desastres). Sem dados confiáveis, **não há gestão efetiva**.
+**Panorama nacional.** O **S2ID integra registros e processos nacionais** e se insere no arcabouço do **Decreto nº 10.593/2020**, alterado pelo Decreto nº 11.774/2023. Sem dados confiáveis, **não há gestão efetiva**.
 
 **Perfil de risco do Brasil.** A geografia e a extensão territorial expõem o país a **múltiplos fenômenos**; a **ocupação irregular aumenta a vulnerabilidade**; a **desigualdade dificulta a preparação**.
 
@@ -123,6 +123,8 @@ A Defesa Civil é definida como **união, prevenção e fé** — e sua identida
 7. Validação do plano
 8. Operacionalizar o PLANCON
 9. Revisar e atualizar
+
+![Os nove passos do PLANCON vão do cenário de risco à revisão contínua.](/study/defesa-civil/plancon-ciclo.svg)
 
 ---
 

@@ -43,6 +43,7 @@ describe('seed integrity', () => {
       decks,
       essentialCards,
       examCards,
+      reversibleExamCards,
       contentPages,
       examOrigins,
       essentialCited,
@@ -63,6 +64,13 @@ describe('seed integrity', () => {
       }),
       prisma.card.count({
         where: { deletedAt: null, deck: { kind: 'EXAM' } },
+      }),
+      prisma.card.count({
+        where: {
+          deletedAt: null,
+          reversible: true,
+          deck: { kind: 'EXAM' },
+        },
       }),
       prisma.contentPage.count({ where: { deletedAt: null } }),
       prisma.card.findMany({
@@ -107,6 +115,7 @@ describe('seed integrity', () => {
     expect(decks).toBe(4);
     expect(essentialCards).toBe(71);
     expect(examCards).toBe(133);
+    expect(reversibleExamCards).toBe(133);
     expect(contentPages).toBe(14);
     expect(examOrigins).toHaveLength(133);
     expect(essentialCited).toHaveLength(148);

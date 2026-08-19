@@ -32,6 +32,8 @@ Todo desastre nasce da combinação **ameaça + vulnerabilidade + ausência de p
 **Mapeamento de riscos** identifica áreas, classifica níveis, orienta decisões — mas "mapa não evita desastre; planejamento sim".
 **Comunicação de risco** deve ser clara, rápida, acessível e confiável.
 
+![Modelo didático dos componentes do risco de desastre.](/study/defesa-civil/modelo-risco.svg)
+
 ## Módulo 04 — Prevenção e Mitigação de Desastres
 **Prevenção:** impedir ou reduzir a ocorrência — planejamento urbano, ordenamento territorial, legislação, educação preventiva.
 **Mitigação:** reduzir danos quando o risco não pode ser eliminado — contenção, drenagem, reforço estrutural, medidas ambientais.

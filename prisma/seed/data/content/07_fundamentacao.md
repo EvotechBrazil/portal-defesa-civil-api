@@ -1,7 +1,7 @@
 # FUNDAMENTAÇÃO DOS FLASHCARDS
-*Para cada uma das 43 cartas conceituais: por que a resposta é essa, onde o ponto aparece no curso e quais questões do banco cobram exatamente isso.*
+*Fundamentação das 43 cartas originais do núcleo; as 8 cartas complementares da apostila têm teoria e fonte no próprio baralho, totalizando 51 essenciais.*
 
-> No guia HTML, essas mesmas questões viram uma **mini-prova dentro do cartão**: você lê a fundamentação, inicia a tentativa (questões e alternativas embaralhadas), responde sem ver gabarito, e no fim recebe a nota comparada com a tentativa anterior. O baralho **Completo** acrescenta ainda 109 cartas no formato das questões reais, uma para cada item do banco.
+> No portal, essas mesmas questões viram uma **mini-prova dentro do cartão**: você lê a fundamentação, inicia a tentativa (questões e alternativas embaralhadas), responde sem ver gabarito e, no fim, recebe a nota comparada com a tentativa anterior. O modo **Conteúdo completo** reúne as 51 essenciais e as 133 cartas de pergunta/resposta, totalizando 184 cartas reversíveis.
 
 ## #1 — Fórmula do risco
 **Resposta:** Risco = Ameaça × Exposição × Vulnerabilidade ÷ Capacidade

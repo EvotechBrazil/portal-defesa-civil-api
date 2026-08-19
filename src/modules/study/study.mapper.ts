@@ -1,4 +1,4 @@
-import { CardDirection, Prisma } from '@prisma/client';
+import { CardDirection, CardLevel, Prisma } from '@prisma/client';
 import { parseQueue, parseTally, resolveDirection } from './study.algorithm';
 import {
   CardWithStudy,
@@ -38,6 +38,13 @@ export function toCurrentCard(
   };
 }
 
+const EMPTY_QUEUE_LEVELS: Record<CardLevel, number> = {
+  NEW: 0,
+  HARD: 0,
+  LEARNING: 0,
+  EASY: 0,
+};
+
 export function toSessionView(
   session: {
     id: string;
@@ -53,6 +60,10 @@ export function toSessionView(
     streak: number;
     seen: number;
   } | null,
+  extra: {
+    queueLevels: Record<CardLevel, number>;
+    focus: CardLevel | null;
+  } = { queueLevels: EMPTY_QUEUE_LEVELS, focus: null },
 ): StudySessionView {
   const queue = parseQueue(session.queue);
   const finished = queue.length === 0;
@@ -74,6 +85,8 @@ export function toSessionView(
     deckSelector: session.deckSelector,
     finished,
     tally: parseTally(session.tally),
+    queueLevels: extra.queueLevels,
+    focus: extra.focus,
     card: finished ? null : current,
   };
 }

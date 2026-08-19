@@ -73,7 +73,7 @@ A Defesa Civil é definida como **união, prevenção e fé** — e sua identida
 
 **Modalidades de gestão.** Corretiva (reduz risco existente) · Prospectiva (**evita novos riscos**) · Compensatória (**fortalece resiliência frente a riscos inevitáveis**).
 
-**Stop Disasters.** Jogo/simulador da ONU (UNDRR) que ensina **planejamento urbano e prevenção** de forma **lúdica e prática**, simulando **ações reais de prevenção**.
+**[Stop Disasters](https://www.stopdisastersgame.org/).** Jogo/simulador da ONU (UNDRR) que ensina **planejamento urbano e prevenção** de forma **lúdica e prática**, simulando **ações reais de prevenção**.
 
 **Governança.** Envolve **liderança, estratégia e controle**; exige **coordenação entre governos**; tem como princípio essencial a **transparência e responsabilidade**.
 

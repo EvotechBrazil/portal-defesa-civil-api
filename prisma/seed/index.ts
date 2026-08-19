@@ -440,6 +440,7 @@ async function printValidation() {
     questionOptions,
     decks,
     essentialCards,
+    essentialQuestionPrompts,
     examCards,
     reversibleExamCards,
     contentPages,
@@ -460,6 +461,13 @@ async function printValidation() {
     prisma.deck.count({ where: { deletedAt: null } }),
     prisma.card.count({
       where: { deletedAt: null, deck: { kind: 'ESSENTIAL' } },
+    }),
+    prisma.card.count({
+      where: {
+        deletedAt: null,
+        frontMd: { endsWith: '?' },
+        deck: { kind: 'ESSENTIAL' },
+      },
     }),
     prisma.card.count({ where: { deletedAt: null, deck: { kind: 'EXAM' } } }),
     prisma.card.count({
@@ -524,6 +532,7 @@ async function printValidation() {
     `tenants: ${tenants} · courses: ${courses} · course_modules: ${courseModules} · quizzes: ${quizzes}`,
     `questions: ${questions} · question_options: ${questionOptions} (${questions} × 3)`,
     `decks: ${decks} · cards ESSENTIAL: ${essentialCards} · cards EXAM: ${examCards}`,
+    `frentes ESSENTIAL formuladas como pergunta: ${essentialQuestionPrompts}/${essentialCards}`,
     `cartas EXAM reversíveis: ${reversibleExamCards}/${examCards}`,
     `card_questions: ${cardsWithoutQuestions === 0 ? `> 0 para todas as ${totalCards} cartas` : `MISSING on ${cardsWithoutQuestions} cards`}`,
     `content_pages: ${contentPages}`,
@@ -553,6 +562,7 @@ async function printValidation() {
   expect('question_options', questionOptions, 471);
   expect('decks', decks, 4);
   expect('cards ESSENTIAL', essentialCards, 71);
+  expect('frentes ESSENTIAL como pergunta', essentialQuestionPrompts, 71);
   expect('cards EXAM', examCards, 133);
   expect('cards EXAM reversíveis', reversibleExamCards, 133);
   expect('content_pages', contentPages, 14);

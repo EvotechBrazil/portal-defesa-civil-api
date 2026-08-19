@@ -42,6 +42,7 @@ describe('seed integrity', () => {
       questionOptions,
       decks,
       essentialCards,
+      essentialQuestionPrompts,
       examCards,
       reversibleExamCards,
       contentPages,
@@ -61,6 +62,13 @@ describe('seed integrity', () => {
       prisma.deck.count({ where: { deletedAt: null } }),
       prisma.card.count({
         where: { deletedAt: null, deck: { kind: 'ESSENTIAL' } },
+      }),
+      prisma.card.count({
+        where: {
+          deletedAt: null,
+          frontMd: { endsWith: '?' },
+          deck: { kind: 'ESSENTIAL' },
+        },
       }),
       prisma.card.count({
         where: { deletedAt: null, deck: { kind: 'EXAM' } },
@@ -114,6 +122,7 @@ describe('seed integrity', () => {
     expect(questionOptions).toBe(471);
     expect(decks).toBe(4);
     expect(essentialCards).toBe(71);
+    expect(essentialQuestionPrompts).toBe(71);
     expect(examCards).toBe(133);
     expect(reversibleExamCards).toBe(133);
     expect(contentPages).toBe(14);

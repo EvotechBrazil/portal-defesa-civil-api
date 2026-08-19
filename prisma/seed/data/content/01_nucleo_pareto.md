@@ -205,4 +205,5 @@ Quando este núcleo estiver estável, avance para **Conteúdo completo**: ele ac
 - [Decreto nº 12.652/2025 — PN-PDC 2025–2035](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12652.htm)
 - [S2ID — funções e acesso](https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/sistema-integrado-de-informacoes-sobre-desastres)
 - [Terminologia de redução do risco — UNDRR](https://www.undrr.org/terminology)
+- [Stop Disasters — jogo educativo da UNDRR](https://www.stopdisastersgame.org/)
 - [Caderno de apoio ao PLANCON — Cemaden Educação](https://educacao.cemaden.gov.br/midiateca/plano-municipal-de-contingencia-de-protecao-e-defesa-civil-plamcon/)

@@ -343,7 +343,7 @@ async function seedAllowedWhatsapps(tenantId: string) {
     'allowed-whatsapps.json',
   );
   for (const item of file.numbers) {
-    const whatsapp = normalizeWhatsapp(item.whatsapp);
+    const whatsapp = normalizeWhatsapp(item.whatsapp.replace(/\D/g, ''));
     await prisma.allowedWhatsapp.upsert({
       where: { tenantId_whatsapp: { tenantId, whatsapp } },
       create: {

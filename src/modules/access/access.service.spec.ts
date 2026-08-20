@@ -41,7 +41,7 @@ describe('AccessService', () => {
   });
 
   it('captures an unknown number as interested and returns NOT_ALLOWED', async () => {
-    const result = await service.checkWhatsapp({ whatsapp: '(43) 98888-7777' });
+    const result = await service.checkWhatsapp({ whatsapp: '5543988887777' });
 
     expect(result).toEqual({
       status: 'NOT_ALLOWED',
@@ -56,7 +56,7 @@ describe('AccessService', () => {
   it('returns ALLOWED when the number is pre-released', async () => {
     repository.findAllowed.mockResolvedValue({ id: 'allow-1' });
 
-    const result = await service.checkWhatsapp({ whatsapp: '43988887777' });
+    const result = await service.checkWhatsapp({ whatsapp: '5543988887777' });
 
     expect(result.status).toBe('ALLOWED');
     expect(repository.upsertInterested).not.toHaveBeenCalled();
@@ -75,7 +75,7 @@ describe('AccessService', () => {
 
     await expect(
       service.requestAccess({
-        whatsapp: '43988887777',
+        whatsapp: '5543988887777',
         name: 'Ana Silva',
         lgndNumber: '1001',
         manada: 'Norte',
@@ -106,7 +106,7 @@ describe('AccessService', () => {
     ]);
 
     const result = await service.requestAccess({
-      whatsapp: '43988887777',
+      whatsapp: '5543988887777',
       name: 'Ana Silva',
       lgndNumber: '1001',
       manada: 'Norte',
@@ -156,7 +156,7 @@ describe('AccessService', () => {
 
     await expect(
       service.requestAccess({
-        whatsapp: '43988887777',
+        whatsapp: '5543988887777',
         name: 'Ana Silva',
         lgndNumber: '1001',
         manada: 'Norte',

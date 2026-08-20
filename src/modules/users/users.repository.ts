@@ -36,6 +36,9 @@ export class UsersRepository {
     whatsapp: string;
     lgndNumber: string;
     manada: string;
+    manadaId?: string;
+    country: string;
+    state: string;
     city: string;
     squad: string;
     eventoFire: string;
@@ -53,6 +56,9 @@ export class UsersRepository {
         whatsapp: data.whatsapp,
         lgndNumber: data.lgndNumber,
         manada: data.manada,
+        manadaId: data.manadaId,
+        country: data.country,
+        state: data.state,
         city: data.city,
         squad: data.squad,
         eventoFire: data.eventoFire,

@@ -78,6 +78,7 @@ model Tenant {
   attempts         Attempt[]
   allowedWhatsapps AllowedWhatsapp[]
   accessRequests   AccessRequest[]
+  manadas          Manada[]
 
   @@map("tenants")
 }
@@ -94,6 +95,9 @@ model User {
   whatsapp        String?
   lgndNumber      String?   @map("lgnd_number")
   manada          String?
+  manadaId        String?   @map("manada_id")
+  country         String?
+  state           String?
   city            String?
   squad           String?
   eventoFire      String?   @map("evento_fire")
@@ -104,6 +108,7 @@ model User {
   deletedAt       DateTime? @map("deleted_at")
 
   tenant                  Tenant                    @relation(fields: [tenantId], references: [id])
+  pack                    Manada?                   @relation(fields: [manadaId], references: [id])
   refreshTokens           RefreshToken[]
   emailVerificationTokens EmailVerificationToken[]
   enrollments             Enrollment[]
@@ -116,6 +121,7 @@ model User {
   @@unique([tenantId, email])
   @@index([tenantId])
   @@index([tenantId, whatsapp])
+  @@index([manadaId])
   @@map("users")
 }
 
@@ -141,6 +147,10 @@ model AccessRequest {
   name          String?
   lgndNumber    String?             @map("lgnd_number")
   manada        String?
+  manadaId      String?             @map("manada_id")
+  country       String?
+  state         String?
+  city          String?
   email         String?
   justification String?
   status        AccessRequestStatus @default(INTERESTED)
@@ -150,11 +160,34 @@ model AccessRequest {
   updatedAt     DateTime            @updatedAt @map("updated_at")
 
   tenant     Tenant @relation(fields: [tenantId], references: [id])
+  pack       Manada? @relation(fields: [manadaId], references: [id])
   reviewedBy User?  @relation("AccessRequestReviewer", fields: [reviewedById], references: [id])
 
   @@unique([tenantId, whatsapp])
   @@index([tenantId, status])
+  @@index([manadaId])
   @@map("access_requests")
+}
+
+model Manada {
+  id        String    @id @default(cuid())
+  tenantId  String    @map("tenant_id")
+  name      String
+  country   String
+  state     String
+  city      String
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  tenant         Tenant          @relation(fields: [tenantId], references: [id])
+  members        User[]
+  accessRequests AccessRequest[]
+
+  @@unique([tenantId, name, country, state, city])
+  @@index([tenantId])
+  @@index([tenantId, country, state, city])
+  @@map("manadas")
 }
 
 model RefreshToken {

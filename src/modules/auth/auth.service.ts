@@ -13,6 +13,7 @@ import { User } from '@prisma/client';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { AccessService } from '../access/access.service';
 import { decodePhotoBase64 } from '../access/photo.util';
+import { ManadasService } from '../manadas/manadas.service';
 import { toUserProfile, UsersService } from '../users/users.service';
 import { UsersRepository } from '../users/users.repository';
 import {
@@ -83,6 +84,7 @@ export class AuthService {
     private readonly configService: ConfigService,
     private readonly mailService: MailService,
     private readonly accessService: AccessService,
+    private readonly manadasService: ManadasService,
   ) {}
 
   async register(dto: RegisterDto): Promise<RegisterResult> {
@@ -113,6 +115,7 @@ export class AuthService {
       throw new ConflictException('WhatsApp já cadastrado');
     }
 
+    const pack = await this.resolveManada(tenant.id, dto);
     const photo = dto.photoBase64
       ? decodePhotoBase64(dto.photoBase64)
       : undefined;
@@ -129,7 +132,10 @@ export class AuthService {
         emailVerifiedAt: autoVerify ? new Date() : undefined,
         whatsapp,
         lgndNumber: dto.lgndNumber.trim(),
-        manada: dto.manada.trim(),
+        manada: pack.name,
+        manadaId: pack.id,
+        country: dto.country.trim().toUpperCase(),
+        state: dto.state.trim(),
         city: dto.city.trim(),
         squad: dto.squad.trim(),
         eventoFire: dto.eventoFire.trim(),
@@ -295,6 +301,36 @@ export class AuthService {
 
   me(currentUser: AuthenticatedUser): Promise<AuthUserView> {
     return this.usersService.getMe(currentUser.id);
+  }
+
+  private async resolveManada(
+    tenantId: string,
+    dto: RegisterDto,
+  ): Promise<{ id: string; name: string; country: string; state: string }> {
+    if (dto.manadaId) {
+      const found = await this.manadasService.getById(tenantId, dto.manadaId);
+      return {
+        id: found.id,
+        name: found.name,
+        country: found.country,
+        state: found.state,
+      };
+    }
+    if (!dto.manada?.trim()) {
+      throw new BadRequestException('Informe a manada.');
+    }
+    const created = await this.manadasService.findOrCreate(tenantId, {
+      name: dto.manada,
+      country: dto.country,
+      state: dto.state,
+      city: dto.city,
+    });
+    return {
+      id: created.id,
+      name: created.name,
+      country: created.country,
+      state: created.state,
+    };
   }
 
   private signAccessToken(user: User): string {

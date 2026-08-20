@@ -10,6 +10,7 @@ import { TenantGuard } from './common/guards/tenant.guard';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { AccessModule } from './modules/access/access.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { ManadasModule } from './modules/manadas/manadas.module';
 import { UsersModule } from './modules/users/users.module';
 import { CoursesModule } from './modules/courses/courses.module';
 import { QuestionsModule } from './modules/questions/questions.module';
@@ -28,6 +29,7 @@ import { HealthController } from './health.controller';
     PrismaModule,
     AuthModule,
     AccessModule,
+    ManadasModule,
     UsersModule,
     CoursesModule,
     QuestionsModule,

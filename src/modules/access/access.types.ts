@@ -1,11 +1,7 @@
 import { AccessRequestStatus } from '@prisma/client';
 
 export type WhatsappCheckStatus =
-  | 'ALLOWED'
-  | 'NOT_ALLOWED'
-  | 'PENDING'
-  | 'REJECTED'
-  | 'REGISTERED';
+  'ALLOWED' | 'NOT_ALLOWED' | 'PENDING' | 'REJECTED' | 'REGISTERED';
 
 export interface WhatsappCheckResult {
   status: WhatsappCheckStatus;

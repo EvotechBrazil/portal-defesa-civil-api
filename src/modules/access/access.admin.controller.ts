@@ -72,10 +72,7 @@ export class AccessAdminController {
 
   @Delete('allowed-whatsapps/:id')
   @HttpCode(204)
-  removeAllowed(
-    @CurrentTenant() tenantId: string,
-    @Param('id') id: string,
-  ) {
+  removeAllowed(@CurrentTenant() tenantId: string, @Param('id') id: string) {
     return this.accessService.removeAllowed(tenantId, id);
   }
 }

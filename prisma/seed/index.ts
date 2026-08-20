@@ -205,10 +205,12 @@ async function seedTenant() {
     where: { slug: 'default' },
     create: {
       slug: 'default',
-      name: 'Portal Defesa Civil',
+      name: 'Programa de evolução contínua LGND SQUAD',
       status: 'ACTIVE',
     },
-    update: {},
+    update: {
+      name: 'Programa de evolução contínua LGND SQUAD',
+    },
   });
 }
 
@@ -244,6 +246,38 @@ interface SeedAllowedWhatsapp {
   label?: string;
 }
 
+async function seedManadas(tenantId: string) {
+  const packs = [
+    { name: 'Manada Norte', country: 'BR', state: 'PR', city: 'Arapongas' },
+    { name: 'Manada Centro', country: 'BR', state: 'PR', city: 'Londrina' },
+    { name: 'Manada Sul', country: 'BR', state: 'PR', city: 'Curitiba' },
+    { name: 'Manada Capital', country: 'BR', state: 'SP', city: 'São Paulo' },
+  ];
+  for (const pack of packs) {
+    const existing = await prisma.manada.findFirst({
+      where: {
+        tenantId,
+        country: pack.country,
+        name: { equals: pack.name, mode: 'insensitive' },
+        state: { equals: pack.state, mode: 'insensitive' },
+        city: { equals: pack.city, mode: 'insensitive' },
+      },
+    });
+    if (existing) {
+      if (existing.deletedAt) {
+        await prisma.manada.update({
+          where: { id: existing.id },
+          data: { deletedAt: null },
+        });
+      }
+      continue;
+    }
+    await prisma.manada.create({
+      data: { tenantId, ...pack },
+    });
+  }
+}
+
 async function seedAllowedWhatsapps(tenantId: string) {
   const file = readJson<{ numbers: SeedAllowedWhatsapp[] }>(
     'allowed-whatsapps.json',
@@ -269,10 +303,12 @@ async function seedCourse() {
     where: { slug: 'defesa-civil-lgnd' },
     create: {
       slug: 'defesa-civil-lgnd',
-      title: 'Proteção e Defesa Civil — LGND SQUAD',
+      title: 'Programa de evolução contínua LGND SQUAD',
       sourcePlatform: 'ticketandgo',
     },
-    update: {},
+    update: {
+      title: 'Programa de evolução contínua LGND SQUAD',
+    },
   });
 }
 
@@ -673,6 +709,7 @@ async function main() {
   const tenant = await seedTenant();
   await seedAdmin(tenant.id);
   await seedAllowedWhatsapps(tenant.id);
+  await seedManadas(tenant.id);
   const course = await seedCourse();
   const indexToQuestionId = await seedModulesAndQuestions(
     course.id,

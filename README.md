@@ -1,6 +1,6 @@
 # portal-defesa-civil-api
 
-API NestJS do Portal de Ensino — Defesa Civil.
+API NestJS do Programa de evolução contínua LGND SQUAD.
 
 ## Como rodar
 
@@ -74,4 +74,4 @@ Questões e alternativas são embaralhadas a cada tentativa (`shownOrd`, `option
 
 ## Seed
 
-`pnpm seed` é idempotente (`upsert` com `update: {}` vazio). Os índices `q`/`src` de `decks.json` são resolvidos pela ordem original de `questoes.json`.
+`pnpm seed` é idempotente. Tenant e curso atualizam o nome do programa no `update`; o restante usa `update: {}` vazio. Os índices `q`/`src` de `decks.json` são resolvidos pela ordem original de `questoes.json`.

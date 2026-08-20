@@ -10,6 +10,8 @@ import { CurrentTenant } from '../../common/decorators/current-tenant.decorator'
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { GetStatsQueryDto } from './dtos/get-stats-query.dto';
+import { ListManadaMembersQueryDto } from './dtos/list-manada-members-query.dto';
+import { ManadaMemberDto } from './dtos/manada-member.dto';
 import { StatsResponseDto } from './dtos/stats-response.dto';
 import { StatsService } from './stats.service';
 
@@ -29,5 +31,21 @@ export class StatsController {
     @Query() query: GetStatsQueryDto,
   ): Promise<StatsResponseDto> {
     return this.statsService.getMine(user.id, tenantId, query.courseId);
+  }
+
+  @Get('manada/members')
+  @ApiOperation({
+    summary: 'Membros da manada do solicitante',
+    description:
+      'O servidor deriva a manada de user.manadaId. Sem manada devolve lista vazia com meta.reason = NO_MANADA.',
+  })
+  @ApiOkResponse({ type: [ManadaMemberDto] })
+  @ApiUnauthorizedResponse()
+  listManadaMembers(
+    @CurrentUser() user: AuthenticatedUser,
+    @CurrentTenant() tenantId: string,
+    @Query() query: ListManadaMembersQueryDto,
+  ) {
+    return this.statsService.listManadaMembers(user, tenantId, query);
   }
 }

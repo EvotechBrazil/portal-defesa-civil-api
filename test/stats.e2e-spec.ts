@@ -110,7 +110,12 @@ describe('Stats (e2e)', () => {
       .expect(200);
 
     const body = response.body as { data: StatsPayload };
-    expect(body.data.byModule).toEqual([]);
+    expect(body.data.byModule.length).toBeGreaterThan(0);
+    expect(
+      body.data.byModule.every(
+        (module) => module.attempts === 0 && module.accuracyPct === 0,
+      ),
+    ).toBe(true);
     expect(body.data.cardLevels).toEqual({
       NEW: 0,
       HARD: 0,

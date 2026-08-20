@@ -67,6 +67,8 @@ type PeerStats = {
   disclaimer: string;
 };
 
+const BASE_COURSE_SLUG = 'defesa-civil-lgnd';
+
 describe('Perfil e ranking (e2e)', () => {
   let app: INestApplication;
   let prisma: PrismaService;
@@ -442,13 +444,22 @@ async function assignManada(
   });
 }
 
+/**
+ * `code` de módulo não é único no catálogo: cada aula tem o seu M1 e a Aula 1
+ * também tem um M2 (nós e amarrações). Tudo aqui é ancorado no curso base para
+ * o quiz do fixture bater com o `moduleCode` que a asserção usa no recorte.
+ */
 async function loadCatalog(prisma: PrismaService) {
   const course = await prisma.course.findFirst({
-    where: { deletedAt: null },
+    where: { slug: BASE_COURSE_SLUG, deletedAt: null },
     select: { id: true },
   });
   const moduleOne = await prisma.courseModule.findFirst({
-    where: { code: 'M1', deletedAt: null },
+    where: {
+      code: 'M1',
+      deletedAt: null,
+      course: { slug: BASE_COURSE_SLUG },
+    },
     select: {
       quizzes: {
         where: { deletedAt: null },
@@ -458,7 +469,11 @@ async function loadCatalog(prisma: PrismaService) {
     },
   });
   const moduleTwo = await prisma.courseModule.findFirst({
-    where: { code: 'M2', deletedAt: null },
+    where: {
+      code: 'M2',
+      deletedAt: null,
+      course: { slug: BASE_COURSE_SLUG },
+    },
     select: {
       quizzes: {
         where: { deletedAt: null },
@@ -468,7 +483,10 @@ async function loadCatalog(prisma: PrismaService) {
     },
   });
   const card = await prisma.card.findFirst({
-    where: { deletedAt: null },
+    where: {
+      deletedAt: null,
+      deck: { course: { slug: BASE_COURSE_SLUG } },
+    },
     select: { id: true },
   });
   if (!course || !moduleOne?.quizzes[0] || !moduleTwo?.quizzes[0] || !card) {

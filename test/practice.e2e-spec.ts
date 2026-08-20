@@ -83,6 +83,10 @@ describe('Practice (e2e)', () => {
   let authHeader: { Authorization: string };
   let cardId: string;
   let reverseShuffle = false;
+  // A carta é compartilhada pelo arquivo e o serviço proíbe refazer a
+  // avaliação depois do gabarito revelado. Os testes que precisam criar
+  // tentativa nova ganham usuário próprio em vez de herdar o do beforeAll.
+  const extraUserIds: string[] = [];
 
   const shuffle: PracticeShuffle = <T>(items: readonly T[]): T[] =>
     reverseShuffle ? [...items].reverse() : [...items];
@@ -122,8 +126,9 @@ describe('Practice (e2e)', () => {
   });
 
   afterAll(async () => {
-    await prisma.attempt.deleteMany({ where: { userId: user.id } });
-    await prisma.user.delete({ where: { id: user.id } });
+    const userIds = [user.id, ...extraUserIds];
+    await prisma.attempt.deleteMany({ where: { userId: { in: userIds } } });
+    await prisma.user.deleteMany({ where: { id: { in: userIds } } });
     await cleanupTestTenants(prisma);
     await app.close();
   });
@@ -235,17 +240,20 @@ describe('Practice (e2e)', () => {
   });
 
   it('two attempts have different question and option orders', async () => {
+    const fresh = await bearerFor(prisma);
+    extraUserIds.push(fresh.user.id);
+
     reverseShuffle = false;
     const firstRes = await request(app.getHttpServer())
       .post(`/api/v1/cards/${cardId}/attempts`)
-      .set(authHeader)
+      .set(fresh.header)
       .expect(201);
     const first = (firstRes.body as Envelope<RunningAttempt>).data;
 
     reverseShuffle = true;
     const secondRes = await request(app.getHttpServer())
       .post(`/api/v1/cards/${cardId}/attempts`)
-      .set(authHeader)
+      .set(fresh.header)
       .expect(201);
     const second = (secondRes.body as Envelope<RunningAttempt>).data;
     reverseShuffle = false;
@@ -323,15 +331,18 @@ describe('Practice (e2e)', () => {
   });
 
   it('GET history is isolated by tenant', async () => {
+    const owner = await bearerFor(prisma);
+    extraUserIds.push(owner.user.id);
+
     reverseShuffle = false;
     const created = await request(app.getHttpServer())
       .post(`/api/v1/cards/${cardId}/attempts`)
-      .set(authHeader)
+      .set(owner.header)
       .expect(201);
     const attempt = (created.body as Envelope<RunningAttempt>).data;
     await request(app.getHttpServer())
       .post(`/api/v1/attempts/${attempt.attemptId}/finish`)
-      .set(authHeader)
+      .set(owner.header)
       .expect(200);
 
     const tenantB = await createSecondTenant(prisma);
@@ -350,7 +361,7 @@ describe('Practice (e2e)', () => {
 
     const ownHistory = await request(app.getHttpServer())
       .get(`/api/v1/cards/${cardId}/attempts`)
-      .set(authHeader)
+      .set(owner.header)
       .expect(200);
     const own = ownHistory.body as Envelope<HistoryPayload>;
     expect(

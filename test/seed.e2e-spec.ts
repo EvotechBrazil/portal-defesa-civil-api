@@ -115,19 +115,19 @@ describe('seed integrity', () => {
     ]);
 
     expect(tenants).toBe(1);
-    expect(courses).toBe(3);
-    expect(courseModules).toBe(9);
-    expect(quizzes).toBe(56);
-    expect(questions).toBe(157);
-    expect(questionOptions).toBe(471);
-    expect(decks).toBe(4);
-    expect(essentialCards).toBe(71);
-    expect(essentialQuestionPrompts).toBe(71);
+    expect(courses).toBe(4);
+    expect(courseModules).toBe(11);
+    expect(quizzes).toBe(64);
+    expect(questions).toBe(183);
+    expect(questionOptions).toBe(549);
+    expect(decks).toBe(5);
+    expect(essentialCards).toBe(88);
+    expect(essentialQuestionPrompts).toBe(88);
     expect(examCards).toBe(133);
     expect(reversibleExamCards).toBe(133);
-    expect(contentPages).toBe(14);
+    expect(contentPages).toBe(16);
     expect(examOrigins).toHaveLength(133);
-    expect(essentialCited).toHaveLength(148);
+    expect(essentialCited).toHaveLength(174);
     expect(cardsWithoutQuestions).toBe(0);
     expect(
       questionsWithOptions.every(

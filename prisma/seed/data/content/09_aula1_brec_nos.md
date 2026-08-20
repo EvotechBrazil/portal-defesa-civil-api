@@ -11,15 +11,17 @@ Todo nó enfraquece a corda entre 20% e 50%. Nó conferido é nó seguro: execut
 
 Sequência: **1 executar → 2 arrumar → 3 apertar → 4 conferir.**
 
-| Nó | Serve para | Atenção |
-|---|---|---|
-| Fiel | Fixar a corda a ponto fixo | Travar com meio-nó |
-| Lais de guia | Alça que não corre | Chicote de no mínimo um palmo |
-| Azelha | Alça rápida para mosquetão | Difícil de desfazer após carga |
-| Oito | Conexão mais usada no resgate | Desenho limpo, sem cruz |
-| Carioca | Alça no meio da corda | Múltiplos pontos na mesma linha |
-| Direito | Une duas cordas iguais, carga leve | Sem carga de vida sem travamento |
-| Cadeirinha rápida | Assento improvisado | Conferir antes de elevar |
+| Nó | Serve para | Atenção | Vídeo |
+|---|---|---|---|
+| Fiel | Fixar a corda a ponto fixo | Travar com meio-nó | [▶ assistir](https://youtu.be/ed_BDWnznZ4) |
+| Lais de guia | Alça que não corre | Chicote de no mínimo um palmo | [▶ assistir](https://youtu.be/AUbibAwpPNc) |
+| Azelha | Alça rápida para mosquetão | Difícil de desfazer após carga | [▶ assistir](https://youtu.be/DXfkp6VqS5w) |
+| Oito | Conexão mais usada no resgate | Desenho limpo, sem cruz | [▶ assistir](https://youtu.be/aT5bGfVzg1c) |
+| Carioca | Alça no meio da corda | Múltiplos pontos na mesma linha | [▶ assistir](https://youtu.be/hetv0J2MBGo) |
+| Direito | Une duas cordas iguais, carga leve | Sem carga de vida sem travamento | [▶ assistir](https://youtu.be/OqGRK6JYvss) |
+| Cadeirinha rápida | Assento improvisado | Conferir antes de elevar | [▶ assistir](https://youtu.be/tjdXva4UzKk) |
+
+Cada nó tem carta própria no baralho e detalhamento na página **Cartilha dos 7 nós**, com o vídeo de execução ao lado do texto.
 
 Amarração rígida: vítima imobilizada antes de qualquer movimento; tórax, quadril e membros; teste de elevação a 90°. Extração em corredor de força: passa-mão, um coordenador, a vítima nunca toca o solo.
 

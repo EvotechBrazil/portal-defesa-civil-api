@@ -644,21 +644,21 @@ async function printValidation() {
     }
   };
   expect('tenants', tenants, 1);
-  expect('courses', courses, 3);
-  expect('course_modules', courseModules, 9);
-  expect('course_modules com summaryMd', modulesWithSummary, 9);
-  expect('quizzes', quizzes, 56);
-  expect('questions', questions, 157);
-  expect('question_options', questionOptions, 471);
-  expect('decks', decks, 4);
-  expect('cards ESSENTIAL', essentialCards, 71);
-  expect('frentes ESSENTIAL como pergunta', essentialQuestionPrompts, 71);
+  expect('courses', courses, 4);
+  expect('course_modules', courseModules, 11);
+  expect('course_modules com summaryMd', modulesWithSummary, 11);
+  expect('quizzes', quizzes, 64);
+  expect('questions', questions, 183);
+  expect('question_options', questionOptions, 549);
+  expect('decks', decks, 5);
+  expect('cards ESSENTIAL', essentialCards, 88);
+  expect('frentes ESSENTIAL como pergunta', essentialQuestionPrompts, 88);
   expect('cards EXAM', examCards, 133);
   expect('cards EXAM reversíveis', reversibleExamCards, 133);
-  expect('content_pages', contentPages, 14);
+  expect('content_pages', contentPages, 16);
   expect('cartas sem card_question', cardsWithoutQuestions, 0);
   expect('cobertura EXAM', examOrigins.length, 133);
-  expect('cobertura ESSENTIAL', essentialCited.length, 148);
+  expect('cobertura ESSENTIAL', essentialCited.length, 174);
   expect('CardLink órfãos', missingLinkSlugs.length, 0);
   expect('questões sem 1 correta', questionsWithoutSingleCorrect, 0);
 
@@ -672,8 +672,8 @@ async function seedLectureCourse(input: {
   title: string;
   questionsFile: string;
   decksFile: string;
-  page: { file: string; slug: string; ord: number; title: string };
-  summaryMd: string;
+  pages: Array<{ file: string; slug: string; ord: number; title: string }>;
+  summaries: Record<string, string>;
 }) {
   const course = await prisma.course.upsert({
     where: { slug: input.slug },
@@ -686,7 +686,7 @@ async function seedLectureCourse(input: {
   });
   const questions = readJson<SeedQuestion[]>(input.questionsFile);
   const decks = readJson<SeedDecks>(input.decksFile);
-  const summaries = new Map<string, string>([['M1', input.summaryMd]]);
+  const summaries = new Map<string, string>(Object.entries(input.summaries));
   const indexToQuestionId = await seedModulesAndQuestions(
     course.id,
     questions,
@@ -699,7 +699,7 @@ async function seedLectureCourse(input: {
     decks.p,
     indexToQuestionId,
   );
-  await seedContentPages(course.id, [input.page]);
+  await seedContentPages(course.id, input.pages);
 }
 
 async function main() {
@@ -736,28 +736,58 @@ async function main() {
     title: 'Aula 1 — BREC e NOS',
     questionsFile: 'aula1-questoes.json',
     decksFile: 'aula1-decks.json',
-    page: {
-      file: '09_aula1_brec_nos.md',
-      slug: 'aula',
-      ord: 1,
-      title: 'Aula 1 · BREC e NOS',
+    pages: [
+      {
+        file: '09_aula1_brec_nos.md',
+        slug: 'aula',
+        ord: 1,
+        title: 'Aula 1 · BREC e NOS',
+      },
+      {
+        file: '12_aula1_nos_amarracoes.md',
+        slug: 'nos',
+        ord: 2,
+        title: 'Aula 1 · Cartilha dos 7 nós',
+      },
+    ],
+    summaries: {
+      M1: 'FIRE Experience: noções de BREC e NOS para a Brigada de Resgate. Regra zero, 7 nós, 3 pontos, apito, chamada 360° e croqui.',
+      M2: 'Cartilha dos 7 nós, um a um, com vídeo de execução: fiel, lais de guia, azelha, oito, direito, carioca e cadeirinha rápida. Todo nó tira 20–50% da corda; nó conferido é nó seguro.',
     },
-    summaryMd:
-      'FIRE Experience: noções de BREC e NOS para a Brigada de Resgate. Regra zero, 7 nós, 3 pontos, apito, chamada 360° e croqui.',
   });
   await seedLectureCourse({
     slug: 'aula-2-aguas-rapidas',
     title: 'Aula 2 — Águas rápidas e corretezas',
     questionsFile: 'aula2-questoes.json',
     decksFile: 'aula2-decks.json',
-    page: {
-      file: '10_aula2_aguas_rapidas.md',
-      slug: 'aula',
-      ord: 1,
-      title: 'Aula 2 · Águas rápidas',
+    pages: [
+      {
+        file: '10_aula2_aguas_rapidas.md',
+        slug: 'aula',
+        ord: 1,
+        title: 'Aula 2 · Águas rápidas',
+      },
+    ],
+    summaries: {
+      M1: 'Táticas de águas rápidas: pirâmide resgatista-equipe-vítima, EPI, 3 km/h, strainer, remanso, 45°, throw bag e choque térmico.',
     },
-    summaryMd:
-      'Táticas de águas rápidas: pirâmide resgatista-equipe-vítima, EPI, 3 km/h, strainer, remanso, 45°, throw bag e choque térmico.',
+  });
+  await seedLectureCourse({
+    slug: 'aula-3-combate-incendio',
+    title: 'Aula 3 — Combate a incêndio',
+    questionsFile: 'aula3-questoes.json',
+    decksFile: 'aula3-decks.json',
+    pages: [
+      {
+        file: '11_aula3_combate_incendio.md',
+        slug: 'aula',
+        ord: 1,
+        title: 'Aula 3 · Combate a incêndio',
+      },
+    ],
+    summaries: {
+      M1: 'Teoria do fogo aplicada ao combate: tetraedro, pirólise, propagação do calor, pontos de fulgor/combustão/ignição, métodos de extinção e classes A a K.',
+    },
   });
   await printValidation();
 }

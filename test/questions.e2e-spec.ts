@@ -9,9 +9,12 @@ import {
 } from './helpers/app.helper';
 import { bearerFor } from './helpers/auth.helper';
 
+// O filtro por `moduleCode` é global ao catálogo, não por curso: M1 soma o
+// módulo do curso base com o M1 de cada aula (13 + 12 + 12 + 12) e M2 soma o
+// base com o módulo de nós da Aula 1 (21 + 14).
 const MODULE_QUESTION_COUNTS: Record<string, number> = {
-  M1: 13,
-  M2: 21,
+  M1: 49,
+  M2: 35,
   M3: 17,
   M4: 20,
   M5: 18,
@@ -44,7 +47,7 @@ describe('Questions (e2e)', () => {
     return session.header;
   }
 
-  it('lists 133 questions in a paginated envelope', async () => {
+  it('lists 183 questions in a paginated envelope', async () => {
     const header = await authHeader();
 
     const firstResponse = await request(httpServer(app))
@@ -57,7 +60,7 @@ describe('Questions (e2e)', () => {
     expect(firstPage.meta).toEqual({
       page: 1,
       pageSize: 100,
-      total: 133,
+      total: 183,
       pageCount: 2,
     });
     expect(firstPage.data).toHaveLength(100);
@@ -69,13 +72,13 @@ describe('Questions (e2e)', () => {
       .expect(200);
     const secondPage = readEnvelope<QuestionDto[]>(secondResponse.body);
 
-    expect(secondPage.data).toHaveLength(33);
-    expect(secondPage.meta?.total).toBe(133);
+    expect(secondPage.data).toHaveLength(83);
+    expect(secondPage.meta?.total).toBe(183);
 
     const ids = new Set(
       [...firstPage.data, ...secondPage.data].map((question) => question.id),
     );
-    expect(ids.size).toBe(133);
+    expect(ids.size).toBe(183);
   });
 
   it('filters by module with the measured counts', async () => {

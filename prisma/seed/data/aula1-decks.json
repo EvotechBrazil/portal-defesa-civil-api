@@ -99,6 +99,76 @@
       "s": [["Aula 1 · BREC e NOS", "aula"]],
       "q": [11],
       "rev": true
+    },
+    {
+      "code": "#11",
+      "f": "Como o nó fiel prende a corda ao ponto fixo e o que trava esse nó?",
+      "v": "Morde o próprio ponto de fixação · <strong>travar sempre com meio-nó</strong>",
+      "t": "Nó de amarrar no poste, na árvore, na coluna. Sem o meio-nó de travamento ele corre quando a carga entra e sai. Nó que se mexe não recebe carga: confira, reaperte, só então recarregue.\n\n[▶ Ver o nó fiel em vídeo](https://youtu.be/ed_BDWnznZ4)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · nó fiel.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [12, 13],
+      "rev": true
+    },
+    {
+      "code": "#12",
+      "f": "Por que o lais de guia é o nó de resgate de pessoa?",
+      "v": "Forma <strong>alça fixa que não corre</strong> — não estrangula quem está dentro dela",
+      "t": "Alça que não corre é alça que não aperta o corpo sob carga. Chicote de no mínimo um palmo e travado: chicote curto escapa sob carga cíclica. Ainda assim enfraquece a corda como qualquer nó.\n\n[▶ Ver o lais de guia em vídeo](https://youtu.be/AUbibAwpPNc)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · lais de guia.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [14, 15],
+      "rev": true
+    },
+    {
+      "code": "#13",
+      "f": "Para que serve a azelha e qual é o seu preço depois da carga?",
+      "v": "<strong>Alça rápida para mosquetão</strong> · depois de carregada fica <strong>difícil de desfazer</strong>",
+      "t": "Azelha simples e azelha dupla — a dupla dá mais volume e mais margem na alça. É conexão rápida, mas trava sob carga: quando for preciso desfazer depois, o oito resolve melhor.\n\n[▶ Ver a azelha simples e dupla em vídeo](https://youtu.be/DXfkp6VqS5w)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · azelha.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [16, 17],
+      "rev": true
+    },
+    {
+      "code": "#14",
+      "f": "Por que o nó oito é a conexão mais usada e como se confere o desenho dele?",
+      "v": "Desenho <strong>limpo e conferível a olho</strong>, boa resistência e desfaz depois da carga · simétrico, <strong>sem cruzes</strong>, pernas paralelas",
+      "t": "Também chamado de azelha dupla em algumas equipes. É o nó auditável: bate o olho e vê se está certo. Cruz no desenho concentra carga no ponto errado — arrumar o nó (etapa 2) é o que faz o oito valer o que promete.\n\n[▶ Ver o nó oito em vídeo](https://youtu.be/aT5bGfVzg1c)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · nó oito.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [18, 19],
+      "rev": true
+    },
+    {
+      "code": "#15",
+      "f": "Qual é o envelope de uso do nó direito e por que ele não sustenta vida sem travamento?",
+      "v": "Une <strong>duas cordas de mesma bitola</strong>, em <strong>carga leve</strong> · sob carga pode virar e escorregar",
+      "t": "É nó de amarrar volume, não de sustentar gente. Bitolas diferentes ou carga de vida sem travamento nas pontas: não entra. Fora do envelope, escolha outro nó.\n\n[▶ Ver o nó direito em vídeo](https://youtu.be/OqGRK6JYvss)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · nó direito.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [20, 21],
+      "rev": true
+    },
+    {
+      "code": "#16",
+      "f": "O que o nó carioca resolve que os nós de ponta não resolvem?",
+      "v": "Cria <strong>alça no meio da corda</strong>, sem usar as pontas — <strong>múltiplos pontos na mesma linha</strong>",
+      "t": "Linha de vida com vários pontos, corrimão improvisado, corda com pegas ao longo do trecho. Distribui apoio sem cortar a corda nem passar as pontas.\n\n[▶ Ver o nó carioca em vídeo](https://youtu.be/hetv0J2MBGo)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · nó carioca.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [22, 23],
+      "rev": true
+    },
+    {
+      "code": "#17",
+      "f": "O que é a cadeirinha rápida e o que se confere antes de elevar?",
+      "v": "Assento improvisado com corda ou fita · conferir <strong>nó, travamento, simetria das alças e conexão</strong> — em dupla, <strong>antes de sair do chão</strong>",
+      "t": "Improviso com regra: resolve quando o equipamento certificado não está lá, mas não substitui equipamento certificado. Conferir antes de elevar, não depois — elevou, o erro vira queda.\n\n[▶ Ver a cadeirinha rápida em vídeo](https://youtu.be/tjdXva4UzKk)",
+      "a": "Aula 1 · Módulo 2 · cartilha dos 7 nós · cadeirinha rápida.",
+      "s": [["Aula 1 · Cartilha dos 7 nós", "nos"]],
+      "q": [24, 25],
+      "rev": true
     }
   ],
   "q": []

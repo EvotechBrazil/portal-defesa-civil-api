@@ -24,6 +24,8 @@ type StatsPayload = {
   sessionsLast30d: Array<{ id: string; reviews: number }>;
 };
 
+const BASE_COURSE_SLUG = 'defesa-civil-lgnd';
+
 describe('Stats (e2e)', () => {
   let app: INestApplication;
   let prisma: PrismaService;
@@ -349,8 +351,12 @@ describe('Stats (e2e)', () => {
     const statsA = (responseA.body as { data: StatsPayload }).data;
     const statsB = (responseB.body as { data: StatsPayload }).data;
 
-    const moduleA = statsA.byModule.find((module) => module.code === 'M1');
-    const moduleB = statsB.byModule.find((module) => module.code === 'M1');
+    // Sem recorte de curso o payload traz um M1 por curso — casar também pelo
+    // título isola o módulo do curso base, que é onde o fixture criou attempts.
+    const isBaseModuleOne = (module: { code: string; title: string }) =>
+      module.code === 'M1' && module.title === catalog.moduleTitle;
+    const moduleA = statsA.byModule.find(isBaseModuleOne);
+    const moduleB = statsB.byModule.find(isBaseModuleOne);
 
     expect(moduleA).toEqual(
       expect.objectContaining({ accuracyPct: 50, attempts: 1 }),
@@ -401,15 +407,25 @@ function httpServer(app: INestApplication): Server {
   return app.getHttpServer() as Server;
 }
 
+/**
+ * `code` de módulo não é único no catálogo: cada aula tem o seu M1. Sem ancorar
+ * no curso base, o `findFirst` pega o M1 de qualquer aula e o quiz do fixture
+ * deixa de bater com o módulo que a asserção procura no `byModule`.
+ */
 async function loadCatalog(prisma: PrismaService) {
   const course = await prisma.course.findFirst({
-    where: { deletedAt: null },
+    where: { slug: BASE_COURSE_SLUG, deletedAt: null },
     select: { id: true },
   });
   const moduleOne = await prisma.courseModule.findFirst({
-    where: { code: 'M1', deletedAt: null },
+    where: {
+      code: 'M1',
+      deletedAt: null,
+      course: { slug: BASE_COURSE_SLUG },
+    },
     select: {
       id: true,
+      title: true,
       quizzes: {
         where: { deletedAt: null },
         take: 1,
@@ -418,7 +434,10 @@ async function loadCatalog(prisma: PrismaService) {
     },
   });
   const cards = await prisma.card.findMany({
-    where: { deletedAt: null },
+    where: {
+      deletedAt: null,
+      deck: { course: { slug: BASE_COURSE_SLUG } },
+    },
     take: 4,
     select: { id: true },
     orderBy: { ord: 'asc' },
@@ -431,6 +450,7 @@ async function loadCatalog(prisma: PrismaService) {
   return {
     courseId: course.id,
     quizId: moduleOne.quizzes[0].id,
+    moduleTitle: moduleOne.title,
     cards: cards.map((card) => card.id),
   };
 }

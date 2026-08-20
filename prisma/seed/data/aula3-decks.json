@@ -1,0 +1,105 @@
+{
+  "p": [
+    {
+      "code": "#1",
+      "f": "Quais são os quatro elementos do tetraedro do fogo?",
+      "v": "<strong>Combustível · comburente (oxigênio) · calor · reação em cadeia</strong>",
+      "t": "Quatro faces sustentam o fogo. Tire uma e ele acaba — é dessa lógica que sai todo método de extinção: isolamento tira o combustível, abafamento tira o comburente, resfriamento tira o calor, inibição quebra a reação em cadeia.",
+      "a": "Aula 3 · teoria do tetraedro do fogo.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [0],
+      "rev": true
+    },
+    {
+      "code": "#2",
+      "f": "O que é o fogo e por que sólidos e líquidos precisam virar gás antes de queimar?",
+      "v": "Processo químico de transformação (combustão). Sólidos e líquidos <strong>viram gases primeiro</strong> para se combinar com o oxigênio",
+      "t": "Ativados por uma fonte de calor, os gases iniciam a transformação química, geram mais calor e desenvolvem a reação em cadeia. Sem a fase gasosa não há combinação com o comburente.",
+      "a": "Aula 3 · conceito do fogo.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [1],
+      "rev": true
+    },
+    {
+      "code": "#3",
+      "f": "Quais são as cinco formas de obtenção do calor?",
+      "v": "<strong>Mecânica · elétrica · natural · reações químicas · nuclear</strong>",
+      "t": "Obtenção é de onde o calor vem. Não confundir com propagação (condução, convecção, irradiação) nem com pontos de temperatura (fulgor, combustão, ignição).",
+      "a": "Aula 3 · formas de obtenção do calor.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [2],
+      "rev": true
+    },
+    {
+      "code": "#4",
+      "f": "Quais são os efeitos fisiológicos do calor sobre quem opera?",
+      "v": "<strong>Desidratação · insolação · fadiga · problemas respiratórios · queimaduras · morte</strong>",
+      "t": "O calor é energia: produz efeitos físicos e químicos nos corpos (elevação de temperatura, aumento de volume, mudança de estado físico e químico) e efeitos fisiológicos nos seres vivos.",
+      "a": "Aula 3 · efeitos do calor.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [3],
+      "rev": true
+    },
+    {
+      "code": "#5",
+      "f": "O que é pirólise?",
+      "v": "<strong>Decomposição do material pela ação do calor</strong>, liberando gases e vapores inflamáveis",
+      "t": "É a pirólise que entrega o gás para a combustão. Por isso a maioria dos combustíveis precisa passar pelo estado gasoso antes de queimar.",
+      "a": "Aula 3 · pirólise e mudança química da matéria.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [4],
+      "rev": true
+    },
+    {
+      "code": "#6",
+      "f": "Como o calor se propaga e qual o risco de cada forma?",
+      "v": "<strong>Condução</strong> (molécula a molécula no sólido) · <strong>convecção</strong> (looping de ar quente e frio) · <strong>irradiação</strong> (ondas pelo espaço)",
+      "t": "Tudo tende ao equilíbrio: o calor vai do mais quente ao mais frio. Tubulação aquecida numa ponta incendeia a outra. O ar quente atinge o ponto de fulgor de materiais em outro local. Corpos ao redor da fonte pegam fogo sem contato.",
+      "a": "Aula 3 · propagação do calor.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [5],
+      "rev": true
+    },
+    {
+      "code": "#7",
+      "f": "O que é combustível e de que depende a velocidade da queima?",
+      "v": "Substância capaz de queimar e alimentar a combustão. Depende da <strong>capacidade de combinar com o oxigênio</strong> e da <strong>fragmentação</strong> (área de contato)",
+      "t": "É o elemento que serve de campo de propagação ao fogo. Pode ser sólido, líquido ou gasoso, e a grande maioria precisa passar pelo estado gasoso. Quanto mais fragmentado, mais rápido queima.",
+      "a": "Aula 3 · combustíveis e tipos.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [6],
+      "rev": true
+    },
+    {
+      "code": "#8",
+      "f": "Quais são os três pontos de temperatura, na ordem do aquecimento?",
+      "v": "<strong>Fulgor</strong> (vapor pega com fonte externa, chama não se mantém) → <strong>combustão</strong> (queima segue sem a fonte) → <strong>ignição</strong> (queima sem fonte externa alguma)",
+      "t": "Os combustíveis são transformados pelo calor e a transformação se desenvolve em temperaturas diferentes conforme o material aquece. A ordem nunca muda.",
+      "a": "Aula 3 · pontos de fulgor, combustão e ignição.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [7, 8],
+      "rev": true
+    },
+    {
+      "code": "#9",
+      "f": "Quais são os métodos de extinção do fogo e o que cada um retira?",
+      "v": "<strong>Isolamento</strong> (combustível) · <strong>abafamento</strong> (oxigênio abaixo de 8% — CO₂, espuma, pó químico) · <strong>resfriamento</strong> (calor — água) · <strong>inibição da reação em cadeia</strong>",
+      "t": "Cada método derruba um lado do tetraedro. Isolamento: fechar válvula, fechar o botão do fogão, fazer o aceiro. Resfriamento: baixar a temperatura abaixo da temperatura de combustão. Inibição: o agente se liga aos radicais livres e forma mistura não inflamável.",
+      "a": "Aula 3 · métodos de extinção.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [9, 10],
+      "rev": true
+    },
+    {
+      "code": "#10",
+      "f": "Quais são as classes de incêndio e o combustível de cada uma?",
+      "v": "<strong>A</strong> sólidos comuns (superfície e profundidade, deixa cinza) · <strong>B</strong> líquidos, graxas e gases (só superfície, sem resíduo) · <strong>C</strong> energizados · <strong>D</strong> metais pirofóricos · <strong>E</strong> radioativos · <strong>K</strong> óleo e gordura de cozinha",
+      "t": "Classe C desligada da rede pode virar A ou B. Classe D: magnésio, lítio, potássio, sódio, titânio, zircônio e afins. Classe K forma camada protetora e resfria por vapor d'água. Identificar o combustível é identificar a classe — e a classe define o agente.",
+      "a": "Aula 3 · classes de incêndio A, B, C, D, E e K.",
+      "s": [["Aula 3 · Combate a incêndio", "aula"]],
+      "q": [11],
+      "rev": true
+    }
+  ],
+  "q": []
+}

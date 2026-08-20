@@ -142,5 +142,173 @@
     ],
     "c": 0,
     "com": "Checklist: autorização e função, EPI completo, apito, dupla, rotas, croqui com horário, nós conferidos por dois. Pressa mata mais que escombro."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.1 — Fiel e lais de guia",
+    "q": "Para que serve o nó fiel e qual é o cuidado obrigatório ao usá-lo?",
+    "opts": [
+      "Fixar a corda a um ponto fixo — e travar sempre com um meio-nó",
+      "Unir duas cordas de mesma bitola — e nunca travar, para desfazer rápido",
+      "Fazer uma alça no meio da corda — e deixar o chicote curto"
+    ],
+    "c": 0,
+    "com": "O fiel morde o próprio ponto de fixação. Sem o meio-nó de travamento ele corre sob carga variável. É o nó de amarrar a corda no poste, na árvore, na coluna."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.1 — Fiel e lais de guia",
+    "q": "O que fazer quando o fiel afrouxa por causa de carga que entra e sai?",
+    "opts": [
+      "Refazer o nó com mais voltas até parar de afrouxar",
+      "Conferir o travamento, reapertar e só então recarregar — nó que se mexe não recebe carga",
+      "Trocar por um nó direito, que não afrouxa"
+    ],
+    "c": 1,
+    "com": "Vale a sequência de sempre: executar, arrumar, apertar e conferir em voz alta com o parceiro. Nó que se mexe é nó não conferido."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.1 — Fiel e lais de guia",
+    "q": "Por que o lais de guia é o nó usado em resgate de pessoa?",
+    "opts": [
+      "Porque é o nó mais rápido de fazer com uma mão só",
+      "Porque forma uma alça fixa que não corre — não aperta o corpo de quem está dentro dela",
+      "Porque é o único nó que não enfraquece a corda"
+    ],
+    "c": 1,
+    "com": "Alça que não corre é alça que não estrangula. Todo nó ainda enfraquece a corda entre 20% e 50% — o lais de guia não é exceção."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.1 — Fiel e lais de guia",
+    "q": "Qual é o cuidado com o chicote (sobra) no lais de guia?",
+    "opts": [
+      "Deixar no mínimo um palmo de sobra, e travar",
+      "Cortar rente ao nó, para não enroscar no escombro",
+      "O tamanho do chicote não interfere na segurança do nó"
+    ],
+    "c": 0,
+    "com": "Chicote curto escapa do nó sob carga cíclica. Um palmo é o piso, não o ideal — e o travamento é o que garante."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.2 — Azelha e oito",
+    "q": "Para que serve a azelha no resgate?",
+    "opts": [
+      "Alça rápida para conectar mosquetão",
+      "Unir duas cordas de bitolas diferentes",
+      "Fixar a corda diretamente ao ponto de ancoragem"
+    ],
+    "c": 0,
+    "com": "Azelha simples e azelha dupla: a dupla dá mais volume e mais segurança na alça. É o nó de conexão rápida no mosquetão."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.2 — Azelha e oito",
+    "q": "Qual é a principal desvantagem da azelha depois de receber carga?",
+    "opts": [
+      "Ela perde a forma e escorrega",
+      "Ela fica difícil de desfazer",
+      "Ela enfraquece a corda mais que qualquer outro nó"
+    ],
+    "c": 1,
+    "com": "Azelha carregada trava. Em operação isso significa perder corda e perder tempo. Quando é preciso desfazer com facilidade depois da carga, o oito é a escolha melhor."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.2 — Azelha e oito",
+    "q": "Por que o nó oito é a conexão mais usada no resgate?",
+    "opts": [
+      "Porque é o único nó que não pode ser feito errado",
+      "Porque tem desenho limpo e conferível a olho, mantém boa resistência e desfaz depois da carga",
+      "Porque dispensa conferência do parceiro"
+    ],
+    "c": 1,
+    "com": "O oito é auditável: dá pra bater o olho e ver se está certo. Também chamado de azelha dupla no jargão de algumas equipes."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.2 — Azelha e oito",
+    "q": "Como se confere visualmente um nó oito bem feito?",
+    "opts": [
+      "Pelo número de voltas em torno da corda principal",
+      "Pelo desenho simétrico do oito, sem cruzes e com as pernas paralelas",
+      "Pelo tamanho da alça formada"
+    ],
+    "c": 1,
+    "com": "Cruz no desenho é carga concentrada no ponto errado. Arrumar o nó — tirar as cruzes — é a etapa 2 da sequência, e é ela que faz o oito valer o que promete."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.3 — Direito e carioca",
+    "q": "Para que serve o nó direito?",
+    "opts": [
+      "Unir duas cordas de mesma bitola, em carga leve",
+      "Unir duas cordas de bitolas diferentes, em carga de vida",
+      "Criar uma alça fixa na ponta da corda"
+    ],
+    "c": 0,
+    "com": "Mesma bitola e carga leve. Fora desse envelope o nó direito não é a ferramenta certa."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.3 — Direito e carioca",
+    "q": "Por que o nó direito não recebe carga de vida sem travamento?",
+    "opts": [
+      "Porque ele enfraquece a corda em mais de 50%",
+      "Porque ele pode virar e escorregar sob carga — precisa de travamento nas pontas",
+      "Porque ele só funciona em corda molhada"
+    ],
+    "c": 1,
+    "com": "O direito é nó de amarrar volume, não de sustentar gente. Em carga de vida, sem travamento, não entra."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.3 — Direito e carioca",
+    "q": "O que o nó carioca permite fazer que os nós de ponta não permitem?",
+    "opts": [
+      "Criar uma alça no meio da corda, sem usar as pontas",
+      "Unir duas cordas sem perder resistência",
+      "Fixar a corda a um ponto fixo mais rápido que o fiel"
+    ],
+    "c": 0,
+    "com": "Alça no meio da linha significa vários pontos de apoio ou de ancoragem na mesma corda, sem precisar cortar nem passar as pontas."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.3 — Direito e carioca",
+    "q": "Em que situação operacional o carioca resolve?",
+    "opts": [
+      "Quando é preciso um único ponto forte na ponta da corda",
+      "Quando é preciso distribuir múltiplos pontos de apoio ao longo da mesma linha",
+      "Quando é preciso emendar duas cordas de bitolas diferentes"
+    ],
+    "c": 1,
+    "com": "É o nó da linha de vida com vários pontos, do corrimão improvisado, da corda com pegas ao longo do trecho."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.4 — Cadeirinha rápida",
+    "q": "O que é a cadeirinha rápida e quando ela é usada?",
+    "opts": [
+      "Um assento improvisado com corda ou fita, para sustentar a pessoa quando não há cadeirinha industrial",
+      "Um nó de ancoragem para cordas de bitola grossa",
+      "Uma amarração rígida usada para imobilizar a coluna da vítima"
+    ],
+    "c": 0,
+    "com": "Improviso com regra. Não substitui equipamento certificado — resolve quando o equipamento não está lá."
+  },
+  {
+    "mod": "MÓDULO 2 — Nós e amarrações",
+    "quiz": "Quiz 2.4 — Cadeirinha rápida",
+    "q": "O que precisa ser conferido na cadeirinha rápida antes de elevar a pessoa?",
+    "opts": [
+      "Só o mosquetão de conexão",
+      "O nó, o travamento, a simetria das alças e a conexão — conferidos em dupla, antes de sair do chão",
+      "Nada: se a pessoa está sentada, a cadeirinha está correta"
+    ],
+    "c": 1,
+    "com": "Conferir antes de elevar, não depois. Elevou, o erro vira queda. Vale a regra do bloco de nós: conferência em voz alta, em dupla."
   }
 ]

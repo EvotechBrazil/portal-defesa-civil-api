@@ -1,0 +1,146 @@
+[
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.1 — Tetraedro e conceito do fogo",
+    "q": "Quais são os quatro elementos que compõem o tetraedro do fogo?",
+    "opts": [
+      "Combustível, comburente (oxigênio), calor e reação em cadeia",
+      "Combustível, fumaça, calor e chama",
+      "Oxigênio, água, calor e pressão"
+    ],
+    "c": 0,
+    "com": "São quatro faces: tire uma e o fogo acaba. É exatamente essa a lógica de cada método de extinção — isolamento tira o combustível, abafamento tira o comburente, resfriamento tira o calor e a inibição quebra a reação em cadeia."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.1 — Tetraedro e conceito do fogo",
+    "q": "O que acontece com sólidos e líquidos antes de eles se combinarem com o oxigênio?",
+    "opts": [
+      "Eles se combinam diretamente com o oxigênio no estado em que estão",
+      "Eles se transformam primeiro em gases, e só então se combinam com o oxigênio",
+      "Eles precisam ser resfriados até o ponto de fulgor"
+    ],
+    "c": 1,
+    "com": "Fogo é um processo químico de transformação (combustão). Sólidos e líquidos viram gás primeiro; ativados por uma fonte de calor, iniciam a transformação química, geram mais calor e desenvolvem a reação em cadeia."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.1 — Tetraedro e conceito do fogo",
+    "q": "Quais são as formas de obtenção do calor?",
+    "opts": [
+      "Mecânica, elétrica, natural, reações químicas e nuclear",
+      "Condução, convecção e irradiação",
+      "Fulgor, combustão e ignição"
+    ],
+    "c": 0,
+    "com": "Não confundir: obtenção é de onde o calor vem. Condução, convecção e irradiação são como ele se propaga. Fulgor, combustão e ignição são os pontos de temperatura do material."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.2 — Calor, pirólise e propagação",
+    "q": "O que é pirólise?",
+    "opts": [
+      "A transferência de calor entre dois corpos até o equilíbrio térmico",
+      "A decomposição do material pela ação do calor, liberando gases e vapores inflamáveis",
+      "A temperatura em que o material queima sem fonte externa de calor"
+    ],
+    "c": 1,
+    "com": "É a pirólise que explica por que a maioria dos combustíveis precisa passar pelo estado gasoso antes de queimar. O sólido se degrada e entrega o gás que vai se combinar com o oxigênio."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.2 — Calor, pirólise e propagação",
+    "q": "Quais são os efeitos fisiológicos do calor sobre a equipe?",
+    "opts": [
+      "Elevação da temperatura, aumento de volume e mudança de estado físico",
+      "Desidratação, insolação, fadiga, problemas respiratórios, queimaduras e morte",
+      "Apenas queimaduras de primeiro e segundo grau"
+    ],
+    "c": 1,
+    "com": "Efeitos nos corpos (físicos e químicos) são elevação de temperatura, aumento de volume e mudança de estado físico e químico. Efeito fisiológico é o que o calor faz com o ser vivo — e vai até a morte."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.2 — Calor, pirólise e propagação",
+    "q": "Qual é a diferença entre condução, convecção e irradiação?",
+    "opts": [
+      "Condução é de molécula a molécula num sólido; convecção é o looping de ar quente e frio; irradiação são ondas de calor pelo espaço",
+      "Condução é por ondas no espaço; convecção é por contato direto; irradiação é pela fumaça",
+      "As três descrevem o mesmo fenômeno com nomes diferentes"
+    ],
+    "c": 0,
+    "com": "O calor sempre vai do mais quente para o mais frio até o equilíbrio. Tubulação aquecida numa ponta incendeia a outra (condução). O ar quente atinge o ponto de fulgor de materiais em outro local (convecção). Corpos ao redor da fonte pegam fogo sem contato (irradiação)."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.3 — Combustíveis e pontos de temperatura",
+    "q": "De que depende a velocidade de queima de um combustível?",
+    "opts": [
+      "Apenas da quantidade de material disponível",
+      "Da capacidade de se combinar com o oxigênio sob a ação do calor e da sua fragmentação (área de contato)",
+      "Da classe de incêndio em que ele foi enquadrado"
+    ],
+    "c": 1,
+    "com": "Combustível é toda substância capaz de queimar e alimentar a combustão — o campo de propagação do fogo. Pode ser sólido, líquido ou gasoso. Quanto mais fragmentado, maior a área de contato com o oxigênio e mais rápida a queima."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.3 — Combustíveis e pontos de temperatura",
+    "q": "Qual é a diferença entre ponto de fulgor e ponto de combustão?",
+    "opts": [
+      "No fulgor os vapores se incendeiam com fonte externa mas as chamas não se mantêm; na combustão os gases continuam queimando sem a fonte",
+      "No fulgor o material queima sozinho; na combustão precisa de fonte externa",
+      "Fulgor é para sólidos e combustão é para líquidos"
+    ],
+    "c": 0,
+    "com": "No ponto de fulgor a quantidade de vapores ainda é pequena, então a chama não se sustenta. Continuando o aquecimento chega-se ao ponto de combustão, em que a queima se mantém sozinha."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.3 — Combustíveis e pontos de temperatura",
+    "q": "O que caracteriza o ponto de ignição?",
+    "opts": [
+      "A temperatura em que o material começa a liberar vapores",
+      "O combustível exposto ao ar entra em combustão sem que haja qualquer fonte externa de calor",
+      "A temperatura em que o material muda de estado físico"
+    ],
+    "c": 1,
+    "com": "A ordem do aquecimento é sempre fulgor, depois combustão, depois ignição. No ponto de ignição não é preciso faísca, chama-piloto ou qualquer fonte externa."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.4 — Métodos de extinção e classes de incêndio",
+    "q": "Em que consiste o método de extinção por abafamento?",
+    "opts": [
+      "Retirar o material ainda não atingido pelas chamas",
+      "Impedir o contato do combustível com o comburente, baixando o oxigênio da queima abaixo de 8%",
+      "Reduzir a temperatura do material abaixo da temperatura de combustão"
+    ],
+    "c": 1,
+    "com": "Abaixo de 8% de oxigênio o fogo não se sustenta. Agentes que atuam assim: CO₂, espuma e pó químico."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.4 — Métodos de extinção e classes de incêndio",
+    "q": "Qual é o melhor agente extintor para o método de resfriamento e por quê?",
+    "opts": [
+      "A água — o método retira o calor até a temperatura cair abaixo da temperatura de combustão",
+      "O CO₂ — porque desloca o oxigênio da superfície",
+      "O pó químico — porque se liga aos radicais livres da combustão"
+    ],
+    "c": 0,
+    "com": "Cada método ataca um lado do tetraedro. Isolamento tira o combustível (fechar a válvula, fazer o aceiro). Abafamento tira o comburente. Resfriamento tira o calor — água. A inibição da reação em cadeia liga o agente aos radicais livres e forma uma mistura não inflamável."
+  },
+  {
+    "mod": "MÓDULO 1 — Combate a incêndio",
+    "quiz": "Quiz 1.4 — Métodos de extinção e classes de incêndio",
+    "q": "O que diferencia um incêndio classe A de um classe B?",
+    "opts": [
+      "Classe A envolve equipamentos energizados; classe B envolve metais pirofóricos",
+      "Classe A são sólidos comuns que queimam em superfície e profundidade e deixam cinzas; classe B são líquidos, graxas e gases que queimam só na superfície e não deixam resíduo",
+      "Classe A é fogo em cozinha; classe B é fogo em material radioativo"
+    ],
+    "c": 1,
+    "com": "C é energizado (desligado da rede pode virar A ou B). D é metal pirofórico — magnésio, lítio, potássio, sódio, titânio, zircônio. E é material radioativo. K é óleo e gordura de cozinha. Identificar o combustível é identificar a classe, e a classe define o agente."
+  }
+]

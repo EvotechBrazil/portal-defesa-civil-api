@@ -7,3 +7,8 @@ coverage
 .DS_Store
 .vercel
 .env*
+
+# tooling de agente, não faz parte do produto
+.agents/
+.claude/
+skills-lock.json

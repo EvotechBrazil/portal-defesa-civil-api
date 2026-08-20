@@ -7,7 +7,7 @@ function courseFixture(overrides?: Partial<Course>): Course {
   return {
     id: 'course-1',
     slug: 'defesa-civil-lgnd',
-    title: 'Proteção e Defesa Civil — LGND SQUAD',
+    title: 'Programa de evolução contínua LGND SQUAD',
     description: 'Curso de formação',
     sourcePlatform: 'ticketandgo',
     createdAt: new Date('2026-01-01'),

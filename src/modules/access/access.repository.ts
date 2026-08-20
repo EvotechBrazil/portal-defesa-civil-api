@@ -60,6 +60,10 @@ export class AccessRepository {
     name: string;
     lgndNumber: string;
     manada: string;
+    manadaId?: string;
+    country?: string;
+    state?: string;
+    city?: string;
     email: string;
     justification: string;
   }): Promise<AccessRequest> {
@@ -73,6 +77,10 @@ export class AccessRepository {
         name: data.name,
         lgndNumber: data.lgndNumber,
         manada: data.manada,
+        manadaId: data.manadaId,
+        country: data.country,
+        state: data.state,
+        city: data.city,
         email: data.email,
         justification: data.justification,
         status: AccessRequestStatus.PENDING,
@@ -81,6 +89,10 @@ export class AccessRepository {
         name: data.name,
         lgndNumber: data.lgndNumber,
         manada: data.manada,
+        manadaId: data.manadaId,
+        country: data.country,
+        state: data.state,
+        city: data.city,
         email: data.email,
         justification: data.justification,
         status: AccessRequestStatus.PENDING,

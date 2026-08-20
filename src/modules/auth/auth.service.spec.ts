@@ -24,6 +24,9 @@ function buildUser(overrides?: Partial<User>): User {
     city: null,
     squad: null,
     eventoFire: null,
+    manadaId: null,
+    country: null,
+    state: null,
     photoBytes: null,
     photoMime: null,
     createdAt: new Date('2026-01-01T00:00:00.000Z'),
@@ -98,6 +101,10 @@ describe('AuthService refresh rotation', () => {
         parseWhatsapp: jest.fn(),
         assertCanRegister: jest.fn(),
         markRegistered: jest.fn(),
+      } as never,
+      {
+        getById: jest.fn(),
+        findOrCreate: jest.fn(),
       } as never,
     );
   });

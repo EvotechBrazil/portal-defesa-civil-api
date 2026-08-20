@@ -8,12 +8,13 @@ import { hashToken } from '../src/modules/auth/auth.crypto';
 import {
   allowWhatsapp,
   bearerFor,
+  cleanupTestTenants,
+  cleanupTestWhatsapps,
   createSecondTenant,
   registerPayload,
   resolveVerificationToken,
   signAccessToken,
   uniqueWhatsapp,
-  cleanupTestTenants,
 } from './helpers/auth.helper';
 
 interface Envelope<T> {
@@ -78,7 +79,8 @@ describe('Auth (e2e)', () => {
     await allowWhatsapp(prisma, whatsapp);
     return request(server)
       .post('/api/v1/auth/register')
-      .send(registerPayload({ ...input, whatsapp }));
+      .send(registerPayload({ ...input, whatsapp }))
+      .expect(201);
   }
 
   beforeAll(async () => {
@@ -101,6 +103,7 @@ describe('Auth (e2e)', () => {
   });
 
   afterAll(async () => {
+    await cleanupTestWhatsapps(prisma);
     await cleanupTestTenants(prisma);
     await app.close();
   });
@@ -110,9 +113,7 @@ describe('Auth (e2e)', () => {
     const password = 'password12';
     const name = 'Ana Silva';
 
-    const registerRes = await registerStudent({ email, name, password }).expect(
-      201,
-    );
+    const registerRes = await registerStudent({ email, name, password });
 
     const registered = (registerRes.body as Envelope<RegisterData>).data;
     expect(typeof registered.id).toBe('string');
@@ -176,7 +177,7 @@ describe('Auth (e2e)', () => {
       email,
       name: 'Unverified User',
       password,
-    }).expect(201);
+    });
 
     const res = await request(server)
       .post('/api/v1/auth/login')
@@ -198,7 +199,7 @@ describe('Auth (e2e)', () => {
       email,
       name: 'Resend User',
       password: 'password12',
-    }).expect(201);
+    });
 
     const existing = await request(server)
       .post('/api/v1/auth/resend-verification')
@@ -215,7 +216,7 @@ describe('Auth (e2e)', () => {
       email,
       name: 'Rotate User',
       password,
-    }).expect(201);
+    });
     const userId = (registerRes.body as Envelope<RegisterData>).data.id;
     const verifyToken = await resolveVerificationToken(prisma, userId, email);
     await request(server)
@@ -271,7 +272,7 @@ describe('Auth (e2e)', () => {
       email,
       name: 'Logout User',
       password,
-    }).expect(201);
+    });
     const userId = (registerRes.body as Envelope<RegisterData>).data.id;
     const verifyToken = await resolveVerificationToken(prisma, userId, email);
     await request(server)

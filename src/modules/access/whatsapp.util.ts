@@ -1,37 +1,39 @@
 export class InvalidWhatsappError extends Error {
-  constructor(message = 'Informe um WhatsApp válido com DDD.') {
+  constructor(
+    message = 'Informe um WhatsApp válido com DDI (ex.: +55 43 99999-9999).',
+  ) {
     super(message);
     this.name = 'InvalidWhatsappError';
   }
 }
 
 /**
- * Normaliza para dígitos com DDI 55. Aceita (43) 99999-9999, 43999999999,
- * +55 43 99999-9999 e o zero de tronco (043...).
+ * Normaliza para dígitos E.164, sem o "+".
+ * - Número com + ou 00: usa o DDI informado (Brasil, EUA/PR, Venezuela, etc.).
+ * - 10 ou 11 dígitos sem DDI: assume Brasil (55).
  */
 export function normalizeWhatsapp(raw: string): string {
-  let digits = raw.replace(/\D/g, '');
+  const trimmed = raw.trim();
+  const hasExplicitCc = trimmed.startsWith('+') || trimmed.startsWith('00');
+  let digits = trimmed.replace(/\D/g, '');
   if (digits.startsWith('00')) {
     digits = digits.slice(2);
   }
   if (
+    !hasExplicitCc &&
     digits.startsWith('0') &&
     (digits.length === 11 || digits.length === 12)
   ) {
     digits = digits.slice(1);
   }
-
-  if (!digits.startsWith('55')) {
-    if (digits.length === 10 || digits.length === 11) {
-      digits = `55${digits}`;
-    }
+  if (
+    !hasExplicitCc &&
+    !digits.startsWith('55') &&
+    (digits.length === 10 || digits.length === 11)
+  ) {
+    digits = `55${digits}`;
   }
-
-  const national = digits.startsWith('55') ? digits.slice(2) : digits;
-  if (national.length !== 10 && national.length !== 11) {
-    throw new InvalidWhatsappError();
-  }
-  if (!digits.startsWith('55')) {
+  if (digits.length < 8 || digits.length > 15) {
     throw new InvalidWhatsappError();
   }
   return digits;
@@ -44,5 +46,8 @@ export function formatWhatsapp(digits: string): string {
   if (digits.startsWith('55') && digits.length === 12) {
     return `+55 (${digits.slice(2, 4)}) ${digits.slice(4, 8)}-${digits.slice(8)}`;
   }
-  return digits;
+  if (digits.startsWith('1') && digits.length === 11) {
+    return `+1 (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
+  }
+  return `+${digits}`;
 }

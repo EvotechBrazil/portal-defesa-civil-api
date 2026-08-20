@@ -12,6 +12,7 @@ import {
   PaginationMeta,
   buildPaginationMeta,
 } from '../../common/dtos/pagination.dto';
+import { ManadasService } from '../manadas/manadas.service';
 import { AccessRepository } from './access.repository';
 import {
   AccessRequestView,
@@ -23,10 +24,7 @@ import { AllowWhatsappDto } from './dtos/allow-whatsapp.dto';
 import { CheckWhatsappDto } from './dtos/check-whatsapp.dto';
 import { ListAccessRequestsDto } from './dtos/list-access-requests.dto';
 import { RequestAccessDto } from './dtos/request-access.dto';
-import {
-  InvalidWhatsappError,
-  normalizeWhatsapp,
-} from './whatsapp.util';
+import { InvalidWhatsappError, normalizeWhatsapp } from './whatsapp.util';
 
 const DEFAULT_TENANT_SLUG = 'default';
 const MAX_PAGE_SIZE = 100;
@@ -40,7 +38,10 @@ function isPrismaUniqueConstraint(error: unknown): boolean {
 
 @Injectable()
 export class AccessService {
-  constructor(private readonly accessRepository: AccessRepository) {}
+  constructor(
+    private readonly accessRepository: AccessRepository,
+    private readonly manadasService: ManadasService,
+  ) {}
 
   async checkWhatsapp(dto: CheckWhatsappDto): Promise<WhatsappCheckResult> {
     const tenantId = await this.requireDefaultTenantId();
@@ -108,12 +109,17 @@ export class AccessService {
       throw new ConflictException('Sua solicitação já está em análise.');
     }
 
+    const pack = await this.resolveManada(tenantId, dto);
     const saved = await this.accessRepository.submitRequest({
       tenantId,
       whatsapp,
       name: dto.name.trim(),
       lgndNumber: dto.lgndNumber.trim(),
-      manada: dto.manada.trim(),
+      manada: pack.name,
+      manadaId: pack.id,
+      country: dto.country?.trim().toUpperCase(),
+      state: dto.state?.trim(),
+      city: dto.city?.trim(),
       email: dto.email.trim().toLowerCase(),
       justification: dto.justification.trim(),
     });
@@ -121,17 +127,11 @@ export class AccessService {
   }
 
   async assertCanRegister(tenantId: string, whatsapp: string): Promise<void> {
-    const allowed = await this.accessRepository.findAllowed(
-      tenantId,
-      whatsapp,
-    );
+    const allowed = await this.accessRepository.findAllowed(tenantId, whatsapp);
     if (allowed) {
       return;
     }
-    const request = await this.accessRepository.findRequest(
-      tenantId,
-      whatsapp,
-    );
+    const request = await this.accessRepository.findRequest(tenantId, whatsapp);
     if (request?.status === AccessRequestStatus.APPROVED) {
       return;
     }
@@ -254,6 +254,30 @@ export class AccessService {
       reviewedAt: new Date(),
     });
     return this.toRequestView(updated);
+  }
+
+  private async resolveManada(
+    tenantId: string,
+    dto: RequestAccessDto,
+  ): Promise<{ id?: string; name: string }> {
+    if (dto.manadaId) {
+      const found = await this.manadasService.getById(tenantId, dto.manadaId);
+      return { id: found.id, name: found.name };
+    }
+    const name = dto.manada?.trim();
+    if (!name) {
+      throw new BadRequestException('Informe a manada.');
+    }
+    if (dto.country && dto.state && dto.city) {
+      const created = await this.manadasService.findOrCreate(tenantId, {
+        name,
+        country: dto.country,
+        state: dto.state,
+        city: dto.city,
+      });
+      return { id: created.id, name: created.name };
+    }
+    return { name };
   }
 
   parseWhatsapp(raw: string): string {

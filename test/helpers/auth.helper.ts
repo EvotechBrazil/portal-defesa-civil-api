@@ -52,6 +52,10 @@ export async function cleanupTestTenants(prisma: PrismaService): Promise<void> {
   await prisma.allowedWhatsapp.deleteMany({
     where: { tenantId: { in: tenantIds } },
   });
+  await prisma.user.updateMany({
+    where: { tenantId: { in: tenantIds } },
+    data: { manadaId: null },
+  });
   if (userIds.length > 0) {
     await prisma.attemptItem.deleteMany({
       where: { attempt: { userId: { in: userIds } } },
@@ -73,6 +77,7 @@ export async function cleanupTestTenants(prisma: PrismaService): Promise<void> {
     });
     await prisma.user.deleteMany({ where: { id: { in: userIds } } });
   }
+  await prisma.manada.deleteMany({ where: { tenantId: { in: tenantIds } } });
   await prisma.tenant.deleteMany({ where: { id: { in: tenantIds } } });
 }
 
@@ -83,11 +88,34 @@ export async function createSecondTenant(prisma: PrismaService) {
   });
 }
 
-let whatsappSeq = 0;
-
 export function uniqueWhatsapp(): string {
-  whatsappSeq += 1;
-  return `5543999${String(whatsappSeq).padStart(6, '0')}`;
+  const digits = nextFixtureId().replace(/\D/g, '').slice(-7).padStart(7, '0');
+  return `554370${digits}`;
+}
+
+export async function cleanupTestWhatsapps(
+  prisma: PrismaService,
+): Promise<void> {
+  const users = await prisma.user.findMany({
+    where: { whatsapp: { startsWith: '554370' } },
+    select: { id: true },
+  });
+  const userIds = users.map((user) => user.id);
+  await prisma.accessRequest.deleteMany({
+    where: { whatsapp: { startsWith: '554370' } },
+  });
+  await prisma.allowedWhatsapp.deleteMany({
+    where: { whatsapp: { startsWith: '554370' } },
+  });
+  if (userIds.length > 0) {
+    await prisma.emailVerificationToken.deleteMany({
+      where: { userId: { in: userIds } },
+    });
+    await prisma.refreshToken.deleteMany({
+      where: { userId: { in: userIds } },
+    });
+    await prisma.user.deleteMany({ where: { id: { in: userIds } } });
+  }
 }
 
 export async function allowWhatsapp(
@@ -95,9 +123,7 @@ export async function allowWhatsapp(
   whatsapp: string,
   tenantId?: string,
 ) {
-  const tenant = tenantId
-    ? { id: tenantId }
-    : await getDefaultTenant(prisma);
+  const tenant = tenantId ? { id: tenantId } : await getDefaultTenant(prisma);
   return prisma.allowedWhatsapp.create({
     data: { tenantId: tenant.id, whatsapp },
   });
@@ -116,6 +142,8 @@ export function registerPayload(input: {
     whatsapp: input.whatsapp,
     lgndNumber: '1001',
     manada: 'Manada Teste',
+    country: 'BR',
+    state: 'PR',
     city: 'Arapongas',
     squad: 'Squad 1',
     eventoFire: 'Fire 2026',

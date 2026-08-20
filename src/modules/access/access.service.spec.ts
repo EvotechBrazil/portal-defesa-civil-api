@@ -24,7 +24,13 @@ describe('AccessService', () => {
       upsertInterested: jest.fn(),
       submitRequest: jest.fn(),
     };
-    service = new AccessService(repository as unknown as AccessRepository);
+    service = new AccessService(
+      repository as unknown as AccessRepository,
+      {
+        getById: jest.fn(),
+        findOrCreate: jest.fn(),
+      } as never,
+    );
   });
 
   it('captures an unknown number as interested and returns NOT_ALLOWED', async () => {

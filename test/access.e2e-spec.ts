@@ -10,6 +10,7 @@ import {
 import {
   allowWhatsapp,
   bearerFor,
+  cleanupTestWhatsapps,
   getDefaultTenant,
   registerPayload,
   uniqueWhatsapp,
@@ -31,6 +32,7 @@ describe('Access (e2e)', () => {
   });
 
   afterAll(async () => {
+    await cleanupTestWhatsapps(prisma);
     if (createdWhatsapps.length > 0) {
       await prisma.accessRequest.deleteMany({
         where: { whatsapp: { in: createdWhatsapps } },

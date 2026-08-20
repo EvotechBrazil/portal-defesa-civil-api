@@ -13,7 +13,10 @@ RUN npm install -g pnpm@9.15.0
 # O schema entra antes do install porque o postinstall roda `prisma generate`.
 COPY package.json pnpm-lock.yaml ./
 COPY prisma ./prisma
-RUN pnpm install --frozen-lockfile
+# --prod=false e obrigatorio: o Coolify injeta as envs da aplicacao como build
+# ARGs, entao NODE_ENV=production chega aqui e faz o pnpm pular devDependencies.
+# Sem elas, o postinstall (prisma generate) e o build do framework nao rodam.
+RUN pnpm install --frozen-lockfile --prod=false
 
 COPY . .
 RUN pnpm exec prisma generate && pnpm build

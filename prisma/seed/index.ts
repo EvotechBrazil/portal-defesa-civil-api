@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { hashPassword } from '../../src/modules/auth/auth.crypto';
 import { normalizeWhatsapp } from '../../src/modules/access/whatsapp.util';
+import { roleLevel } from '../../src/common/authz/role-hierarchy';
 
 const prisma = new PrismaClient();
 
@@ -221,7 +222,11 @@ async function seedAdmin(tenantId: string) {
     where: { tenantId, email, deletedAt: null },
   });
   if (existing) {
-    if (existing.role !== UserRole.ADMIN) {
+    // Comparacao por NIVEL, nunca por igualdade: `entrypoint.sh` roda o seed em
+    // todo boot do container (o Coolify nao tem release step). Com `!==`, um
+    // ADMIN_EMAIL promovido a ADMIN_SENIOR pela tela era rebaixado no proximo
+    // restart. So promove quem esta ABAIXO de ADMIN.
+    if (roleLevel(existing.role) < roleLevel(UserRole.ADMIN)) {
       await prisma.user.update({
         where: { id: existing.id },
         data: { role: UserRole.ADMIN, emailVerifiedAt: new Date() },
@@ -236,6 +241,61 @@ async function seedAdmin(tenantId: string) {
       name: 'Administrador',
       passwordHash: await hashPassword(password),
       role: UserRole.ADMIN,
+      emailVerifiedAt: new Date(),
+    },
+  });
+}
+
+async function seedSuperAdmin(tenantId: string) {
+  const email = process.env.SUPER_ADMIN_EMAIL?.toLowerCase();
+  const password = process.env.SUPER_ADMIN_PASSWORD;
+
+  if (!email || !password) {
+    // Em producao nao inventamos credencial de topo de piramide: avisa e pula.
+    // NAO lanca de proposito — `entrypoint.sh` roda o seed em todo boot, entao
+    // lancar aqui derrubaria o seed do catalogo inteiro junto.
+    if (process.env.NODE_ENV === 'production') {
+      console.warn(
+        '[seed] SUPER_ADMIN_EMAIL/SUPER_ADMIN_PASSWORD ausentes: super-admin nao criado.',
+      );
+      return;
+    }
+    return seedSuperAdminWith(
+      tenantId,
+      'super-admin@portal.local',
+      'superadmin12345',
+    );
+  }
+
+  return seedSuperAdminWith(tenantId, email, password);
+}
+
+async function seedSuperAdminWith(
+  tenantId: string,
+  email: string,
+  password: string,
+) {
+  const existing = await prisma.user.findFirst({
+    where: { tenantId, email, deletedAt: null },
+  });
+  if (existing) {
+    // So promove quem esta ABAIXO de SUPER_ADMIN, e nunca reescreve a senha:
+    // o seed roda em todo boot e nao pode pisar em config de runtime.
+    if (roleLevel(existing.role) < roleLevel(UserRole.SUPER_ADMIN)) {
+      await prisma.user.update({
+        where: { id: existing.id },
+        data: { role: UserRole.SUPER_ADMIN, emailVerifiedAt: new Date() },
+      });
+    }
+    return;
+  }
+  await prisma.user.create({
+    data: {
+      tenantId,
+      email,
+      name: 'Super Administrador',
+      passwordHash: await hashPassword(password),
+      role: UserRole.SUPER_ADMIN,
       emailVerifiedAt: new Date(),
     },
   });
@@ -708,6 +768,7 @@ async function main() {
 
   const tenant = await seedTenant();
   await seedAdmin(tenant.id);
+  await seedSuperAdmin(tenant.id);
   await seedAllowedWhatsapps(tenant.id);
   await seedManadas(tenant.id);
   const course = await seedCourse();

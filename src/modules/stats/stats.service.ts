@@ -6,6 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { CardLevel, UserRole } from '@prisma/client';
+import { hasAtLeast } from '../../common/authz/role-hierarchy';
 import {
   PaginationMeta,
   buildPaginationMeta,
@@ -348,7 +349,7 @@ function canViewPeer(
   if (viewer.id === target.id) {
     return true;
   }
-  if (viewer.role === UserRole.ADMIN) {
+  if (hasAtLeast(viewer.role, UserRole.ADMIN)) {
     return true;
   }
   if (!viewerProfile.manadaId || !target.manadaId) {

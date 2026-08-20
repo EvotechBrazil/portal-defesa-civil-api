@@ -6,7 +6,7 @@ import { UsersRepository } from '../users/users.repository';
 import { UsersService } from '../users/users.service';
 import { AuthRepository } from './auth.repository';
 import { AuthService } from './auth.service';
-import { MailService } from './mail.service';
+import { MailService } from '../mail/mail.service';
 
 function buildUser(overrides?: Partial<User>): User {
   return {

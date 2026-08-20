@@ -1,7 +1,9 @@
+import { UserRole } from '@prisma/client';
+
 export interface AuthenticatedUser {
   id: string;
   email: string;
-  role: 'STUDENT' | 'ADMIN';
+  role: UserRole;
   tenantId: string;
 }
 

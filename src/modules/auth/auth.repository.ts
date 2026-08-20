@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   EmailVerificationToken,
+  PasswordResetToken,
   RefreshToken,
   Tenant,
   User,
@@ -8,6 +9,10 @@ import {
 import { PrismaService } from '../../database/prisma.service';
 
 export type EmailVerificationTokenWithUser = EmailVerificationToken & {
+  user: User;
+};
+
+export type PasswordResetTokenWithUser = PasswordResetToken & {
   user: User;
 };
 
@@ -122,6 +127,91 @@ export class AuthRepository {
     await this.prisma.refreshToken.updateMany({
       where: { userId, revokedAt: null },
       data: { revokedAt },
+    });
+  }
+
+  findLatestPasswordResetToken(
+    userId: string,
+  ): Promise<PasswordResetToken | null> {
+    return this.prisma.passwordResetToken.findFirst({
+      where: { userId },
+      orderBy: { createdAt: 'desc' },
+    });
+  }
+
+  findPasswordResetTokenByHash(
+    tokenHash: string,
+  ): Promise<PasswordResetTokenWithUser | null> {
+    return this.prisma.passwordResetToken.findUnique({
+      where: { tokenHash },
+      include: { user: true },
+    });
+  }
+
+  /**
+   * Invalida os tokens ainda válidos e emite um novo na mesma transação —
+   * dois links vivos ao mesmo tempo é o mesmo que não ter expiração.
+   */
+  async rotatePasswordResetToken(data: {
+    userId: string;
+    tokenHash: string;
+    expiresAt: Date;
+    now: Date;
+  }): Promise<PasswordResetToken> {
+    return this.prisma.$transaction(async (tx) => {
+      await tx.passwordResetToken.updateMany({
+        where: {
+          userId: data.userId,
+          usedAt: null,
+          expiresAt: { gt: data.now },
+        },
+        data: { usedAt: data.now },
+      });
+      return tx.passwordResetToken.create({
+        data: {
+          userId: data.userId,
+          tokenHash: data.tokenHash,
+          expiresAt: data.expiresAt,
+        },
+      });
+    });
+  }
+
+  /**
+   * Consome o token, grava a senha nova, marca o e-mail se ainda não estava
+   * verificado e derruba todas as sessões. Tudo na mesma transação: trocar a
+   * senha e deixar o refresh antigo vivo anula a troca.
+   *
+   * Devolve `false` quando outra requisição já marcou o token — o serviço
+   * traduz isso na mesma 400 genérica de token inválido.
+   */
+  consumePasswordReset(params: {
+    tokenId: string;
+    userId: string;
+    passwordHash: string;
+    usedAt: Date;
+    verifyEmail: boolean;
+  }): Promise<boolean> {
+    return this.prisma.$transaction(async (tx) => {
+      const claimed = await tx.passwordResetToken.updateMany({
+        where: { id: params.tokenId, usedAt: null },
+        data: { usedAt: params.usedAt },
+      });
+      if (claimed.count === 0) {
+        return false;
+      }
+      await tx.user.update({
+        where: { id: params.userId },
+        data: {
+          passwordHash: params.passwordHash,
+          ...(params.verifyEmail ? { emailVerifiedAt: params.usedAt } : {}),
+        },
+      });
+      await tx.refreshToken.updateMany({
+        where: { userId: params.userId, revokedAt: null },
+        data: { revokedAt: params.usedAt },
+      });
+      return true;
     });
   }
 }

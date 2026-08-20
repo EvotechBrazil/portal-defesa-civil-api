@@ -5,6 +5,7 @@ import {
   Injectable,
   InternalServerErrorException,
   Logger,
+  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -25,10 +26,15 @@ import {
 } from './auth.crypto';
 import { AuthRepository } from './auth.repository';
 import {
+  AdminPasswordResetResult,
   AuthUserView,
+  FORGOT_PASSWORD_ACK_MESSAGE,
+  ForgotPasswordResult,
   JwtAccessPayload,
   LoginResult,
   RegisterResult,
+  RESET_PASSWORD_INVALID_MESSAGE,
+  ResetPasswordResult,
   TokenPair,
   VerifyEmailResult,
 } from './auth.types';
@@ -36,11 +42,18 @@ import { EmailDto } from './dtos/email.dto';
 import { LoginDto } from './dtos/login.dto';
 import { RefreshDto } from './dtos/refresh.dto';
 import { RegisterDto } from './dtos/register.dto';
+import { ResetPasswordDto } from './dtos/reset-password.dto';
 import { TokenDto } from './dtos/token.dto';
-import { MailService } from './mail.service';
+import { MailService } from '../mail/mail.service';
 
 const DEFAULT_TENANT_SLUG = 'default';
 const EMAIL_VERIFICATION_TTL_MS = 24 * 60 * 60 * 1000;
+const PASSWORD_RESET_TTL_MS = 60 * 60 * 1000;
+const PASSWORD_RESET_COOLDOWN_MS = 60 * 1000;
+
+const FORGOT_PASSWORD_ACK: ForgotPasswordResult = {
+  message: FORGOT_PASSWORD_ACK_MESSAGE,
+};
 
 function isPrismaUniqueConstraint(error: unknown): boolean {
   if (typeof error !== 'object' || error === null || !('code' in error)) {
@@ -184,6 +197,89 @@ export class AuthService {
       new Date(),
     );
     return { verified: true };
+  }
+
+  async forgotPassword(dto: EmailDto): Promise<ForgotPasswordResult> {
+    const tenant =
+      await this.authRepository.findActiveTenantBySlug(DEFAULT_TENANT_SLUG);
+    if (!tenant) {
+      return FORGOT_PASSWORD_ACK;
+    }
+
+    const user = await this.usersRepository.findActiveByEmail(
+      tenant.id,
+      normalizeEmail(dto.email),
+    );
+    if (!user) {
+      return FORGOT_PASSWORD_ACK;
+    }
+
+    const now = new Date();
+    const latest = await this.authRepository.findLatestPasswordResetToken(
+      user.id,
+    );
+    if (
+      latest &&
+      now.getTime() - latest.createdAt.getTime() < PASSWORD_RESET_COOLDOWN_MS
+    ) {
+      return FORGOT_PASSWORD_ACK;
+    }
+
+    await this.issuePasswordResetEmail(user, now);
+    return FORGOT_PASSWORD_ACK;
+  }
+
+  async resetPassword(dto: ResetPasswordDto): Promise<ResetPasswordResult> {
+    const record = await this.authRepository.findPasswordResetTokenByHash(
+      hashToken(dto.token),
+    );
+    if (
+      !record ||
+      record.usedAt ||
+      record.expiresAt.getTime() <= Date.now() ||
+      record.user.deletedAt
+    ) {
+      throw new BadRequestException(RESET_PASSWORD_INVALID_MESSAGE);
+    }
+
+    const consumed = await this.authRepository.consumePasswordReset({
+      tokenId: record.id,
+      userId: record.userId,
+      passwordHash: await hashPassword(dto.password),
+      usedAt: new Date(),
+      verifyEmail: record.user.emailVerifiedAt === null,
+    });
+    if (!consumed) {
+      throw new BadRequestException(RESET_PASSWORD_INVALID_MESSAGE);
+    }
+    return { reset: true };
+  }
+
+  async issueAdminPasswordReset(
+    actor: AuthenticatedUser,
+    tenantId: string,
+    userId: string,
+  ): Promise<AdminPasswordResetResult> {
+    const target = await this.usersRepository.findActiveByIdInTenant(
+      tenantId,
+      userId,
+    );
+    if (!target) {
+      throw new NotFoundException('Usuario nao encontrado.');
+    }
+
+    const now = new Date();
+    const rawToken = await this.issuePasswordResetToken(target.id, now);
+    this.logger.log(
+      JSON.stringify({
+        event: 'user.password_reset.issued',
+        tenantId,
+        actorId: actor.id,
+        targetId: target.id,
+        timestamp: now.toISOString(),
+      }),
+    );
+    return { resetUrl: this.buildPasswordResetUrl(rawToken) };
   }
 
   async resendVerification(dto: EmailDto): Promise<void> {
@@ -357,6 +453,37 @@ export class AuthService {
       accessToken: this.signAccessToken(user),
       refreshToken,
     };
+  }
+
+  private buildPasswordResetUrl(rawToken: string): string {
+    const webBaseUrl = this.configService.getOrThrow<string>('mail.webBaseUrl');
+    return `${webBaseUrl}/redefinir-senha?token=${encodeURIComponent(rawToken)}`;
+  }
+
+  private async issuePasswordResetToken(
+    userId: string,
+    now: Date,
+  ): Promise<string> {
+    const rawToken = generateOpaqueToken();
+    await this.authRepository.rotatePasswordResetToken({
+      userId,
+      tokenHash: hashToken(rawToken),
+      expiresAt: new Date(now.getTime() + PASSWORD_RESET_TTL_MS),
+      now,
+    });
+    return rawToken;
+  }
+
+  private async issuePasswordResetEmail(user: User, now: Date): Promise<void> {
+    const rawToken = await this.issuePasswordResetToken(user.id, now);
+    try {
+      await this.mailService.sendPasswordResetEmail(user.email, rawToken);
+    } catch (error: unknown) {
+      this.logger.error(
+        `Password reset email was not delivered for user ${user.id}`,
+        error instanceof Error ? error.stack : undefined,
+      );
+    }
   }
 
   private async issueVerificationEmail(user: User): Promise<void> {

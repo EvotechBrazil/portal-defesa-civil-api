@@ -35,3 +35,20 @@ export interface TokenPair {
 export interface VerifyEmailResult {
   verified: true;
 }
+
+export const FORGOT_PASSWORD_ACK_MESSAGE =
+  'Se houver conta com esse e-mail, o link foi enviado.';
+
+export const RESET_PASSWORD_INVALID_MESSAGE = 'Link inválido ou expirado.';
+
+export interface ForgotPasswordResult {
+  message: typeof FORGOT_PASSWORD_ACK_MESSAGE;
+}
+
+export interface ResetPasswordResult {
+  reset: true;
+}
+
+export interface AdminPasswordResetResult {
+  resetUrl: string;
+}

@@ -1,6 +1,50 @@
 import { Injectable } from '@nestjs/common';
-import { User, UserRole } from '@prisma/client';
+import { Prisma, User, UserRole } from '@prisma/client';
 import { PrismaService } from '../../database/prisma.service';
+
+/** Projecao unica das telas admin: nada de passwordHash/photoBytes/whatsapp. */
+const ADMIN_USER_SELECT = {
+  id: true,
+  name: true,
+  email: true,
+  role: true,
+  manada: true,
+  lgndNumber: true,
+  lastLoginAt: true,
+  createdAt: true,
+} satisfies Prisma.UserSelect;
+
+export type AdminUserRow = Prisma.UserGetPayload<{
+  select: typeof ADMIN_USER_SELECT;
+}>;
+
+interface ListUsersParams {
+  tenantId: string;
+  role?: UserRole;
+  q?: string;
+  skip: number;
+  take: number;
+}
+
+function listUsersWhere(params: {
+  tenantId: string;
+  role?: UserRole;
+  q?: string;
+}): Prisma.UserWhereInput {
+  return {
+    tenantId: params.tenantId,
+    deletedAt: null,
+    ...(params.role ? { role: params.role } : {}),
+    ...(params.q
+      ? {
+          OR: [
+            { name: { contains: params.q, mode: 'insensitive' as const } },
+            { email: { contains: params.q, mode: 'insensitive' as const } },
+          ],
+        }
+      : {}),
+  };
+}
 
 @Injectable()
 export class UsersRepository {
@@ -74,6 +118,61 @@ export class UsersRepository {
     await this.prisma.user.update({
       where: { id },
       data: { lastLoginAt },
+    });
+  }
+
+  findActiveByIdInTenant(tenantId: string, id: string): Promise<User | null> {
+    return this.prisma.user.findFirst({
+      where: { id, tenantId, deletedAt: null },
+    });
+  }
+
+  listByTenant(params: ListUsersParams): Promise<AdminUserRow[]> {
+    return this.prisma.user.findMany({
+      where: listUsersWhere(params),
+      // Ordena por nome, NUNCA por role: no Postgres o ORDER BY de um enum
+      // segue a ordem de declaracao do tipo, que aqui nao e a hierarquia.
+      // `id` como desempate deixa a paginacao estavel.
+      orderBy: [{ name: 'asc' }, { id: 'asc' }],
+      select: ADMIN_USER_SELECT,
+      skip: params.skip,
+      take: params.take,
+    });
+  }
+
+  countByTenant(params: {
+    tenantId: string;
+    role?: UserRole;
+    q?: string;
+  }): Promise<number> {
+    return this.prisma.user.count({ where: listUsersWhere(params) });
+  }
+
+  /**
+   * Troca o papel e grava a trilha na MESMA transacao — uma promocao sem
+   * rastro e pior que nenhuma promocao.
+   *
+   * A escrita da auditoria mora aqui, e nao num AuditRepository, porque o
+   * service nao pode importar o PrismaService e portanto nao abre transacao.
+   * A trilha so existe como efeito de um update de user, entao nao ha um
+   * segundo escritor possivel. Quando surgir um segundo evento auditavel,
+   * extrai-se um AuditModule e passa-se o `tx` adiante.
+   */
+  updateRoleWithAudit(params: {
+    tenantId: string;
+    actorId: string;
+    targetId: string;
+    fromRole: UserRole;
+    toRole: UserRole;
+  }): Promise<AdminUserRow> {
+    return this.prisma.$transaction(async (tx) => {
+      const user = await tx.user.update({
+        where: { id: params.targetId },
+        data: { role: params.toRole },
+        select: ADMIN_USER_SELECT,
+      });
+      await tx.roleChangeAudit.create({ data: params });
+      return user;
     });
   }
 }

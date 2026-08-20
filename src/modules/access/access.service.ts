@@ -4,6 +4,7 @@ import {
   ForbiddenException,
   Injectable,
   InternalServerErrorException,
+  Logger,
   NotFoundException,
 } from '@nestjs/common';
 import { AccessRequest, AccessRequestStatus } from '@prisma/client';
@@ -12,6 +13,7 @@ import {
   PaginationMeta,
   buildPaginationMeta,
 } from '../../common/dtos/pagination.dto';
+import { MailService } from '../mail/mail.service';
 import { ManadasService } from '../manadas/manadas.service';
 import { AccessRepository } from './access.repository';
 import {
@@ -38,9 +40,12 @@ function isPrismaUniqueConstraint(error: unknown): boolean {
 
 @Injectable()
 export class AccessService {
+  private readonly logger = new Logger(AccessService.name);
+
   constructor(
     private readonly accessRepository: AccessRepository,
     private readonly manadasService: ManadasService,
+    private readonly mailService: MailService,
   ) {}
 
   async checkWhatsapp(dto: CheckWhatsappDto): Promise<WhatsappCheckResult> {
@@ -122,6 +127,16 @@ export class AccessService {
       city: dto.city?.trim(),
       email: dto.email.trim().toLowerCase(),
       justification: dto.justification.trim(),
+    });
+    await this.notifyAccessReviewers(tenantId, {
+      name: saved.name ?? dto.name.trim(),
+      whatsapp: saved.whatsapp,
+      email: saved.email ?? dto.email.trim().toLowerCase(),
+      lgndNumber: saved.lgndNumber ?? dto.lgndNumber.trim(),
+      manada: saved.manada ?? pack.name,
+      city: saved.city,
+      state: saved.state,
+      justification: saved.justification ?? dto.justification.trim(),
     });
     return { id: saved.id, status: saved.status };
   }
@@ -254,6 +269,54 @@ export class AccessService {
       reviewedAt: new Date(),
     });
     return this.toRequestView(updated);
+  }
+
+  private async notifyAccessReviewers(
+    tenantId: string,
+    payload: {
+      name: string;
+      whatsapp: string;
+      email: string;
+      lgndNumber: string;
+      manada: string;
+      city?: string | null;
+      state?: string | null;
+      justification: string;
+    },
+  ): Promise<void> {
+    const reviewers = await this.accessRepository.findAccessReviewers(tenantId);
+    const recipients = [
+      ...new Set(reviewers.map((row) => row.email.trim().toLowerCase())),
+    ].filter(Boolean);
+    if (recipients.length === 0) {
+      this.logger.warn(
+        JSON.stringify({
+          event: 'access.request.notify.skipped',
+          tenantId,
+          reason: 'NO_REVIEWERS',
+        }),
+      );
+      return;
+    }
+
+    const results = await Promise.allSettled(
+      recipients.map((to) =>
+        this.mailService.sendAccessRequestNotification(to, payload),
+      ),
+    );
+    const failed = results.filter(
+      (result) => result.status === 'rejected',
+    ).length;
+    if (failed > 0) {
+      this.logger.error(
+        JSON.stringify({
+          event: 'access.request.notify.partial_failure',
+          tenantId,
+          failed,
+          total: recipients.length,
+        }),
+      );
+    }
   }
 
   private async resolveManada(

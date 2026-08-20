@@ -6,11 +6,16 @@ import { AppModule } from '../src/app.module';
 import { PrismaService } from '../src/database/prisma.service';
 import { hashToken } from '../src/modules/auth/auth.crypto';
 import {
+  FORGOT_PASSWORD_ACK_MESSAGE,
+  RESET_PASSWORD_INVALID_MESSAGE,
+} from '../src/modules/auth/auth.types';
+import {
   allowWhatsapp,
   bearerFor,
   cleanupTestTenants,
   cleanupTestWhatsapps,
   createSecondTenant,
+  issuePasswordResetToken,
   registerPayload,
   resolveVerificationToken,
   signAccessToken,
@@ -57,6 +62,18 @@ function expectNoSecretLeak(body: unknown, password: string): void {
   expect(serialized).not.toContain(password);
   expect(serialized).not.toMatch(/passwordHash/i);
   expect(serialized.toLowerCase()).not.toContain('"password"');
+}
+
+function errorMessage(body: unknown): string {
+  if (
+    body &&
+    typeof body === 'object' &&
+    'message' in body &&
+    typeof body.message === 'string'
+  ) {
+    return body.message;
+  }
+  throw new Error('Response is missing message');
 }
 
 describe('Auth (e2e)', () => {
@@ -364,5 +381,121 @@ describe('Auth (e2e)', () => {
       .expect(403);
 
     expect(JSON.stringify(res.body)).toMatch(/não está liberado/i);
+  });
+
+  describe('password reset', () => {
+    const FORGOT_ACK = {
+      data: { message: FORGOT_PASSWORD_ACK_MESSAGE },
+    };
+
+    it('returns the same 200 body for missing and existing e-mail', async () => {
+      const email = uniqueEmail('forgot');
+      await registerStudent({
+        email,
+        name: 'Forgot User',
+        password: 'password12',
+      });
+
+      const missing = await request(server)
+        .post('/api/v1/auth/forgot-password')
+        .send({ email: uniqueEmail('nobody') })
+        .expect(200);
+
+      const existing = await request(server)
+        .post('/api/v1/auth/forgot-password')
+        .send({ email })
+        .expect(200);
+
+      expect(missing.body).toEqual(FORGOT_ACK);
+      expect(existing.body).toEqual(missing.body);
+      expect(JSON.stringify(existing.body)).not.toMatch(/token=/);
+      expect(JSON.stringify(existing.body)).not.toMatch(/resetUrl/);
+    });
+
+    it('rejects expired, used and tampered tokens with the same 400', async () => {
+      const email = uniqueEmail('reset-invalid');
+      const registerRes = await registerStudent({
+        email,
+        name: 'Reset Invalid',
+        password: 'password12',
+      });
+      const userId = (registerRes.body as Envelope<RegisterData>).data.id;
+
+      const expiredToken = await issuePasswordResetToken(prisma, userId, {
+        expiresAt: new Date(Date.now() - 1000),
+      });
+      const usedToken = await issuePasswordResetToken(prisma, userId, {
+        usedAt: new Date(),
+      });
+
+      const expired = await request(server)
+        .post('/api/v1/auth/reset-password')
+        .send({ token: expiredToken, password: 'newpass12' })
+        .expect(400);
+      const used = await request(server)
+        .post('/api/v1/auth/reset-password')
+        .send({ token: usedToken, password: 'newpass12' })
+        .expect(400);
+      const tampered = await request(server)
+        .post('/api/v1/auth/reset-password')
+        .send({ token: 'adulterated-token', password: 'newpass12' })
+        .expect(400);
+
+      expect(errorMessage(expired.body)).toBe(RESET_PASSWORD_INVALID_MESSAGE);
+      expect(errorMessage(used.body)).toBe(errorMessage(expired.body));
+      expect(errorMessage(tampered.body)).toBe(errorMessage(expired.body));
+      expect(JSON.stringify(expired.body)).not.toMatch(/expirad[oa] e/);
+      expect(JSON.stringify(used.body)).not.toMatch(/já usado|already used/i);
+    });
+
+    it('revokes the previous refresh token after a successful reset', async () => {
+      const email = uniqueEmail('reset-revoke');
+      const oldPassword = 'password12';
+      const newPassword = 'newpass34';
+      const registerRes = await registerStudent({
+        email,
+        name: 'Reset Revoke',
+        password: oldPassword,
+      });
+      const userId = (registerRes.body as Envelope<RegisterData>).data.id;
+      const verifyToken = await resolveVerificationToken(prisma, userId, email);
+      await request(server)
+        .post('/api/v1/auth/verify-email')
+        .send({ token: verifyToken })
+        .expect(200);
+
+      const loginRes = await request(server)
+        .post('/api/v1/auth/login')
+        .send({ email, password: oldPassword })
+        .expect(200);
+      const refreshToken = (loginRes.body as Envelope<LoginData>).data
+        .refreshToken;
+
+      const resetToken = await issuePasswordResetToken(prisma, userId);
+      await request(server)
+        .post('/api/v1/auth/reset-password')
+        .send({ token: resetToken, password: newPassword })
+        .expect(200);
+
+      await request(server)
+        .post('/api/v1/auth/refresh')
+        .send({ refreshToken })
+        .expect(401);
+
+      const leftover = await prisma.refreshToken.findMany({
+        where: { userId, revokedAt: null },
+      });
+      expect(leftover).toHaveLength(0);
+
+      await request(server)
+        .post('/api/v1/auth/login')
+        .send({ email, password: oldPassword })
+        .expect(401);
+
+      await request(server)
+        .post('/api/v1/auth/login')
+        .send({ email, password: newPassword })
+        .expect(200);
+    });
   });
 });

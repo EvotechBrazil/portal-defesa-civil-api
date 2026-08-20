@@ -57,6 +57,14 @@ export async function cleanupTestTenants(prisma: PrismaService): Promise<void> {
     data: { manadaId: null },
   });
   if (userIds.length > 0) {
+    // Antes de qualquer delete de user: a trilha de auditoria tem FK para
+    // actor e target, entao um usuario com linha aqui trava o deleteMany com
+    // P2003 e derruba a limpeza da suite inteira, nao so a deste arquivo.
+    await prisma.roleChangeAudit.deleteMany({
+      where: {
+        OR: [{ actorId: { in: userIds } }, { targetId: { in: userIds } }],
+      },
+    });
     await prisma.attemptItem.deleteMany({
       where: { attempt: { userId: { in: userIds } } },
     });
@@ -73,6 +81,9 @@ export async function cleanupTestTenants(prisma: PrismaService): Promise<void> {
       where: { userId: { in: userIds } },
     });
     await prisma.emailVerificationToken.deleteMany({
+      where: { userId: { in: userIds } },
+    });
+    await prisma.passwordResetToken.deleteMany({
       where: { userId: { in: userIds } },
     });
     await prisma.user.deleteMany({ where: { id: { in: userIds } } });
@@ -109,6 +120,9 @@ export async function cleanupTestWhatsapps(
   });
   if (userIds.length > 0) {
     await prisma.emailVerificationToken.deleteMany({
+      where: { userId: { in: userIds } },
+    });
+    await prisma.passwordResetToken.deleteMany({
       where: { userId: { in: userIds } },
     });
     await prisma.refreshToken.deleteMany({
@@ -196,6 +210,23 @@ export async function bearerFor(
     token,
     header: { Authorization: `Bearer ${token}` },
   };
+}
+
+export async function issuePasswordResetToken(
+  prisma: PrismaService,
+  userId: string,
+  overrides?: { expiresAt?: Date; usedAt?: Date | null },
+): Promise<string> {
+  const token = generateOpaqueToken();
+  await prisma.passwordResetToken.create({
+    data: {
+      userId,
+      tokenHash: hashToken(token),
+      expiresAt: overrides?.expiresAt ?? new Date(Date.now() + 60 * 60 * 1000),
+      usedAt: overrides?.usedAt ?? null,
+    },
+  });
+  return token;
 }
 
 export async function issueEmailVerificationToken(

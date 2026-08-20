@@ -1,0 +1,11 @@
+-- Reconcilia drift PRE-EXISTENTE, sem relacao com a hierarquia de papeis.
+--
+-- 20260819180000_access_requests criou a mao um UNIQUE PARCIAL
+-- (users_tenant_id_whatsapp_key ... WHERE whatsapp IS NOT NULL), que o Prisma
+-- nao consegue expressar no schema. O schema declara @@index([tenantId, whatsapp]),
+-- um indice comum que nunca chegou a existir no banco.
+--
+-- Resultado: todo `migrate dev` propunha este CREATE INDEX e o pendurava na
+-- migration que estivesse sendo gerada no momento. Criando-o aqui, o schema e o
+-- banco passam a concordar e as proximas migrations param de ser poluidas.
+CREATE INDEX "users_tenant_id_whatsapp_idx" ON "users"("tenant_id", "whatsapp");

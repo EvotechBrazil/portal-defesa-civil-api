@@ -12,7 +12,7 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { UserRole } from '@prisma/client';
 import { CurrentTenant } from '../../common/decorators/current-tenant.decorator';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { Roles } from '../../common/decorators/roles.decorator';
+import { MinRole } from '../../common/decorators/min-role.decorator';
 import { PaginationDto } from '../../common/dtos/pagination.dto';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { AccessService } from './access.service';
@@ -21,7 +21,7 @@ import { ListAccessRequestsDto } from './dtos/list-access-requests.dto';
 
 @ApiTags('admin-access')
 @ApiBearerAuth()
-@Roles(UserRole.ADMIN)
+@MinRole(UserRole.ADMIN)
 @Controller('admin')
 export class AccessAdminController {
   constructor(private readonly accessService: AccessService) {}

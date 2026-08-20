@@ -10,9 +10,11 @@ describe('AccessService', () => {
     findUserByWhatsapp: jest.Mock;
     findAllowed: jest.Mock;
     findRequest: jest.Mock;
+    findAccessReviewers: jest.Mock;
     upsertInterested: jest.Mock;
     submitRequest: jest.Mock;
   };
+  let mailService: { sendAccessRequestNotification: jest.Mock };
   let service: AccessService;
 
   beforeEach(() => {
@@ -21,8 +23,12 @@ describe('AccessService', () => {
       findUserByWhatsapp: jest.fn().mockResolvedValue(null),
       findAllowed: jest.fn().mockResolvedValue(null),
       findRequest: jest.fn().mockResolvedValue(null),
+      findAccessReviewers: jest.fn().mockResolvedValue([]),
       upsertInterested: jest.fn(),
       submitRequest: jest.fn(),
+    };
+    mailService = {
+      sendAccessRequestNotification: jest.fn().mockResolvedValue(undefined),
     };
     service = new AccessService(
       repository as unknown as AccessRepository,
@@ -30,6 +36,7 @@ describe('AccessService', () => {
         getById: jest.fn(),
         findOrCreate: jest.fn(),
       } as never,
+      mailService as never,
     );
   });
 
@@ -77,5 +84,88 @@ describe('AccessService', () => {
       }),
     ).rejects.toBeInstanceOf(ConflictException);
     expect(repository.submitRequest).not.toHaveBeenCalled();
+  });
+
+  it('emails ADMIN_SENIOR and SUPER_ADMIN after a pending request is stored', async () => {
+    repository.submitRequest.mockResolvedValue({
+      id: 'req-1',
+      status: AccessRequestStatus.PENDING,
+      name: 'Ana Silva',
+      whatsapp: '5543988887777',
+      email: 'ana@example.com',
+      lgndNumber: '1001',
+      manada: 'Norte',
+      city: 'Arapongas',
+      state: 'PR',
+      justification: 'Quero estudar para a prova da brigada.',
+    });
+    repository.findAccessReviewers.mockResolvedValue([
+      { email: 'senior@portal.local', name: 'Senior' },
+      { email: 'super@portal.local', name: 'Super' },
+      { email: 'senior@portal.local', name: 'Senior duplicado' },
+    ]);
+
+    const result = await service.requestAccess({
+      whatsapp: '43988887777',
+      name: 'Ana Silva',
+      lgndNumber: '1001',
+      manada: 'Norte',
+      email: 'ana@example.com',
+      justification: 'Quero estudar para a prova da brigada.',
+    });
+
+    expect(result).toEqual({
+      id: 'req-1',
+      status: AccessRequestStatus.PENDING,
+    });
+    expect(mailService.sendAccessRequestNotification).toHaveBeenCalledTimes(2);
+    expect(mailService.sendAccessRequestNotification).toHaveBeenCalledWith(
+      'senior@portal.local',
+      expect.objectContaining({
+        name: 'Ana Silva',
+        whatsapp: '5543988887777',
+        email: 'ana@example.com',
+        manada: 'Norte',
+      }),
+    );
+    expect(mailService.sendAccessRequestNotification).toHaveBeenCalledWith(
+      'super@portal.local',
+      expect.objectContaining({ name: 'Ana Silva' }),
+    );
+  });
+
+  it('still returns PENDING when the notification email fails', async () => {
+    repository.submitRequest.mockResolvedValue({
+      id: 'req-2',
+      status: AccessRequestStatus.PENDING,
+      name: 'Ana Silva',
+      whatsapp: '5543988887777',
+      email: 'ana@example.com',
+      lgndNumber: '1001',
+      manada: 'Norte',
+      city: null,
+      state: null,
+      justification: 'Quero estudar para a prova da brigada.',
+    });
+    repository.findAccessReviewers.mockResolvedValue([
+      { email: 'senior@portal.local', name: 'Senior' },
+    ]);
+    mailService.sendAccessRequestNotification.mockRejectedValue(
+      new Error('smtp down'),
+    );
+
+    await expect(
+      service.requestAccess({
+        whatsapp: '43988887777',
+        name: 'Ana Silva',
+        lgndNumber: '1001',
+        manada: 'Norte',
+        email: 'ana@example.com',
+        justification: 'Quero estudar para a prova da brigada.',
+      }),
+    ).resolves.toEqual({
+      id: 'req-2',
+      status: AccessRequestStatus.PENDING,
+    });
   });
 });

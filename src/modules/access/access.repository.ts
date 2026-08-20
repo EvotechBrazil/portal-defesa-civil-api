@@ -5,6 +5,7 @@ import {
   AllowedWhatsapp,
   Tenant,
   User,
+  UserRole,
 } from '@prisma/client';
 import { PrismaService } from '../../database/prisma.service';
 
@@ -30,6 +31,19 @@ export class AccessRepository {
   findUserByWhatsapp(tenantId: string, whatsapp: string): Promise<User | null> {
     return this.prisma.user.findFirst({
       where: { tenantId, whatsapp, deletedAt: null },
+    });
+  }
+
+  findAccessReviewers(
+    tenantId: string,
+  ): Promise<Array<{ email: string; name: string }>> {
+    return this.prisma.user.findMany({
+      where: {
+        tenantId,
+        deletedAt: null,
+        role: { in: [UserRole.ADMIN_SENIOR, UserRole.SUPER_ADMIN] },
+      },
+      select: { email: true, name: true },
     });
   }
 

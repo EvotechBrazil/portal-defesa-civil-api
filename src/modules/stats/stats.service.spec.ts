@@ -310,6 +310,23 @@ describe('StatsService', () => {
       const result = await service.getPeer(admin, otherPack.id, 'tenant-a');
       expect(result.profile.userId).toBe(otherPack.id);
     });
+
+    // Regressao da hierarquia: canViewPeer comparava com `=== UserRole.ADMIN`,
+    // o que fazia o papel SUPERIOR perder um acesso que o inferior tinha.
+    it.each([UserRole.ADMIN_SENIOR, UserRole.SUPER_ADMIN])(
+      'lets a %s read another manada in the same tenant',
+      async (role) => {
+        const senior = authUser('senior-1', role);
+        repository.findActiveProfileById
+          .mockResolvedValueOnce(otherPack)
+          .mockResolvedValueOnce(
+            profile({ id: senior.id, manadaId: 'pack-a' }),
+          );
+
+        const result = await service.getPeer(senior, otherPack.id, 'tenant-a');
+        expect(result.profile.userId).toBe(otherPack.id);
+      },
+    );
   });
 
   describe('listManadaMembers', () => {

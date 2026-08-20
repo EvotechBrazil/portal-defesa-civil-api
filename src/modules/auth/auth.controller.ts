@@ -8,6 +8,7 @@ import { EmailDto } from './dtos/email.dto';
 import { LoginDto } from './dtos/login.dto';
 import { RefreshDto } from './dtos/refresh.dto';
 import { RegisterDto } from './dtos/register.dto';
+import { ResetPasswordDto } from './dtos/reset-password.dto';
 import { TokenDto } from './dtos/token.dto';
 
 @ApiTags('auth')
@@ -33,6 +34,20 @@ export class AuthController {
   @Post('auth/resend-verification')
   resendVerification(@Body() body: EmailDto) {
     return this.authService.resendVerification(body);
+  }
+
+  @Public()
+  @HttpCode(200)
+  @Post('auth/forgot-password')
+  forgotPassword(@Body() body: EmailDto) {
+    return this.authService.forgotPassword(body);
+  }
+
+  @Public()
+  @HttpCode(200)
+  @Post('auth/reset-password')
+  resetPassword(@Body() body: ResetPasswordDto) {
+    return this.authService.resetPassword(body);
   }
 
   @Public()

@@ -16,6 +16,11 @@ enum TenantStatus {
 enum UserRole {
   STUDENT
   ADMIN
+  // Valores acrescentados no fim de proposito: no meio, o Prisma gera
+  // `ADD VALUE ... BEFORE`. A hierarquia NAO vem desta ordem — ela vive
+  // em src/common/authz/role-hierarchy.ts.
+  ADMIN_SENIOR
+  SUPER_ADMIN
 }
 
 enum AccessRequestStatus {
@@ -79,6 +84,7 @@ model Tenant {
   allowedWhatsapps AllowedWhatsapp[]
   accessRequests   AccessRequest[]
   manadas          Manada[]
+  roleChangeAudits RoleChangeAudit[]
 
   @@map("tenants")
 }
@@ -111,12 +117,15 @@ model User {
   pack                    Manada?                   @relation(fields: [manadaId], references: [id])
   refreshTokens           RefreshToken[]
   emailVerificationTokens EmailVerificationToken[]
+  passwordResetTokens     PasswordResetToken[]
   enrollments             Enrollment[]
   lessonProgress          LessonProgress[]
   cardStates              CardState[]
   studySessions           StudySession[]
   attempts                Attempt[]
   reviewedAccessRequests  AccessRequest[]           @relation("AccessRequestReviewer")
+  roleChangesMade         RoleChangeAudit[]         @relation("RoleChangeActor")
+  roleChangesReceived     RoleChangeAudit[]         @relation("RoleChangeTarget")
 
   @@unique([tenantId, email])
   @@index([tenantId])
@@ -169,6 +178,32 @@ model AccessRequest {
   @@map("access_requests")
 }
 
+/// Trilha append-only de mudanca de papel.
+///
+/// Sem `updatedAt` e sem `deletedAt` DE PROPOSITO — e o ponto do model:
+/// auditoria editavel ou soft-deletavel nao e auditoria. Desvio consciente da
+/// regra de soft delete, registrado aqui para nao virar achado de auditoria.
+///
+/// Guarda so ids, nunca nome ou e-mail: standards/lgpd-erasure.md pede
+/// "audit trail append-only SEM PII".
+model RoleChangeAudit {
+  id        String   @id @default(cuid())
+  tenantId  String   @map("tenant_id")
+  actorId   String   @map("actor_id")
+  targetId  String   @map("target_id")
+  fromRole  UserRole @map("from_role")
+  toRole    UserRole @map("to_role")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+  actor  User   @relation("RoleChangeActor", fields: [actorId], references: [id])
+  target User   @relation("RoleChangeTarget", fields: [targetId], references: [id])
+
+  @@index([tenantId, createdAt])
+  @@index([tenantId, targetId])
+  @@map("role_change_audits")
+}
+
 model Manada {
   id        String    @id @default(cuid())
   tenantId  String    @map("tenant_id")
@@ -217,6 +252,20 @@ model EmailVerificationToken {
 
   @@index([userId])
   @@map("email_verification_tokens")
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String    @map("user_id")
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("password_reset_tokens")
 }
 
 // ─────────────── conteúdo: CATÁLOGO GLOBAL, sem tenantId ───────────────

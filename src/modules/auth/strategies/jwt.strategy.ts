@@ -4,13 +4,7 @@ import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { UsersRepository } from '../../users/users.repository';
 import { AuthenticatedUser } from '../../../common/types/authenticated-request';
-
-interface JwtPayload {
-  sub: string;
-  tenantId: string;
-  role: 'STUDENT' | 'ADMIN';
-  email: string;
-}
+import { JwtAccessPayload } from '../auth.types';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -25,7 +19,12 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(payload: JwtPayload): Promise<AuthenticatedUser> {
+  /**
+   * O `role` do payload e deliberadamente IGNORADO: o papel efetivo vem do
+   * banco a cada request. E isso que faz promocao e rebaixamento valerem no
+   * request seguinte, sem esperar o access token de 15 min expirar.
+   */
+  async validate(payload: JwtAccessPayload): Promise<AuthenticatedUser> {
     const user = await this.usersRepository.findActiveById(payload.sub);
     if (!user || user.tenantId !== payload.tenantId) {
       throw new UnauthorizedException();

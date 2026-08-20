@@ -10,7 +10,7 @@ import {
 import { UserRole } from '@prisma/client';
 import { CurrentTenant } from '../../common/decorators/current-tenant.decorator';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { Roles } from '../../common/decorators/roles.decorator';
+import { MinRole } from '../../common/decorators/min-role.decorator';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { ListRankingQueryDto } from './dtos/list-ranking-query.dto';
 import { RankingDataDto } from './dtos/ranking-response.dto';
@@ -18,7 +18,7 @@ import { StatsService } from './stats.service';
 
 @ApiTags('admin-members')
 @ApiBearerAuth()
-@Roles(UserRole.ADMIN)
+@MinRole(UserRole.ADMIN)
 @Controller('admin')
 export class MembersAdminController {
   constructor(private readonly statsService: StatsService) {}

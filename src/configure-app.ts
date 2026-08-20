@@ -38,7 +38,7 @@ export function configureApp(app: INestApplication): void {
 
   if (configService.get<string>('app.nodeEnv') !== 'production') {
     const swagger = new DocumentBuilder()
-      .setTitle('Portal Defesa Civil API')
+      .setTitle('Programa de evolução contínua LGND SQUAD API')
       .setDescription('API do portal de ensino')
       .setVersion('1.0')
       .addBearerAuth()

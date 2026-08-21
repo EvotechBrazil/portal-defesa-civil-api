@@ -1,0 +1,312 @@
+{
+  "p": [
+    {
+      "code": "#1",
+      "f": "Qual é a primeira coisa a fazer ao chegar numa cena de emergência?",
+      "v": "<strong>Avaliar a segurança da cena — antes de tocar na vítima</strong>",
+      "t": "Pense como um eletricista: antes de tocar em qualquer fio, você desliga o disjuntor. Um socorrista morto não salva ninguém e ainda vira a segunda vítima da equipe que chegar.",
+      "a": "Aula 4 · segurança da cena.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        0,
+        1
+      ],
+      "rev": true
+    },
+    {
+      "code": "#2",
+      "f": "Qual é a sequência de quatro passos da segurança da cena?",
+      "v": "<strong>Avalie · Proteja-se · Comunique · Reavalie</strong>",
+      "t": "Reavaliar não é um extra do fim: a cena muda enquanto você atende — fogo alastra, estrutura cede, trânsito volta a passar.",
+      "a": "Aula 4 · segurança da cena.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        2
+      ],
+      "rev": true
+    },
+    {
+      "code": "#3",
+      "f": "O que fazer diante de uma cena insegura?",
+      "v": "<strong>Não entrar</strong> — estabilizar o perímetro e aguardar equipe especializada ou criar condições seguras",
+      "t": "É a regra de ouro da aula. A pressa de entrar numa cena instável transforma uma vítima em duas, e tira do socorro a pessoa que ainda podia ajudar.",
+      "a": "Aula 4 · regra de ouro.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        1
+      ],
+      "rev": true
+    },
+    {
+      "code": "#4",
+      "f": "O que significam as letras do protocolo XABCDE?",
+      "v": "<strong>X</strong> hemorragia · <strong>A</strong> via aérea · <strong>B</strong> respiração · <strong>C</strong> circulação · <strong>D</strong> déficit neurológico · <strong>E</strong> exposição",
+      "t": "É um checklist: uma sequência lógica que garante que nenhum sistema crítico seja pulado. A ordem das letras é a ordem em que cada coisa mata.",
+      "a": "Aula 4 · protocolo XABCDE.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        3
+      ],
+      "rev": true
+    },
+    {
+      "code": "#5",
+      "f": "Por que o X passou à frente do A no PHTLS 10?",
+      "v": "<strong>Porque sangramento maciço mata mais rápido que obstrução de via aérea em trauma</strong>",
+      "t": "Uma hemorragia arterial em membro pode matar em 3 a 5 minutos — como um cano de alta pressão rompido, cada segundo é volume perdido.",
+      "a": "Aula 4 · XABCDE, prioridade do X.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        4
+      ],
+      "rev": true
+    },
+    {
+      "code": "#6",
+      "f": "Na escala AVDI, o que cada letra avalia?",
+      "v": "<strong>Alerta · responde à Voz · responde à Dor · Irresponsivo</strong>",
+      "t": "É o D do XABCDE: nível de consciência. Rápido de aplicar e revelador — diz muito sobre a perfusão cerebral naquele momento.",
+      "a": "Aula 4 · déficit neurológico.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        5
+      ],
+      "rev": true
+    },
+    {
+      "code": "#7",
+      "f": "Quais são os três sinais de alarme de hemorragia exsanguinante?",
+      "v": "<strong>Sangramento jorrante ou pulsátil · poça maior que a palma da mão · membro amputado ou esmagado</strong>",
+      "t": "Os três são visuais e não exigem medir nada. Presente qualquer um deles, o X do XABCDE está aberto e é ele que manda.",
+      "a": "Aula 4 · hemorragia exsanguinante.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        6
+      ],
+      "rev": true
+    },
+    {
+      "code": "#8",
+      "f": "O curativo encharcou de sangue. Retira ou mantém?",
+      "v": "<strong>Mantém</strong> — adiciona mais camadas por cima e sustenta a pressão direta",
+      "t": "Retirar o curativo arranca o coágulo que estava se formando e reinicia o sangramento do zero. Pressão firme, com as duas mãos, sem espiar.",
+      "a": "Aula 4 · controle de hemorragia.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        7
+      ],
+      "rev": true
+    },
+    {
+      "code": "#9",
+      "f": "Onde se posiciona o torniquete?",
+      "v": "<strong>De 5 a 7 cm acima da ferida, nunca sobre articulação</strong>",
+      "t": "Sobre articulação o garrote não comprime o vaso: osso e espaço articular impedem. Vai sobre a pele ou sobre roupa fina.",
+      "a": "Aula 4 · torniquete, posicionamento.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        8
+      ],
+      "rev": true
+    },
+    {
+      "code": "#10",
+      "f": "Depois de apertar e fixar o torniquete, o que ainda falta?",
+      "v": "<strong>Registrar o horário</strong> — na pele ou no próprio torniquete — e informar à equipe de socorro",
+      "t": "O horário orienta as decisões do hospital sobre o membro. E nunca afrouxe no campo: soltar e reapertar devolve sangramento e lança metabólitos na circulação.",
+      "a": "Aula 4 · torniquete, registro.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        9
+      ],
+      "rev": true
+    },
+    {
+      "code": "#11",
+      "f": "Em que situações o torniquete está indicado?",
+      "v": "<strong>Sangramento arterial em membro que não cede com pressão · amputação traumática · ambiente hostil</strong>",
+      "t": "Pescoço, virilha e axila são junções e não aceitam torniquete — ali o recurso é curativo compressivo. Usado certo, o torniquete não amputa: salva.",
+      "a": "Aula 4 · torniquete, indicações.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        10
+      ],
+      "rev": true
+    },
+    {
+      "code": "#12",
+      "f": "Adulto consciente engasgado, sem falar nem tossir. Qual a sequência?",
+      "v": "<strong>5 tapas nas costas alternadas com 5 compressões abdominais, até desobstruir</strong>",
+      "t": "Confirme antes: não fala, não tosse com força, aponta para a garganta, lábios azulados. Incline a vítima para frente e bata firme entre as escápulas com a base da mão.",
+      "a": "Aula 4 · OVACE em adulto.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        11
+      ],
+      "rev": true
+    },
+    {
+      "code": "#13",
+      "f": "A vítima engasgada perde a consciência. O que muda?",
+      "v": "<strong>Inicia-se RCP imediatamente</strong>",
+      "t": "Com a vítima inconsciente, as compressões também geram pressão nas vias aéreas e podem deslocar o objeto. No Brasil, a OVACE é a principal causa de morte pediátrica por fator externo.",
+      "a": "Aula 4 · OVACE, vítima inconsciente.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        12
+      ],
+      "rev": true
+    },
+    {
+      "code": "#14",
+      "f": "Qual a frequência e a profundidade das compressões na RCP em adulto?",
+      "v": "<strong>100 a 120 por minuto · 5 a 6 cm de profundidade</strong>",
+      "t": "O ritmo de \"Stayin' Alive\" serve de metrônomo. E tão importante quanto comprimir é deixar o tórax retornar por completo — sem isso o coração não volta a encher.",
+      "a": "Aula 4 · RCP de alta qualidade.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        13
+      ],
+      "rev": true
+    },
+    {
+      "code": "#15",
+      "f": "Quanto custa cada minuto sem RCP numa parada cardiorrespiratória?",
+      "v": "<strong>De 7 a 10% da chance de sobrevivência, por minuto</strong>",
+      "t": "Você é o gerador de emergência que mantém o sistema ligado até o socorro chegar. Começar cedo vale mais do que começar perfeito.",
+      "a": "Aula 4 · PCR.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        14
+      ],
+      "rev": true
+    },
+    {
+      "code": "#16",
+      "f": "Na triagem START, como se classifica quem consegue caminhar?",
+      "v": "<strong>Verde</strong>",
+      "t": "Quem deambula sai da zona crítica e libera sua atenção. O START responde uma pergunta só, e é a mais dura: quem salvar primeiro.",
+      "a": "Aula 4 · triagem START.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        15
+      ],
+      "rev": true
+    },
+    {
+      "code": "#17",
+      "f": "No START, o que classifica a vítima como preta?",
+      "v": "<strong>Não respirar nem após a abertura das vias aéreas</strong>",
+      "t": "Em múltiplas vítimas a matemática é de sobrevivência: recurso vai para quem tem chance. É protocolar justamente para não ser uma decisão pessoal no meio do caos.",
+      "a": "Aula 4 · triagem START.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        16
+      ],
+      "rev": true
+    },
+    {
+      "code": "#18",
+      "f": "No START, qual achado respiratório classifica a vítima como vermelha?",
+      "v": "<strong>Frequência respiratória acima de 30 por minuto</strong>",
+      "t": "Acima de 30 rpm indica instabilidade e prioridade imediata. Abaixo disso, avalia-se a perfusão e depois se a vítima cumpre ordens.",
+      "a": "Aula 4 · triagem START.",
+      "s": [
+        [
+          "Aula 4 · Primeiros socorros",
+          "aula"
+        ]
+      ],
+      "q": [
+        17
+      ],
+      "rev": true
+    }
+  ],
+  "q": []
+}

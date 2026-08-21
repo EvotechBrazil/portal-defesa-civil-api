@@ -850,6 +850,23 @@ async function main() {
       M1: 'Teoria do fogo aplicada ao combate: tetraedro, pirólise, propagação do calor, pontos de fulgor/combustão/ignição, métodos de extinção e classes A a K.',
     },
   });
+  await seedLectureCourse({
+    slug: 'aula-4-primeiros-socorros',
+    title: 'Aula 4 — Primeiros socorros',
+    questionsFile: 'aula4-questoes.json',
+    decksFile: 'aula4-decks.json',
+    pages: [
+      {
+        file: '12_aula4_primeiros_socorros.md',
+        slug: 'aula',
+        ord: 1,
+        title: 'Aula 4 · Primeiros socorros',
+      },
+    ],
+    summaries: {
+      M1: 'Atendimento pre-hospitalar: seguranca da cena, protocolo XABCDE, controle de hemorragia e torniquete, OVACE, PCR/RCP e triagem START.',
+    },
+  });
   await printValidation();
 }
 

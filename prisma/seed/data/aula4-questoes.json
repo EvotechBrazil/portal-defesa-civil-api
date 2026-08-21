@@ -1,0 +1,218 @@
+[
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.1 — Segurança da cena",
+    "q": "Qual é a primeira ação ao chegar numa cena de emergência?",
+    "opts": [
+      "Avaliar a segurança da cena antes de tocar na vítima",
+      "Checar a respiração da vítima mais próxima",
+      "Ligar para o SAMU e aguardar orientação"
+    ],
+    "c": 0,
+    "com": "Pense como um eletricista: antes de tocar em qualquer fio, você desliga o disjuntor. Socorrista morto não salva ninguém — e vira uma segunda vítima para a equipe que chegar."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.1 — Segurança da cena",
+    "q": "A cena está insegura. O que fazer?",
+    "opts": [
+      "Não entrar: estabilizar o perímetro e aguardar equipe especializada ou criar condições seguras",
+      "Entrar rápido e retirar a vítima antes que piore",
+      "Entrar apenas se a vítima estiver consciente"
+    ],
+    "c": 0,
+    "com": "Regra de ouro: cena insegura, não entre. A pressa de entrar numa cena instável transforma uma vítima em duas."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.1 — Segurança da cena",
+    "q": "Qual é a sequência da segurança da cena?",
+    "opts": [
+      "Avalie · Proteja-se · Comunique · Reavalie",
+      "Comunique · Avalie · Entre · Socorra",
+      "Proteja-se · Entre · Avalie · Comunique"
+    ],
+    "c": 0,
+    "com": "Reavaliar é parte da sequência, não um extra: a cena muda enquanto você atende — fogo alastra, estrutura cede, trânsito volta a passar."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.2 — Protocolo XABCDE",
+    "q": "O que representa cada letra do XABCDE?",
+    "opts": [
+      "Hemorragia · Via aérea · Respiração · Circulação · Déficit neurológico · Exposição",
+      "Exame · Ausculta · Batimentos · Consciência · Diagnóstico · Encaminhamento",
+      "Hemorragia · Analgesia · Bandagem · Cervical · Desfibrilação · Evacuação"
+    ],
+    "c": 0,
+    "com": "É um checklist: uma sequência lógica que garante que você não pule nenhum sistema crítico. Cada letra é uma prioridade, na ordem em que mata."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.2 — Protocolo XABCDE",
+    "q": "Por que o X vem antes do A no PHTLS 10?",
+    "opts": [
+      "Porque sangramento maciço mata mais rápido que obstrução de via aérea em trauma",
+      "Porque a via aérea só é avaliada com a vítima consciente",
+      "Porque o X é opcional quando há sangramento visível"
+    ],
+    "c": 0,
+    "com": "Uma hemorragia arterial em membro pode matar em 3 a 5 minutos — é como um cano de alta pressão rompido, cada segundo é volume perdido. Por isso o controle do sangramento catastrófico ganhou a frente da fila."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.2 — Protocolo XABCDE",
+    "q": "O que o D do XABCDE avalia?",
+    "opts": [
+      "O nível de consciência, pela escala AVDI",
+      "A desfibrilação precoce",
+      "A dor referida pela vítima"
+    ],
+    "c": 0,
+    "com": "D é déficit neurológico. AVDI: Alerta, responde à Voz, responde à Dor, Irresponsivo. É rápido e diz muito sobre perfusão cerebral."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.3 — Hemorragia exsanguinante",
+    "q": "Quais são os sinais de alarme de hemorragia exsanguinante?",
+    "opts": [
+      "Sangramento jorrante ou pulsátil, poça de sangue maior que a palma da mão, membro amputado ou esmagado",
+      "Sangramento escuro e contínuo em pequeno volume",
+      "Palidez e sudorese, isoladamente"
+    ],
+    "c": 0,
+    "com": "Os três sinais são visuais e rápidos de reconhecer. Não é preciso medir nada: se jorra, se a poça é grande ou se há amputação, o X do XABCDE está aberto."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.3 — Hemorragia exsanguinante",
+    "q": "O curativo encharcou de sangue. Qual é a conduta?",
+    "opts": [
+      "Não retirar o curativo: adicionar mais por cima e manter a pressão direta",
+      "Retirar o curativo encharcado e colocar um limpo",
+      "Afrouxar a pressão para avaliar se o sangramento cedeu"
+    ],
+    "c": 0,
+    "com": "Retirar o curativo arranca o coágulo que estava se formando e reinicia o sangramento do zero. Adicione camadas por cima e mantenha a compressão firme com as duas mãos."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.4 — Torniquete",
+    "q": "Onde o torniquete deve ser posicionado?",
+    "opts": [
+      "De 5 a 7 cm acima da ferida, nunca sobre articulação",
+      "Diretamente sobre a ferida, para comprimir o vaso",
+      "O mais próximo possível da raiz do membro, sempre"
+    ],
+    "c": 0,
+    "com": "Sobre articulação o garrote não comprime o vaso — o osso e o espaço articular impedem. Sobre a pele ou sobre roupa fina, de 5 a 7 cm acima da ferida."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.4 — Torniquete",
+    "q": "Depois de apertar e fixar o torniquete, o que mais precisa ser feito?",
+    "opts": [
+      "Registrar o horário da aplicação e informar à equipe de socorro na chegada",
+      "Afrouxar a cada 10 minutos para irrigar o membro",
+      "Cobrir o torniquete para a vítima não vê-lo"
+    ],
+    "c": 0,
+    "com": "O horário define as decisões do hospital sobre o membro. Escreva na pele ou no próprio torniquete. E não afrouxe: soltar e reapertar devolve sangramento e joga metabólitos na circulação."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.4 — Torniquete",
+    "q": "Em qual situação o torniquete está indicado?",
+    "opts": [
+      "Sangramento arterial em membro que não cede com pressão direta, amputação traumática ou ambiente hostil",
+      "Qualquer sangramento em membro, como primeira medida",
+      "Sangramentos de pescoço, virilha e axila"
+    ],
+    "c": 0,
+    "com": "Pescoço, virilha e axila são junções: não aceitam torniquete, pedem curativo compressivo. O torniquete foi reabilitado pela medicina de combate — usado certo, não amputa, salva."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.5 — OVACE",
+    "q": "Adulto consciente engasgado, sem conseguir falar nem tossir. Qual a conduta?",
+    "opts": [
+      "Alternar 5 tapas nas costas com 5 compressões abdominais até desobstruir",
+      "Oferecer água para ajudar o objeto a descer",
+      "Introduzir o dedo na boca para retirar o objeto"
+    ],
+    "c": 0,
+    "com": "Confirme antes: vítima que não fala, não tosse com força, aponta para a garganta e tem lábios azulados. Incline-a para frente e aplique golpes firmes entre as escápulas, alternando com a manobra de Heimlich."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.5 — OVACE",
+    "q": "A vítima engasgada perde a consciência. O que muda?",
+    "opts": [
+      "Inicia-se RCP imediatamente",
+      "Continua-se apenas com tapas nas costas",
+      "Aguarda-se o SAMU sem intervir"
+    ],
+    "c": 0,
+    "com": "Com a vítima inconsciente, as compressões da RCP também geram pressão nas vias aéreas e podem deslocar o objeto. No Brasil a OVACE é a principal causa de morte pediátrica por fator externo."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.6 — PCR e RCP",
+    "q": "Qual a frequência e a profundidade corretas das compressões na RCP em adulto?",
+    "opts": [
+      "100 a 120 compressões por minuto, de 5 a 6 cm de profundidade",
+      "60 a 80 compressões por minuto, de 2 a 3 cm",
+      "140 a 160 compressões por minuto, de 7 a 8 cm"
+    ],
+    "c": 0,
+    "com": "O ritmo de \"Stayin' Alive\" serve de metrônomo. Tão importante quanto comprimir é permitir o retorno total do tórax entre as compressões — sem isso o coração não enche de novo."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.6 — PCR e RCP",
+    "q": "Qual o impacto de cada minuto sem RCP numa parada cardiorrespiratória?",
+    "opts": [
+      "A chance de sobrevivência cai de 7 a 10% por minuto",
+      "A chance de sobrevivência não muda nos primeiros 10 minutos",
+      "A chance de sobrevivência cai pela metade a cada minuto"
+    ],
+    "c": 0,
+    "com": "Você é o gerador de emergência que mantém o sistema funcionando até o socorro chegar. Começar cedo vale mais que começar perfeito."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.7 — Triagem START",
+    "q": "Na triagem START, qual a classificação da vítima que consegue caminhar sozinha?",
+    "opts": [
+      "Verde",
+      "Amarela",
+      "Vermelha"
+    ],
+    "c": 0,
+    "com": "Quem deambula sai da zona crítica e libera sua atenção para quem não anda. O START responde uma pergunta só: quem salvar primeiro."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.7 — Triagem START",
+    "q": "Vítima que não respira mesmo após a abertura das vias aéreas recebe qual classificação?",
+    "opts": [
+      "Preta",
+      "Vermelha",
+      "Amarela"
+    ],
+    "c": 0,
+    "com": "Em múltiplas vítimas, a matemática é de sobrevivência: recursos vão para quem tem chance. É a decisão mais dura do método, e é justamente por isso que ela é protocolar e não pessoal."
+  },
+  {
+    "mod": "MÓDULO 1 — Primeiros socorros",
+    "quiz": "Quiz 1.7 — Triagem START",
+    "q": "Vítima com respiração acima de 30 por minuto é classificada como:",
+    "opts": [
+      "Vermelha",
+      "Amarela",
+      "Verde"
+    ],
+    "c": 0,
+    "com": "Frequência acima de 30 rpm indica instabilidade respiratória e prioridade imediata. Abaixo disso, avalia-se a perfusão e depois se a vítima cumpre ordens."
+  }
+]

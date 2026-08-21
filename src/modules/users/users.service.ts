@@ -19,10 +19,7 @@ import { AdminUserDto } from './dtos/admin-user.dto';
 import { ListRoleChangesDto } from './dtos/list-role-changes.dto';
 import { ListUsersDto } from './dtos/list-users.dto';
 import { RoleChangeDto } from './dtos/role-change.dto';
-import {
-  RoleChangeAuditRepository,
-  RoleChangeRow,
-} from './role-change-audit.repository';
+import { AuditLogRepository, AuditLogRow } from './audit-log.repository';
 import { AdminUserRow, UsersRepository } from './users.repository';
 
 export interface UserProfile {
@@ -58,9 +55,10 @@ function toAdminUser(row: AdminUserRow): AdminUserDto {
   };
 }
 
-function toRoleChange(row: RoleChangeRow): RoleChangeDto {
+function toRoleChange(row: AuditLogRow): RoleChangeDto {
   return {
     id: row.id,
+    event: row.event,
     actor: { id: row.actor.id, name: row.actor.name },
     target: { id: row.target.id, name: row.target.name },
     fromRole: row.fromRole,
@@ -75,7 +73,7 @@ export class UsersService {
 
   constructor(
     private readonly usersRepository: UsersRepository,
-    private readonly roleChangeAuditRepository: RoleChangeAuditRepository,
+    private readonly auditLogRepository: AuditLogRepository,
   ) {}
 
   async getMe(userId: string): Promise<UserProfile> {
@@ -170,6 +168,9 @@ export class UsersService {
       fromRole: target.role,
       toRole: nextRole,
     });
+    if (!updated) {
+      throw new NotFoundException('Usuario nao encontrado.');
+    }
 
     // Segundo rastro, no padrao de stats.service: evento estruturado em stdout,
     // sem PII (so ids) — standards/lgpd-erasure.md.
@@ -196,12 +197,12 @@ export class UsersService {
     const pageSize = Math.min(query.pageSize ?? 20, MAX_PAGE_SIZE);
     const filters = { tenantId, targetUserId: query.targetUserId };
     const [rows, total] = await Promise.all([
-      this.roleChangeAuditRepository.listByTenant({
+      this.auditLogRepository.listByTenant({
         ...filters,
         skip: (page - 1) * pageSize,
         take: pageSize,
       }),
-      this.roleChangeAuditRepository.countByTenant(filters),
+      this.auditLogRepository.countByTenant(filters),
     ]);
     return {
       data: rows.map(toRoleChange),

@@ -215,9 +215,12 @@ async function seedTenant() {
   });
 }
 
+function allowSeedDefaultPasswords(): boolean {
+  return process.env.ALLOW_SEED_DEFAULT_PASSWORDS === 'true';
+}
+
 async function seedAdmin(tenantId: string) {
   const email = (process.env.ADMIN_EMAIL ?? 'admin@portal.local').toLowerCase();
-  const password = process.env.ADMIN_PASSWORD ?? 'admin12345';
   const existing = await prisma.user.findFirst({
     where: { tenantId, email, deletedAt: null },
   });
@@ -225,7 +228,7 @@ async function seedAdmin(tenantId: string) {
     // Comparacao por NIVEL, nunca por igualdade: `entrypoint.sh` roda o seed em
     // todo boot do container (o Coolify nao tem release step). Com `!==`, um
     // ADMIN_EMAIL promovido a ADMIN_SENIOR pela tela era rebaixado no proximo
-    // restart. So promove quem esta ABAIXO de ADMIN.
+    // restart. So promove quem esta ABAIXO de ADMIN. Nunca reescreve a senha.
     if (roleLevel(existing.role) < roleLevel(UserRole.ADMIN)) {
       await prisma.user.update({
         where: { id: existing.id },
@@ -234,6 +237,19 @@ async function seedAdmin(tenantId: string) {
     }
     return;
   }
+
+  let password = process.env.ADMIN_PASSWORD;
+  if (!password) {
+    if (process.env.NODE_ENV === 'production' || !allowSeedDefaultPasswords()) {
+      console.warn('[seed] ADMIN_PASSWORD ausente: admin padrao nao criado.');
+      return;
+    }
+    password = 'admin12345';
+    console.warn(
+      '[seed] ADMIN_PASSWORD ausente: usando senha padrao porque ALLOW_SEED_DEFAULT_PASSWORDS=true.',
+    );
+  }
+
   await prisma.user.create({
     data: {
       tenantId,
@@ -251,20 +267,23 @@ async function seedSuperAdmin(tenantId: string) {
   const password = process.env.SUPER_ADMIN_PASSWORD;
 
   if (!email || !password) {
-    // Em producao nao inventamos credencial de topo de piramide: avisa e pula.
-    // NAO lanca de proposito — `entrypoint.sh` roda o seed em todo boot, entao
-    // lancar aqui derrubaria o seed do catalogo inteiro junto.
-    if (process.env.NODE_ENV === 'production') {
+    // NAO lanca: `entrypoint.sh` roda o seed em todo boot, e um throw
+    // derrubaria o catalogo junto. Fallback so com flag explicito — nunca
+    // inferido por NODE_ENV.
+    if (allowSeedDefaultPasswords() && process.env.NODE_ENV !== 'production') {
       console.warn(
-        '[seed] SUPER_ADMIN_EMAIL/SUPER_ADMIN_PASSWORD ausentes: super-admin nao criado.',
+        '[seed] SUPER_ADMIN_EMAIL/SUPER_ADMIN_PASSWORD ausentes: usando padrao porque ALLOW_SEED_DEFAULT_PASSWORDS=true.',
       );
-      return;
+      return seedSuperAdminWith(
+        tenantId,
+        'super-admin@portal.local',
+        'superadmin12345',
+      );
     }
-    return seedSuperAdminWith(
-      tenantId,
-      'super-admin@portal.local',
-      'superadmin12345',
+    console.warn(
+      '[seed] SUPER_ADMIN_EMAIL/SUPER_ADMIN_PASSWORD ausentes: super-admin nao criado.',
     );
+    return;
   }
 
   return seedSuperAdminWith(tenantId, email, password);

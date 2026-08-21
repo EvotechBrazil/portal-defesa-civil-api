@@ -1,4 +1,9 @@
-import { BadRequestException, Logger, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { PasswordResetToken, User, UserRole } from '@prisma/client';
@@ -89,6 +94,7 @@ describe('AuthService password reset', () => {
     findActiveByEmail: jest.Mock;
     findActiveByWhatsapp: jest.Mock;
     findActiveByIdInTenant: jest.Mock;
+    appendAudit: jest.Mock;
     createStudent: jest.Mock;
     updateLastLoginAt: jest.Mock;
   };
@@ -122,6 +128,7 @@ describe('AuthService password reset', () => {
       findActiveByEmail: jest.fn(),
       findActiveByWhatsapp: jest.fn(),
       findActiveByIdInTenant: jest.fn(),
+      appendAudit: jest.fn().mockResolvedValue(undefined),
       createStudent: jest.fn(),
       updateLastLoginAt: jest.fn(),
     };
@@ -291,13 +298,13 @@ describe('AuthService password reset', () => {
 
   describe('issueAdminPasswordReset', () => {
     const actor: AuthenticatedUser = {
-      id: 'admin-1',
-      email: 'admin@portal.local',
-      role: UserRole.ADMIN,
+      id: 'senior-1',
+      email: 'senior@portal.local',
+      role: UserRole.ADMIN_SENIOR,
       tenantId: 'tenant-default',
     };
 
-    it('returns the link, does not send e-mail and logs actor and target', async () => {
+    it('returns the link, does not send e-mail, logs and writes audit', async () => {
       const target = buildUser();
       usersRepository.findActiveByIdInTenant.mockResolvedValue(target);
       const logSpy = jest
@@ -317,6 +324,12 @@ describe('AuthService password reset', () => {
       expect(authRepository.rotatePasswordResetToken).toHaveBeenCalledWith(
         expect.objectContaining({ userId: target.id, now }),
       );
+      expect(usersRepository.appendAudit).toHaveBeenCalledWith({
+        tenantId: actor.tenantId,
+        event: 'user.password_reset.issued',
+        actorId: actor.id,
+        targetId: target.id,
+      });
       expect(logSpy).toHaveBeenCalledWith(
         JSON.stringify({
           event: 'user.password_reset.issued',
@@ -336,6 +349,18 @@ describe('AuthService password reset', () => {
         service.issueAdminPasswordReset(actor, actor.tenantId, 'missing'),
       ).rejects.toBeInstanceOf(NotFoundException);
       expect(authRepository.rotatePasswordResetToken).not.toHaveBeenCalled();
+    });
+
+    it('returns 403 for equal or higher target role', async () => {
+      usersRepository.findActiveByIdInTenant.mockResolvedValue(
+        buildUser({ role: UserRole.ADMIN_SENIOR }),
+      );
+
+      await expect(
+        service.issueAdminPasswordReset(actor, actor.tenantId, 'peer'),
+      ).rejects.toBeInstanceOf(ForbiddenException);
+      expect(authRepository.rotatePasswordResetToken).not.toHaveBeenCalled();
+      expect(usersRepository.appendAudit).not.toHaveBeenCalled();
     });
   });
 });

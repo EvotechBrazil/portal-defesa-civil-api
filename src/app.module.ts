@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD, APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { appConfig, databaseConfig, jwtConfig, mailConfig } from './config';
 import { PrismaModule } from './database/prisma.module';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
+import { AppThrottlerGuard } from './common/guards/app-throttler.guard';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
 import { RolesGuard } from './common/guards/roles.guard';
 import { TenantGuard } from './common/guards/tenant.guard';
@@ -26,6 +28,25 @@ import { HealthController } from './health.controller';
       isGlobal: true,
       load: [appConfig, databaseConfig, jwtConfig, mailConfig],
     }),
+    ThrottlerModule.forRoot({
+      throttlers: [
+        {
+          name: 'default',
+          ttl: 60_000,
+          limit: process.env.NODE_ENV === 'test' ? 10_000 : 120,
+        },
+        {
+          name: 'auth',
+          ttl: 60_000,
+          limit: process.env.NODE_ENV === 'test' ? 10_000 : 10,
+        },
+        {
+          name: 'admin',
+          ttl: 60_000,
+          limit: process.env.NODE_ENV === 'test' ? 10_000 : 20,
+        },
+      ],
+    }),
     PrismaModule,
     AuthModule,
     AccessModule,
@@ -43,6 +64,7 @@ import { HealthController } from './health.controller';
     { provide: APP_GUARD, useClass: JwtAuthGuard },
     { provide: APP_GUARD, useClass: TenantGuard },
     { provide: APP_GUARD, useClass: RolesGuard },
+    { provide: APP_GUARD, useClass: AppThrottlerGuard },
     { provide: APP_FILTER, useClass: AllExceptionsFilter },
     { provide: APP_INTERCEPTOR, useClass: ResponseInterceptor },
   ],

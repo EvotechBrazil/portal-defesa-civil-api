@@ -84,7 +84,7 @@ model Tenant {
   allowedWhatsapps AllowedWhatsapp[]
   accessRequests   AccessRequest[]
   manadas          Manada[]
-  roleChangeAudits RoleChangeAudit[]
+  auditLogs        AuditLog[]
 
   @@map("tenants")
 }
@@ -124,8 +124,8 @@ model User {
   studySessions           StudySession[]
   attempts                Attempt[]
   reviewedAccessRequests  AccessRequest[]           @relation("AccessRequestReviewer")
-  roleChangesMade         RoleChangeAudit[]         @relation("RoleChangeActor")
-  roleChangesReceived     RoleChangeAudit[]         @relation("RoleChangeTarget")
+  auditLogsMade           AuditLog[]                @relation("AuditActor")
+  auditLogsReceived       AuditLog[]                @relation("AuditTarget")
 
   @@unique([tenantId, email])
   @@index([tenantId])
@@ -178,30 +178,33 @@ model AccessRequest {
   @@map("access_requests")
 }
 
-/// Trilha append-only de mudanca de papel.
+/// Trilha append-only de eventos administrativos.
 ///
 /// Sem `updatedAt` e sem `deletedAt` DE PROPOSITO — e o ponto do model:
 /// auditoria editavel ou soft-deletavel nao e auditoria. Desvio consciente da
 /// regra de soft delete, registrado aqui para nao virar achado de auditoria.
 ///
 /// Guarda so ids, nunca nome ou e-mail: standards/lgpd-erasure.md pede
-/// "audit trail append-only SEM PII".
-model RoleChangeAudit {
-  id        String   @id @default(cuid())
-  tenantId  String   @map("tenant_id")
-  actorId   String   @map("actor_id")
-  targetId  String   @map("target_id")
-  fromRole  UserRole @map("from_role")
-  toRole    UserRole @map("to_role")
-  createdAt DateTime @default(now()) @map("created_at")
+/// "audit trail append-only SEM PII". `fromRole`/`toRole` so existem em
+/// `user.role.changed`; os outros eventos deixam nulo.
+model AuditLog {
+  id        String    @id @default(cuid())
+  tenantId  String    @map("tenant_id")
+  event     String
+  actorId   String    @map("actor_id")
+  targetId  String    @map("target_id")
+  fromRole  UserRole? @map("from_role")
+  toRole    UserRole? @map("to_role")
+  createdAt DateTime  @default(now()) @map("created_at")
 
   tenant Tenant @relation(fields: [tenantId], references: [id])
-  actor  User   @relation("RoleChangeActor", fields: [actorId], references: [id])
-  target User   @relation("RoleChangeTarget", fields: [targetId], references: [id])
+  actor  User   @relation("AuditActor", fields: [actorId], references: [id])
+  target User   @relation("AuditTarget", fields: [targetId], references: [id])
 
   @@index([tenantId, createdAt])
   @@index([tenantId, targetId])
-  @@map("role_change_audits")
+  @@index([tenantId, event])
+  @@map("audit_logs")
 }
 
 model Manada {

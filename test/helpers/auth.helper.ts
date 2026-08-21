@@ -60,7 +60,7 @@ export async function cleanupTestTenants(prisma: PrismaService): Promise<void> {
     // Antes de qualquer delete de user: a trilha de auditoria tem FK para
     // actor e target, entao um usuario com linha aqui trava o deleteMany com
     // P2003 e derruba a limpeza da suite inteira, nao so a deste arquivo.
-    await prisma.roleChangeAudit.deleteMany({
+    await prisma.auditLog.deleteMany({
       where: {
         OR: [{ actorId: { in: userIds } }, { targetId: { in: userIds } }],
       },

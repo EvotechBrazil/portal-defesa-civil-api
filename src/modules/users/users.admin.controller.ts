@@ -8,6 +8,7 @@ import {
   ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import { UserRole } from '@prisma/client';
 import { CurrentTenant } from '../../common/decorators/current-tenant.decorator';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
@@ -40,6 +41,7 @@ export class UsersAdminController {
 
   @Patch('users/:id/role')
   @MinRole(UserRole.ADMIN_SENIOR)
+  @Throttle({ admin: { limit: 20, ttl: 60_000 } })
   @ApiOperation({
     summary: 'Concede ou revoga papel.',
     description:

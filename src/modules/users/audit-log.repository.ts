@@ -2,19 +2,19 @@ import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../database/prisma.service';
 
-const ROLE_CHANGE_INCLUDE = {
+const AUDIT_INCLUDE = {
   actor: { select: { id: true, name: true } },
   target: { select: { id: true, name: true } },
-} satisfies Prisma.RoleChangeAuditInclude;
+} satisfies Prisma.AuditLogInclude;
 
-export type RoleChangeRow = Prisma.RoleChangeAuditGetPayload<{
-  include: typeof ROLE_CHANGE_INCLUDE;
+export type AuditLogRow = Prisma.AuditLogGetPayload<{
+  include: typeof AUDIT_INCLUDE;
 }>;
 
 function where(params: {
   tenantId: string;
   targetUserId?: string;
-}): Prisma.RoleChangeAuditWhereInput {
+}): Prisma.AuditLogWhereInput {
   return {
     tenantId: params.tenantId,
     ...(params.targetUserId ? { targetId: params.targetUserId } : {}),
@@ -22,12 +22,11 @@ function where(params: {
 }
 
 /**
- * Leitura da trilha de auditoria. READ-ONLY de proposito: a escrita acontece
- * em UsersRepository.updateRoleWithAudit, dentro da mesma transacao do update
- * do papel.
+ * Leitura da trilha. READ-ONLY de proposito: a escrita acontece junto do
+ * efeito (troca de papel, emissao de link) na mesma transacao, quando da.
  */
 @Injectable()
-export class RoleChangeAuditRepository {
+export class AuditLogRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   listByTenant(params: {
@@ -35,10 +34,10 @@ export class RoleChangeAuditRepository {
     targetUserId?: string;
     skip: number;
     take: number;
-  }): Promise<RoleChangeRow[]> {
-    return this.prisma.roleChangeAudit.findMany({
+  }): Promise<AuditLogRow[]> {
+    return this.prisma.auditLog.findMany({
       where: where(params),
-      include: ROLE_CHANGE_INCLUDE,
+      include: AUDIT_INCLUDE,
       orderBy: [{ createdAt: 'desc' }, { id: 'desc' }],
       skip: params.skip,
       take: params.take,
@@ -49,6 +48,6 @@ export class RoleChangeAuditRepository {
     tenantId: string;
     targetUserId?: string;
   }): Promise<number> {
-    return this.prisma.roleChangeAudit.count({ where: where(params) });
+    return this.prisma.auditLog.count({ where: where(params) });
   }
 }

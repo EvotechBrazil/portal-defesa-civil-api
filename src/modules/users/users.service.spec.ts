@@ -1,7 +1,7 @@
 import { ForbiddenException, NotFoundException } from '@nestjs/common';
 import { User, UserRole } from '@prisma/client';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
-import { RoleChangeAuditRepository } from './role-change-audit.repository';
+import { AuditLogRepository } from './audit-log.repository';
 import { AdminUserRow, UsersRepository } from './users.repository';
 import { UsersService } from './users.service';
 
@@ -53,7 +53,7 @@ describe('UsersService', () => {
     >
   >;
   let auditRepository: jest.Mocked<
-    Pick<RoleChangeAuditRepository, 'listByTenant' | 'countByTenant'>
+    Pick<AuditLogRepository, 'listByTenant' | 'countByTenant'>
   >;
 
   beforeEach(() => {
@@ -67,7 +67,7 @@ describe('UsersService', () => {
     auditRepository = { listByTenant: jest.fn(), countByTenant: jest.fn() };
     service = new UsersService(
       usersRepository as unknown as UsersRepository,
-      auditRepository as unknown as RoleChangeAuditRepository,
+      auditRepository as unknown as AuditLogRepository,
     );
   });
 
@@ -275,6 +275,20 @@ describe('UsersService', () => {
       ).rejects.toBeInstanceOf(ForbiddenException);
     });
 
+    it('responde 404 se o updateMany nao atingir linha do tenant', async () => {
+      usersRepository.findActiveByIdInTenant.mockResolvedValue(targetUser());
+      usersRepository.updateRoleWithAudit.mockResolvedValue(null);
+
+      await expect(
+        service.changeUserRole(
+          actorWith(UserRole.SUPER_ADMIN),
+          TENANT,
+          'target-1',
+          UserRole.ADMIN,
+        ),
+      ).rejects.toBeInstanceOf(NotFoundException);
+    });
+
     it('trata papel igual ao atual como no-op, sem gravar auditoria', async () => {
       usersRepository.findActiveByIdInTenant.mockResolvedValue(
         targetUser({ role: UserRole.ADMIN }),
@@ -298,6 +312,7 @@ describe('UsersService', () => {
         {
           id: 'audit-1',
           tenantId: TENANT,
+          event: 'user.role.changed',
           actorId: 'actor-1',
           targetId: 'target-1',
           fromRole: UserRole.STUDENT,
@@ -316,6 +331,7 @@ describe('UsersService', () => {
 
       expect(result.data[0]).toEqual({
         id: 'audit-1',
+        event: 'user.role.changed',
         actor: { id: 'actor-1', name: 'Chefe' },
         target: { id: 'target-1', name: 'Alvo' },
         fromRole: UserRole.STUDENT,

@@ -335,7 +335,7 @@ describe('Admin users (e2e)', () => {
       const actor = await senior();
       const alvo = await admin();
 
-      const antes = await prisma.roleChangeAudit.count({ where: { tenantId } });
+      const antes = await prisma.auditLog.count({ where: { tenantId } });
 
       await request(httpServer(app))
         .patch(`/api/v1/admin/users/${alvo.user.id}/role`)
@@ -343,15 +343,13 @@ describe('Admin users (e2e)', () => {
         .send({ role: UserRole.ADMIN })
         .expect(200);
 
-      expect(await prisma.roleChangeAudit.count({ where: { tenantId } })).toBe(
-        antes,
-      );
+      expect(await prisma.auditLog.count({ where: { tenantId } })).toBe(antes);
     });
   });
 
   describe('POST /admin/users/:userId/password-reset', () => {
-    it('ADMIN devolve o link e nao coloca o token em outra rota', async () => {
-      const actor = await admin();
+    it('ADMIN_SENIOR devolve o link e nao coloca o token em outra rota', async () => {
+      const actor = await senior();
       const alvo = await student();
 
       const response = await request(httpServer(app))
@@ -369,6 +367,15 @@ describe('Admin users (e2e)', () => {
       });
       expect(stored).toHaveLength(1);
       expect(stored[0]?.tokenHash).not.toBe(token);
+      const trail = await prisma.auditLog.findMany({
+        where: {
+          tenantId,
+          event: 'user.password_reset.issued',
+          targetId: alvo.user.id,
+        },
+      });
+      expect(trail).toHaveLength(1);
+      expect(trail[0]?.actorId).toBe(actor.user.id);
     });
 
     it('barra STUDENT com 403', async () => {
@@ -381,8 +388,31 @@ describe('Admin users (e2e)', () => {
         .expect(403);
     });
 
-    it('responde 404 para alvo de outro tenant', async () => {
+    it('barra ADMIN com 403 — a rota sobe para ADMIN_SENIOR', async () => {
       const actor = await admin();
+      const alvo = await student();
+
+      await request(httpServer(app))
+        .post(`/api/v1/admin/users/${alvo.user.id}/password-reset`)
+        .set(actor.header)
+        .expect(403);
+    });
+
+    it('barra ADMIN_SENIOR de emitir link de um SUPER_ADMIN', async () => {
+      const actor = await senior();
+      const alvo = await bearerFor(prisma, {
+        role: UserRole.SUPER_ADMIN,
+        tenantId,
+      });
+
+      await request(httpServer(app))
+        .post(`/api/v1/admin/users/${alvo.user.id}/password-reset`)
+        .set(actor.header)
+        .expect(403);
+    });
+
+    it('responde 404 para alvo de outro tenant', async () => {
+      const actor = await senior();
       const outro = await createSecondTenant(prisma);
       const alvo = await bearerFor(prisma, {
         role: UserRole.STUDENT,

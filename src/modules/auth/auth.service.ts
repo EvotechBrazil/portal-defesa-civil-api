@@ -11,6 +11,8 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { User } from '@prisma/client';
+import { AUDIT_EVENT } from '../../common/audit/audit-events';
+import { canManageRole } from '../../common/authz/role-hierarchy';
 import { AuthenticatedUser } from '../../common/types/authenticated-request';
 import { AccessService } from '../access/access.service';
 import { decodePhotoBase64 } from '../access/photo.util';
@@ -267,12 +269,23 @@ export class AuthService {
     if (!target) {
       throw new NotFoundException('Usuario nao encontrado.');
     }
+    if (!canManageRole(actor.role, target.role)) {
+      throw new ForbiddenException(
+        'O alvo tem papel igual ou superior ao seu.',
+      );
+    }
 
     const now = new Date();
     const rawToken = await this.issuePasswordResetToken(target.id, now);
+    await this.usersRepository.appendAudit({
+      tenantId,
+      event: AUDIT_EVENT.PASSWORD_RESET_ISSUED,
+      actorId: actor.id,
+      targetId: target.id,
+    });
     this.logger.log(
       JSON.stringify({
-        event: 'user.password_reset.issued',
+        event: AUDIT_EVENT.PASSWORD_RESET_ISSUED,
         tenantId,
         actorId: actor.id,
         targetId: target.id,

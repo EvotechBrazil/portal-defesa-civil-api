@@ -8,9 +8,12 @@ class RoleChangeParty {
 
 export class RoleChangeDto {
   @ApiProperty() id!: string;
+  @ApiProperty() event!: string;
   @ApiProperty({ type: RoleChangeParty }) actor!: RoleChangeParty;
   @ApiProperty({ type: RoleChangeParty }) target!: RoleChangeParty;
-  @ApiProperty({ enum: UserRole }) fromRole!: UserRole;
-  @ApiProperty({ enum: UserRole }) toRole!: UserRole;
+  @ApiProperty({ enum: UserRole, nullable: true, required: false })
+  fromRole!: UserRole | null;
+  @ApiProperty({ enum: UserRole, nullable: true, required: false })
+  toRole!: UserRole | null;
   @ApiProperty() createdAt!: Date;
 }

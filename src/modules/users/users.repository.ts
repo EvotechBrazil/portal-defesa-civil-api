@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma, User, UserRole } from '@prisma/client';
+import { AUDIT_EVENT } from '../../common/audit/audit-events';
 import { PrismaService } from '../../database/prisma.service';
 
 /** Projecao unica das telas admin: nada de passwordHash/photoBytes/whatsapp. */
@@ -159,27 +160,64 @@ export class UsersRepository {
    * Troca o papel e grava a trilha na MESMA transacao — uma promocao sem
    * rastro e pior que nenhuma promocao.
    *
-   * A escrita da auditoria mora aqui, e nao num AuditRepository, porque o
-   * service nao pode importar o PrismaService e portanto nao abre transacao.
-   * A trilha so existe como efeito de um update de user, entao nao ha um
-   * segundo escritor possivel. Quando surgir um segundo evento auditavel,
-   * extrai-se um AuditModule e passa-se o `tx` adiante.
+   * `updateMany` com tenantId + deletedAt: o `update` por id sozinho atravessa
+   * tenant se o service errar o lookup. count === 0 aborta sem escrever audit.
    */
-  updateRoleWithAudit(params: {
+  async updateRoleWithAudit(params: {
     tenantId: string;
     actorId: string;
     targetId: string;
     fromRole: UserRole;
     toRole: UserRole;
-  }): Promise<AdminUserRow> {
+  }): Promise<AdminUserRow | null> {
     return this.prisma.$transaction(async (tx) => {
-      const user = await tx.user.update({
-        where: { id: params.targetId },
+      const updated = await tx.user.updateMany({
+        where: {
+          id: params.targetId,
+          tenantId: params.tenantId,
+          deletedAt: null,
+        },
         data: { role: params.toRole },
+      });
+      if (updated.count === 0) {
+        return null;
+      }
+      await tx.auditLog.create({
+        data: {
+          tenantId: params.tenantId,
+          event: AUDIT_EVENT.ROLE_CHANGED,
+          actorId: params.actorId,
+          targetId: params.targetId,
+          fromRole: params.fromRole,
+          toRole: params.toRole,
+        },
+      });
+      return tx.user.findFirstOrThrow({
+        where: { id: params.targetId, tenantId: params.tenantId },
         select: ADMIN_USER_SELECT,
       });
-      await tx.roleChangeAudit.create({ data: params });
-      return user;
     });
+  }
+
+  appendAudit(params: {
+    tenantId: string;
+    event: string;
+    actorId: string;
+    targetId: string;
+    fromRole?: UserRole;
+    toRole?: UserRole;
+  }): Promise<void> {
+    return this.prisma.auditLog
+      .create({
+        data: {
+          tenantId: params.tenantId,
+          event: params.event,
+          actorId: params.actorId,
+          targetId: params.targetId,
+          fromRole: params.fromRole,
+          toRole: params.toRole,
+        },
+      })
+      .then(() => undefined);
   }
 }

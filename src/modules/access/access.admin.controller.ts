@@ -9,6 +9,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import { UserRole } from '@prisma/client';
 import { CurrentTenant } from '../../common/decorators/current-tenant.decorator';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
@@ -36,6 +37,7 @@ export class AccessAdminController {
 
   @Post('access-requests/:id/approve')
   @HttpCode(200)
+  @Throttle({ admin: { limit: 20, ttl: 60_000 } })
   approve(
     @CurrentTenant() tenantId: string,
     @CurrentUser() user: AuthenticatedUser,
@@ -46,6 +48,7 @@ export class AccessAdminController {
 
   @Post('access-requests/:id/reject')
   @HttpCode(200)
+  @Throttle({ admin: { limit: 20, ttl: 60_000 } })
   reject(
     @CurrentTenant() tenantId: string,
     @CurrentUser() user: AuthenticatedUser,
@@ -63,6 +66,7 @@ export class AccessAdminController {
   }
 
   @Post('allowed-whatsapps')
+  @Throttle({ admin: { limit: 20, ttl: 60_000 } })
   addAllowed(
     @CurrentTenant() tenantId: string,
     @Body() body: AllowWhatsappDto,
@@ -72,6 +76,7 @@ export class AccessAdminController {
 
   @Delete('allowed-whatsapps/:id')
   @HttpCode(204)
+  @Throttle({ admin: { limit: 20, ttl: 60_000 } })
   removeAllowed(@CurrentTenant() tenantId: string, @Param('id') id: string) {
     return this.accessService.removeAllowed(tenantId, id);
   }

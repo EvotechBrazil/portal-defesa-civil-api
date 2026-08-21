@@ -27,6 +27,7 @@ import { CheckWhatsappDto } from './dtos/check-whatsapp.dto';
 import { ListAccessRequestsDto } from './dtos/list-access-requests.dto';
 import { RequestAccessDto } from './dtos/request-access.dto';
 import {
+  assertPlausibleWhatsapp,
   canonicalWhatsapp,
   InvalidWhatsappError,
   normalizeWhatsapp,
@@ -349,7 +350,9 @@ export class AccessService {
 
   parseWhatsapp(raw: string): string {
     try {
-      return canonicalWhatsapp(normalizeWhatsapp(raw));
+      const digits = canonicalWhatsapp(normalizeWhatsapp(raw));
+      assertPlausibleWhatsapp(digits);
+      return digits;
     } catch (error: unknown) {
       if (error instanceof InvalidWhatsappError) {
         throw new BadRequestException(error.message);

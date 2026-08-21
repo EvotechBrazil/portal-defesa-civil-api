@@ -60,3 +60,53 @@ export function whatsappAliases(digits: string): string[] {
 export function formatWhatsapp(digits: string): string {
   return digits;
 }
+
+/**
+ * DDDs que existem no plano de numeracao brasileiro. Serve para barrar digitacao
+ * aleatoria e autopreenchimento errado antes de virar pedido de acesso.
+ */
+const BR_DDD = new Set([
+  11, 12, 13, 14, 15, 16, 17, 18, 19,
+  21, 22, 24, 27, 28,
+  31, 32, 33, 34, 35, 37, 38,
+  41, 42, 43, 44, 45, 46, 47, 48, 49,
+  51, 53, 54, 55,
+  61, 62, 63, 64, 65, 66, 67, 68, 69,
+  71, 73, 74, 75, 77, 79,
+  81, 82, 83, 84, 85, 86, 87, 88, 89,
+  91, 92, 93, 94, 95, 96, 97, 98, 99,
+]);
+
+/**
+ * Roda DEPOIS da canonicalizacao, sobre um numero ja so com digitos.
+ *
+ * Brasileiro tem forma conhecida e por isso e checado de verdade: DDD que
+ * existe, celular de 9 digitos comecando em 9, fixo de 8 comecando em 2-5.
+ * Estrangeiro nao da para validar assim — fica so no comprimento.
+ */
+export function assertPlausibleWhatsapp(digits: string): void {
+  if (/^(\d)\1+$/.test(digits)) {
+    throw new InvalidWhatsappError('Numero invalido: digitos repetidos.');
+  }
+
+  if (!digits.startsWith('55')) {
+    if (digits.length < 8 || digits.length > 15) {
+      throw new InvalidWhatsappError(WHATSAPP_DIGITS_MESSAGE);
+    }
+    return;
+  }
+
+  const ddd = Number(digits.slice(2, 4));
+  if (!BR_DDD.has(ddd)) {
+    throw new InvalidWhatsappError(`DDD ${digits.slice(2, 4)} nao existe.`);
+  }
+
+  const rest = digits.slice(4);
+  const celular = rest.length === 9 && rest.startsWith('9');
+  const fixo = rest.length === 8 && '2345'.includes(rest[0] ?? '');
+  if (!celular && !fixo) {
+    throw new InvalidWhatsappError(
+      'Numero brasileiro deve ter DDI 55, DDD e 9 digitos comecando em 9.',
+    );
+  }
+}

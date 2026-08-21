@@ -1,9 +1,8 @@
-import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { Test } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import type { App } from 'supertest/types';
-import { AppModule } from '../src/app.module';
 import { PrismaService } from '../src/database/prisma.service';
+import { createTestingApp, httpServer } from './helpers/app.helper';
 import { hashToken } from '../src/modules/auth/auth.crypto';
 import {
   FORGOT_PASSWORD_ACK_MESSAGE,
@@ -101,21 +100,8 @@ describe('Auth (e2e)', () => {
   }
 
   beforeAll(async () => {
-    const moduleRef = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
-
-    app = moduleRef.createNestApplication();
-    app.setGlobalPrefix('api/v1');
-    app.useGlobalPipes(
-      new ValidationPipe({
-        whitelist: true,
-        forbidNonWhitelisted: true,
-        transform: true,
-      }),
-    );
-    await app.init();
-    server = app.getHttpServer() as App;
+    app = await createTestingApp();
+    server = httpServer(app);
     prisma = app.get(PrismaService);
   });
 
@@ -381,6 +367,23 @@ describe('Auth (e2e)', () => {
       .expect(403);
 
     expect(JSON.stringify(res.body)).toMatch(/não está liberado/i);
+  });
+
+  it('does not 500 when the register body includes a photo over 100 KB', async () => {
+    const res = await request(server)
+      .post('/api/v1/auth/register')
+      .send({
+        ...registerPayload({
+          email: uniqueEmail('photo'),
+          name: 'Foto User',
+          password: 'password12',
+          whatsapp: uniqueWhatsapp(),
+        }),
+        photoBase64: `data:image/jpeg;base64,${'A'.repeat(200_000)}`,
+      });
+
+    expect(res.status).not.toBe(500);
+    expect(res.status).toBe(403);
   });
 
   describe('password reset', () => {

@@ -21,7 +21,12 @@ export class AllExceptionsFilter implements ExceptionFilter {
     let message: string | string[] = 'Internal server error';
     let error = 'Internal Server Error';
 
-    if (exception instanceof HttpException) {
+    if (isPayloadTooLarge(exception)) {
+      status = HttpStatus.PAYLOAD_TOO_LARGE;
+      message =
+        'A foto é grande demais para enviar. Use uma imagem de até 2 MB.';
+      error = 'Payload Too Large';
+    } else if (exception instanceof HttpException) {
       status = exception.getStatus();
       const payload = exception.getResponse();
       if (typeof payload === 'string') {
@@ -46,4 +51,20 @@ export class AllExceptionsFilter implements ExceptionFilter {
       path: request.url,
     });
   }
+}
+
+function isPayloadTooLarge(exception: unknown): boolean {
+  if (typeof exception !== 'object' || exception === null) {
+    return false;
+  }
+  const err = exception as {
+    type?: unknown;
+    status?: unknown;
+    statusCode?: unknown;
+  };
+  return (
+    err.type === 'entity.too.large' ||
+    err.status === HttpStatus.PAYLOAD_TOO_LARGE ||
+    err.statusCode === HttpStatus.PAYLOAD_TOO_LARGE
+  );
 }

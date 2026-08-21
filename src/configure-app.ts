@@ -1,7 +1,14 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { json, urlencoded } from 'express';
 import helmet from 'helmet';
+
+/**
+ * Foto no cadastro: até 2 MB binário vira ~2,7 MB em data URL. O default do
+ * Express é 100 KB — qualquer foto de celular estourava e virava 500.
+ */
+export const JSON_BODY_LIMIT = '6mb';
 
 export function resolveCorsOrigin(
   raw: string | undefined,
@@ -22,6 +29,8 @@ export function resolveCorsOrigin(
 
 export function configureApp(app: INestApplication): void {
   const configService = app.get(ConfigService);
+  app.use(json({ limit: JSON_BODY_LIMIT }));
+  app.use(urlencoded({ extended: true, limit: JSON_BODY_LIMIT }));
   app.use(helmet());
   app.enableCors({
     origin: resolveCorsOrigin(configService.get<string>('app.corsOrigin')),

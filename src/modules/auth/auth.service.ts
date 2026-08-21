@@ -320,8 +320,15 @@ export class AuthService {
     if (!user || !passwordMatches) {
       throw new UnauthorizedException('Credenciais inválidas.');
     }
+    const autoVerify =
+      this.configService.get<boolean>('mail.autoVerifyEmail') === true;
     if (!user.emailVerifiedAt) {
-      throw new ForbiddenException('Verifique seu e-mail antes de entrar.');
+      if (!autoVerify) {
+        throw new ForbiddenException('Verifique seu e-mail antes de entrar.');
+      }
+      const verifiedAt = new Date();
+      await this.usersRepository.markEmailVerified(user.id, verifiedAt);
+      user.emailVerifiedAt = verifiedAt;
     }
 
     await this.usersRepository.updateLastLoginAt(user.id, new Date());

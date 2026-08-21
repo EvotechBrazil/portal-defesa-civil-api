@@ -33,7 +33,7 @@ catálogo incompleto, não indisponibilidade.
 | `MAIL_SECURE` | não | `true` para porta 465 |
 | `MAIL_FROM` | não | Remetente exibido |
 | `SEED_ON_BOOT` | não | Padrão `true` |
-| `AUTO_VERIFY_EMAIL` | não | `true` pula a verificação por e-mail. Só enquanto não houver SMTP |
+| `AUTO_VERIFY_EMAIL` | não | Em produção o default é `true` (pula a prova de e-mail). `false` religa quando o SMTP entregar |
 
 Gerar segredo: `openssl rand -hex 32`.
 

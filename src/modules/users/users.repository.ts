@@ -121,6 +121,13 @@ export class UsersRepository {
     });
   }
 
+  async markEmailVerified(id: string, emailVerifiedAt: Date): Promise<void> {
+    await this.prisma.user.update({
+      where: { id },
+      data: { emailVerifiedAt },
+    });
+  }
+
   findActiveByIdInTenant(tenantId: string, id: string): Promise<User | null> {
     return this.prisma.user.findFirst({
       where: { id, tenantId, deletedAt: null },

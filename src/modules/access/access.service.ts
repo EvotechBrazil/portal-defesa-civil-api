@@ -26,7 +26,11 @@ import { AllowWhatsappDto } from './dtos/allow-whatsapp.dto';
 import { CheckWhatsappDto } from './dtos/check-whatsapp.dto';
 import { ListAccessRequestsDto } from './dtos/list-access-requests.dto';
 import { RequestAccessDto } from './dtos/request-access.dto';
-import { InvalidWhatsappError, normalizeWhatsapp } from './whatsapp.util';
+import {
+  canonicalWhatsapp,
+  InvalidWhatsappError,
+  normalizeWhatsapp,
+} from './whatsapp.util';
 
 const DEFAULT_TENANT_SLUG = 'default';
 const MAX_PAGE_SIZE = 100;
@@ -345,7 +349,7 @@ export class AccessService {
 
   parseWhatsapp(raw: string): string {
     try {
-      return normalizeWhatsapp(raw);
+      return canonicalWhatsapp(normalizeWhatsapp(raw));
     } catch (error: unknown) {
       if (error instanceof InvalidWhatsappError) {
         throw new BadRequestException(error.message);

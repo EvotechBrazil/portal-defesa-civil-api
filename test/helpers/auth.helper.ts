@@ -104,6 +104,13 @@ export function uniqueWhatsapp(): string {
   return `554370${digits}`;
 }
 
+/** Celular BR antigo (12 dígitos) e a forma canônica de 13. */
+export function uniqueShortBrMobile(): { short: string; full: string } {
+  const digits = nextFixtureId().replace(/\D/g, '').slice(-7).padStart(7, '0');
+  const short = `55359${digits}`;
+  return { short, full: `${short.slice(0, 4)}9${short.slice(4)}` };
+}
+
 export async function cleanupTestWhatsapps(
   prisma: PrismaService,
 ): Promise<void> {

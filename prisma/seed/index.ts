@@ -2,7 +2,10 @@ import { PrismaClient, UserRole } from '@prisma/client';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { hashPassword } from '../../src/modules/auth/auth.crypto';
-import { normalizeWhatsapp } from '../../src/modules/access/whatsapp.util';
+import {
+  canonicalWhatsapp,
+  normalizeWhatsapp,
+} from '../../src/modules/access/whatsapp.util';
 import { roleLevel } from '../../src/common/authz/role-hierarchy';
 
 const prisma = new PrismaClient();
@@ -362,7 +365,9 @@ async function seedAllowedWhatsapps(tenantId: string) {
     'allowed-whatsapps.json',
   );
   for (const item of file.numbers) {
-    const whatsapp = normalizeWhatsapp(item.whatsapp.replace(/\D/g, ''));
+    const whatsapp = canonicalWhatsapp(
+      normalizeWhatsapp(item.whatsapp.replace(/\D/g, '')),
+    );
     await prisma.allowedWhatsapp.upsert({
       where: { tenantId_whatsapp: { tenantId, whatsapp } },
       create: {

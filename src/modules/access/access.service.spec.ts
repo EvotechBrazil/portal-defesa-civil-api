@@ -62,6 +62,25 @@ describe('AccessService', () => {
     expect(repository.upsertInterested).not.toHaveBeenCalled();
   });
 
+  it('looks up the canonical 13-digit form when the person types the old 12-digit mobile', async () => {
+    repository.findAllowed.mockResolvedValue({ id: 'allow-short' });
+
+    const result = await service.checkWhatsapp({ whatsapp: '553591783500' });
+
+    expect(result).toEqual({
+      status: 'ALLOWED',
+      whatsapp: '5535991783500',
+    });
+    expect(repository.findUserByWhatsapp).toHaveBeenCalledWith(
+      tenant.id,
+      '5535991783500',
+    );
+    expect(repository.findAllowed).toHaveBeenCalledWith(
+      tenant.id,
+      '5535991783500',
+    );
+  });
+
   it('blocks register when the number is not on the list', async () => {
     await expect(
       service.assertCanRegister(tenant.id, '5543988887777'),

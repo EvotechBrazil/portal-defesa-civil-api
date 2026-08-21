@@ -8,6 +8,7 @@ import {
   UserRole,
 } from '@prisma/client';
 import { PrismaService } from '../../database/prisma.service';
+import { whatsappAliases } from './whatsapp.util';
 
 @Injectable()
 export class AccessRepository {
@@ -23,14 +24,18 @@ export class AccessRepository {
     tenantId: string,
     whatsapp: string,
   ): Promise<AllowedWhatsapp | null> {
-    return this.prisma.allowedWhatsapp.findUnique({
-      where: { tenantId_whatsapp: { tenantId, whatsapp } },
+    return this.prisma.allowedWhatsapp.findFirst({
+      where: { tenantId, whatsapp: { in: whatsappAliases(whatsapp) } },
     });
   }
 
   findUserByWhatsapp(tenantId: string, whatsapp: string): Promise<User | null> {
     return this.prisma.user.findFirst({
-      where: { tenantId, whatsapp, deletedAt: null },
+      where: {
+        tenantId,
+        whatsapp: { in: whatsappAliases(whatsapp) },
+        deletedAt: null,
+      },
     });
   }
 
@@ -51,8 +56,8 @@ export class AccessRepository {
     tenantId: string,
     whatsapp: string,
   ): Promise<AccessRequest | null> {
-    return this.prisma.accessRequest.findUnique({
-      where: { tenantId_whatsapp: { tenantId, whatsapp } },
+    return this.prisma.accessRequest.findFirst({
+      where: { tenantId, whatsapp: { in: whatsappAliases(whatsapp) } },
     });
   }
 
@@ -230,7 +235,7 @@ export class AccessRepository {
   ): Promise<void> {
     return this.prisma.accessRequest
       .updateMany({
-        where: { tenantId, whatsapp },
+        where: { tenantId, whatsapp: { in: whatsappAliases(whatsapp) } },
         data: { status: AccessRequestStatus.APPROVED },
       })
       .then(() => undefined);

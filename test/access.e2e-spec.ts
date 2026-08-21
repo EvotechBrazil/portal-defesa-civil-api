@@ -13,6 +13,7 @@ import {
   cleanupTestWhatsapps,
   getDefaultTenant,
   registerPayload,
+  uniqueShortBrMobile,
   uniqueWhatsapp,
 } from './helpers/auth.helper';
 
@@ -86,6 +87,36 @@ describe('Access (e2e)', () => {
     expect(readEnvelope<{ status: string }>(submitted.body).data.status).toBe(
       'PENDING',
     );
+  });
+
+  it('lets a person whose allow-list entry is the old 12-digit mobile register with 13 digits', async () => {
+    const { short, full } = uniqueShortBrMobile();
+    createdWhatsapps.push(short, full);
+    await allowWhatsapp(prisma, short);
+    const server = httpServer(app);
+
+    const check = await request(server)
+      .post('/api/v1/auth/check-whatsapp')
+      .send({ whatsapp: full })
+      .expect(200);
+    expect(readEnvelope<CheckData>(check.body).data.status).toBe('ALLOWED');
+    expect(readEnvelope<CheckData>(check.body).data.whatsapp).toBe(full);
+
+    const email = `access-ninth-${Date.now()}@example.com`;
+    await request(server)
+      .post('/api/v1/auth/register')
+      .send(
+        registerPayload({
+          email,
+          name: 'Nono Digito',
+          password: 'password12',
+          whatsapp: full,
+        }),
+      )
+      .expect(201);
+
+    const stored = await prisma.user.findFirst({ where: { email } });
+    expect(stored?.whatsapp).toBe(full);
   });
 
   it('lets a pre-released number register after the WhatsApp check', async () => {

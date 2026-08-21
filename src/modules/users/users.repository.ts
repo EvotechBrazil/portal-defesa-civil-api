@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Prisma, User, UserRole } from '@prisma/client';
 import { AUDIT_EVENT } from '../../common/audit/audit-events';
 import { PrismaService } from '../../database/prisma.service';
+import { whatsappAliases } from '../access/whatsapp.util';
 
 /** Projecao unica das telas admin: nada de passwordHash/photoBytes/whatsapp. */
 const ADMIN_USER_SELECT = {
@@ -68,7 +69,11 @@ export class UsersRepository {
     whatsapp: string,
   ): Promise<User | null> {
     return this.prisma.user.findFirst({
-      where: { tenantId, whatsapp, deletedAt: null },
+      where: {
+        tenantId,
+        whatsapp: { in: whatsappAliases(whatsapp) },
+        deletedAt: null,
+      },
     });
   }
 

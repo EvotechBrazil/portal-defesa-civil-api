@@ -11,6 +11,12 @@ export interface RegisterResult {
   id: string;
   email: string;
   name: string;
+  /**
+   * Falso quando ainda falta provar o e-mail. Com AUTO_VERIFY_EMAIL ligado a
+   * conta ja nasce verificada e nenhum e-mail e enviado — o cliente precisa
+   * saber disso para nao pedir um codigo que nunca foi gerado.
+   */
+  emailVerified: boolean;
 }
 
 export interface AuthUserView {

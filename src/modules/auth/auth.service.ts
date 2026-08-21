@@ -168,7 +168,15 @@ export class AuthService {
     if (!autoVerify) {
       await this.issueVerificationEmail(user);
     }
-    return { id: user.id, email: user.email, name: user.name };
+    // `emailVerified` diz ao cliente se ainda falta provar o e-mail. Com
+    // AUTO_VERIFY_EMAIL ligado nenhum e-mail e enviado, entao mandar a pessoa
+    // para a tela de token seria pedir um codigo que nunca foi gerado.
+    return {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      emailVerified: Boolean(user.emailVerifiedAt),
+    };
   }
 
   async verifyEmail(dto: TokenDto): Promise<VerifyEmailResult> {

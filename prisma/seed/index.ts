@@ -704,21 +704,21 @@ async function printValidation() {
     }
   };
   expect('tenants', tenants, 1);
-  expect('courses', courses, 4);
-  expect('course_modules', courseModules, 11);
-  expect('course_modules com summaryMd', modulesWithSummary, 11);
-  expect('quizzes', quizzes, 64);
-  expect('questions', questions, 183);
-  expect('question_options', questionOptions, 549);
-  expect('decks', decks, 5);
-  expect('cards ESSENTIAL', essentialCards, 88);
-  expect('frentes ESSENTIAL como pergunta', essentialQuestionPrompts, 88);
+  expect('courses', courses, 5);
+  expect('course_modules', courseModules, 12);
+  expect('course_modules com summaryMd', modulesWithSummary, 12);
+  expect('quizzes', quizzes, 71);
+  expect('questions', questions, 201);
+  expect('question_options', questionOptions, 603);
+  expect('decks', decks, 6);
+  expect('cards ESSENTIAL', essentialCards, 106);
+  expect('frentes ESSENTIAL como pergunta', essentialQuestionPrompts, 106);
   expect('cards EXAM', examCards, 133);
   expect('cards EXAM reversíveis', reversibleExamCards, 133);
-  expect('content_pages', contentPages, 16);
+  expect('content_pages', contentPages, 17);
   expect('cartas sem card_question', cardsWithoutQuestions, 0);
   expect('cobertura EXAM', examOrigins.length, 133);
-  expect('cobertura ESSENTIAL', essentialCited.length, 174);
+  expect('cobertura ESSENTIAL', essentialCited.length, 192);
   expect('CardLink órfãos', missingLinkSlugs.length, 0);
   expect('questões sem 1 correta', questionsWithoutSingleCorrect, 0);
 
